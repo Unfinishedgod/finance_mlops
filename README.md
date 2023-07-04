@@ -1,1 +1,1 @@
-# finance_mlops
+# GCP와 파이썬을 사용한 금융데이터 ETL 및 대시보드 구축
