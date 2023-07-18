@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup as bs
 import pandas as pd
 import os
 from time import sleep
-
+import openai
 from datetime import datetime
 import os
 import time
@@ -28,8 +28,12 @@ kor_ticker_list = pd.read_csv(f'{file_dir}/kor_ticker_list.csv')
 kor_corp_name_list = kor_ticker_list['corp_name']
 
 # 코스피 200 리스트
-kospi_200_ticker = kospi_200_ticker.to_csv(f'{file_dir}/kor_ticker_list.csv')
-kospi_200_corp_name_list = kospi_200_ticker['corp_name']
+index_code_df = pd.read_csv(f'{file_dir}/kor_kospi_index_list_df.csv', 
+                            dtype = {'index_code':str,
+                                    'ticker':str})
+kospi_200_index = index_code_df[index_code_df['index_code'] == '1028'] # 코스피 200 인덱스 코드 1028
+kospi_200_index = kospi_200_index.reset_index(drop = True)
+kospi_200_corp_name_list = kospi_200_index['corp_name']
 
 # 
 chatgpt_apikey_df = pd.read_csv(f'{file_dir}/chatgpt_apikey.csv')
@@ -69,12 +73,12 @@ def get_news_summary(key_word):
             news_article_text = news_article_nm[0].get_text()
             new_article_list.append(news_article_text)
             
-#     # BARD에 들어갈 최종 뉴스기사
+    # CHAT GPT에 들어갈 최종 뉴스기사
     total_article = '_'.join(new_article_list)
     total_article = total_article.replace("\n","")
     
     
-#     # 뉴스기사와 함께 요약문 
+    # 뉴스기사와 함께 요약문 
     input_text_2 = ' \n 전망이 어떨지 요약 좀 해줘'
     
     question = f'{total_article} {input_text_2}'
@@ -88,11 +92,57 @@ def get_news_summary(key_word):
     return completion.choices[0]['message']['content']
 
 
-for kospi_200_corp_name in kospi_200_corp_name_list:
-    result_val = get_news_summary(kor_corp_name)
+now = datetime.now()
+today_date_time_csv = now.strftime("%Y%m%d_%H%M")
+print(f'뉴스 크롤링 시작 {today_date_time_csv}')  
+
+file_name = 'news_summary'
+news_summary_df = pd.DataFrame()
+
+for i in range(len(kospi_200_index)):
+    kospi_200_corp_name = kospi_200_index['corp_name'][i]
+    kospi_200_ticker = kospi_200_index['ticker'][i]
+    now = datetime.now()
+    today_date_time_csv = now.strftime("%Y%m%d-%H:%M:%S")
+    print(f'{kospi_200_corp_name} 시작 {today_date_time_csv}')
+    try:
+        result_val = get_news_summary(kospi_200_corp_name)
+        
+        df_raw = pd.DataFrame({
+          'corp_name':kospi_200_corp_name,
+          'ticker':kospi_200_ticker,
+          'summary':result_val
+        }, index = [0])
+        
+        news_summary_df = pd.concat([news_summary_df, df_raw])
+        # if not os.path.exists(f'{file_dir}/{file_name}_{today_date1}.csv'):
+        #     df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='w')
+        # else:
+        #     df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='a', header=False)
+        
+        print(f'{kospi_200_corp_name} 완료 {today_date_time_csv}')
+    except:
+        df_raw = pd.DataFrame({
+          'corp_name':kospi_200_corp_name,
+          'summary':"None"
+        }, index = [0])
+        
+        news_summary_df = pd.concat([news_summary_df, df_raw])
+        
+        # if not os.path.exists(f'{file_dir}/{file_name}_{today_date1}.csv'):
+        #     df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='w')
+        # else:
+        #     df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='a', header=False)
+            
+        print(f'{kospi_200_corp_name} 에러 {today_date_time_csv}')
+
     
+now = datetime.now()
+today_date_time_csv = now.strftime("%Y%m%d_%H%M")
+print(f'뉴스 크롤링 완료 {today_date_time_csv}')  
+news_summary_df = news_summary_df.reset_index(drop = True)
 
-
+news_summary_df.to_csv(f'{file_dir}/news_summary_{today_date_time_csv}.csv')
 
 
 

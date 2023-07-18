@@ -48,7 +48,8 @@ file_list = glob.glob(f'{file_dir}/*{today_date1}.csv')
 # In[45]:
 
 
-df = pd.read_csv(file_list[1])
+# df = pd.read_csv(file_list[1])
+df = pd.read_csv(f'{file_dir}/kor_stock_ohlcv_20230717_1007.csv')
 
 
 # In[60]:

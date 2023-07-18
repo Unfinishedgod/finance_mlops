@@ -13,6 +13,8 @@ file_dir = '/home/owenchoi07/finance_mlops/data_crawler'
 now = datetime.now()
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
+today_date_time_csv = now.strftime("%Y%m%d_%H%M")
+
 ticker_nm = '005930'
 
 # 주가 정보 
@@ -25,10 +27,10 @@ df_raw['날짜'] = today_date2
 
 file_name = 'kor_stock_ohlcv'
 
-if not os.path.exists(f'{file_dir}/{file_name}_{today_date1}.csv'):
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='w')
+if not os.path.exists(f'{file_dir}/{file_name}_{today_date_time_csv}.csv'):
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='w')
 else:
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='a', header=False)
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='a', header=False)
 print('주가정보 완료')
     
     
@@ -39,10 +41,10 @@ df_raw = df_raw.rename(columns =  {'티커':'ticker'})
 df_raw['날짜'] = today_date2
 
 file_name = 'kor_market_cap'
-if not os.path.exists(f'{file_dir}/{file_name}_{today_date1}.csv'):
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='w')
+if not os.path.exists(f'{file_dir}/{file_name}_{today_date_time_csv}.csv'):
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='w')
 else:
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='a', header=False)
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='a', header=False)
  
 
 print('시가총액 완료')   
@@ -56,10 +58,10 @@ df_raw.rename(columns = {'티커':'ticker'}, inplace = True)
 df_raw['날짜'] = today_date2
 
 file_name = 'kor_stock_fundamental'
-if not os.path.exists(f'{file_dir}/{file_name}_{today_date1}.csv'):
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='w')
+if not os.path.exists(f'{file_dir}/{file_name}_{today_date_time_csv}.csv'):
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='w')
 else:
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='a', header=False)
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='a', header=False)
 
 print('DIV/BPS/PER/EPS 완료')
 

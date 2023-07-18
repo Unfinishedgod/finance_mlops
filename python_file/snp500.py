@@ -42,6 +42,7 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 # start_date2 = '2017-01-01'
 start_date2 = today_date2
+today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 # ### S&P 500 데이터 수집
 
@@ -57,10 +58,10 @@ for ticker_nm in sp500_ticker_list:
         df_raw['ticker'] = ticker_nm
         df_raw = df_raw.reset_index()
         
-        if not os.path.exists(f'{file_dir}/{file_name}_{today_date1}.csv'):
-            df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='w')
+        if not os.path.exists(f'{file_dir}/{file_name}_{today_date_time_csv}.csv'):
+            df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='w')
         else:
-            df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='a', header=False)
+            df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='a', header=False)
         
         print(f'{ticker_nm} success')    
     except:
@@ -81,10 +82,10 @@ btc_df = fdr.DataReader('BTC/KRW', start_date2,today_date2)
 btc_df = btc_df.reset_index()
 
 file_name = 'bitcoin'
-if not os.path.exists(f'{file_dir}/{file_name}_{today_date1}.csv'):
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='w')
+if not os.path.exists(f'{file_dir}/{file_name}_{today_date_time_csv}.csv'):
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='w')
 else:
-    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date1}.csv', index=False, mode='a', header=False)
+    df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='a', header=False)
  
 print('비트코인 완료')   
 
