@@ -11,6 +11,7 @@ from time import sleep
 import FinanceDataReader as fdr
 
 from datetime import datetime
+import datetime
 import os
 import time
 
@@ -37,7 +38,7 @@ sp500_ticker_list = snp500['ticker']
 
 
 # ### 날짜 설정
-now = datetime.now()
+now = datetime.datetime.now()
 now = now + timedelta(days=-1)
 
 today_date1 = now.strftime('%Y%m%d')
