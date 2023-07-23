@@ -71,40 +71,40 @@ start_date2 = '2017-01-01'
 # In[5]:
 
 
-# S&P 500 symbol list
-snp500 = fdr.StockListing('S&P500')
-snp500.columns = ['ticker', 'corp_name', 'sector', 'industry']
-snp500.head()
+# # S&P 500 symbol list
+# snp500 = fdr.StockListing('S&P500')
+# snp500.columns = ['ticker', 'corp_name', 'sector', 'industry']
+# snp500.head()
 
 
-# In[7]:
+# # In[7]:
 
 
-file_name = 'snp500_ticker_list'
-# 빅쿼리 데이터 적재
-snp500.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-  project_id=project_id,
-  if_exists='replace',
-  credentials=credentials)
+# file_name = 'snp500_ticker_list'
+# # 빅쿼리 데이터 적재
+# snp500.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+#   project_id=project_id,
+#   if_exists='replace',
+#   credentials=credentials)
 
-# Postgresql 적재
-snp500.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
-
-
-
-snp500.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
+# # Postgresql 적재
+# snp500.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
 
 
-# Google Storage 적재
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
-source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(destination_blob_name)
-blob.upload_from_filename(source_file_name)
+# snp500.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
-sp500_ticker_list = snp500['ticker']
+
+# # Google Storage 적재
+# bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
+# source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
+# destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
+
+# bucket = storage_client.bucket(bucket_name)
+# blob = bucket.blob(destination_blob_name)
+# blob.upload_from_filename(source_file_name)
+
+# sp500_ticker_list = snp500['ticker']
 
 
 # ## 주가 데이터 수집
@@ -112,40 +112,41 @@ sp500_ticker_list = snp500['ticker']
 # In[8]:
 
 
-for ticker_nm in sp500_ticker_list:
-    file_name = 'snp500'
-    try:
-        # Apple(AAPL), 2017-01-01 ~ Now
-        df_raw = fdr.DataReader(ticker_nm, start_date2,today_date2)
-        df_raw['ticker'] = ticker_nm
-        df_raw = df_raw.reset_index()
+# for ticker_nm in sp500_ticker_list:
+#     file_name = 'snp500'
+#     try:
+#         # Apple(AAPL), 2017-01-01 ~ Now
+#         df_raw = fdr.DataReader(ticker_nm, start_date2,today_date2)
+#         df_raw['ticker'] = ticker_nm
+#         df_raw = df_raw.reset_index()
+#         df_raw.columns = ['Date', 'Open','High','Low','Close','Adj_Close','Volume','ticker']
         
-        # 빅쿼리 데이터 적재
-        df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-          project_id=project_id,
-          if_exists='append',
-          credentials=credentials)
+#         # 빅쿼리 데이터 적재
+#         df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+#           project_id=project_id,
+#           if_exists='append',
+#           credentials=credentials)
         
-        # Postgresql 적재
-        df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
+#         # Postgresql 적재
+#         df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
         
-        if not os.path.exists(f'data_crawler/{file_name}.csv'):
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-        else:
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
+#         if not os.path.exists(f'data_crawler/{file_name}.csv'):
+#             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
+#         else:
+#             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
         
-        print(f'{ticker_nm} success')
-    except:
-        print(f'{ticker_nm} fail')   
+#         print(f'{ticker_nm} success')
+#     except:
+#         print(f'{ticker_nm} fail')   
 
-# Google Storage 적재        
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
-source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
+# # Google Storage 적재        
+# bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
+# source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
+# destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(destination_blob_name)
-blob.upload_from_filename(source_file_name)    
+# bucket = storage_client.bucket(bucket_name)
+# blob = bucket.blob(destination_blob_name)
+# blob.upload_from_filename(source_file_name)    
 
 
 # ## 비트코인
@@ -155,8 +156,9 @@ blob.upload_from_filename(source_file_name)
 
 df_raw = fdr.DataReader('BTC/KRW', "2016-01-01",today_date2)
 df_raw = df_raw.reset_index()
+df_raw.columns = ['Date', 'Open','High','Low','Close','Adj_Close','Volume']
 
-file_name = 'btc_df'
+file_name = 'bitcoin'
 
 df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
@@ -186,6 +188,7 @@ blob.upload_from_filename(source_file_name)
 
 df_raw = fdr.DataReader('USD/KRW', "2016-01-01",today_date2)
 df_raw = df_raw.reset_index()
+df_raw.columns = ['Date', 'Open','High','Low','Close','Adj_Close','Volume']
 
 file_name = 'usdkrw'
 
