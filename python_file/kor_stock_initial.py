@@ -46,6 +46,7 @@ dataset_id = 'finance_mlops'
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
 
+bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 
 # Postgresql 연결
 db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
@@ -100,7 +101,6 @@ kor_ticker_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index
         
 kor_ticker_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -151,7 +151,6 @@ for ticker_nm in kor_ticker_list:
         print(f'{file_name}_{ticker_nm} fail')   
 
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -202,7 +201,6 @@ for ticker_nm in kor_ticker_list:
     except:
         print(f'{file_name}_{ticker_nm} fail')  
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -244,7 +242,6 @@ for ticker_nm in kor_ticker_list:
     except:
         print(f'{file_name}_{ticker_nm} fail')   
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -301,7 +298,6 @@ for buy_sell_type in buy_sell_type_list:
 #     time.sleep(300)
 
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -358,7 +354,6 @@ for buy_sell_type in buy_sell_type_list:
 #     time.sleep(300)
 
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 

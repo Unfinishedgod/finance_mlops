@@ -45,7 +45,7 @@ dataset_id = 'finance_mlops'
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
-
+bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 
 # Postgresql 연결
 db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
@@ -100,7 +100,7 @@ kor_ticker_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index
         
 kor_ticker_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
+
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -150,7 +150,6 @@ kor_index_list_df.head()
 kor_index_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -190,11 +189,10 @@ for index_code in kor_index_code_list:
         else:
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
         
-        print(f'{index_code} success')
+        print(f'{file_name}_{index_code} success')
     except:
-        print(f'{index_code} fail')   
+        print(f'{file_name}_{index_code} fail')   
         
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -231,11 +229,10 @@ for index_code in kor_index_code_list:
         else:
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
         
-        print(f'{index_code} success')
+        print(f'{file_name}_{index_code} success')
     except:
-        print(f'{index_code} fail')   
+        print(f'{file_name}_{index_code} fail')   
         
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -298,7 +295,6 @@ index_code_master.head()
 index_code_master.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
 
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
