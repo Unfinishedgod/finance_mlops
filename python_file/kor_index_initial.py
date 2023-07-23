@@ -162,9 +162,9 @@ for index_code in kor_index_code_list:
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
         else:
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_success')    
+        print(f'{file_name}_{index_code}_로컬CSV저장_success')    
     except:
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail')
+        print(f'{file_name}_{index_code}_로컬CSV저장_fail')
     
     try:
         # 빅쿼리 데이터 적재
@@ -172,17 +172,17 @@ for index_code in kor_index_code_list:
           project_id=project_id,
           if_exists='append',
           credentials=credentials)
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_success')    
+        print(f'{file_name}_{index_code}_빅쿼리저장_success')    
     except:
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail')  
+        print(f'{file_name}_{index_code}_빅쿼리저장_fail')  
     
     
     try:
         # Postgresql 적재
         df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_success')    
+        print(f'{file_name}_{index_code}_Postgresql저장_success')    
     except:
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_fail')
+        print(f'{file_name}_{index_code}_Postgresql저장_fail')
         
         
 # Google Storage 적재
@@ -207,9 +207,9 @@ for index_code in kor_index_code_list:
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
         else:
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_success')    
+        print(f'{file_name}_{index_code}_로컬CSV저장_success')    
     except:
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail')
+        print(f'{file_name}_{index_code}_로컬CSV저장_fail')
     
     try:
         # 빅쿼리 데이터 적재
@@ -217,17 +217,17 @@ for index_code in kor_index_code_list:
           project_id=project_id,
           if_exists='append',
           credentials=credentials)
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_success')    
+        print(f'{file_name}_{index_code}_빅쿼리저장_success')    
     except:
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail')  
+        print(f'{file_name}_{index_code}_빅쿼리저장_fail')  
     
     
     try:
         # Postgresql 적재
         df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_success')    
+        print(f'{file_name}_{index_code}_Postgresql저장_success')    
     except:
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_fail')
+        print(f'{file_name}_{index_code}_Postgresql저장_fail')
         
 # Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
