@@ -113,6 +113,8 @@ for ticker_nm in kor_ticker_list:
     df_raw['ticker'] = ticker_nm
     df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'trading_value', 'price_change_percentage', 'ticker']
     
+    time.sleep(1)
+    
     try:
         if not os.path.exists(f'data_crawler/{file_name}.csv'):
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
@@ -159,6 +161,8 @@ for ticker_nm in kor_ticker_list:
     df_raw['ticker'] = ticker_nm
     df_raw = df_raw.drop(['거래량', '거래대금'], axis = 1)
     df_raw.columns = ['date', 'market_cap', 'outstanding_shares', 'ticker']
+    
+    time.sleep(1)
     
     try:
         if not os.path.exists(f'data_crawler/{file_name}.csv'):
@@ -209,6 +213,8 @@ for ticker_nm in kor_ticker_list:
     df_raw = df_raw.reset_index()
     df_raw['ticker'] = ticker_nm
     df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']  
+    
+    time.sleep(1)
     
     try:
         if not os.path.exists(f'data_crawler/{file_name}.csv'):
@@ -272,6 +278,10 @@ for buy_sell_type in buy_sell_type_list:
             'total', 
             'ticker', 'type'
         ]
+        
+        time.sleep(1)
+        
+        
         try:
             if not os.path.exists(f'data_crawler/{file_name}.csv'):
                 df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
