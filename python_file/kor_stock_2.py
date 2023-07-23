@@ -133,9 +133,9 @@ for buy_sell_type in buy_sell_type_list:
                     'total', 
                     'ticker', 'type'
                 ]
-            print(f'{file_name}_{ticker_nm}_데이터수집_success_{time_line}')     
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_success_{time_line}')     
         except:
-            print(f'{file_name}_{ticker_nm}_데이터수집_fail_{time_line}') 
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_fail_{time_line}') 
             
             
         try:
@@ -143,9 +143,9 @@ for buy_sell_type in buy_sell_type_list:
                 df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
             else:
                 df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-            print(f'{file_name}_{ticker_nm}_로컬CSV저장_success_{time_line}')     
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_로컬CSV저장_success_{time_line}')     
         except:
-            print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail_{time_line}') 
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_로컬CSV저장_fail_{time_line}') 
         
         
         try:
@@ -154,18 +154,18 @@ for buy_sell_type in buy_sell_type_list:
               project_id=project_id,
               if_exists='append',
               credentials=credentials)
-            print(f'{file_name}_{ticker_nm}_빅쿼리저장_success_{time_line}')     
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_빅쿼리저장_success_{time_line}')     
         except:
-            print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail_{time_line}')   
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_빅쿼리저장_fail_{time_line}')   
         
         
         
         try:
             # Postgresql 적재
             df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-            print(f'{file_name}_{ticker_nm}_Postgresql저장_success_{time_line}')     
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_Postgresql저장_success_{time_line}')     
         except:
-            print(f'{file_name}_{ticker_nm}_Postgresql저장_fail_{time_line}')         
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_Postgresql저장_fail_{time_line}')         
 
 
 # Google Storage 적재
