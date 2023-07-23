@@ -57,7 +57,7 @@ engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432
 
 now = datetime.now()
 today_date1 = now.strftime('%Y%m%d')
-start_date = '20230101'
+start_date = '20180101'
 today_date1 = '20230721'
 # start_date = '20230701'
 
@@ -66,7 +66,7 @@ today_date1 = '20230721'
 # # 주식 정보
 
 # ## 티커 리스트
-market_list = ['KOSPI', 'KOSDAQ', 'KONEX']
+market_list = ['KOSPI', 'KOSDAQ']
 
 kor_ticker_list_df = pd.DataFrame()
 for market_nm in market_list:
@@ -154,7 +154,7 @@ file_name = 'kor_index_ohlcv'
 for index_code in kor_index_code_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
-    time.sleep(1)  
+    time.sleep(10)
     
     try:
         df_raw = stock.get_index_ohlcv(start_date, today_date1, index_code)
@@ -210,7 +210,7 @@ for index_code in kor_index_code_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
     
-    time.sleep(1)
+    time.sleep(10)
     
     try:
         df_raw = stock.get_index_fundamental(start_date, today_date1, index_code)
@@ -310,7 +310,7 @@ for ticker_nm in kor_ticker_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
     
-    time.sleep(1)
+    time.sleep(10)
     try:
         df_raw = stock.get_market_ohlcv(start_date, today_date1, ticker_nm)
         df_raw = df_raw.reset_index()
@@ -365,7 +365,7 @@ file_name = 'kor_market_cap'
 for ticker_nm in kor_ticker_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
-    time.sleep(1)
+    time.sleep(10)
     
     try:
         df_raw = stock.get_market_cap(start_date, today_date1, ticker_nm)
@@ -426,7 +426,7 @@ for ticker_nm in kor_ticker_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
     
-    time.sleep(1)
+    time.sleep(10)
     
     try:
         df_raw = stock.get_market_fundamental(start_date, today_date1, ticker_nm)

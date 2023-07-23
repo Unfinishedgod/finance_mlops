@@ -60,7 +60,7 @@ engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432
 
 now = datetime.now()
 today_date1 = now.strftime('%Y%m%d')
-start_date = '20230101'
+start_date = '20180101'
 today_date1 = '20230721'
 # start_date = '20230701'
 
@@ -68,7 +68,7 @@ today_date1 = '20230721'
 # # 주식 정보
 
 # ## 티커 리스트
-market_list = ['KOSPI', 'KOSDAQ', 'KONEX']
+market_list = ['KOSPI', 'KOSDAQ']
 
 kor_ticker_list_df = pd.DataFrame()
 for market_nm in market_list:
@@ -114,7 +114,7 @@ for buy_sell_type in buy_sell_type_list:
     for ticker_nm in kor_ticker_list:
         now1 = datetime.now()
         time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-        time.sleep(1)    
+        time.sleep(10)
         
         try:
             df_raw = stock.get_market_trading_value_by_date(start_date, today_date1, 
