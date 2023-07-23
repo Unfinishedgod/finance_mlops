@@ -99,6 +99,7 @@ kor_ticker_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_na
 # Postgresql 적재
 kor_ticker_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
         
+# Google Storage 적재
 kor_ticker_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
@@ -106,23 +107,14 @@ destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로�
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)
+
+
 
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
-# In[ ]:
-
-
-
-
-
 # ## 종목별 주가 정보
-
-# In[7]:
-
-
 for ticker_nm in kor_ticker_list:
     file_name = 'kor_stock_ohlcv'
     
@@ -150,29 +142,16 @@ for ticker_nm in kor_ticker_list:
     except:
         print(f'{file_name}_{ticker_nm} fail')   
 
-
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)        
 
 
 # ## 종목별 시가총액
-
-# In[8]:
-
-
-df_raw = stock.get_market_cap('2023-07-11', today_date1, ticker_nm)
-df_raw = df_raw.drop(['거래량', '거래대금'], axis = 1)
-df_raw.head()
-
-
-# In[9]:
-
-
 for ticker_nm in kor_ticker_list:
     file_name = 'kor_market_cap'
     
@@ -201,20 +180,17 @@ for ticker_nm in kor_ticker_list:
     except:
         print(f'{file_name}_{ticker_nm} fail')  
 
+
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)        
 
 
 # ## 종목별 DIV/BPS/PER/EPS
-
-# In[10]:
-
-
 for ticker_nm in kor_ticker_list:
     file_name = 'kor_stock_fundamental'
     
@@ -242,20 +218,16 @@ for ticker_nm in kor_ticker_list:
     except:
         print(f'{file_name}_{ticker_nm} fail')   
 
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)        
 
 
 # ##  일자별 거래실적 추이 (거래대금)
-
-# In[11]:
-
-
 buy_sell_type_list = ['순매수', '매수', '매도']
 for buy_sell_type in buy_sell_type_list:
     for ticker_nm in kor_ticker_list:
@@ -298,20 +270,16 @@ for buy_sell_type in buy_sell_type_list:
 #     time.sleep(300)
 
 
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)
 
 
 # ### 일자별 거래실적 추이 (거래량)
-
-# In[12]:
-
-
 buy_sell_type_list = ['순매수', '매수', '매도']
 for buy_sell_type in buy_sell_type_list:
     for ticker_nm in kor_ticker_list:
@@ -351,26 +319,11 @@ for buy_sell_type in buy_sell_type_list:
             print(f'{file_name}_{ticker_nm} success')
         except:
             print(f'{file_name}_{ticker_nm} fail')    
-#     time.sleep(300)
 
-
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)
-
-
-# In[13]:
-
-
-df_raw = stock.get_market_trading_volume_by_date(start_date, today_date1, 
-                                                                 ticker_nm, 
-                                                                 detail=True,
-                                                                 on = buy_sell_type)
-df_raw = df_raw.reset_index()
-df_raw['ticker'] = ticker_nm
-df_raw['type'] = buy_sell_type
-

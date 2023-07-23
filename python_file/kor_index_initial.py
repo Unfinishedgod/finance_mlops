@@ -28,9 +28,6 @@ from google.cloud import storage
 os.chdir('/home/owenchoi07/finance_mlops')
 
 
-# import pydata_google_auth
-
-# pandas_gbq
 # 서비스 계정 키 JSON 파일 경로
 key_path = glob.glob("key_value/*.json")[0]
 
@@ -70,10 +67,6 @@ start_date = '20180101'
 # # 주식 정보
 
 # ## 티커 리스트
-
-# In[3]:
-
-
 market_list = ['KOSPI', 'KOSDAQ', 'KONEX']
 
 kor_ticker_list_df = pd.DataFrame()
@@ -97,28 +90,21 @@ kor_ticker_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_na
 
 # Postgresql 적재
 kor_ticker_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
-        
 kor_ticker_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
-
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)
 
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
 # # 인덱스 정보
-# 
 # ## 인덱스 리스트
-
-# In[15]:
-
-
 kor_index_list_df = pd.DataFrame()
 market_list = ['KOSPI', 'KOSDAQ'] 
  
@@ -137,6 +123,7 @@ kor_index_list_df.head()
 
 
 file_name = 'kor_index_list_df'
+
 # 빅쿼리 데이터 적재
 kor_index_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
   project_id=project_id,
@@ -145,11 +132,9 @@ kor_index_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_nam
 
 # Postgresql 적재
 kor_index_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
-
-kor_index_list_df.head()
 kor_index_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
-
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -168,7 +153,6 @@ kor_index_code_list  = kor_index_list_df['index_code']
 
 for index_code in kor_index_code_list:
     file_name = 'kor_index_ohlcv'
-    
     try:
         df_raw = stock.get_index_ohlcv(start_date, today_date1, index_code)
         df_raw = df_raw.reset_index()
@@ -193,6 +177,8 @@ for index_code in kor_index_code_list:
     except:
         print(f'{file_name}_{index_code} fail')   
         
+        
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -202,10 +188,6 @@ blob.upload_from_filename(source_file_name)
 
 
 # ## 인덱스 등락률
-
-# In[17]:
-
-
 for index_code in kor_index_code_list:
     file_name = 'kor_index_code_fundamental'
     
@@ -233,6 +215,7 @@ for index_code in kor_index_code_list:
     except:
         print(f'{file_name}_{index_code} fail')   
         
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -242,10 +225,6 @@ blob.upload_from_filename(source_file_name)
 
 
 # ## 인덱스 구성 종목
-
-# In[18]:
-
-
 index_code_info = pd.DataFrame()
 for index_code in kor_index_code_list:
     pdf = stock.get_index_portfolio_deposit_file(str(index_code))
@@ -255,33 +234,21 @@ for index_code in kor_index_code_list:
 index_code_info = index_code_info.reset_index(drop = True)
 
 
-# In[19]:
-
-
 index_code_info_2  = pd.merge(index_code_info, kor_index_list_df,
         how = 'left',
         on = 'index_code')
         
-index_code_info_2.head()
-
-
-# In[20]:
-
 
 kor_ticker_list_df = pd.read_csv(f'data_crawler/kor_ticker_list.csv')
 kor_ticker_list_df.head()
-
-
-# In[21]:
 
 
 index_code_master  = pd.merge(index_code_info_2, kor_ticker_list_df[['ticker','corp_name']],
         how = 'left',
         on = 'ticker')
         
-index_code_master.head()
-
 file_name = 'index_code_master'
+
 # 빅쿼리 데이터 적재
 index_code_master.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
   project_id=project_id,
@@ -291,21 +258,13 @@ index_code_master.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_nam
 # Postgresql 적재
 index_code_master.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
 
-index_code_master.head()
+
 index_code_master.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
-
+# Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
-
 blob.upload_from_filename(source_file_name)
-
-
-# In[ ]:
-
-
-
-
