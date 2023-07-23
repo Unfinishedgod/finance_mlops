@@ -150,7 +150,7 @@ kor_index_code_list  = kor_index_list_df['index_code']
 
 # ## 인덱스 OHLCV 조회
 file_name = 'kor_index_ohlcv'
-for ticker_nm in kor_ticker_list:
+for index_code in kor_index_code_list:
     df_raw = stock.get_index_ohlcv(start_date, today_date1, index_code)
     df_raw = df_raw.reset_index()
     df_raw['index_code'] = index_code
@@ -196,7 +196,7 @@ blob.upload_from_filename(source_file_name)
 
 # ## 인덱스 등락률
 file_name = 'kor_index_code_fundamental'
-for ticker_nm in kor_ticker_list:
+for index_code in kor_index_code_list:
     df_raw = stock.get_index_fundamental(start_date, today_date1, index_code)
     df_raw = df_raw.reset_index()
     df_raw['index_code'] = index_code
