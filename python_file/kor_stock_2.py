@@ -114,7 +114,7 @@ for buy_sell_type in buy_sell_type_list:
     for ticker_nm in kor_ticker_list:
         now1 = datetime.now()
         time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-        time.sleep(10)    
+        time.sleep(20)    
         
         try:
             df_raw = stock.get_market_trading_volume_by_date(start_date, today_date1, 
