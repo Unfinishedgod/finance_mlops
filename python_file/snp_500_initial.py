@@ -97,19 +97,27 @@ sp500_ticker_list = snp500['ticker']
 file_name = 'snp500'
 for ticker_nm in sp500_ticker_list:
     # Apple(AAPL), 2017-01-01 ~ Now
-    df_raw = fdr.DataReader(ticker_nm, start_date2,today_date2)
-    df_raw['ticker'] = ticker_nm
-    df_raw = df_raw.reset_index()
-    df_raw.columns = ['date', 'open','high','low','close','adj_close','volume','ticker']
+    now1 = datetime.now()
+    time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+    time.sleep(1)    
     
+    try:    
+        df_raw = fdr.DataReader(ticker_nm, start_date2,today_date2)
+        df_raw['ticker'] = ticker_nm
+        df_raw = df_raw.reset_index()
+        df_raw.columns = ['date', 'open','high','low','close','adj_close','volume','ticker']
+        print(f'{file_name}_{ticker_nm}_데이터수집_success_{time_line}')   
+    except:
+        print(f'{file_name}_{ticker_nm}_데이터수집_fail_{time_line}')
+            
     try:
         if not os.path.exists(f'data_crawler/{file_name}.csv'):
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
         else:
             df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_success')    
+        print(f'{file_name}_{ticker_nm}_로컬CSV저장_success_{time_line}')   
     except:
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail')
+        print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail_{time_line}')
     
     
     try:
@@ -118,18 +126,18 @@ for ticker_nm in sp500_ticker_list:
           project_id=project_id,
           if_exists='append',
           credentials=credentials)
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_success')    
+        print(f'{file_name}_{ticker_nm}_빅쿼리저장_success_{time_line}')   
     except:
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail')  
+        print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail_{time_line}')  
     
     
     
     try:
         # Postgresql 적재
         df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_success')    
+        print(f'{file_name}_{ticker_nm}_Postgresql저장_success_{time_line}')   
     except:
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_fail')
+        print(f'{file_name}_{ticker_nm}_Postgresql저장_fail_{time_line}')
 
 # Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
