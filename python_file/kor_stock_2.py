@@ -107,7 +107,7 @@ kor_ticker_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w'
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
-# ### 일자별 거래실적 추이 (거래량)
+# ##  일자별 거래실적 추이 (거래대금)
 file_name = 'kor_stock_trading_volume_by_date'
 buy_sell_type_list = ['순매수', '매수', '매도']
 for buy_sell_type in buy_sell_type_list:
@@ -125,25 +125,25 @@ for buy_sell_type in buy_sell_type_list:
             df_raw['ticker'] = ticker_nm
             df_raw['type'] = buy_sell_type
             df_raw.columns = [
-                    'date', 
-                    'financial_investment', 'insurance', 'investment', 'private_equity', 'bank','other_finance', 'pension_fund', # 기관합계 
-                    'other_corporation', # 기타 법인
-                    'individual',# 개인
-                    'foreigner', 'other_foreigner', # 외국인 합계
-                    'total', 
-                    'ticker', 'type'
-                ]
-            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_success_{time_line}')     
+                'date', 
+                'financial_investment', 'insurance', 'investment', 'private_equity', 'bank','other_finance', 'pension_fund', # 기관합계 
+                'other_corporation', # 기타 법인
+                'individual',# 개인
+                'foreigner', 'other_foreigner', # 외국인 합계
+                'total', 
+                'ticker', 'type'
+            ]
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_success_{time_line}')  
         except:
             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_fail_{time_line}') 
-            
-            
+        
+        
         try:
             if not os.path.exists(f'data_crawler/{file_name}.csv'):
                 df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
             else:
                 df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_로컬CSV저장_success_{time_line}')     
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_로컬CSV저장_success_{time_line}')  
         except:
             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_로컬CSV저장_fail_{time_line}') 
         
@@ -154,7 +154,7 @@ for buy_sell_type in buy_sell_type_list:
               project_id=project_id,
               if_exists='append',
               credentials=credentials)
-            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_빅쿼리저장_success_{time_line}')     
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_빅쿼리저장_success_{time_line}')  
         except:
             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_빅쿼리저장_fail_{time_line}')   
         
@@ -163,7 +163,7 @@ for buy_sell_type in buy_sell_type_list:
         try:
             # Postgresql 적재
             df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_Postgresql저장_success_{time_line}')     
+            print(f'{file_name}_{buy_sell_type}_{ticker_nm}_Postgresql저장_success_{time_line}')  
         except:
             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_Postgresql저장_fail_{time_line}')         
 
@@ -175,3 +175,8 @@ destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로�
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
+
+
+
+
+
