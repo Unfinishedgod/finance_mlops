@@ -63,7 +63,7 @@ engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432
 now = datetime.now()
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = '2017-01-01'
-
+today_date2 = '2023-07-21'
 
 # ## S&P 500 종목 리스트
 snp500 = fdr.StockListing('S&P500')
