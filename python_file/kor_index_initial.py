@@ -82,23 +82,26 @@ for market_nm in market_list:
 kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 
 file_name = 'kor_ticker_list'
-# 빅쿼리 데이터 적재
-kor_ticker_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-  project_id=project_id,
-  if_exists='replace',
-  credentials=credentials)
 
-# Postgresql 적재
-kor_ticker_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
+# 로컬 적재
 kor_ticker_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-
-# Google Storage 적재
-source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
-
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(destination_blob_name)
-blob.upload_from_filename(source_file_name)
+# 
+# # 빅쿼리 데이터 적재
+# kor_ticker_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+#   project_id=project_id,
+#   if_exists='replace',
+#   credentials=credentials)
+# 
+# # Postgresql 적재
+# kor_ticker_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
+# 
+# # Google Storage 적재
+# source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
+# destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
+# 
+# bucket = storage_client.bucket(bucket_name)
+# blob = bucket.blob(destination_blob_name)
+# blob.upload_from_filename(source_file_name)
 
 kor_ticker_list = kor_ticker_list_df['ticker']
 
@@ -119,8 +122,6 @@ for market_nm in market_list:
         kor_index_list_df = pd.concat([kor_index_list_df,df])
         
 kor_index_list_df = kor_index_list_df.reset_index(drop = True)
-kor_index_list_df.head()
-
 
 file_name = 'kor_index_list_df'
 
@@ -147,35 +148,40 @@ kor_index_code_list  = kor_index_list_df['index_code']
 
 
 # ## 인덱스 OHLCV 조회
+file_name = 'kor_index_ohlcv'
+for ticker_nm in kor_ticker_list:
+    df_raw = stock.get_index_ohlcv(start_date, today_date1, index_code)
+    df_raw = df_raw.reset_index()
+    df_raw['index_code'] = index_code
+    df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'trading_value', 'market_cap', 'index_code']
 
-# In[16]:
 
-
-for index_code in kor_index_code_list:
-    file_name = 'kor_index_ohlcv'
     try:
-        df_raw = stock.get_index_ohlcv(start_date, today_date1, index_code)
-        df_raw = df_raw.reset_index()
-        df_raw['index_code'] = index_code
-        df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'trading_value', 'market_cap', 'index_code']
-
+        if not os.path.exists(f'data_crawler/{file_name}.csv'):
+            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
+        else:
+            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
+        print(f'{file_name}_{ticker_nm}_로컬CSV저장_success')    
+    except:
+        print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail')
+    
+    try:
         # 빅쿼리 데이터 적재
         df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
           project_id=project_id,
           if_exists='append',
           credentials=credentials)
-        
+        print(f'{file_name}_{ticker_nm}_빅쿼리저장_success')    
+    except:
+        print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail')  
+    
+    
+    try:
         # Postgresql 적재
         df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-        
-        if not os.path.exists(f'data_crawler/{file_name}.csv'):
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-        else:
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-        
-        print(f'{file_name}_{index_code} success')
+        print(f'{file_name}_{ticker_nm}_Postgresql저장_success')    
     except:
-        print(f'{file_name}_{index_code} fail')   
+        print(f'{file_name}_{ticker_nm}_Postgresql저장_fail')
         
         
 # Google Storage 적재
@@ -188,32 +194,39 @@ blob.upload_from_filename(source_file_name)
 
 
 # ## 인덱스 등락률
-for index_code in kor_index_code_list:
-    file_name = 'kor_index_code_fundamental'
+file_name = 'kor_index_code_fundamental'
+for ticker_nm in kor_ticker_list:
+    df_raw = stock.get_index_fundamental(start_date, today_date1, index_code)
+    df_raw = df_raw.reset_index()
+    df_raw['index_code'] = index_code
+    df_raw.columns = ['date', 'close', 'price_change_percentage', 'per', 'porward_per', 'pbr', 'dividend_yield', 'index_code']
+
+    try:
+        if not os.path.exists(f'data_crawler/{file_name}.csv'):
+            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
+        else:
+            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
+        print(f'{file_name}_{ticker_nm}_로컬CSV저장_success')    
+    except:
+        print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail')
     
     try:
-        df_raw = stock.get_index_fundamental(start_date, today_date1, index_code)
-        df_raw = df_raw.reset_index()
-        df_raw['index_code'] = index_code
-        df_raw.columns = ['date', 'close', 'price_change_percentage', 'per', 'porward_per', 'pbr', 'dividend_yield', 'index_code']
-
         # 빅쿼리 데이터 적재
         df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
           project_id=project_id,
           if_exists='append',
           credentials=credentials)
-        
+        print(f'{file_name}_{ticker_nm}_빅쿼리저장_success')    
+    except:
+        print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail')  
+    
+    
+    try:
         # Postgresql 적재
         df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-        
-        if not os.path.exists(f'data_crawler/{file_name}.csv'):
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-        else:
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-        
-        print(f'{file_name}_{index_code} success')
+        print(f'{file_name}_{ticker_nm}_Postgresql저장_success')    
     except:
-        print(f'{file_name}_{index_code} fail')   
+        print(f'{file_name}_{ticker_nm}_Postgresql저장_fail')
         
 # Google Storage 적재
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
@@ -222,6 +235,7 @@ destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로�
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)        
+
 
 
 # ## 인덱스 구성 종목
@@ -240,8 +254,6 @@ index_code_info_2  = pd.merge(index_code_info, kor_index_list_df,
         
 
 kor_ticker_list_df = pd.read_csv(f'data_crawler/kor_ticker_list.csv')
-kor_ticker_list_df.head()
-
 
 index_code_master  = pd.merge(index_code_info_2, kor_ticker_list_df[['ticker','corp_name']],
         how = 'left',
