@@ -57,8 +57,8 @@ engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432
 
 now = datetime.now()
 today_date1 = now.strftime('%Y%m%d')
-start_date = '20180101'
-today_date1 = '20230101'
+start_date = '20230101'
+today_date1 = '20230701'
 # start_date = '20230701'
 
 
