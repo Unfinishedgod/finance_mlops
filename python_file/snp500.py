@@ -12,6 +12,7 @@ import FinanceDataReader as fdr
 
 from datetime import datetime
 import datetime
+from datetime import timedelta
 import os
 import time
 
