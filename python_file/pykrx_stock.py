@@ -45,8 +45,6 @@ if not os.path.exists(f'{file_dir}/{file_name}_{today_date_time_csv}.csv'):
     df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='w')
 else:
     df_raw.to_csv(f'{file_dir}/{file_name}_{today_date_time_csv}.csv', index=False, mode='a', header=False)
- 
-
 print('시가총액 완료')   
 
 # DIV/BPS/PER/EPS 조회 (매일 실행 되는 배치용)
