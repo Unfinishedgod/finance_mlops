@@ -85,7 +85,6 @@ def upload_df(data, file_name, project_id, dataset_id, time_line):
         print(f'{file_name}_빅쿼리저장_fail_{time_line}')  
     
     
-    
     try:
         # Postgresql 적재
         data.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)

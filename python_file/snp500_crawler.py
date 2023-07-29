@@ -2,10 +2,6 @@
 # coding: utf-8
 
 # ##  FinanceDataReader 데이터 수집
-
-# In[1]:
-
-
 import pandas as pd
 from time import sleep
 import FinanceDataReader as fdr
@@ -32,8 +28,6 @@ snp50 = pd.read_csv(f'{file_dir}/snp500_ticker_list.csv')
 sp500_ticker_list = snp500['ticker']
 
 
-# In[4]:
-
 
 # snp500.to_csv('data_crawler/snp500_ticker_list.csv', index = False)
 
@@ -44,7 +38,6 @@ now = now + timedelta(days=-1)
 
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
-# start_date2 = '2017-01-01'
 start_date2 = today_date2
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
@@ -101,7 +94,6 @@ print('비트코인 완료')
 # btc_df.to_csv(f'data_crawler/btc_df.csv')
 
 
-# 
 # # ### 환율 정보
 # 
 # # In[19]:
