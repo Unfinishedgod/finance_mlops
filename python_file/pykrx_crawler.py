@@ -36,7 +36,6 @@ credentials = service_account.Credentials.from_service_account_file(key_path)
 project_id = 'owen-389015'
 dataset_id = 'finance_mlops'
 
-
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
@@ -44,12 +43,10 @@ bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입�
 
 # Postgresql 연결
 db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
-
 username = db_connect_info['username'][0]
 password = db_connect_info['password'][0]
 host = db_connect_info['host'][0]
 database = db_connect_info['database'][0]
-
 engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
 
 
@@ -130,33 +127,13 @@ for market_nm in market_list:
 kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 
 file_name = 'kor_ticker_list'
-
-# 로컬 적재
-kor_ticker_list_df.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-
-
-# 빅쿼리 데이터 적재
-kor_ticker_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-  project_id=project_id,
-  if_exists='replace',
-  credentials=credentials)
-
-# Postgresql 적재
-kor_ticker_list_df.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
-
-# Google Storage 적재
-source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
-
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(destination_blob_name)
-blob.upload_from_filename(source_file_name)
+upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line)
 
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
 # 주가 정보 
-print(f'주가정보 시작')
+print('주가정보 시작')
 df_raw = stock.get_market_ohlcv(today_date1,  market="ALL")
 df_raw = df_raw.reset_index()
 df_raw['날짜'] = today_date2
@@ -189,7 +166,7 @@ upload_df(df_raw, file_name, project_id, dataset_id, time_line)
 print(f'시가총액 완료_{time_line}')
 
 
-# DIV/BPS/PER/EPS 조회 (매일 실행 되는 배치용)
+# DIV/BPS/PER/EPS 조회
 print(f'DIV/BPS/PER/EPS 시작')
 
 df_raw = stock.get_market_fundamental(today_date1, market='ALL')
@@ -301,10 +278,6 @@ print(f'일자별 거래실적 추이 (거래량) 완료_{time_line}')
 
 
 
-
-
-
-
 # # 인덱스 정보
 print(f'인덱스 정보 시작')
 kor_index_list_df = pd.DataFrame()
@@ -395,7 +368,7 @@ print(f'인덱스 등락률 완료_{time_line}')
 
 
 
-# ## 인덱스 구성 종목
+# 인덱스 구성 종목
 print(f'인덱스 구성 종목 시작')
 
 index_code_info = pd.DataFrame()
