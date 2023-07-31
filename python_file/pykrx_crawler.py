@@ -111,9 +111,11 @@ today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 # # 주식 정보
 
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
+
 ## 티커 리스트
 market_list = ['KOSPI', 'KOSDAQ']
-
 kor_ticker_list_df = pd.DataFrame()
 for market_nm in market_list:
     ticker_list = stock.get_market_ticker_list(today_date1, market=market_nm)
@@ -195,7 +197,8 @@ for buy_sell_type in buy_sell_type_list:
     for ticker_nm in kor_ticker_list:
         now1 = datetime.now()
         time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-        
+        time.sleep(1)
+
         try:
             df_raw = stock.get_market_trading_value_by_date(today_date1, today_date1, 
                                                                              ticker_nm, 
@@ -241,6 +244,7 @@ for buy_sell_type in buy_sell_type_list:
     for ticker_nm in kor_ticker_list:
         now1 = datetime.now()
         time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+        time.sleep(1)
         
         try:
             df_raw = stock.get_market_trading_volume_by_date(today_date1, today_date1, 
@@ -285,8 +289,7 @@ market_list = ['KOSPI', 'KOSDAQ']
 for market_nm in market_list:
     kor_index_list = stock.get_index_ticker_list(market=market_nm)
     for index_codes in kor_index_list:
-
-    
+        time.sleep(1)
         index_name = stock.get_index_ticker_name(index_codes)
         df = pd.DataFrame({'index_code':index_codes,
                            'index_code_nm':index_name,
@@ -317,6 +320,7 @@ df_raw_total = pd.DataFrame()
 for index_code in kor_index_code_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
+    time.sleep(1)
     try:
         df_raw = stock.get_index_ohlcv(today_date1, today_date1, index_code)
         df_raw = df_raw.reset_index()
@@ -346,6 +350,7 @@ df_raw_total = pd.DataFrame()
 for index_code in kor_index_code_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+    time.sleep(1)
     try:
         df_raw = stock.get_index_fundamental(today_date1, today_date1, index_code)
         df_raw = df_raw.reset_index()
@@ -372,6 +377,7 @@ print(f'인덱스 구성 종목 시작')
 
 index_code_info = pd.DataFrame()
 for index_code in kor_index_code_list:
+    time.sleep(1)
     pdf = stock.get_index_portfolio_deposit_file(str(index_code))
     df = pd.DataFrame({'ticker':pdf,
                        'index_code': str(index_code)})

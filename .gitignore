@@ -164,3 +164,7 @@ cython_debug/
 *.json
 *.out
 *.txt
+
+
+st*
+config.toml
