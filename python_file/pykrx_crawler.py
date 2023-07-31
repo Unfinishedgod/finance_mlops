@@ -128,7 +128,6 @@ kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 
 file_name = 'kor_ticker_list'
 upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line)
-
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
