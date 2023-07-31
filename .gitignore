@@ -168,3 +168,5 @@ cython_debug/
 
 st*
 config.toml
+style.css
+pages/*
