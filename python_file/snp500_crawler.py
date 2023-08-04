@@ -16,15 +16,14 @@ import time
 file_dir = '/home/owenchoi07/finance_mlops/data_crawler'
 
 
-# ### S&P 500 종목 리스트 
-
 # S&P 500 symbol list
 snp500 = fdr.StockListing('S&P500')
 snp500.columns = ['ticker', 'corp_name', 'sector', 'industry']
-snp500.head()
 
-
-snp50 = pd.read_csv(f'{file_dir}/snp500_ticker_list.csv')
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
+file_name = 'snp500_ticker_list'
+upload_df(snp500, file_name, project_id, dataset_id, time_line, today_date1)
 sp500_ticker_list = snp500['ticker']
 
 
@@ -64,11 +63,6 @@ for ticker_nm in sp500_ticker_list:
     except:
         print(f'{ticker_nm} fail')
 
-
-# In[10]:
-
-
-df_raw.head()
 
 
 # ### 비트코인 
