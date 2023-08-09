@@ -100,6 +100,7 @@ file_name = 'news_summary'
 news_summary_df = pd.DataFrame()
 
 for i in range(len(kospi_200_index)):
+    time.sleep(1)
     kospi_200_corp_name = kospi_200_index['corp_name'][i]
     kospi_200_ticker = kospi_200_index['ticker'][i]
     now = datetime.now()

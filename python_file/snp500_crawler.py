@@ -14,6 +14,8 @@ import psycopg2 as pg2
 from sqlalchemy import create_engine
 
 from datetime import datetime
+from datetime import timedelta
+
 import os
 import time
 
@@ -49,7 +51,7 @@ database = db_connect_info['database'][0]
 engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
 
 
-def upload_df(data, file_name, project_id, dataset_id, time_line):
+def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
     if not os.path.exists(f'data_crawler/{file_name}'):
         os.makedirs(f'data_crawler/{file_name}')
 
@@ -91,7 +93,7 @@ def upload_df(data, file_name, project_id, dataset_id, time_line):
         
         
 # ### 날짜 설정
-now = datetime.datetime.now()
+now = datetime.now()
 now = now + timedelta(days=-1)
 
 today_date1 = now.strftime('%Y%m%d')
@@ -107,6 +109,7 @@ snp500 = fdr.StockListing('S&P500')
 snp500.columns = ['ticker', 'corp_name', 'sector', 'industry']
 
 now1 = datetime.now()
+
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
 file_name = 'snp500_ticker_list'
 upload_df(snp500, file_name, project_id, dataset_id, time_line, today_date1)

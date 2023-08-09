@@ -108,13 +108,13 @@ start_date2 = today_date2
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 
-file_name = 'bitcoin'
-ticker_nm = 'btc_krw'
+file_name = 'usd_krw'
+ticker_nm = 'usd_krw'
 try:
     now1 = datetime.now()
 
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-    df_raw = fdr.DataReader('BTC/KRW', start_date2,today_date2, today_date1)
+    df_raw = fdr.DataReader('USD/KRW', start_date2,today_date2, today_date1)
     df_raw['ticker'] = ticker_nm
     df_raw = df_raw.reset_index()
     df_raw.columns = ['date', 'open','high','low','close','adj_close','volume','ticker']

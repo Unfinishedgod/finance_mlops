@@ -6,7 +6,7 @@ import pandas_gbq
 from pykrx import stock
 from pykrx import bond
 import FinanceDataReader as fdr
-from datetime import timedelta
+
 
 from time import sleep
 
@@ -14,6 +14,8 @@ import psycopg2 as pg2
 from sqlalchemy import create_engine
 
 from datetime import datetime
+from datetime import timedelta
+
 import os
 import time
 
