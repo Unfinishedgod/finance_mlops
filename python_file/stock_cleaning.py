@@ -24,7 +24,7 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 ticker_nm = '005930'
 
-file_dir = '/home/owenchoi07/finance_mlops/data_crawler'
+file_dir = '/home/shjj08choi/finance_mlops/data_crawler'
 
 
 # In[8]:

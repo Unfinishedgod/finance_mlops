@@ -13,7 +13,7 @@ import os
 import time
 
 
-file_dir = '/home/owenchoi07/finance_mlops/data_crawler'
+file_dir = '/home/shjj08choi/finance_mlops/data_crawler'
 
 now = datetime.now()
 today_date1 = now.strftime('%Y%m%d')

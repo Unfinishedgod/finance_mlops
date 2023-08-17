@@ -23,7 +23,7 @@ from google.oauth2 import service_account
 from google.cloud import storage
 
 # 경로 변경
-os.chdir('/home/owenchoi07/finance_mlops')
+os.chdir('/home/shjj08choi/finance_mlops')
 
 
 # import pydata_google_auth
@@ -36,7 +36,7 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owen-389015'
+project_id = 'owenchoi-396200'
 dataset_id = 'finance_mlops'
 
 
@@ -44,7 +44,7 @@ dataset_id = 'finance_mlops'
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
 
 
 # Postgresql 연결
@@ -84,7 +84,7 @@ snp500.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
 
 
 # Google Storage 적재
-bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
 source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
@@ -168,7 +168,7 @@ blob.upload_from_filename(source_file_name)
 # df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
 # 
 # # Google Storage 적재
-# bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
+# bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
 # source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 # destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 # 
@@ -196,7 +196,7 @@ blob.upload_from_filename(source_file_name)
 # df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
 # 
 # # Google Storage 적재
-# bucket_name = 'finance-mlops'    # 서비스 계정 생성한 bucket 이름 입력
+# bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
 # source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
 # destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 # 
