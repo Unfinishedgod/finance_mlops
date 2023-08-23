@@ -105,6 +105,7 @@ now = datetime.now()
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = today_date2
+start_date2 = '2016-01-01'
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 
@@ -114,7 +115,8 @@ try:
     now1 = datetime.now()
 
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-    df_raw = fdr.DataReader('BTC/KRW', start_date2,today_date2, today_date1)
+    df_raw = fdr.DataReader('BTC/KRW', start_date2, today_date2)
+    # df_raw = fdr.DataReader('BTC/KRW', start_date2,today_date2, today_date1)
     df_raw['ticker'] = ticker_nm
     df_raw = df_raw.reset_index()
     df_raw.columns = ['date', 'open','high','low','close','adj_close','volume','ticker']

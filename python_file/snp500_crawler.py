@@ -99,22 +99,8 @@ now = now + timedelta(days=-1)
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = today_date2
+# start_date2 = '2017-01-01'
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
-
-
-
-
-# S&P 500 symbol list
-snp500 = fdr.StockListing('S&P500')
-snp500.columns = ['ticker', 'corp_name', 'sector', 'industry']
-
-now1 = datetime.now()
-
-time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
-file_name = 'snp500_ticker_list'
-upload_df(snp500, file_name, project_id, dataset_id, time_line, today_date1)
-sp500_ticker_list = snp500['ticker']
-
 
 # ### S&P 500 종목 리스트 
 

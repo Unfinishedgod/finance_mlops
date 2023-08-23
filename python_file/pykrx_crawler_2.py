@@ -121,7 +121,7 @@ now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
 
 file_name = 'kor_ticker_list'
-upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
+# upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
@@ -146,7 +146,7 @@ file_name = 'kor_index_list_df_1'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-# upload_df(kor_index_list_df, file_name, project_id, dataset_id, time_line, today_date1)
+upload_df(kor_index_list_df, file_name, project_id, dataset_id, time_line, today_date1)
 
 
 

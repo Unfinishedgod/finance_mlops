@@ -57,6 +57,7 @@ engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432
 now = datetime.now()
 # now = now + timedelta(days=-2)
 today_date1 = now.strftime('%Y%m%d')
+start_date1 = '20180101'
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
@@ -125,57 +126,75 @@ upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, toda
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
-# 주가 정보
-print('주가정보 시작')
-df_raw = stock.get_market_ohlcv(today_date1,  market="ALL")
-df_raw = df_raw.reset_index()
-df_raw['날짜'] = today_date2
-df_raw = df_raw[['날짜', '시가', '고가', '저가', '종가', '거래량', '등락률', '티커']]
-df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_change_percentage', 'ticker']
-
-df_raw['date'] = pd.to_datetime(df_raw['date'])
-
-file_name = 'kor_stock_ohlcv_1'
-
-now1 = datetime.now()
-time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-print(f'주가정보 완료_{time_line}')
+# # 주가 정보
+# print('주가정보 시작')
+# for ticker_nm in kor_ticker_list:
+#     try:
+#         df_raw = stock.get_market_ohlcv('20180101', '20230822', ticker_nm)
+#         df_raw = df_raw.reset_index()
+#         # df_raw['날짜'] = today_date2
+#         df_raw['티커'] = ticker_nm
+#         df_raw = df_raw[['날짜', '시가', '고가', '저가', '종가', '거래량', '등락률', '티커']]
+#         df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_change_percentage', 'ticker']
+#         
+#         df_raw['date'] = pd.to_datetime(df_raw['date'])
+#         
+#         file_name = 'kor_stock_ohlcv'
+#         
+#         now1 = datetime.now()
+#         time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+#         
+#         upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+#         print(f'주가정보 완료_{ticker_nm}_{time_line}')
+#     except:
+#         print(f'주가정보 실패_{ticker_nm}_{time_line}')
 
 
 print(f'시가총액 시작')
-df_raw = stock.get_market_cap(today_date1,  market="ALL")
-df_raw = df_raw.reset_index()
-df_raw['날짜'] = today_date2
-df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장주식수', '티커']]
-df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
-df_raw['date'] = pd.to_datetime(df_raw['date'])
+for ticker_nm in kor_ticker_list:
+    try:
+        df_raw = stock.get_market_cap('20180101', '20230822', ticker_nm)
+        df_raw = df_raw.reset_index()
+        # df_raw['날짜'] = today_date2
+        df_raw['티커'] = ticker_nm
+        df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장주식수', '티커']]
+        df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
+        df_raw['date'] = pd.to_datetime(df_raw['date'])
+        
+        file_name = 'kor_market_cap'
+        
+        now1 = datetime.now()
+        time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+        
+        upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+        print(f'시가총액 완료_{ticker_nm}_{time_line}')    
+    except:
+        print(f'시가총액 실패_{ticker_nm}_{time_line}')
+      
 
-file_name = 'kor_market_cap_1'
-
-now1 = datetime.now()
-time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-print(f'시가총액 완료_{time_line}')
 
 
 # DIV/BPS/PER/EPS 조회
 print(f'DIV/BPS/PER/EPS 시작')
-
-df_raw = stock.get_market_fundamental(today_date1, market='ALL')
-df_raw = df_raw.reset_index()
-df_raw['날짜'] = today_date2
-df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
-df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
-df_raw['date'] = pd.to_datetime(df_raw['date'])
-
-file_name = 'kor_stock_fundamental_1'
-
-now1 = datetime.now()
-time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-
-print(f'DIV/BPS/PER/EPS 완료_{time_line}')
+for ticker_nm in kor_ticker_list:
+    try:
+        df_raw = stock.get_market_fundamental('20180101', '20230823', ticker_nm)
+        df_raw = df_raw.reset_index()
+        # df_raw['날짜'] = today_date2
+        df_raw['티커'] = ticker_nm
+        df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
+        df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
+        df_raw['date'] = pd.to_datetime(df_raw['date'])
+        
+        file_name = 'kor_stock_fundamental'
+        
+        now1 = datetime.now()
+        time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+        
+        upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+        print(f'DIV/BPS/PER/EPS 완료_{ticker_nm}_{time_line}')
+    except:
+        print(f'DIV/BPS/PER/EPS 실패_{ticker_nm}_{time_line}')
+      
+      
+    
