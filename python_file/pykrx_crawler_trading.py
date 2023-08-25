@@ -60,7 +60,7 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-print(f'{today_date2} pykrx_crawler Start')
+print(f'{today_date2} pykrx_trading_crawler Start')
 
 # def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
 #     if not os.path.exists(f'data_crawler/{file_name}'):
@@ -119,65 +119,99 @@ print(f'{today_date2} pykrx_crawler Start')
 # kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 # 
 # 
+# 
+# 
+# 
 # now1 = datetime.now()
 # time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
 # 
 # file_name = 'kor_ticker_list'
-# upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
+# # upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
 # kor_ticker_list = kor_ticker_list_df['ticker']
 # 
 # 
-# # 주가 정보
-# print('주가정보 시작')
-# df_raw = stock.get_market_ohlcv(today_date1,  market="ALL")
-# df_raw = df_raw.reset_index()
-# df_raw['날짜'] = today_date2
-# df_raw = df_raw[['날짜', '시가', '고가', '저가', '종가', '거래량', '등락률', '티커']]
-# df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_change_percentage', 'ticker']
+# # 일자별 거래실적 추이 (거래대금)
+# print(f'일자별 거래실적 추이 (거래대금) 시작')
+# file_name = 'kor_stock_trading_value_by_investor'
+# buy_sell_type_list = ['순매수', '매수', '매도']
+# df_raw_total = pd.DataFrame()
+# for buy_sell_type in buy_sell_type_list:
+#     for ticker_nm in kor_ticker_list:
+#         now1 = datetime.now()
+#         time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+#         time.sleep(1)
 # 
-# df_raw['date'] = pd.to_datetime(df_raw['date'])
-# 
-# file_name = 'kor_stock_ohlcv'
-# 
-# now1 = datetime.now()
-# time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-# 
-# upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-# print(f'주가정보 완료_{time_line}')
-# 
-# 
-# print(f'시가총액 시작')
-# df_raw = stock.get_market_cap(today_date1,  market="ALL")
-# df_raw = df_raw.reset_index()
-# df_raw['날짜'] = today_date2
-# df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장주식수', '티커']]
-# df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
-# df_raw['date'] = pd.to_datetime(df_raw['date'])
-# 
-# file_name = 'kor_market_cap'
-# 
-# now1 = datetime.now()
-# time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-# 
-# upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-# print(f'시가총액 완료_{time_line}')
+#         try:
+#             df_raw = stock.get_market_trading_value_by_date(today_date1, today_date1,
+#                                                                              ticker_nm,
+#                                                                              detail=True,
+#                                                                              on = buy_sell_type)
+#             df_raw = df_raw.reset_index()
+#             df_raw['ticker'] = ticker_nm
+#             df_raw['type'] = buy_sell_type
+#             df_raw.columns = [
+#                 'date',
+#                 'financial_investment', 'insurance', 'investment', 'private_equity', 'bank','other_finance', 'pension_fund', # 기관합계
+#                 'other_corporation', # 기타 법인
+#                 'individual',# 개인
+#                 'foreigner', 'other_foreigner', # 외국인 합계
+#                 'total',
+#                 'ticker', 'type'
+#             ]
+#             df_raw_total = pd.concat([df_raw_total,df_raw])
+#             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_success_{time_line}')
+#         except:
+#             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_fail_{time_line}')
 # 
 # 
-# # DIV/BPS/PER/EPS 조회
-# print(f'DIV/BPS/PER/EPS 시작')
-# 
-# df_raw = stock.get_market_fundamental(today_date1, market='ALL')
-# df_raw = df_raw.reset_index()
-# df_raw['날짜'] = today_date2
-# df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
-# df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
-# df_raw['date'] = pd.to_datetime(df_raw['date'])
-# 
-# file_name = 'kor_stock_fundamental'
+# df_raw_total['date'] = pd.to_datetime(df_raw_total['date'])
 # 
 # now1 = datetime.now()
 # time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 # 
-# upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+# upload_df(df_raw_total, file_name, project_id, dataset_id, time_line, today_date1)
 # 
-# print(f'DIV/BPS/PER/EPS 완료_{time_line}')
+# print(f'일자별 거래실적 추이 (거래대금) 시작')
+# 
+# 
+# # 일자별 거래실적 추이 (거래량)
+# print(f'일자별 거래실적 추이 (거래량) 시작')
+# file_name = 'kor_stock_trading_volume_by_date'
+# buy_sell_type_list = ['순매수', '매수', '매도']
+# df_raw_total = pd.DataFrame()
+# for buy_sell_type in buy_sell_type_list:
+#     for ticker_nm in kor_ticker_list:
+#         now1 = datetime.now()
+#         time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+#         time.sleep(1)
+# 
+#         try:
+#             df_raw = stock.get_market_trading_volume_by_date(today_date1, today_date1,
+#                                                                              ticker_nm,
+#                                                                              detail=True,
+#                                                                              on = buy_sell_type)
+#             df_raw = df_raw.reset_index()
+#             df_raw['ticker'] = ticker_nm
+#             df_raw['type'] = buy_sell_type
+#             df_raw.columns = [
+#                 'date',
+#                 'financial_investment', 'insurance', 'investment', 'private_equity', 'bank','other_finance', 'pension_fund', # 기관합계
+#                 'other_corporation', # 기타 법인
+#                 'individual',# 개인
+#                 'foreigner', 'other_foreigner', # 외국인 합계
+#                 'total',
+#                 'ticker', 'type'
+#             ]
+#             df_raw_total = pd.concat([df_raw_total,df_raw])
+#             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_success_{time_line}')
+#         except:
+#             print(f'{file_name}_{buy_sell_type}_{ticker_nm}_데이터수집_fail_{time_line}')
+# 
+# 
+# df_raw_total['date'] = pd.to_datetime(df_raw_total['date'])
+# now1 = datetime.now()
+# time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+# 
+# upload_df(df_raw_total, file_name, project_id, dataset_id, time_line, today_date1)
+# 
+# print(f'일자별 거래실적 추이 (거래량) 완료_{time_line}')

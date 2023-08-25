@@ -24,7 +24,7 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 ticker_nm = '005930'
 
-print(f'{today_date2} stock_cleaning Start')
+print(f'{today_date2} index_modeling Start')
 # 
 # file_dir = '/home/shjj08choi/finance_mlops/data_crawler'
 # 
