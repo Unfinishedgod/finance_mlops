@@ -166,7 +166,7 @@ cython_debug/
 *.txt
 
 
-st*
-config.toml
-style.css
-pages/*
+
+
+
+

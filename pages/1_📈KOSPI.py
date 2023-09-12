@@ -13,7 +13,7 @@ from datetime import datetime
 from st_files_connection import FilesConnection
 
 st.set_page_config(
-    page_title="Finance_mlops",
+    page_title="asdf",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"

@@ -1,5 +1,7 @@
 import pandas as pd
 import os
+
+
 import glob
 import plotly.express as px
 import plotly.graph_objects as go
@@ -13,7 +15,7 @@ from datetime import datetime
 from st_files_connection import FilesConnection
 
 st.set_page_config(
-    page_title="Finance_mlops",
+    page_title="asdf",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
