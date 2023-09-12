@@ -115,7 +115,7 @@ try:
     now1 = datetime.now()
 
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-    df_raw = fdr.DataReader('BTC/KRW', start_date2, today_date2)
+    df_raw = fdr.DataReader('BTC/KRW', today_date2, today_date2)
     # df_raw = fdr.DataReader('BTC/KRW', start_date2,today_date2, today_date1)
     df_raw['ticker'] = ticker_nm
     df_raw = df_raw.reset_index()
