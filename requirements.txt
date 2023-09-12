@@ -1,8 +1,5 @@
-# s3fs
 plotly
 
-# requirements.txt
-# s3fs==x.x.x
+
 s3fs
-# Direct pypi install coming soon
 git+https://github.com/streamlit/files-connection
