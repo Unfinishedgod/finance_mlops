@@ -19,6 +19,15 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+from datetime import datetime
+from datetime import timedelta
+
+
+# ### 날짜 설정
+now = datetime.now()
+now = now + timedelta(days=-30)
+
+today_date2 = now.strftime('%Y-%m-%d')
 
 
 
@@ -27,9 +36,11 @@ st.set_page_config(
 kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker': object})
 kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv')
 
+bitcoin_df = pd.read_csv('data_crawler/bitcoin/bitcoin_20230908.csv')
 
 
-kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > '2023-07-01']
+# kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > today_date2]
+kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > '2023-07-15']
 
 df = kor_index_ohlcv.groupby(['index_code'])['close'].apply(list).reset_index()
 
@@ -40,35 +51,168 @@ df2 = pd.merge(kor_index_list_df, df,
         
 df_kospi = df2[df2['market'] == 'KOSPI']        
 df_kosdaq = df2[df2['market'] == 'KOSDAQ']        
+
+
+
+
+col1, col2 = st.columns(2)
+col1.metric("Temperature", "70 °F", "1.2 °F")
+
+ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 1001] 
+
+fig = go.Figure([go.Scatter(x=ohlcv_kospi['date'], y=ohlcv_kospi['close'])])
+
+fig.update_layout(
+    title = ' ',
+#     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
+    title_font_family="맑은고딕",
+    title_font_size = 18,
+    hoverlabel=dict(
+#         bgcolor='white',
+        bgcolor='black',
+        font_size=15,
+    ),
+#     hovermode="x unified",
+    hovermode="x",    
+#     template='plotly_white', 
+    template='plotly_dark',
+    xaxis_tickangle=90,
+    yaxis_tickformat = ',',
+    legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1), 
+    barmode='group'
+)
+    
+fig.update_layout(
+      xaxis=dict(
+        showline=True,
+        showgrid=False,
+        showticklabels=True,
+        linecolor='rgb(204, 204, 204)',
+        linewidth=2,
+        ticks='outside',
+        tickfont=dict(
+            family='Arial',
+            size=12,
+            color='rgb(82, 82, 82)',
+        ),
+    ),
+    yaxis=dict(
+        showgrid=False,
+        zeroline=False,
+        showline=False,
+        showticklabels=False,
+    ),
+  autosize=False,
+  height=80,
+  margin=go.layout.Margin(
+    
+        # l=10, #left margin
+        # r=10, #right margin
+        # b=10, #bottom margin
+        # t=50  #top margin
+
+        l=0, #left margin
+        r=0, #right margin
+        b=0, #bottom margin
+        t=0  #top margin
+    ))
+    
+col1.plotly_chart(fig, use_container_width=True)
+
+
+
+
+
+col2.metric("Wind", "9 mph", "-8%")
+ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 2001] 
+
+fig = go.Figure([go.Scatter(x=ohlcv_kospi['date'], y=ohlcv_kospi['close'])])
+
+fig.update_layout(
+    title = ' ',
+#     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
+    title_font_family="맑은고딕",
+    title_font_size = 18,
+    hoverlabel=dict(
+#         bgcolor='white',
+        bgcolor='black',
+        font_size=15,
+    ),
+#     hovermode="x unified",
+    hovermode="x",    
+#     template='plotly_white', 
+    template='plotly_dark',
+    xaxis_tickangle=90,
+    yaxis_tickformat = ',',
+    legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1), 
+    barmode='group'
+)
+    
+fig.update_layout(
+      xaxis=dict(
+        showline=True,
+        showgrid=False,
+        showticklabels=True,
+        linecolor='rgb(204, 204, 204)',
+        linewidth=2,
+        ticks='outside',
+        tickfont=dict(
+            family='Arial',
+            size=12,
+            color='rgb(82, 82, 82)',
+        ),
+    ),
+    yaxis=dict(
+        showgrid=False,
+        zeroline=False,
+        showline=False,
+        showticklabels=False,
+    ),
+  autosize=False,
+  height=80,
+  margin=go.layout.Margin(
+    
+        # l=10, #left margin
+        # r=10, #right margin
+        # b=10, #bottom margin
+        # t=50  #top margin
+
+        l=0, #left margin
+        r=0, #right margin
+        b=0, #bottom margin
+        t=0  #top margin
+    ))
+    
+col2.plotly_chart(fig, use_container_width=True)
+
+
         
 col1, col2 = st.columns(2)
 
-with col1: 
-    st.dataframe(
-        df_kospi,
-        column_config={
-            "index_code": "App name",
-            "index_name": "App index_name",
-            "index_market": "App index_market",
-            "url": st.column_config.LinkColumn("App URL"),
-            "close": st.column_config.LineChartColumn(
-                "Views (past 30 days)", 
-            ),
-        },
-        hide_index=True,
-    )
+col1.dataframe(
+    df_kospi,
+    column_config={
+        "index_code": "App name",
+        "index_name": "App index_name",
+        "index_market": "App index_market",
+        "url": st.column_config.LinkColumn("App URL"),
+        "close": st.column_config.LineChartColumn(
+            "Views (past 30 days)", 
+        ),
+    },
+    hide_index=True,
+)
 
-with col2: 
-    st.dataframe(
-      df_kosdaq,
-      column_config={
-          "index_code": "App name",
-          "index_name": "App index_name",
-          "index_market": "App index_market",
-          "url": st.column_config.LinkColumn("App URL"),
-          "close": st.column_config.LineChartColumn(
-              "Views (past 30 days)",
-          ),
-      },
-      hide_index=True,
-  )
+col2.dataframe(
+  df_kosdaq,
+  column_config={
+      "index_code": "App name",
+      "index_name": "App index_name",
+      "index_market": "App index_market",
+      "url": st.column_config.LinkColumn("App URL"),
+      "close": st.column_config.LineChartColumn(
+          "Views (past 30 days)",
+      ),
+  },
+  hide_index=True,
+)
