@@ -43,7 +43,7 @@ bitcoin_df['MA20'] = bitcoin_df['close'].rolling(window=20).mean()
 bitcoin_df['MA5'] = bitcoin_df['close'].rolling(window=5).mean()
 
 
-bitcoin_df = bitcoin_df[bitcoin_df['date'] > '2022-08-01']
+# bitcoin_df = bitcoin_df[bitcoin_df['date'] > '2022-08-01']
 
 # tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
 
