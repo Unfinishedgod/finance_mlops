@@ -31,7 +31,7 @@ st.set_page_config(
 # kor_stock_ohlcv = pd.read_csv('data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv', dtype = {'ticker':object})
 # kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv')
 
-
+conn = st.experimental_connection('gcs', type=FilesConnection)
 kor_stock_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv", 
                       input_format="csv", ttl=600)
                       
