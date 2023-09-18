@@ -23,16 +23,16 @@ st.set_page_config(
 )
 
 # 경로 변경
-os.chdir('/home/shjj08choi/finance_mlops')
+# os.chdir('/home/shjj08choi/finance_mlops')
 
 
 
 conn = st.experimental_connection('gcs', type=FilesConnection)
-df = conn.read("finance-mlops-1/data_crawler/bitcoin/myfile.csv", input_format="csv", ttl=600)
+bitcoin_df = conn.read("finance-mlops-1/data_crawler/bitcoin/bitcoin_20230908.csv", input_format="csv", ttl=600)
 
 
 
-bitcoin_df = pd.read_csv('data_crawler/bitcoin/bitcoin_20230908.csv')
+# bitcoin_df = pd.read_csv('data_crawler/bitcoin/bitcoin_20230908.csv')
 
 
 option = 'Bitcoin'
