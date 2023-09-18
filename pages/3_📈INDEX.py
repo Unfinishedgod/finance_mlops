@@ -52,13 +52,6 @@ kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > '2023-01-15']
 df2 = pd.merge(kor_index_ohlcv, kor_index_list_df, 
         on = 'index_code', 
         how = 'left')
-
-# # df2 = kor_index_ohlcv[kor_index_ohlcv['date'] == '2023-07-21']
-# df2 = pd.merge(kor_index_ohlcv, kor_index_list, 
-#         on = 'ticker', 
-#         how = 'left')
-#         
-# df2 = df2[df2['market'] == 'KOSDAQ']
 # 
 index_list = df2['index_code_nm'].unique()
 
@@ -72,8 +65,8 @@ st.write('You selected:', option)
 ticker_nm = '095570'
         
 # kor_index_ohlcv_095570_total = df2[df2['ticker'] == ticker_nm]
-kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == option]
-
+# kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == option]
+kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == '코스피']
 
 
 # fig = make_subplots(rows=4, cols=1, shared_xaxes=True)
