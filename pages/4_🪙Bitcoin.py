@@ -16,8 +16,8 @@ from datetime import datetime
 from st_files_connection import FilesConnection
 
 st.set_page_config(
-    page_title="asdf",
-    page_icon="📈",
+    page_title="Bitcoin",
+    page_icon="🪙",
     layout="wide",
     initial_sidebar_state="expanded"
 )
