@@ -72,7 +72,7 @@ st.write('You selected:', option)
 ticker_nm = '095570'
         
 # kor_index_ohlcv_095570_total = df2[df2['ticker'] == ticker_nm]
-kor_index_ohlcv_095570_total = df2[df2['corp_name'] == option]
+kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == option]
 
 
 
