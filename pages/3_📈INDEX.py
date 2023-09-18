@@ -66,6 +66,7 @@ ticker_nm = '095570'
         
 # kor_index_ohlcv_095570_total = df2[df2['ticker'] == ticker_nm]
 # kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == option]
+df2 = df2[df2['market'] == 'KOSPI']
 kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == '코스피']
 
 
@@ -146,60 +147,5 @@ fig.update_layout(
 #     ))
 fig.update_layout(xaxis_rangeslider_visible=False)
 
-
-
-# fig = go.Figure(
-#     data=go.Candlestick(
-#         x=kor_index_ohlcv_095570_total['date'],
-#         open=kor_index_ohlcv_095570_total['open'],
-#         high=kor_index_ohlcv_095570_total['high'],
-#         low=kor_index_ohlcv_095570_total['low'],
-#         close=kor_index_ohlcv_095570_total['close'],
-#         increasing_line_color= 'red', decreasing_line_color= 'blue')
-# )
-# 
-# 
-# fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
-#                          y=kor_index_ohlcv_095570_total['MA5'],
-#                          opacity=0.7,
-#                          line=dict(color='blue', width=2),
-#                          name='MA 5'))
-# fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
-#                          y=kor_index_ohlcv_095570_total['MA20'],
-#                          opacity=0.7,
-#                          line=dict(color='orange', width=2),
-#                          name='MA 20'))
-# 
-# 
-# fig.update_layout(
-#     title = option,
-# #     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
-#     title_font_family="맑은고딕",
-#     title_font_size = 18,
-#     hoverlabel=dict(
-# #         bgcolor='white',
-#         bgcolor='black',
-#         font_size=15,
-#     ),
-#     hovermode="x unified",
-# #     hovermode="x",
-# #     template='plotly_white',
-#     template='plotly_dark',
-#     xaxis_tickangle=90,
-#     yaxis_tickformat = ',',
-#     legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1),
-#     barmode='group'
-# )
-# 
-# fig.update_layout(margin=go.layout.Margin(
-#         l=10, #left margin
-#         r=10, #right margin
-#         b=10, #bottom margin
-#         t=50  #top margin
-#     ))
-# 
-# # fig.update_layout(xaxis_rangeslider_visible=False)
-# fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
-# # fig.show()
 
 st.plotly_chart(fig, use_container_width=True)
