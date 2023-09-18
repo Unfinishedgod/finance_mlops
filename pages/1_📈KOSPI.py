@@ -24,13 +24,22 @@ st.set_page_config(
 
 
 
-kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker': object})
-kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv')
+# kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker': object})
+# kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv')
 
 
-kor_stock_ohlcv = pd.read_csv('data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv', dtype = {'ticker':object})
-kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv')
+# kor_stock_ohlcv = pd.read_csv('data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv', dtype = {'ticker':object})
+# kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv')
 
+
+kor_stock_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv", 
+                      input_format="csv", ttl=600)
+                      
+kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv", 
+                      input_format="csv", ttl=600)
+                      
+                      
+                      
 
 kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
 kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()

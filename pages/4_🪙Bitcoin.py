@@ -28,7 +28,8 @@ st.set_page_config(
 
 
 conn = st.experimental_connection('gcs', type=FilesConnection)
-bitcoin_df = conn.read("finance-mlops-1/data_crawler/bitcoin/bitcoin_20230908.csv", input_format="csv", ttl=600)
+bitcoin_df = conn.read("finance-mlops-1/data_crawler/bitcoin/bitcoin_20230908.csv", 
+                      input_format="csv", ttl=600)
 
 
 
