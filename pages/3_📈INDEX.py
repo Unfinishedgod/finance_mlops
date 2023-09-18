@@ -52,7 +52,7 @@ kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > '2023-01-15']
 df2 = pd.merge(kor_index_ohlcv, kor_index_list_df, 
         on = 'index_code', 
         how = 'left')
-df2 = df2[df2['market'] == 'KOSPI']
+# df2 = df2[df2['market'] == 'KOSPI']
 
 index_list = df2['index_code_nm'].unique()
 
