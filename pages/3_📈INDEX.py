@@ -1,11 +1,10 @@
 import pandas as pd
 import os
-
-
 import glob
 import plotly.express as px
 import plotly.graph_objects as go
 import json
+from plotly.subplots import make_subplots
 
 # import math
 
@@ -15,41 +14,199 @@ from datetime import datetime
 from st_files_connection import FilesConnection
 
 st.set_page_config(
-    page_title="asdf",
+    page_title="KOSDAQ",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# 경로 변경
-os.chdir('/home/shjj08choi/finance_mlops')
-
-kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker': object})
-kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv')
 
 
 
 
+# kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker': object})
+# kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv')
 
-df = kor_index_ohlcv.groupby(['index_code'])['close'].apply(list).reset_index()
+
+# kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker':object})
+# kor_index_list = pd.read_csv('data_crawler/kor_index_list/kor_index_list_20230825.csv')
+
+conn = st.experimental_connection('gcs', type=FilesConnection)
+kor_index_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv", 
+                      input_format="csv", ttl=600)
+                      
+kor_index_list_df = conn.read("finance-mlops-1/data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv", 
+                      input_format="csv", ttl=600)
+                      
+                      
+                      
+
+kor_index_ohlcv['MA120'] = kor_index_ohlcv['close'].rolling(window=120).mean()
+kor_index_ohlcv['MA60'] = kor_index_ohlcv['close'].rolling(window=60).mean()
+kor_index_ohlcv['MA20'] = kor_index_ohlcv['close'].rolling(window=20).mean()
+kor_index_ohlcv['MA5'] = kor_index_ohlcv['close'].rolling(window=5).mean()
+
+kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > '2023-01-15']
 
 
-df2 = pd.merge(kor_index_list_df, df, 
+df2 = pd.merge(kor_index_ohlcv, kor_index_list_df, 
         on = 'index_code', 
         how = 'left')
+
+# # df2 = kor_index_ohlcv[kor_index_ohlcv['date'] == '2023-07-21']
+# df2 = pd.merge(kor_index_ohlcv, kor_index_list, 
+#         on = 'ticker', 
+#         how = 'left')
+#         
+# df2 = df2[df2['market'] == 'KOSDAQ']
+# 
+index_list = df2['index_code_nm'].unique()
+
+option = st.selectbox(
+    'How would you like to be contacted?',
+    index_list)
+
+st.write('You selected:', option)
+
+
+ticker_nm = '095570'
         
-        
-        
-st.dataframe(
-    df2,
-    column_config={
-        "index_code": "App name",
-        "index_name": "App index_name",
-        "index_market": "App index_market",
-        "url": st.column_config.LinkColumn("App URL"),
-        "close": st.column_config.LineChartColumn(
-            "Views (past 30 days)", y_min=0, y_max=5000
-        ),
-    },
-    hide_index=True,
+# kor_index_ohlcv_095570_total = df2[df2['ticker'] == ticker_nm]
+kor_index_ohlcv_095570_total = df2[df2['corp_name'] == option]
+
+
+
+# fig = make_subplots(rows=4, cols=1, shared_xaxes=True)
+# fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5,0.1,0.2,0.2])
+fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.7,0.3])
+# Plot OHLC on 1st subplot (using the codes from before)
+# Plot volume trace on 2nd row
+fig.add_trace(go.Candlestick(
+        x=kor_index_ohlcv_095570_total['date'],
+        open=kor_index_ohlcv_095570_total['open'],
+        high=kor_index_ohlcv_095570_total['high'],
+        low=kor_index_ohlcv_095570_total['low'],
+        close=kor_index_ohlcv_095570_total['close'],
+        increasing_line_color= 'red', decreasing_line_color= 'blue')
+, row=1, col=1)
+
+fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
+                         y=kor_index_ohlcv_095570_total['MA5'],
+                         opacity=0.7,
+                         line=dict(color='blue', width=2),
+                         name='MA 5'))
+fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
+                         y=kor_index_ohlcv_095570_total['MA20'],
+                         opacity=0.7,
+                         line=dict(color='orange', width=2),
+                         name='MA 20'))
+fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
+                         y=kor_index_ohlcv_095570_total['MA60'],
+                         opacity=0.7,
+                         line=dict(color='green', width=2),
+                         name='MA 60'))
+fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
+                         y=kor_index_ohlcv_095570_total['MA120'],
+                         opacity=0.7,
+                         line=dict(color='yellow', width=2),
+                         name='MA 120'))                         
+                         
+
+fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
+
+# fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'], y=kor_index_ohlcv_095570_total['close']), row=2, col=1)
+
+
+
+fig.add_trace(go.Bar(x=kor_index_ohlcv_095570_total['date'], 
+                     y=kor_index_ohlcv_095570_total['volume'],
+                     name = 'volumn'
+                    ), row=2, col=1)
+
+
+
+fig.update_layout(
+    title = option,
+#     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
+    title_font_family="맑은고딕",
+    title_font_size = 18,
+    hoverlabel=dict(
+#         bgcolor='white',
+        bgcolor='black',
+        font_size=15,
+    ),
+    hovermode="x unified",
+#     hovermode="x",    
+#     template='plotly_white', 
+    template='plotly_dark',
+    xaxis_tickangle=90,
+    yaxis_tickformat = ',',
+    legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1), 
+    barmode='group'
 )
+    
+# fig.update_layout(margin=go.layout.Margin(
+#         l=20, #left margin
+#         r=20, #right margin
+#         b=20, #bottom margin
+#         t=20  #top margin
+#     ))
+fig.update_layout(xaxis_rangeslider_visible=False)
+
+
+
+# fig = go.Figure(
+#     data=go.Candlestick(
+#         x=kor_index_ohlcv_095570_total['date'],
+#         open=kor_index_ohlcv_095570_total['open'],
+#         high=kor_index_ohlcv_095570_total['high'],
+#         low=kor_index_ohlcv_095570_total['low'],
+#         close=kor_index_ohlcv_095570_total['close'],
+#         increasing_line_color= 'red', decreasing_line_color= 'blue')
+# )
+# 
+# 
+# fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
+#                          y=kor_index_ohlcv_095570_total['MA5'],
+#                          opacity=0.7,
+#                          line=dict(color='blue', width=2),
+#                          name='MA 5'))
+# fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
+#                          y=kor_index_ohlcv_095570_total['MA20'],
+#                          opacity=0.7,
+#                          line=dict(color='orange', width=2),
+#                          name='MA 20'))
+# 
+# 
+# fig.update_layout(
+#     title = option,
+# #     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
+#     title_font_family="맑은고딕",
+#     title_font_size = 18,
+#     hoverlabel=dict(
+# #         bgcolor='white',
+#         bgcolor='black',
+#         font_size=15,
+#     ),
+#     hovermode="x unified",
+# #     hovermode="x",
+# #     template='plotly_white',
+#     template='plotly_dark',
+#     xaxis_tickangle=90,
+#     yaxis_tickformat = ',',
+#     legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1),
+#     barmode='group'
+# )
+# 
+# fig.update_layout(margin=go.layout.Margin(
+#         l=10, #left margin
+#         r=10, #right margin
+#         b=10, #bottom margin
+#         t=50  #top margin
+#     ))
+# 
+# # fig.update_layout(xaxis_rangeslider_visible=False)
+# fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
+# # fig.show()
+
+st.plotly_chart(fig, use_container_width=True)

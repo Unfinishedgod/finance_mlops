@@ -4,6 +4,7 @@ import glob
 import plotly.express as px
 import plotly.graph_objects as go
 import json
+from plotly.subplots import make_subplots
 
 # import math
 
@@ -36,9 +37,6 @@ today_date2 = now.strftime('%Y-%m-%d')
 
 kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker': object})
 kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv')
-
-bitcoin_df = pd.read_csv('data_crawler/bitcoin/bitcoin_20230908.csv')
-
 
 # kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > today_date2]
 kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > '2023-07-15']
