@@ -61,11 +61,13 @@ df_kosdaq = df2[df2['market'] == 'KOSDAQ']
 
 
 
+ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 1001]
+
+ohlcv_kospi_value = ohlcv_kospi['closed'].tail(1)
 
 col1, col2 = st.columns(2)
-col1.metric("Temperature", "70 °F", "1.2 °F")
+col1.metric("코스피", ohlcv_kospi_value, "1.2 °F")
 
-ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 1001] 
 
 fig = go.Figure([go.Scatter(x=ohlcv_kospi['date'], y=ohlcv_kospi['close'])])
 
@@ -130,7 +132,7 @@ col1.plotly_chart(fig, use_container_width=True)
 
 
 
-col2.metric("Wind", "9 mph", "-8%")
+col2.metric("코스닥", "9 mph", "-8%")
 ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 2001] 
 
 fig = go.Figure([go.Scatter(x=ohlcv_kospi['date'], y=ohlcv_kospi['close'])])
