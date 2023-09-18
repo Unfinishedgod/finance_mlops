@@ -52,7 +52,8 @@ kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > '2023-01-15']
 df2 = pd.merge(kor_index_ohlcv, kor_index_list_df, 
         on = 'index_code', 
         how = 'left')
-# 
+df2 = df2[df2['market'] == 'KOSPI']
+
 index_list = df2['index_code_nm'].unique()
 
 option = st.selectbox(
@@ -66,7 +67,7 @@ ticker_nm = '095570'
         
 # kor_index_ohlcv_095570_total = df2[df2['ticker'] == ticker_nm]
 # kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == option]
-df2 = df2[df2['market'] == 'KOSPI']
+
 kor_index_ohlcv_095570_total = df2[df2['index_code_nm'] == '코스피']
 
 
@@ -108,15 +109,11 @@ fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'],
 
 fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
 
-# fig.add_trace(go.Scatter(x=kor_index_ohlcv_095570_total['date'], y=kor_index_ohlcv_095570_total['close']), row=2, col=1)
-
-
 
 fig.add_trace(go.Bar(x=kor_index_ohlcv_095570_total['date'], 
                      y=kor_index_ohlcv_095570_total['volume'],
                      name = 'volumn'
                     ), row=2, col=1)
-
 
 
 fig.update_layout(
