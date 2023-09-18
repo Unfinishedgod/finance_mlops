@@ -1,6 +1,6 @@
 pandas
 plotly
 
-
+gcsfs
 s3fs
 git+https://github.com/streamlit/files-connection
