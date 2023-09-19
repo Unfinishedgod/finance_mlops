@@ -66,7 +66,7 @@ df_kosdaq = df2[df2['market'] == 'KOSDAQ']
 
 
 ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 1001]
-price_change_percentage_kospi = kor_index_code_fundamental[kor_index_code_fundamental['index_code'] == 1001]
+price_change_percentage_kospi = kor_index_code_fundamental[kor_index_code_fundamental['index_code'] == '1001']
 
 
 
