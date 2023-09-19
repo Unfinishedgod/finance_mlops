@@ -29,6 +29,10 @@ from datetime import datetime
 from datetime import timedelta
 
 
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
 
 # ### 날짜 설정
 now = datetime.now()
