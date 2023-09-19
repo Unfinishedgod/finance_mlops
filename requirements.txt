@@ -4,3 +4,6 @@ plotly
 gcsfs
 s3fs
 git+https://github.com/streamlit/files-connection
+
+google-cloud-bigquery
+pandas-gbq

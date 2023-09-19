@@ -6,6 +6,11 @@ import plotly.graph_objects as go
 import json
 from plotly.subplots import make_subplots
 
+
+from google.oauth2 import service_account
+from google.cloud import bigquery
+
+
 # import math
 
 import streamlit as st
