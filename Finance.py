@@ -42,6 +42,10 @@ conn = st.experimental_connection('gcs', type=FilesConnection)
 kor_index_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv", 
                       input_format="csv", ttl=600)
                       
+kor_index_code_fundamental = conn.read("finance-mlops-1/data_crawler/kor_index_code_fundamental/kor_index_code_fundamental_20230825.csv", 
+                      input_format="csv", ttl=600)
+                      
+                      
 kor_index_list_df = conn.read("finance-mlops-1/data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv", 
                       input_format="csv", ttl=600)
 
@@ -62,12 +66,16 @@ df_kosdaq = df2[df2['market'] == 'KOSDAQ']
 
 
 ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 1001]
+price_change_percentage_kospi = price_change_percentage[price_change_percentage['index_code'] == 1001]
+
 
 
 ohlcv_kospi_value = ohlcv_kospi['close'].tail(1).tolist()[0]
+price_change_percentage_value = price_change_percentage_kospi['price_change_percentage'].tail(1).tolist()[0]
+
 
 col1, col2 = st.columns(2)
-col1.metric("코스피", ohlcv_kospi_value, "1.2 °F")
+col1.metric("코스피", ohlcv_kospi_value, price_change_percentage_value)
 
 
 fig = go.Figure([go.Scatter(x=ohlcv_kospi['date'], y=ohlcv_kospi['close'])])
@@ -131,10 +139,18 @@ col1.plotly_chart(fig, use_container_width=True)
 
 
 
+ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 2001]
+price_change_percentage_kospi = price_change_percentage[price_change_percentage['index_code'] == 2001]
 
 
-col2.metric("코스닥", "9 mph", "-8%")
-ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 2001] 
+
+ohlcv_kospi_value = ohlcv_kospi['close'].tail(1).tolist()[0]
+price_change_percentage_value = price_change_percentage_kospi['price_change_percentage'].tail(1).tolist()[0]
+
+
+
+
+col2.metric("코스닥", ohlcv_kospi_value, price_change_percentage_value)
 
 fig = go.Figure([go.Scatter(x=ohlcv_kospi['date'], y=ohlcv_kospi['close'])])
 
