@@ -5,7 +5,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 import json
 from plotly.subplots import make_subplots
-
+from datetime import datetime
+from datetime import timedelta
 # 
 # from google.oauth2 import service_account
 # from google.cloud import bigquery
@@ -25,8 +26,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-from datetime import datetime
-from datetime import timedelta
+
 
 
 with open('style.css') as f:
