@@ -68,4 +68,88 @@ kor_stock_ohlcv = run_query(f"""SELECT *
                                 where ticker = '{option}' AND date > '2020-01-01'""")
 
 
-st.dataframe(kor_stock_ohlcv)
+kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
+kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
+kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
+kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
+
+
+
+# fig = make_subplots(rows=4, cols=1, shared_xaxes=True)
+# fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5,0.1,0.2,0.2])
+fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.7,0.3])
+# Plot OHLC on 1st subplot (using the codes from before)
+# Plot volume trace on 2nd row
+fig.add_trace(go.Candlestick(
+        x=kor_stock_ohlcv['date'],
+        open=kor_stock_ohlcv['open'],
+        high=kor_stock_ohlcv['high'],
+        low=kor_stock_ohlcv['low'],
+        close=kor_stock_ohlcv['close'],
+        increasing_line_color= 'red', decreasing_line_color= 'blue')
+, row=1, col=1)
+
+fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
+                         y=kor_stock_ohlcv['MA5'],
+                         opacity=0.7,
+                         line=dict(color='blue', width=2),
+                         name='MA 5'))
+fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
+                         y=kor_stock_ohlcv['MA20'],
+                         opacity=0.7,
+                         line=dict(color='orange', width=2),
+                         name='MA 20'))
+fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
+                         y=kor_stock_ohlcv['MA60'],
+                         opacity=0.7,
+                         line=dict(color='green', width=2),
+                         name='MA 60'))
+fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
+                         y=kor_stock_ohlcv['MA120'],
+                         opacity=0.7,
+                         line=dict(color='yellow', width=2),
+                         name='MA 120'))                         
+                         
+
+fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
+
+# fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'], y=kor_stock_ohlcv['close']), row=2, col=1)
+
+
+
+fig.add_trace(go.Bar(x=kor_stock_ohlcv['date'], 
+                     y=kor_stock_ohlcv['volume'],
+                     name = 'volumn'
+                    ), row=2, col=1)
+
+
+fig.update_layout(
+    title = option,
+    title_font_family="맑은고딕",
+    title_font_size = 18,
+    hoverlabel=dict(
+        bgcolor='black',
+        font_size=15,
+    ),
+    hovermode="x unified",
+    template='plotly_dark',
+    xaxis_tickangle=90,
+    yaxis_tickformat = ',',
+    legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1), 
+    barmode='group'
+)
+    
+fig.update_layout(margin=go.layout.Margin(
+        l=10, #left margin
+        r=10, #right margin
+        b=10, #bottom margin
+        t=10  #top margin
+    ))
+fig.update_layout(xaxis_rangeslider_visible=False)
+
+
+st.plotly_chart(fig, use_container_width=True)
+
+
+
+# st.dataframe(kor_stock_ohlcv)
