@@ -56,8 +56,8 @@ kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ti
 #         on = 'ticker', 
 #         how = 'left')
 #         
-# df1 = df1[df1['market'] == 'KOSPI']
 
+kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSPI']
 ticker_list = kor_ticker_list['ticker'].unique()
 
 option = st.selectbox(

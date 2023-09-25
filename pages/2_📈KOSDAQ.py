@@ -48,7 +48,7 @@ kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
 kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
 kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
 
-kor_stock_ohlcv = kor_stock_ohlcv[kor_stock_ohlcv['date'] > '2023-01-15']
+# kor_stock_ohlcv = kor_stock_ohlcv[kor_stock_ohlcv['date'] > '2023-01-15']
 
 
 
