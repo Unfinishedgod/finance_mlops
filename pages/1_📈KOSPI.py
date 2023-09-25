@@ -33,32 +33,32 @@ with open('style.css') as f:
 # kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv')
 
 conn = st.experimental_connection('gcs', type=FilesConnection)
-kor_stock_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv", 
+# kor_stock_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv",
+#                       input_format="csv", ttl=600)
+#                       
+kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv",
                       input_format="csv", ttl=600)
-                      
-kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv", 
-                      input_format="csv", ttl=600)
-                      
-                      
-                      
+#                       
+#                       
+#                       
+# 
+# kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
+# kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
+# kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
+# kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
+# 
+# kor_stock_ohlcv = kor_stock_ohlcv[kor_stock_ohlcv['date'] > '2023-01-15']
+# 
+# 
+# 
+# # df1 = kor_stock_ohlcv[kor_stock_ohlcv['date'] == '2023-07-21']
+# df1 = pd.merge(kor_stock_ohlcv, kor_ticker_list, 
+#         on = 'ticker', 
+#         how = 'left')
+#         
+# df1 = df1[df1['market'] == 'KOSPI']
 
-kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
-kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
-kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
-kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
-
-kor_stock_ohlcv = kor_stock_ohlcv[kor_stock_ohlcv['date'] > '2023-01-15']
-
-
-
-# df1 = kor_stock_ohlcv[kor_stock_ohlcv['date'] == '2023-07-21']
-df1 = pd.merge(kor_stock_ohlcv, kor_ticker_list, 
-        on = 'ticker', 
-        how = 'left')
-        
-df1 = df1[df1['market'] == 'KOSPI']
-
-ticker_list = df1['corp_name'].unique()
+ticker_list = kor_ticker_list['corp_name'].unique()
 
 option = st.selectbox(
     'How would you like to be contacted?',
@@ -68,9 +68,14 @@ st.write('You selected:', option)
 
 
 ticker_nm = '095570'
-        
-# kor_stock_ohlcv_095570_total = df1[df1['ticker'] == ticker_nm]
-kor_stock_ohlcv_095570_total = df1[df1['corp_name'] == option]
+
+
+kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-1/data_crawler/streamlit_data/{option}_20230925.csv",
+                      input_format="csv", ttl=600)
+
+
+# # kor_stock_ohlcv_095570_total = df1[df1['ticker'] == ticker_nm]
+# kor_stock_ohlcv_095570_total = df1[df1['corp_name'] == option]
 
 
 
