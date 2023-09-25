@@ -68,4 +68,4 @@ kor_stock_ohlcv = run_query(f"""SELECT *
                                 where ticker = '{option}' AND date > '2020-01-01'""")
 
 
-st.dataframe(df)
+st.dataframe(kor_stock_ohlcv)
