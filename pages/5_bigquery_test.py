@@ -51,7 +51,7 @@ def run_query(query):
 kor_ticker_list = run_query(f"""SELECT distinct(ticker), corp_name, market FROM `owenchoi-396200.finance_mlops.kor_ticker_list`""")
 
 
-ticker_list = kor_ticker_list['corp_code'].unique()                      
+ticker_list = kor_ticker_list['ticker'].unique()                      
 
 option = st.selectbox(
     'How would you like to be contacted?',
