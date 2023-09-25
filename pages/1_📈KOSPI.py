@@ -70,7 +70,7 @@ st.write('You selected:', option)
 ticker_nm = '095570'
 
 
-kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-1/data_crawler/streamlit_data/{option}_20230925.csv",
+kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-1/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
                       input_format="csv", ttl=600)
 
 
