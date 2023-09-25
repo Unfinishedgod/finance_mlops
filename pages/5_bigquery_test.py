@@ -65,7 +65,7 @@ st.write('You selected:', option)
     
 kor_stock_ohlcv = run_query(f"""SELECT * 
                                 FROM `owenchoi-396200.finance_mlops.kor_stock_ohlcv` 
-                                where ticker = '{option}' AND date > '2020-01-01'""")
+                                where ticker = '{option}' AND date > '2018-01-01'""")
 
 
 kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
