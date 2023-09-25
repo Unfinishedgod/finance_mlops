@@ -44,8 +44,6 @@ conn = st.experimental_connection('gcs', type=FilesConnection)
 kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv", 
                       input_format="csv", ttl=600)
                       
-                      
-                      
 
 ticker_list = kor_ticker_list['corp_code'].unique()                      
 
