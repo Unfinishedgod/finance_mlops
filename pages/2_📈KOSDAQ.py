@@ -124,6 +124,7 @@ fig.add_trace(go.Bar(x=kor_stock_ohlcv_095570_total['date'],
 
 
 
+
 fig.update_layout(
     title = option,
 #     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
