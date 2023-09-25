@@ -14,6 +14,7 @@ from datetime import datetime
 from st_files_connection import FilesConnection
 
 from google.oauth2 import service_account
+from google.cloud import bigquery
 
 
 
