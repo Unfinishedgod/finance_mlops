@@ -37,13 +37,19 @@ credentials = service_account.Credentials.from_service_account_info(
 
 client = bigquery.Client(credentials=credentials)
 
+@st.cache_data(ttl=600)
+def run_query(query):
+    # sql = f"SELECT {cols} FROM streamlit-dashboard-369600.seoul.{name}"
+    # sql = f'SELECT * FROM `owenchoi-396200.finance_mlops.kor_stock_ohlcv`'
+    # query
+    df = client.query(query).to_dataframe()
 
+    # st.dataframe(df)
+    return df
+  
+  
+kor_ticker_list = run_query(f"""SELECT distinct(ticker), corp_name, market FROM `owenchoi-396200.finance_mlops.kor_ticker_list`""")
 
-conn = st.experimental_connection('gcs', type=FilesConnection)
-                      
-kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv", 
-                      input_format="csv", ttl=600)
-                      
 
 ticker_list = kor_ticker_list['corp_code'].unique()                      
 
@@ -55,15 +61,7 @@ st.write('You selected:', option)
 
 
 
-@st.cache_data(ttl=600)
-def run_query(query):
-    # sql = f"SELECT {cols} FROM streamlit-dashboard-369600.seoul.{name}"
-    # sql = f'SELECT * FROM `owenchoi-396200.finance_mlops.kor_stock_ohlcv`'
-    # query
-    df = client.query(query).to_dataframe()
 
-    # st.dataframe(df)
-    return df
     
 kor_stock_ohlcv = run_query(f"""SELECT * 
                                 FROM `owenchoi-396200.finance_mlops.kor_stock_ohlcv` 
