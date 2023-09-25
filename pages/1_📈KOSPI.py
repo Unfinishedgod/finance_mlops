@@ -58,7 +58,7 @@ kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ti
 #         
 # df1 = df1[df1['market'] == 'KOSPI']
 
-ticker_list = kor_ticker_list['corp_name'].unique()
+ticker_list = kor_ticker_list['ticker'].unique()
 
 option = st.selectbox(
     'How would you like to be contacted?',
