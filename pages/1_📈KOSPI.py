@@ -147,7 +147,7 @@ fig.update_layout(
     template='plotly_dark',
     xaxis_tickangle=90,
     yaxis_tickformat = ',',
-    legend = dict(orientation = 'h', xanchor = "center", x = 0, y= 1.1), 
+    legend = dict(orientation = 'h', xanchor = "center", x = 0.5, y= 1.1), 
     barmode='group'
 )
     
@@ -161,10 +161,14 @@ fig.update_layout(
 fig.update_layout(xaxis_rangeslider_visible=False)
 
 
+kor_stock_fundamental_total_df = kor_stock_fundamental_total[['bps', 'per', 'pbr', 'eps', 'div', 'dps']].T.reset_index()
+
+
 col1, col2 = st.columns([3,1])
 
 with col1:
   st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-  st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
+  # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
+  st.dataframe(kor_stock_fundamental_total_df)
