@@ -171,4 +171,4 @@ with col1:
 
 with col2:
   # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
-  st.dataframe(kor_stock_fundamental_total_df)
+  st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
