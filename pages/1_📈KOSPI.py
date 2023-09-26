@@ -38,8 +38,13 @@ conn = st.experimental_connection('gcs', type=FilesConnection)
 #                       
 kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv",
                       input_format="csv", ttl=600)
-#                       
-#                       
+                      
+kor_stock_fundamental = conn.read("finance-mlops-1/data_crawler/kor_stock_fundamental/kor_stock_fundamental_20230922.csv",
+                      input_format="csv", ttl=600)
+
+
+
+
 #                       
 # 
 # kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
@@ -68,6 +73,9 @@ st.write('You selected:', option)
 
 
 ticker_nm = '095570'
+
+kor_stock_fundamental_total = kor_stock_fundamental[kor_stock_fundamental['ticker'] == option].reset_index()
+
 
 
 kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-1/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
@@ -119,8 +127,6 @@ fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
 
 # fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'], y=kor_stock_ohlcv_095570_total['close']), row=2, col=1)
 
-
-
 fig.add_trace(go.Bar(x=kor_stock_ohlcv_095570_total['date'], 
                      y=kor_stock_ohlcv_095570_total['volume'],
                      name = 'volumn'
@@ -134,17 +140,14 @@ fig.update_layout(
     title_font_family="맑은고딕",
     title_font_size = 18,
     hoverlabel=dict(
-#         bgcolor='white',
         bgcolor='black',
         font_size=15,
     ),
     hovermode="x unified",
-#     hovermode="x",    
-#     template='plotly_white', 
     template='plotly_dark',
     xaxis_tickangle=90,
     yaxis_tickformat = ',',
-    legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1), 
+    legend = dict(orientation = 'h', xanchor = "center", x = 0, y= 1.1), 
     barmode='group'
 )
     
@@ -154,62 +157,14 @@ fig.update_layout(
 #         b=20, #bottom margin
 #         t=20  #top margin
 #     ))
+
 fig.update_layout(xaxis_rangeslider_visible=False)
 
 
+col1, col2 = st.columns([3,1])
 
-# fig = go.Figure(
-#     data=go.Candlestick(
-#         x=kor_stock_ohlcv_095570_total['date'],
-#         open=kor_stock_ohlcv_095570_total['open'],
-#         high=kor_stock_ohlcv_095570_total['high'],
-#         low=kor_stock_ohlcv_095570_total['low'],
-#         close=kor_stock_ohlcv_095570_total['close'],
-#         increasing_line_color= 'red', decreasing_line_color= 'blue')
-# )
-# 
-# 
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-#                          y=kor_stock_ohlcv_095570_total['MA5'],
-#                          opacity=0.7,
-#                          line=dict(color='blue', width=2),
-#                          name='MA 5'))
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-#                          y=kor_stock_ohlcv_095570_total['MA20'],
-#                          opacity=0.7,
-#                          line=dict(color='orange', width=2),
-#                          name='MA 20'))
-# 
-# 
-# fig.update_layout(
-#     title = option,
-# #     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
-#     title_font_family="맑은고딕",
-#     title_font_size = 18,
-#     hoverlabel=dict(
-# #         bgcolor='white',
-#         bgcolor='black',
-#         font_size=15,
-#     ),
-#     hovermode="x unified",
-# #     hovermode="x",
-# #     template='plotly_white',
-#     template='plotly_dark',
-#     xaxis_tickangle=90,
-#     yaxis_tickformat = ',',
-#     legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1),
-#     barmode='group'
-# )
-# 
-# fig.update_layout(margin=go.layout.Margin(
-#         l=10, #left margin
-#         r=10, #right margin
-#         b=10, #bottom margin
-#         t=50  #top margin
-#     ))
-# 
-# # fig.update_layout(xaxis_rangeslider_visible=False)
-# fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
-# # fig.show()
+with col1:
+  st.plotly_chart(fig, use_container_width=True)
 
-st.plotly_chart(fig, use_container_width=True)
+with col2:
+  st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)

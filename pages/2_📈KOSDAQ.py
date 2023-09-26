@@ -39,11 +39,10 @@ kor_stock_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_stock_ohlcv/kor_st
                       
 kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv", 
                       input_format="csv", ttl=600)
-                      
-                      
-                      
 
-kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
+
+
+llkor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
 kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
 kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
 kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
