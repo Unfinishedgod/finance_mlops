@@ -6,6 +6,9 @@ import plotly.graph_objects as go
 import json
 from plotly.subplots import make_subplots
 
+import functional
+from ta.trend import MACD 
+from ta.momentum import StochasticOscillator 
 # import math
 
 import streamlit as st
@@ -45,8 +48,6 @@ kor_stock_fundamental = conn.read("finance-mlops-1/data_crawler/kor_stock_fundam
 
 
 
-#                       
-# 
 # kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
 # kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
 # kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
@@ -82,83 +83,24 @@ kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-1/data_crawler/streamli
                       input_format="csv", ttl=600)
 
 
-# # kor_stock_ohlcv_095570_total = df1[df1['ticker'] == ticker_nm]
-# kor_stock_ohlcv_095570_total = df1[df1['corp_name'] == option]
+kor_stock_ohlcv_095570_total['MA5'] = kor_stock_ohlcv_095570_total['close'].rolling(window=5).mean()
+kor_stock_ohlcv_095570_total['MA20'] = kor_stock_ohlcv_095570_total['close'].rolling(window=20).mean()
+kor_stock_ohlcv_095570_total['MA60'] = kor_stock_ohlcv_095570_total['close'].rolling(window=60).mean()
+kor_stock_ohlcv_095570_total['MA120'] = kor_stock_ohlcv_095570_total['close'].rolling(window=120).mean()
+
+# MACD
+kor_stock_ohlcv_095570_total['ema_short'] = kor_stock_ohlcv_095570_total['close'].rolling(window=12).mean()
+kor_stock_ohlcv_095570_total['ema_long'] = kor_stock_ohlcv_095570_total['close'].rolling(window=26).mean()
+kor_stock_ohlcv_095570_total['macd'] = kor_stock_ohlcv_095570_total['ema_short'] - kor_stock_ohlcv_095570_total['ema_long'] 
 
 
+std = kor_stock_ohlcv_095570_total['close'].rolling(20).std(ddof=0)
 
-# fig = make_subplots(rows=4, cols=1, shared_xaxes=True)
-# fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5,0.1,0.2,0.2])
-fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.7,0.3])
-# Plot OHLC on 1st subplot (using the codes from before)
-# Plot volume trace on 2nd row
-fig.add_trace(go.Candlestick(
-        x=kor_stock_ohlcv_095570_total['date'],
-        open=kor_stock_ohlcv_095570_total['open'],
-        high=kor_stock_ohlcv_095570_total['high'],
-        low=kor_stock_ohlcv_095570_total['low'],
-        close=kor_stock_ohlcv_095570_total['close'],
-        increasing_line_color= 'red', decreasing_line_color= 'blue')
-, row=1, col=1)
+kor_stock_ohlcv_095570_total['upper'] = kor_stock_ohlcv_095570_total['MA20'] + 2 * std
+kor_stock_ohlcv_095570_total['lower'] = kor_stock_ohlcv_095570_total['MA20'] - 2 * std
 
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA5'],
-                         opacity=0.7,
-                         line=dict(color='blue', width=2),
-                         name='MA 5'))
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA20'],
-                         opacity=0.7,
-                         line=dict(color='orange', width=2),
-                         name='MA 20'))
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA60'],
-                         opacity=0.7,
-                         line=dict(color='green', width=2),
-                         name='MA 60'))
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA120'],
-                         opacity=0.7,
-                         line=dict(color='yellow', width=2),
-                         name='MA 120'))                         
-                         
-
-fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
-
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'], y=kor_stock_ohlcv_095570_total['close']), row=2, col=1)
-
-fig.add_trace(go.Bar(x=kor_stock_ohlcv_095570_total['date'], 
-                     y=kor_stock_ohlcv_095570_total['volume'],
-                     name = 'volumn'
-                    ), row=2, col=1)
-
-
-
-fig.update_layout(
-    title = option,
-#     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
-    title_font_family="맑은고딕",
-    title_font_size = 18,
-    hoverlabel=dict(
-        bgcolor='black',
-        font_size=15,
-    ),
-    hovermode="x unified",
-    template='plotly_dark',
-    xaxis_tickangle=90,
-    yaxis_tickformat = ',',
-    legend = dict(orientation = 'h', xanchor = "center", x = 0.5, y= 1.1), 
-    barmode='group'
-)
-    
-# fig.update_layout(margin=go.layout.Margin(
-#         l=20, #left margin
-#         r=20, #right margin
-#         b=20, #bottom margin
-#         t=20  #top margin
-#     ))
-
-fig.update_layout(xaxis_rangeslider_visible=False)
+ 
+fig = functional.func1(kor_stock_ohlcv_095570_total)
 
 
 kor_stock_fundamental_total_df = kor_stock_fundamental_total[['bps', 'per', 'pbr', 'eps', 'div', 'dps']].T.reset_index()
