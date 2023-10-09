@@ -16,8 +16,6 @@ from plotly.subplots import make_subplots
 
 def func1(data):
   
-    
-
     # MACD 
     macd = MACD(close=data['close'], 
                 window_slow=26,
