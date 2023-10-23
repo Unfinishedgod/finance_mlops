@@ -127,6 +127,6 @@ cross_df = cross_df.reset_index(drop = True)
 
 
 
-asdf = macd_vis(df_raw)
+asdf = functional.macd_vis(df_raw)
 
 st.plotly_chart(asdf, use_container_width=True)
