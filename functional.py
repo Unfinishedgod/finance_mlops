@@ -187,7 +187,7 @@ def func1(data):
 
 def macd_vis(df_raw):
     # fig = go.Figure()
-    fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.4, 0.2, 0.2, 0.2])
+    fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.45, 0.1, 0.25, 0.2])
 
     # 캔들스틱차트
     fig.add_trace(go.Candlestick(
@@ -314,7 +314,7 @@ def macd_vis(df_raw):
     
     # Rayout
     fig.update_layout(
-        title = '삼성전자 주가',
+        title = f'{ticker_nm} 주가',
         title_font_family="맑은고딕",
         title_font_size = 18,
         hoverlabel=dict(
@@ -333,7 +333,7 @@ def macd_vis(df_raw):
             b=10, #bottom margin
             t=100  #top margin
         ),
-        height=400, width=900, 
+        height=500, width=900, 
     #     showlegend=False, 
         xaxis_rangeslider_visible=False
     )
