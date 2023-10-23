@@ -185,7 +185,7 @@ def func1(data):
     
 
 
-def macd_vis(df_raw):
+def macd_vis(df_raw, ticker_nm):
     # fig = go.Figure()
     fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.45, 0.1, 0.25, 0.2])
 
