@@ -1,6 +1,9 @@
 pandas== 2.1.0
 plotly
 
+ta
+
+
 gcsfs
 s3fs
 git+https://github.com/streamlit/files-connection
@@ -9,4 +12,3 @@ google-cloud-bigquery
 pandas-gbq
 
 
-ta
