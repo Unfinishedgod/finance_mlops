@@ -1,10 +1,11 @@
 import pandas as pd
 import os
-import geopandas as gpd
+
 import glob
 import plotly.express as px
 import plotly.graph_objects as go
 import json
+
 from ta.trend import MACD 
 from ta.momentum import StochasticOscillator 
 
