@@ -16,10 +16,11 @@ from st_files_connection import FilesConnection
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
+import functional
 
 
 st.set_page_config(
-    page_title="KOSPI",
+    page_title="test",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -28,129 +29,80 @@ st.set_page_config(
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-# 
-# # Create API client.
-# credentials = service_account.Credentials.from_service_account_info(
-#     # Very Important Point
-#     st.secrets["gcp_service_account"]
-# )
-# 
-# client = bigquery.Client(credentials=credentials)
-# 
-# @st.cache_data(ttl=600)
-# def run_query(query):
-#     # sql = f"SELECT {cols} FROM streamlit-dashboard-369600.seoul.{name}"
-#     # sql = f'SELECT * FROM `owenchoi-396200.finance_mlops.kor_stock_ohlcv`'
-#     # query
-#     df = client.query(query).to_dataframe()
-# 
-#     # st.dataframe(df)
-#     return df
-#   
-#   
-# kor_ticker_list = run_query(f"""SELECT distinct(ticker), corp_name, market FROM `owenchoi-396200.finance_mlops.kor_ticker_list`""")
-# 
-# 
-# ticker_list = kor_ticker_list['ticker'].unique()                      
-# 
-# option = st.selectbox(
-#     'How would you like to be contacted?',
-#     ticker_list)
-# 
-# st.write('You selected:', option)
-# 
-# 
-# 
-# 
-#     
-# kor_stock_ohlcv = run_query(f"""SELECT * 
-#                                 FROM `owenchoi-396200.finance_mlops.kor_stock_ohlcv` 
-#                                 where ticker = '{option}' AND date > '2018-01-01'
-#                                 order by date""")
-# 
-# 
-# kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
-# kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
-# kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
-# kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
-# 
-# 
-# 
-# # fig = make_subplots(rows=4, cols=1, shared_xaxes=True)
-# # fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5,0.1,0.2,0.2])
-# fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.7,0.3])
-# # Plot OHLC on 1st subplot (using the codes from before)
-# # Plot volume trace on 2nd row
-# fig.add_trace(go.Candlestick(
-#         x=kor_stock_ohlcv['date'],
-#         open=kor_stock_ohlcv['open'],
-#         high=kor_stock_ohlcv['high'],
-#         low=kor_stock_ohlcv['low'],
-#         close=kor_stock_ohlcv['close'],
-#         increasing_line_color= 'red', decreasing_line_color= 'blue')
-# , row=1, col=1)
-# 
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
-#                          y=kor_stock_ohlcv['MA5'],
-#                          opacity=0.7,
-#                          line=dict(color='blue', width=2),
-#                          name='MA 5'))
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
-#                          y=kor_stock_ohlcv['MA20'],
-#                          opacity=0.7,
-#                          line=dict(color='orange', width=2),
-#                          name='MA 20'))
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
-#                          y=kor_stock_ohlcv['MA60'],
-#                          opacity=0.7,
-#                          line=dict(color='green', width=2),
-#                          name='MA 60'))
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'],
-#                          y=kor_stock_ohlcv['MA120'],
-#                          opacity=0.7,
-#                          line=dict(color='yellow', width=2),
-#                          name='MA 120'))                         
-#                          
-# 
-# fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
-# 
-# # fig.add_trace(go.Scatter(x=kor_stock_ohlcv['date'], y=kor_stock_ohlcv['close']), row=2, col=1)
-# 
-# 
-# 
-# fig.add_trace(go.Bar(x=kor_stock_ohlcv['date'], 
-#                      y=kor_stock_ohlcv['volume'],
-#                      name = 'volumn'
-#                     ), row=2, col=1)
-# 
-# 
-# fig.update_layout(
-#     title = option,
-#     title_font_family="맑은고딕",
-#     title_font_size = 18,
-#     hoverlabel=dict(
-#         bgcolor='black',
-#         font_size=15,
-#     ),
-#     hovermode="x unified",
-#     template='plotly_dark',
-#     xaxis_tickangle=90,
-#     yaxis_tickformat = ',',
-#     legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1), 
-#     barmode='group'
-# )
-#     
-# fig.update_layout(margin=go.layout.Margin(
-#         l=10, #left margin
-#         r=10, #right margin
-#         b=10, #bottom margin
-#         t=10  #top margin
-#     ))
-# fig.update_layout(xaxis_rangeslider_visible=False)
-# 
-# 
-# st.plotly_chart(fig, use_container_width=True)
-# 
-# 
-# 
-# # st.dataframe(kor_stock_ohlcv)
+
+
+
+
+ticker_nm = '005930'
+start_date  = '20200101'
+today_date1 = '20231006'
+
+df_raw = stock.get_market_ohlcv(start_date, today_date1, ticker_nm)
+df_raw = df_raw.reset_index()
+df_raw['ticker'] = ticker_nm
+
+df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume','trading_value','price_change_percentage', 'ticker']
+
+
+
+df_raw['MA5'] = df_raw['close'].rolling(window=5).mean()
+df_raw['MA20'] = df_raw['close'].rolling(window=20).mean()
+df_raw['MA60'] = df_raw['close'].rolling(window=60).mean()
+df_raw['MA120'] = df_raw['close'].rolling(window=120).mean()
+
+
+
+std = df_raw['close'].rolling(20).std(ddof=0)
+
+df_raw['upper'] = df_raw['MA20'] + 2 * std
+df_raw['lower'] = df_raw['MA20'] - 2 * std
+
+
+
+# MACD 
+macd = MACD(close=df_raw['close'], 
+            window_slow=26,
+            window_fast=12, 
+            window_sign=9)
+
+
+df_raw['MACD_DIFF'] = macd.macd_diff()
+df_raw['MACD'] = macd.macd()
+df_raw['MACD_Signal'] = macd.macd_signal()
+
+
+
+df_raw['변화량'] = df_raw['close'] - df_raw['close'].shift(1)
+df_raw['상승폭'] = np.where(df_raw['변화량']>=0, df_raw['변화량'], 0)
+df_raw['하락폭'] = np.where(df_raw['변화량'] <0, df_raw['변화량'].abs(), 0)
+
+# welles moving average
+df_raw['AU'] = df_raw['상승폭'].ewm(alpha=1/14, min_periods=14).mean()
+df_raw['AD'] = df_raw['하락폭'].ewm(alpha=1/14, min_periods=14).mean()
+df_raw['RSI'] = df_raw['AU'] / (df_raw['AU'] + df_raw['AD']) * 100
+
+
+
+df_raw = df_raw[df_raw['date'] > '2023-01-01']
+df_raw = df_raw.reset_index(drop = True)
+
+
+down_reg = [idx for idx in range(1,len(df_raw)) if df_raw['RSI'][idx] > 70 and df_raw['RSI'][idx-1] <= 70]
+top_reg = [idx for idx in range(1,len(df_raw)) if df_raw['RSI'][idx] < 30 and df_raw['RSI'][idx-1] >= 30]
+
+down_reg_df = pd.DataFrame({
+    'index':down_reg,
+    'name':'매도'})
+
+top_reg_df = pd.DataFrame({
+    'index':top_reg,
+    'name':'매수'})
+    
+cross_df = pd.concat([down_reg_df, top_reg_df])
+cross_df = cross_df.reset_index(drop = True)
+
+
+
+asdf = macd_vis(df_raw)
+
+st.plotly_chart(asdf, use_container_width=True)
