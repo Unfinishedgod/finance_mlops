@@ -6,6 +6,8 @@ import plotly.graph_objects as go
 import json
 from plotly.subplots import make_subplots
 
+import numpy as np
+
 # import math
 
 from ta.trend import MACD 

@@ -12,6 +12,8 @@ from ta.momentum import StochasticOscillator
 import streamlit as st
 from datetime import datetime
 
+import numpy as np
+
 from st_files_connection import FilesConnection
 from plotly.subplots import make_subplots
 
