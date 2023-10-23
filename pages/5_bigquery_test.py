@@ -31,17 +31,36 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
+conn = st.experimental_connection('gcs', type=FilesConnection)
+# kor_stock_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv",
+#                       input_format="csv", ttl=600)
+#                       
+kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv",
+                      input_format="csv", ttl=600)
 
+kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSPI']
+ticker_list = kor_ticker_list['ticker'].unique()
 
-ticker_nm = '005930'
-start_date  = '20200101'
-today_date1 = '20231006'
+option = st.selectbox(
+    'How would you like to be contacted?',
+    ticker_list)
 
-df_raw = stock.get_market_ohlcv(start_date, today_date1, ticker_nm)
-df_raw = df_raw.reset_index()
-df_raw['ticker'] = ticker_nm
+st.write('You selected:', option)
 
-df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume','trading_value','price_change_percentage', 'ticker']
+ticker_nm = '095570'
+df_raw = conn.read(f"finance-mlops-1/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
+                      input_format="csv", ttl=600)                      
+
+# ticker_nm = '005930'
+# start_date  = '20200101'
+# today_date1 = '20231006'
+# 
+# df_raw = stock.get_market_ohlcv(start_date, today_date1, ticker_nm)
+# df_raw = df_raw.reset_index()
+# df_raw['ticker'] = ticker_nm
+# 
+# df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume','trading_value','price_change_percentage', 'ticker']
+
 
 
 
