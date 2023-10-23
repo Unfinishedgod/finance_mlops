@@ -345,4 +345,3 @@ def macd_vis(df_raw):
     fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
     return fig
     
-macd_vis(df_raw)    
