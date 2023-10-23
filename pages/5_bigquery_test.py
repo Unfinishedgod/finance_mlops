@@ -8,6 +8,9 @@ from plotly.subplots import make_subplots
 
 # import math
 
+from ta.trend import MACD 
+from ta.momentum import StochasticOscillator 
+
 import streamlit as st
 from datetime import datetime
 
