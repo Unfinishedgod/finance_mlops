@@ -233,20 +233,20 @@ def macd_vis(df_raw):
         showlegend=False
     ), row = 1, col = 1)
 
-    # 상향, 하향 회귀
-    for i in range(len(cross_df)):
-        cross_index = cross_df['index'][i]
-        cross_name = cross_df['name'][i]
-
-        cross_date = df_raw['date'][cross_index]
-        cross_value = df_raw['close'][cross_index]
-
-        fig.add_annotation(x=cross_date, 
-                           y=cross_value,
-                           text=cross_name,
-                           showarrow=True,
-                           arrowhead=1,
-                           row = 1, col = 1)
+    # # 상향, 하향 회귀
+    # for i in range(len(cross_df)):
+    #     cross_index = cross_df['index'][i]
+    #     cross_name = cross_df['name'][i]
+    # 
+    #     cross_date = df_raw['date'][cross_index]
+    #     cross_value = df_raw['close'][cross_index]
+    # 
+    #     fig.add_annotation(x=cross_date, 
+    #                        y=cross_value,
+    #                        text=cross_name,
+    #                        showarrow=True,
+    #                        arrowhead=1,
+    #                        row = 1, col = 1)
 
     # Row 2 
     # volume
