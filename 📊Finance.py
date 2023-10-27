@@ -44,18 +44,18 @@ today_date2 = now.strftime('%Y-%m-%d')
 
 
 
-# kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv', dtype = {'ticker': object})
-# kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv')
+# kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv', dtype = {'ticker': object})
+# kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df.csv')
 
 conn = st.experimental_connection('gcs', type=FilesConnection)
-kor_index_ohlcv = conn.read("finance-mlops-owen/data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv", 
+kor_index_ohlcv = conn.read("finance-mlops-owen/data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv", 
                       input_format="csv", ttl=600)
                       
-kor_index_code_fundamental = conn.read("finance-mlops-owen/data_crawler/kor_index_code_fundamental/kor_index_code_fundamental_20230825.csv", 
+kor_index_code_fundamental = conn.read("finance-mlops-owen/data_crawler/kor_index_code_fundamental/kor_index_code_fundamental.csv", 
                       input_format="csv", ttl=600)
                       
                       
-kor_index_list_df = conn.read("finance-mlops-owen/data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv", 
+kor_index_list_df = conn.read("finance-mlops-owen/data_crawler/kor_index_list_df/kor_index_list_df.csv", 
                       input_format="csv", ttl=600)
 
 
