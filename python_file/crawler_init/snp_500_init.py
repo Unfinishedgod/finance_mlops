@@ -36,7 +36,7 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owenchoi-396200'
+project_id = 'owen-403216'
 dataset_id = 'finance_mlops'
 
 
@@ -44,7 +44,7 @@ dataset_id = 'finance_mlops'
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
-bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-owen'     # 서비스 계정 생성한 bucket 이름 입력
 
 
 # Postgresql 연결
@@ -58,39 +58,60 @@ database = db_connect_info['database'][0]
 engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
 
 
-# In[2]:
+def upload_df(data, file_name, project_id, dataset_id, time_line):
+    if not os.path.exists(f'data_crawler/{file_name}'):
+        os.makedirs(f'data_crawler/{file_name}')
+
+    try:
+        if not os.path.exists(f'data_crawler/{file_name}/{file_name}.csv'):
+            data.to_csv(f'data_crawler/{file_name}/{file_name}.csv', index=False, mode='w')
+        else:
+            data.to_csv(f'data_crawler/{file_name}/{file_name}.csv', index=False, mode='a', header=False)
+        print(f'{file_name}_로컬CSV저장_success_{time_line}')    
+    except:
+        print(f'{file_name}_로컬CSV저장_fail_{time_line}')
+    
+    
+    # Google Storage 적재
+    source_file_name = f'data_crawler/{file_name}/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
+    destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob(destination_blob_name)
+    blob.upload_from_filename(source_file_name)      
+    
+    try:
+        # 빅쿼리 데이터 적재
+        data.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+          project_id=project_id,
+          if_exists='append',
+          credentials=credentials)
+        print(f'{file_name}_빅쿼리저장_success_{time_line}')    
+    except:
+        print(f'{file_name}_빅쿼리저장_fail_{time_line}')  
+    
+    
+    try:
+        # Postgresql 적재
+        data.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
+        print(f'{file_name}_Postgresql저장_success_{time_line}')    
+    except:
+        print(f'{file_name}_Postgresql저장_fail_{time_line}')
 
 
 now = datetime.now()
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = '2017-01-01'
-today_date2 = '2023-07-21'
+# today_date2 = '2023-07-21'
 
 # ## S&P 500 종목 리스트
 snp500 = fdr.StockListing('S&P500')
 snp500.columns = ['ticker', 'corp_name', 'sector', 'industry']
 
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 file_name = 'snp500_ticker_list'
-
-# 빅쿼리 데이터 적재
-snp500.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-  project_id=project_id,
-  if_exists='replace',
-  credentials=credentials)
-
-# Postgresql 적재
-snp500.to_sql(f'{file_name}',if_exists='replace', con=engine,  index=False)
-snp500.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-
-
-# Google Storage 적재
-bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
-source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
-
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(destination_blob_name)
-blob.upload_from_filename(source_file_name)
+upload_df(snp500, file_name, project_id, dataset_id, time_line)
 
 sp500_ticker_list = snp500['ticker']
 
@@ -100,108 +121,39 @@ for ticker_nm in sp500_ticker_list:
     # Apple(AAPL), 2017-01-01 ~ Now
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-    time.sleep(1)    
-    
-    try:    
+    # time.sleep(1)
+
+    try:
         df_raw = fdr.DataReader(ticker_nm, start_date2,today_date2)
         df_raw['ticker'] = ticker_nm
         df_raw = df_raw.reset_index()
         df_raw.columns = ['date', 'open','high','low','close','adj_close','volume','ticker']
-        print(f'{file_name}_{ticker_nm}_데이터수집_success_{time_line}')   
+        upload_df(df_raw, file_name, project_id, dataset_id, time_line)
+
+        print(f'{file_name}_{ticker_nm}_데이터수집_success_{time_line}')
     except:
         print(f'{file_name}_{ticker_nm}_데이터수집_fail_{time_line}')
-            
-    try:
-        if not os.path.exists(f'data_crawler/{file_name}.csv'):
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-        else:
-            df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='a', header=False)
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_success_{time_line}')   
-    except:
-        print(f'{file_name}_{ticker_nm}_로컬CSV저장_fail_{time_line}')
-    
-    
-    try:
-        # 빅쿼리 데이터 적재
-        df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-          project_id=project_id,
-          if_exists='append',
-          credentials=credentials)
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_success_{time_line}')   
-    except:
-        print(f'{file_name}_{ticker_nm}_빅쿼리저장_fail_{time_line}')  
-    
-    
-    
-    try:
-        # Postgresql 적재
-        df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_success_{time_line}')   
-    except:
-        print(f'{file_name}_{ticker_nm}_Postgresql저장_fail_{time_line}')
 
-# Google Storage 적재
-source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(destination_blob_name)
-blob.upload_from_filename(source_file_name)
+# ## 비트코인
+df_raw = fdr.DataReader('BTC/KRW', "2016-01-01",today_date2)
+df_raw = df_raw.reset_index()
+df_raw.columns = ['date', 'open','high','low','close','adj_close','colume']
 
-# 
-# # ## 비트코인
-# df_raw = fdr.DataReader('BTC/KRW', "2016-01-01",today_date2)
-# df_raw = df_raw.reset_index()
-# df_raw.columns = ['Date', 'Open','High','Low','Close','Adj_Close','Volume']
-# 
-# file_name = 'bitcoin'
-# 
-# df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-# 
-# # 빅쿼리 데이터 적재
-# df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-#   project_id=project_id,
-#   if_exists='append',
-#   credentials=credentials)
-# 
-# # Postgresql 적재
-# df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-# 
-# # Google Storage 적재
-# bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
-# source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-# destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
-# 
-# bucket = storage_client.bucket(bucket_name)
-# blob = bucket.blob(destination_blob_name)
-# blob.upload_from_filename(source_file_name)    
-# 
-# 
-# # ### 환율
-# df_raw = fdr.DataReader('USD/KRW', "2016-01-01",today_date2)
-# df_raw = df_raw.reset_index()
-# df_raw.columns = ['Date', 'Open','High','Low','Close','Adj_Close','Volume']
-# 
-# file_name = 'usdkrw'
-# 
-# df_raw.to_csv(f'data_crawler/{file_name}.csv', index=False, mode='w')
-# 
-# # 빅쿼리 데이터 적재
-# df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-#   project_id=project_id,
-#   if_exists='append',
-#   credentials=credentials)
-# 
-# # Postgresql 적재
-# df_raw.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-# 
-# # Google Storage 적재
-# bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
-# source_file_name = f'data_crawler/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-# destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
-# 
-# bucket = storage_client.bucket(bucket_name)
-# blob = bucket.blob(destination_blob_name)
-# blob.upload_from_filename(source_file_name)    
 
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+file_name = 'bitcoin'
+upload_df(df_raw, file_name, project_id, dataset_id, time_line)
+
+
+# ### 환율
+df_raw = fdr.DataReader('USD/KRW', "2016-01-01",today_date2)
+df_raw = df_raw.reset_index()
+df_raw.columns = ['date', 'open','high','low','close','adj_close','colume']
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+file_name = 'usdkrw'
+upload_df(df_raw, file_name, project_id, dataset_id, time_line)
 

@@ -34,13 +34,13 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owenchoi-396200'
+project_id = 'owenchoi-403216'
 dataset_id = 'finance_mlops'
 
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
-bucket_name = 'finance-mlops-1'     # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-owen'    # 서비스 계정 생성한 bucket 이름 입력
 
 # Postgresql 연결
 db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
