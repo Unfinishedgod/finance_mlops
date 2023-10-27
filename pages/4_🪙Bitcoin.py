@@ -30,7 +30,7 @@ with open('style.css') as f:
 
 
 conn = st.experimental_connection('gcs', type=FilesConnection)
-bitcoin_df = conn.read("finance-mlops-1/data_crawler/bitcoin/bitcoin_20230908.csv", 
+bitcoin_df = conn.read("finance-mlops-owen/data_crawler/bitcoin/bitcoin_20230908.csv", 
                       input_format="csv", ttl=600)
 
 

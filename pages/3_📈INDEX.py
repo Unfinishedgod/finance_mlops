@@ -34,10 +34,10 @@ with open('style.css') as f:
 # kor_index_list = pd.read_csv('data_crawler/kor_index_list/kor_index_list_20230825.csv')
 
 conn = st.experimental_connection('gcs', type=FilesConnection)
-kor_index_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv", 
+kor_index_ohlcv = conn.read("finance-mlops-owen/data_crawler/kor_index_ohlcv/kor_index_ohlcv_20230825.csv", 
                       input_format="csv", ttl=600)
                       
-kor_index_list_df = conn.read("finance-mlops-1/data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv", 
+kor_index_list_df = conn.read("finance-mlops-owen/data_crawler/kor_index_list_df/kor_index_list_df_20230825.csv", 
                       input_format="csv", ttl=600)
                       
                       
