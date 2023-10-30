@@ -154,6 +154,6 @@ df_raw.columns = ['date', 'open','high','low','close','adj_close','colume']
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-file_name = 'usdkrw'
+file_name = 'usd_krw'
 upload_df(df_raw, file_name, project_id, dataset_id, time_line)
 
