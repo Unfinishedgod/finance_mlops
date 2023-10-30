@@ -101,7 +101,7 @@ def upload_df(data, file_name, project_id, dataset_id, time_line):
 now = datetime.now()
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = '2017-01-01'
-# today_date2 = '2023-07-21'
+today_date2 = '2023-10-29'
 
 # ## S&P 500 종목 리스트
 snp500 = fdr.StockListing('S&P500')
@@ -116,7 +116,7 @@ upload_df(snp500, file_name, project_id, dataset_id, time_line)
 sp500_ticker_list = snp500['ticker']
 
 ## 주가 데이터 수집
-file_name = 'snp500'
+file_name = 'snp500_daily'
 for ticker_nm in sp500_ticker_list:
     # Apple(AAPL), 2017-01-01 ~ Now
     now1 = datetime.now()
@@ -136,7 +136,8 @@ for ticker_nm in sp500_ticker_list:
 
 
 # ## 비트코인
-df_raw = fdr.DataReader('BTC/KRW', "2016-01-01",today_date2)
+# df_raw = fdr.DataReader('BTC/KRW', "2016-01-01",today_date2)
+df_raw = fdr.DataReader('BTC/KRW', "2016-01-01","2023-10-29")
 df_raw = df_raw.reset_index()
 df_raw.columns = ['date', 'open','high','low','close','adj_close','colume']
 
@@ -148,7 +149,8 @@ upload_df(df_raw, file_name, project_id, dataset_id, time_line)
 
 
 # ### 환율
-df_raw = fdr.DataReader('USD/KRW', "2016-01-01",today_date2)
+# df_raw = fdr.DataReader('USD/KRW', "2016-01-01",today_date2)
+df_raw = fdr.DataReader('USD/KRW', "2016-01-01","2023-10-30")
 df_raw = df_raw.reset_index()
 df_raw.columns = ['date', 'open','high','low','close','adj_close','colume']
 

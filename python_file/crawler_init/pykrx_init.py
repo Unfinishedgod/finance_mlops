@@ -58,7 +58,7 @@ now = datetime.now()
 # now = now + timedelta(days=-2)
 today_date1 = now.strftime('%Y%m%d')
 start_date1 = '20180101'
-today_date1 = '20231026'
+today_date1 = '20231030'
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
