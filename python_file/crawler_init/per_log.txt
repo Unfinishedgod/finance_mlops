@@ -1,0 +1,1238 @@
+DIV/BPS/PER/EPS 시작
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:17:10
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17403.75it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:17:10
+kor_stock_fundamental_Postgresql저장_success_20231031_10:17:10
+DIV/BPS/PER/EPS 완료_095570_20231031_10:17:10
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:17:25
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23431.87it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:17:25
+kor_stock_fundamental_Postgresql저장_success_20231031_10:17:25
+DIV/BPS/PER/EPS 완료_006840_20231031_10:17:25
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:17:35
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24105.20it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:17:35
+kor_stock_fundamental_Postgresql저장_success_20231031_10:17:35
+DIV/BPS/PER/EPS 완료_027410_20231031_10:17:35
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:17:46
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22550.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:17:46
+kor_stock_fundamental_Postgresql저장_success_20231031_10:17:46
+DIV/BPS/PER/EPS 완료_282330_20231031_10:17:46
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:17:57
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:17:57
+kor_stock_fundamental_Postgresql저장_success_20231031_10:17:57
+DIV/BPS/PER/EPS 완료_138930_20231031_10:17:57
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:18:08
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 5140.08it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:18:08
+kor_stock_fundamental_Postgresql저장_success_20231031_10:18:08
+DIV/BPS/PER/EPS 완료_001460_20231031_10:18:08
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:18:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17476.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:18:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:18:20
+DIV/BPS/PER/EPS 완료_001465_20231031_10:18:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:18:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24672.38it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:18:29
+kor_stock_fundamental_Postgresql저장_success_20231031_10:18:29
+DIV/BPS/PER/EPS 완료_001040_20231031_10:18:29
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:18:38
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:18:38
+kor_stock_fundamental_Postgresql저장_success_20231031_10:18:38
+DIV/BPS/PER/EPS 완료_079160_20231031_10:18:38
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:18:47
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 4185.93it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:18:47
+kor_stock_fundamental_Postgresql저장_success_20231031_10:18:47
+DIV/BPS/PER/EPS 완료_00104K_20231031_10:18:47
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:18:55
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:18:55
+kor_stock_fundamental_Postgresql저장_success_20231031_10:18:55
+DIV/BPS/PER/EPS 완료_000120_20231031_10:18:55
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:19:06
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:19:06
+kor_stock_fundamental_Postgresql저장_success_20231031_10:19:06
+DIV/BPS/PER/EPS 완료_011150_20231031_10:19:06
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:19:14
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:19:14
+kor_stock_fundamental_Postgresql저장_success_20231031_10:19:14
+DIV/BPS/PER/EPS 완료_011155_20231031_10:19:14
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:19:24
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:19:24
+kor_stock_fundamental_Postgresql저장_success_20231031_10:19:24
+DIV/BPS/PER/EPS 완료_001045_20231031_10:19:24
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:19:33
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:19:33
+kor_stock_fundamental_Postgresql저장_success_20231031_10:19:33
+DIV/BPS/PER/EPS 완료_097950_20231031_10:19:33
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:19:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24244.53it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:19:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:19:42
+DIV/BPS/PER/EPS 완료_097955_20231031_10:19:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:19:52
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:19:52
+kor_stock_fundamental_Postgresql저장_success_20231031_10:19:52
+DIV/BPS/PER/EPS 완료_000480_20231031_10:19:52
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:20:01
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:20:01
+kor_stock_fundamental_Postgresql저장_success_20231031_10:20:01
+DIV/BPS/PER/EPS 완료_000590_20231031_10:20:01
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:20:11
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21290.88it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:20:11
+kor_stock_fundamental_Postgresql저장_success_20231031_10:20:11
+DIV/BPS/PER/EPS 완료_012030_20231031_10:20:11
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:20:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24385.49it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:20:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:20:20
+DIV/BPS/PER/EPS 완료_016610_20231031_10:20:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:20:31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18078.90it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:20:31
+kor_stock_fundamental_Postgresql저장_success_20231031_10:20:31
+DIV/BPS/PER/EPS 완료_005830_20231031_10:20:31
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:20:40
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:20:40
+kor_stock_fundamental_Postgresql저장_success_20231031_10:20:40
+DIV/BPS/PER/EPS 완료_000990_20231031_10:20:40
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:20:49
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26051.58it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:20:49
+kor_stock_fundamental_Postgresql저장_success_20231031_10:20:49
+DIV/BPS/PER/EPS 완료_139130_20231031_10:20:49
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:20:58
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16008.79it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:20:58
+kor_stock_fundamental_Postgresql저장_success_20231031_10:20:58
+DIV/BPS/PER/EPS 완료_001530_20231031_10:20:58
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:21:08
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:21:08
+kor_stock_fundamental_Postgresql저장_success_20231031_10:21:08
+DIV/BPS/PER/EPS 완료_000210_20231031_10:21:08
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:21:18
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:21:18
+kor_stock_fundamental_Postgresql저장_success_20231031_10:21:18
+DIV/BPS/PER/EPS 완료_001880_20231031_10:21:18
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:21:27
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26051.58it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:21:27
+kor_stock_fundamental_Postgresql저장_success_20231031_10:21:27
+DIV/BPS/PER/EPS 완료_000215_20231031_10:21:27
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:21:34
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:21:34
+kor_stock_fundamental_Postgresql저장_success_20231031_10:21:34
+DIV/BPS/PER/EPS 완료_375500_20231031_10:21:34
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:21:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:21:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:21:42
+DIV/BPS/PER/EPS 완료_37550L_20231031_10:21:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:21:49
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:21:49
+kor_stock_fundamental_Postgresql저장_success_20231031_10:21:49
+DIV/BPS/PER/EPS 완료_37550K_20231031_10:21:49
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:21:59
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:21:59
+kor_stock_fundamental_Postgresql저장_success_20231031_10:21:59
+DIV/BPS/PER/EPS 완료_007340_20231031_10:21:59
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:22:08
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:22:08
+kor_stock_fundamental_Postgresql저장_success_20231031_10:22:08
+DIV/BPS/PER/EPS 완료_004840_20231031_10:22:08
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:22:18
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:22:18
+kor_stock_fundamental_Postgresql저장_success_20231031_10:22:18
+DIV/BPS/PER/EPS 완료_155660_20231031_10:22:18
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:22:31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:22:31
+kor_stock_fundamental_Postgresql저장_success_20231031_10:22:31
+DIV/BPS/PER/EPS 완료_069730_20231031_10:22:31
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:22:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:22:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:22:42
+DIV/BPS/PER/EPS 완료_017940_20231031_10:22:42
+DIV/BPS/PER/EPS 실패_365550_20231031_10:22:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:22:51
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:22:51
+kor_stock_fundamental_Postgresql저장_success_20231031_10:22:51
+DIV/BPS/PER/EPS 완료_383220_20231031_10:22:51
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:23:01
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21959.71it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:23:01
+kor_stock_fundamental_Postgresql저장_success_20231031_10:23:01
+DIV/BPS/PER/EPS 완료_007700_20231031_10:23:01
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:23:11
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21620.12it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:23:11
+kor_stock_fundamental_Postgresql저장_success_20231031_10:23:11
+DIV/BPS/PER/EPS 완료_114090_20231031_10:23:11
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:23:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:23:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:23:20
+DIV/BPS/PER/EPS 완료_078930_20231031_10:23:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:23:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:23:29
+kor_stock_fundamental_Postgresql저장_success_20231031_10:23:29
+DIV/BPS/PER/EPS 완료_006360_20231031_10:23:29
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:23:39
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:23:39
+kor_stock_fundamental_Postgresql저장_success_20231031_10:23:39
+DIV/BPS/PER/EPS 완료_001250_20231031_10:23:39
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:23:48
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20262.34it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:23:48
+kor_stock_fundamental_Postgresql저장_success_20231031_10:23:48
+DIV/BPS/PER/EPS 완료_007070_20231031_10:23:48
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:23:58
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17848.10it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:23:58
+kor_stock_fundamental_Postgresql저장_success_20231031_10:23:58
+DIV/BPS/PER/EPS 완료_078935_20231031_10:23:58
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:24:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23431.87it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:24:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:24:09
+DIV/BPS/PER/EPS 완료_012630_20231031_10:24:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:24:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21076.90it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:24:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:24:20
+DIV/BPS/PER/EPS 완료_039570_20231031_10:24:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:24:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20460.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:24:29
+kor_stock_fundamental_Postgresql저장_success_20231031_10:24:29
+DIV/BPS/PER/EPS 완료_089470_20231031_10:24:29
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:24:38
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19508.39it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:24:38
+kor_stock_fundamental_Postgresql저장_success_20231031_10:24:38
+DIV/BPS/PER/EPS 완료_294870_20231031_10:24:38
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:24:46
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21290.88it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:24:46
+kor_stock_fundamental_Postgresql저장_success_20231031_10:24:46
+DIV/BPS/PER/EPS 완료_009540_20231031_10:24:46
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:24:56
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25731.93it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:24:56
+kor_stock_fundamental_Postgresql저장_success_20231031_10:24:56
+DIV/BPS/PER/EPS 완료_267250_20231031_10:24:56
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:25:07
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25575.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:25:07
+kor_stock_fundamental_Postgresql저장_success_20231031_10:25:07
+DIV/BPS/PER/EPS 완료_267270_20231031_10:25:07
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:25:15
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:25:15
+kor_stock_fundamental_Postgresql저장_success_20231031_10:25:15
+DIV/BPS/PER/EPS 완료_322000_20231031_10:25:15
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:25:25
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24105.20it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:25:25
+kor_stock_fundamental_Postgresql저장_success_20231031_10:25:25
+DIV/BPS/PER/EPS 완료_042670_20231031_10:25:25
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:25:34
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:25:34
+kor_stock_fundamental_Postgresql저장_success_20231031_10:25:34
+DIV/BPS/PER/EPS 완료_267260_20231031_10:25:34
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:25:41
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31536.12it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:25:41
+kor_stock_fundamental_Postgresql저장_success_20231031_10:25:41
+DIV/BPS/PER/EPS 완료_329180_20231031_10:25:41
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:25:51
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20763.88it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:25:51
+kor_stock_fundamental_Postgresql저장_success_20231031_10:25:51
+DIV/BPS/PER/EPS 완료_097230_20231031_10:25:51
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:26:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16644.06it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:26:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:26:02
+DIV/BPS/PER/EPS 완료_014790_20231031_10:26:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:26:13
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20262.34it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:26:13
+kor_stock_fundamental_Postgresql저장_success_20231031_10:26:13
+DIV/BPS/PER/EPS 완료_003580_20231031_10:26:13
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:26:22
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23045.63it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:26:22
+kor_stock_fundamental_Postgresql저장_success_20231031_10:26:22
+DIV/BPS/PER/EPS 완료_204320_20231031_10:26:22
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:26:33
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22550.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:26:33
+kor_stock_fundamental_Postgresql저장_success_20231031_10:26:33
+DIV/BPS/PER/EPS 완료_060980_20231031_10:26:33
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:26:43
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:26:43
+kor_stock_fundamental_Postgresql저장_success_20231031_10:26:43
+DIV/BPS/PER/EPS 완료_011200_20231031_10:26:43
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:26:53
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16980.99it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:26:53
+kor_stock_fundamental_Postgresql저장_success_20231031_10:26:53
+DIV/BPS/PER/EPS 완료_082740_20231031_10:26:53
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:27:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:27:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:27:02
+DIV/BPS/PER/EPS 완료_035000_20231031_10:27:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:27:11
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24672.38it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:27:11
+kor_stock_fundamental_Postgresql저장_success_20231031_10:27:11
+DIV/BPS/PER/EPS 완료_003560_20231031_10:27:11
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:27:21
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17119.61it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:27:21
+kor_stock_fundamental_Postgresql저장_success_20231031_10:27:21
+DIV/BPS/PER/EPS 완료_175330_20231031_10:27:21
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:27:32
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24528.09it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:27:32
+kor_stock_fundamental_Postgresql저장_success_20231031_10:27:32
+DIV/BPS/PER/EPS 완료_234080_20231031_10:27:32
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:27:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:27:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:27:42
+DIV/BPS/PER/EPS 완료_001060_20231031_10:27:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:27:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22429.43it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:27:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:27:50
+DIV/BPS/PER/EPS 완료_001067_20231031_10:27:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:28:00
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22671.91it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:28:00
+kor_stock_fundamental_Postgresql저장_success_20231031_10:28:00
+DIV/BPS/PER/EPS 완료_001065_20231031_10:28:00
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:28:10
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:28:10
+kor_stock_fundamental_Postgresql저장_success_20231031_10:28:10
+DIV/BPS/PER/EPS 완료_096760_20231031_10:28:10
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:28:19
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:28:19
+kor_stock_fundamental_Postgresql저장_success_20231031_10:28:19
+DIV/BPS/PER/EPS 완료_105560_20231031_10:28:19
+DIV/BPS/PER/EPS 실패_432320_20231031_10:28:19
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:28:31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24528.09it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:28:31
+kor_stock_fundamental_Postgresql저장_success_20231031_10:28:31
+DIV/BPS/PER/EPS 완료_002380_20231031_10:28:31
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:28:40
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:28:40
+kor_stock_fundamental_Postgresql저장_success_20231031_10:28:40
+DIV/BPS/PER/EPS 완료_344820_20231031_10:28:40
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:28:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:28:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:28:50
+DIV/BPS/PER/EPS 완료_009070_20231031_10:28:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:29:00
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8962.19it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:29:00
+kor_stock_fundamental_Postgresql저장_success_20231031_10:29:00
+DIV/BPS/PER/EPS 완료_009440_20231031_10:29:00
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:29:11
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:29:11
+kor_stock_fundamental_Postgresql저장_success_20231031_10:29:11
+DIV/BPS/PER/EPS 완료_119650_20231031_10:29:11
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:29:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:29:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:29:20
+DIV/BPS/PER/EPS 완료_092220_20231031_10:29:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:29:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:29:29
+kor_stock_fundamental_Postgresql저장_success_20231031_10:29:29
+DIV/BPS/PER/EPS 완료_003620_20231031_10:29:29
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:29:39
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:29:39
+kor_stock_fundamental_Postgresql저장_success_20231031_10:29:39
+DIV/BPS/PER/EPS 완료_016380_20231031_10:29:39
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:29:48
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17924.38it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:29:48
+kor_stock_fundamental_Postgresql저장_success_20231031_10:29:48
+DIV/BPS/PER/EPS 완료_001390_20231031_10:29:48
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:29:57
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:29:57
+kor_stock_fundamental_Postgresql저장_success_20231031_10:29:57
+DIV/BPS/PER/EPS 완료_033180_20231031_10:29:57
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:30:06
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:30:06
+kor_stock_fundamental_Postgresql저장_success_20231031_10:30:06
+DIV/BPS/PER/EPS 완료_015590_20231031_10:30:06
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:30:16
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24672.38it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:30:16
+kor_stock_fundamental_Postgresql저장_success_20231031_10:30:16
+DIV/BPS/PER/EPS 완료_001940_20231031_10:30:16
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:30:25
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22671.91it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:30:25
+kor_stock_fundamental_Postgresql저장_success_20231031_10:30:25
+DIV/BPS/PER/EPS 완료_025000_20231031_10:30:25
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:30:34
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23831.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:30:34
+kor_stock_fundamental_Postgresql저장_success_20231031_10:30:34
+DIV/BPS/PER/EPS 완료_092230_20231031_10:30:34
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:30:45
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:30:45
+kor_stock_fundamental_Postgresql저장_success_20231031_10:30:45
+DIV/BPS/PER/EPS 완료_000040_20231031_10:30:45
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:30:54
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:30:54
+kor_stock_fundamental_Postgresql저장_success_20231031_10:30:54
+DIV/BPS/PER/EPS 완료_044450_20231031_10:30:54
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:31:03
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23563.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:31:03
+kor_stock_fundamental_Postgresql저장_success_20231031_10:31:03
+DIV/BPS/PER/EPS 완료_030200_20231031_10:31:03
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:31:12
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20360.70it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:31:12
+kor_stock_fundamental_Postgresql저장_success_20231031_10:31:12
+DIV/BPS/PER/EPS 완료_033780_20231031_10:31:12
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:31:23
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18808.54it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:31:23
+kor_stock_fundamental_Postgresql저장_success_20231031_10:31:23
+DIV/BPS/PER/EPS 완료_058850_20231031_10:31:23
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:31:33
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:31:33
+kor_stock_fundamental_Postgresql저장_success_20231031_10:31:33
+DIV/BPS/PER/EPS 완료_058860_20231031_10:31:33
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:31:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22310.13it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:31:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:31:42
+DIV/BPS/PER/EPS 완료_093050_20231031_10:31:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:31:52
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 14716.86it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:31:52
+kor_stock_fundamental_Postgresql저장_success_20231031_10:31:52
+DIV/BPS/PER/EPS 완료_003550_20231031_10:31:52
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:32:01
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:32:01
+kor_stock_fundamental_Postgresql저장_success_20231031_10:32:01
+DIV/BPS/PER/EPS 완료_034220_20231031_10:32:01
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:32:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18236.10it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:32:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:32:09
+DIV/BPS/PER/EPS 완료_051900_20231031_10:32:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:32:17
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:32:17
+kor_stock_fundamental_Postgresql저장_success_20231031_10:32:17
+DIV/BPS/PER/EPS 완료_051905_20231031_10:32:17
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:32:24
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:32:24
+kor_stock_fundamental_Postgresql저장_success_20231031_10:32:24
+DIV/BPS/PER/EPS 완료_373220_20231031_10:32:24
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:32:34
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:32:34
+kor_stock_fundamental_Postgresql저장_success_20231031_10:32:34
+DIV/BPS/PER/EPS 완료_003555_20231031_10:32:34
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:32:44
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26051.58it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:32:44
+kor_stock_fundamental_Postgresql저장_success_20231031_10:32:44
+DIV/BPS/PER/EPS 완료_032640_20231031_10:32:44
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:32:53
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21732.15it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:32:53
+kor_stock_fundamental_Postgresql저장_success_20231031_10:32:53
+DIV/BPS/PER/EPS 완료_011070_20231031_10:32:53
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:33:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20867.18it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:33:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:33:02
+DIV/BPS/PER/EPS 완료_066570_20231031_10:33:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:33:13
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:33:13
+kor_stock_fundamental_Postgresql저장_success_20231031_10:33:13
+DIV/BPS/PER/EPS 완료_066575_20231031_10:33:13
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:33:22
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:33:22
+kor_stock_fundamental_Postgresql저장_success_20231031_10:33:22
+DIV/BPS/PER/EPS 완료_037560_20231031_10:33:22
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:33:31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23967.45it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:33:31
+kor_stock_fundamental_Postgresql저장_success_20231031_10:33:31
+DIV/BPS/PER/EPS 완료_051910_20231031_10:33:31
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:33:40
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18808.54it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:33:40
+kor_stock_fundamental_Postgresql저장_success_20231031_10:33:40
+DIV/BPS/PER/EPS 완료_051915_20231031_10:33:40
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:33:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 9664.29it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:33:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:33:50
+DIV/BPS/PER/EPS 완료_079550_20231031_10:33:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:34:00
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20262.34it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:34:00
+kor_stock_fundamental_Postgresql저장_success_20231031_10:34:00
+DIV/BPS/PER/EPS 완료_006260_20231031_10:34:00
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:34:10
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18477.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:34:10
+kor_stock_fundamental_Postgresql저장_success_20231031_10:34:10
+DIV/BPS/PER/EPS 완료_010120_20231031_10:34:10
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:34:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18078.90it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:34:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:34:20
+DIV/BPS/PER/EPS 완료_000680_20231031_10:34:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:34:30
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:34:30
+kor_stock_fundamental_Postgresql저장_success_20231031_10:34:30
+DIV/BPS/PER/EPS 완료_229640_20231031_10:34:30
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:34:39
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20068.44it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:34:39
+kor_stock_fundamental_Postgresql저장_success_20231031_10:34:39
+DIV/BPS/PER/EPS 완료_108320_20231031_10:34:39
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:34:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:34:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:34:50
+DIV/BPS/PER/EPS 완료_001120_20231031_10:34:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:34:59
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:34:59
+kor_stock_fundamental_Postgresql저장_success_20231031_10:34:59
+DIV/BPS/PER/EPS 완료_108670_20231031_10:34:59
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:35:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:35:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:35:09
+DIV/BPS/PER/EPS 완료_108675_20231031_10:35:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:35:15
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:35:15
+kor_stock_fundamental_Postgresql저장_success_20231031_10:35:15
+DIV/BPS/PER/EPS 완료_383800_20231031_10:35:15
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:35:22
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:35:22
+kor_stock_fundamental_Postgresql저장_success_20231031_10:35:22
+DIV/BPS/PER/EPS 완료_38380K_20231031_10:35:22
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:35:33
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16844.59it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:35:33
+kor_stock_fundamental_Postgresql저장_success_20231031_10:35:33
+DIV/BPS/PER/EPS 완료_023150_20231031_10:35:33
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:35:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:35:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:35:42
+DIV/BPS/PER/EPS 완료_035420_20231031_10:35:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:35:51
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24105.20it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:35:51
+kor_stock_fundamental_Postgresql저장_success_20231031_10:35:51
+DIV/BPS/PER/EPS 완료_181710_20231031_10:35:51
+DIV/BPS/PER/EPS 실패_400760_20231031_10:35:51
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:36:03
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22192.08it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:36:03
+kor_stock_fundamental_Postgresql저장_success_20231031_10:36:03
+DIV/BPS/PER/EPS 완료_005940_20231031_10:36:03
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:36:12
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:36:12
+kor_stock_fundamental_Postgresql저장_success_20231031_10:36:12
+DIV/BPS/PER/EPS 완료_005945_20231031_10:36:12
+DIV/BPS/PER/EPS 실패_338100_20231031_10:36:12
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:36:24
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17772.47it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:36:24
+kor_stock_fundamental_Postgresql저장_success_20231031_10:36:24
+DIV/BPS/PER/EPS 완료_034310_20231031_10:36:24
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:36:33
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22429.43it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:36:33
+kor_stock_fundamental_Postgresql저장_success_20231031_10:36:33
+DIV/BPS/PER/EPS 완료_030190_20231031_10:36:33
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:36:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:36:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:36:42
+DIV/BPS/PER/EPS 완료_008260_20231031_10:36:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:36:51
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:36:51
+kor_stock_fundamental_Postgresql저장_success_20231031_10:36:51
+DIV/BPS/PER/EPS 완료_004250_20231031_10:36:51
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:37:00
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:37:00
+kor_stock_fundamental_Postgresql저장_success_20231031_10:37:00
+DIV/BPS/PER/EPS 완료_004255_20231031_10:37:00
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:37:06
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24966.10it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:37:06
+kor_stock_fundamental_Postgresql저장_success_20231031_10:37:06
+DIV/BPS/PER/EPS 완료_456040_20231031_10:37:06
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:37:15
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23431.87it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:37:15
+kor_stock_fundamental_Postgresql저장_success_20231031_10:37:15
+DIV/BPS/PER/EPS 완료_010060_20231031_10:37:15
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:37:24
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26886.56it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:37:24
+kor_stock_fundamental_Postgresql저장_success_20231031_10:37:24
+DIV/BPS/PER/EPS 완료_178920_20231031_10:37:24
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:37:35
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22919.69it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:37:35
+kor_stock_fundamental_Postgresql저장_success_20231031_10:37:35
+DIV/BPS/PER/EPS 완료_005490_20231031_10:37:35
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:37:44
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17119.61it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:37:44
+kor_stock_fundamental_Postgresql저장_success_20231031_10:37:44
+DIV/BPS/PER/EPS 완료_010950_20231031_10:37:44
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:37:52
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 14926.35it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:37:52
+kor_stock_fundamental_Postgresql저장_success_20231031_10:37:52
+DIV/BPS/PER/EPS 완료_010955_20231031_10:37:52
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:38:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:38:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:38:02
+DIV/BPS/PER/EPS 완료_034120_20231031_10:38:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:38:13
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19328.59it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:38:13
+kor_stock_fundamental_Postgresql저장_success_20231031_10:38:13
+DIV/BPS/PER/EPS 완료_005090_20231031_10:38:13
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:38:23
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19878.22it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:38:23
+kor_stock_fundamental_Postgresql저장_success_20231031_10:38:23
+DIV/BPS/PER/EPS 완료_001380_20231031_10:38:23
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:38:32
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25575.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:38:32
+kor_stock_fundamental_Postgresql저장_success_20231031_10:38:32
+DIV/BPS/PER/EPS 완료_004060_20231031_10:38:32
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:38:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21290.88it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:38:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:38:42
+DIV/BPS/PER/EPS 완료_001770_20231031_10:38:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:38:52
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:38:52
+kor_stock_fundamental_Postgresql저장_success_20231031_10:38:52
+DIV/BPS/PER/EPS 완료_002360_20231031_10:38:52
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:39:01
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:39:01
+kor_stock_fundamental_Postgresql저장_success_20231031_10:39:01
+DIV/BPS/PER/EPS 완료_009160_20231031_10:39:01
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:39:11
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:39:11
+kor_stock_fundamental_Postgresql저장_success_20231031_10:39:11
+DIV/BPS/PER/EPS 완료_123700_20231031_10:39:11
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:39:21
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20867.18it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:39:21
+kor_stock_fundamental_Postgresql저장_success_20231031_10:39:21
+DIV/BPS/PER/EPS 완료_025530_20231031_10:39:21
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:39:31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20971.52it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:39:31
+kor_stock_fundamental_Postgresql저장_success_20231031_10:39:31
+DIV/BPS/PER/EPS 완료_034730_20231031_10:39:31
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:39:40
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11748.75it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:39:40
+kor_stock_fundamental_Postgresql저장_success_20231031_10:39:40
+DIV/BPS/PER/EPS 완료_011790_20231031_10:39:40
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:39:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:39:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:39:50
+DIV/BPS/PER/EPS 완료_018670_20231031_10:39:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:39:59
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:39:59
+kor_stock_fundamental_Postgresql저장_success_20231031_10:39:59
+DIV/BPS/PER/EPS 완료_001740_20231031_10:39:59
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:40:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:40:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:40:09
+DIV/BPS/PER/EPS 완료_006120_20231031_10:40:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:40:19
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:40:19
+kor_stock_fundamental_Postgresql저장_success_20231031_10:40:19
+DIV/BPS/PER/EPS 완료_006125_20231031_10:40:19
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:40:30
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19508.39it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:40:30
+kor_stock_fundamental_Postgresql저장_success_20231031_10:40:30
+DIV/BPS/PER/EPS 완료_210980_20231031_10:40:30
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:40:39
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22671.91it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:40:39
+kor_stock_fundamental_Postgresql저장_success_20231031_10:40:39
+DIV/BPS/PER/EPS 완료_068400_20231031_10:40:39
+DIV/BPS/PER/EPS 실패_395400_20231031_10:40:39
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:40:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25575.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:40:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:40:50
+DIV/BPS/PER/EPS 완료_302440_20231031_10:40:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:40:57
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24672.38it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:40:57
+kor_stock_fundamental_Postgresql저장_success_20231031_10:40:57
+DIV/BPS/PER/EPS 완료_326030_20231031_10:40:57
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:41:03
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:41:03
+kor_stock_fundamental_Postgresql저장_success_20231031_10:41:03
+DIV/BPS/PER/EPS 완료_402340_20231031_10:41:03
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:41:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25731.93it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:41:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:41:09
+DIV/BPS/PER/EPS 완료_361610_20231031_10:41:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:41:19
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16578.28it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:41:19
+kor_stock_fundamental_Postgresql저장_success_20231031_10:41:19
+DIV/BPS/PER/EPS 완료_100090_20231031_10:41:19
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:41:30
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23431.87it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:41:30
+kor_stock_fundamental_Postgresql저장_success_20231031_10:41:30
+DIV/BPS/PER/EPS 완료_03473K_20231031_10:41:30
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:41:39
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26051.58it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:41:39
+kor_stock_fundamental_Postgresql저장_success_20231031_10:41:39
+DIV/BPS/PER/EPS 완료_096770_20231031_10:41:39
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:41:49
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11949.58it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:41:49
+kor_stock_fundamental_Postgresql저장_success_20231031_10:41:49
+DIV/BPS/PER/EPS 완료_096775_20231031_10:41:49
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:41:58
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24244.53it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:41:58
+kor_stock_fundamental_Postgresql저장_success_20231031_10:41:58
+DIV/BPS/PER/EPS 완료_001510_20231031_10:41:58
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:42:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:42:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:42:09
+DIV/BPS/PER/EPS 완료_001515_20231031_10:42:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:42:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:42:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:42:20
+DIV/BPS/PER/EPS 완료_285130_20231031_10:42:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:42:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:42:29
+kor_stock_fundamental_Postgresql저장_success_20231031_10:42:29
+DIV/BPS/PER/EPS 완료_28513K_20231031_10:42:29
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:42:41
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24528.09it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:42:41
+kor_stock_fundamental_Postgresql저장_success_20231031_10:42:41
+DIV/BPS/PER/EPS 완료_017670_20231031_10:42:41
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:42:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:42:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:42:50
+DIV/BPS/PER/EPS 완료_000660_20231031_10:42:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:42:59
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:42:59
+kor_stock_fundamental_Postgresql저장_success_20231031_10:42:59
+DIV/BPS/PER/EPS 완료_003570_20231031_10:42:59
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:43:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18078.90it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:43:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:43:09
+DIV/BPS/PER/EPS 완료_064960_20231031_10:43:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:43:19
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24244.53it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:43:19
+kor_stock_fundamental_Postgresql저장_success_20231031_10:43:19
+DIV/BPS/PER/EPS 완료_100840_20231031_10:43:19
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:43:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25890.77it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:43:29
+kor_stock_fundamental_Postgresql저장_success_20231031_10:43:29
+DIV/BPS/PER/EPS 완료_036530_20231031_10:43:29
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:43:38
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18808.54it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:43:38
+kor_stock_fundamental_Postgresql저장_success_20231031_10:43:38
+DIV/BPS/PER/EPS 완료_005610_20231031_10:43:38
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:43:48
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19972.88it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:43:48
+kor_stock_fundamental_Postgresql저장_success_20231031_10:43:48
+DIV/BPS/PER/EPS 완료_011810_20231031_10:43:48
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:43:53
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25420.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:43:53
+kor_stock_fundamental_Postgresql저장_success_20231031_10:43:53
+DIV/BPS/PER/EPS 완료_465770_20231031_10:43:53
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:44:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23172.95it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:44:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:44:02
+DIV/BPS/PER/EPS 완료_077970_20231031_10:44:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:44:15
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20971.52it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:44:15
+kor_stock_fundamental_Postgresql저장_success_20231031_10:44:15
+DIV/BPS/PER/EPS 완료_071970_20231031_10:44:15
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:44:24
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:44:24
+kor_stock_fundamental_Postgresql저장_success_20231031_10:44:24
+DIV/BPS/PER/EPS 완료_002820_20231031_10:44:24
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:44:34
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:44:34
+kor_stock_fundamental_Postgresql저장_success_20231031_10:44:34
+DIV/BPS/PER/EPS 완료_084870_20231031_10:44:34
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:44:44
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16578.28it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:44:44
+kor_stock_fundamental_Postgresql저장_success_20231031_10:44:44
+DIV/BPS/PER/EPS 완료_002710_20231031_10:44:44
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:44:54
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:44:54
+kor_stock_fundamental_Postgresql저장_success_20231031_10:44:54
+DIV/BPS/PER/EPS 완료_069260_20231031_10:44:54
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:45:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:45:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:45:02
+DIV/BPS/PER/EPS 완료_002900_20231031_10:45:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:45:15
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22310.13it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:45:15
+kor_stock_fundamental_Postgresql저장_success_20231031_10:45:15
+DIV/BPS/PER/EPS 완료_024070_20231031_10:45:15
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:45:25
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23831.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:45:25
+kor_stock_fundamental_Postgresql저장_success_20231031_10:45:25
+DIV/BPS/PER/EPS 완료_037270_20231031_10:45:25
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:45:35
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24966.10it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:45:35
+kor_stock_fundamental_Postgresql저장_success_20231031_10:45:35
+DIV/BPS/PER/EPS 완료_000500_20231031_10:45:35
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:45:44
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25731.93it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:45:44
+kor_stock_fundamental_Postgresql저장_success_20231031_10:45:44
+DIV/BPS/PER/EPS 완료_000860_20231031_10:45:44
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:45:54
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:45:54
+kor_stock_fundamental_Postgresql저장_success_20231031_10:45:54
+DIV/BPS/PER/EPS 완료_035250_20231031_10:45:54
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:46:04
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:46:04
+kor_stock_fundamental_Postgresql저장_success_20231031_10:46:04
+DIV/BPS/PER/EPS 완료_011420_20231031_10:46:04
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:46:13
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23172.95it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:46:13
+kor_stock_fundamental_Postgresql저장_success_20231031_10:46:13
+DIV/BPS/PER/EPS 완료_002100_20231031_10:46:13
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:46:23
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:46:23
+kor_stock_fundamental_Postgresql저장_success_20231031_10:46:23
+DIV/BPS/PER/EPS 완료_009450_20231031_10:46:23
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:46:34
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:46:34
+kor_stock_fundamental_Postgresql저장_success_20231031_10:46:34
+DIV/BPS/PER/EPS 완료_267290_20231031_10:46:34
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:46:43
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25115.59it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:46:43
+kor_stock_fundamental_Postgresql저장_success_20231031_10:46:43
+DIV/BPS/PER/EPS 완료_012320_20231031_10:46:43
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:46:53
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24966.10it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:46:53
+kor_stock_fundamental_Postgresql저장_success_20231031_10:46:53
+DIV/BPS/PER/EPS 완료_000050_20231031_10:46:53
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:47:03
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23431.87it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:47:03
+kor_stock_fundamental_Postgresql저장_success_20231031_10:47:03
+DIV/BPS/PER/EPS 완료_214390_20231031_10:47:03
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:47:12
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:47:12
+kor_stock_fundamental_Postgresql저장_success_20231031_10:47:12
+DIV/BPS/PER/EPS 완료_012610_20231031_10:47:12
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:47:21
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20971.52it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:47:21
+kor_stock_fundamental_Postgresql저장_success_20231031_10:47:21
+DIV/BPS/PER/EPS 완료_009140_20231031_10:47:21
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:47:31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24244.53it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:47:31
+kor_stock_fundamental_Postgresql저장_success_20231031_10:47:31
+DIV/BPS/PER/EPS 완료_013580_20231031_10:47:31
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:47:41
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25420.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:47:41
+kor_stock_fundamental_Postgresql저장_success_20231031_10:47:41
+DIV/BPS/PER/EPS 완료_012200_20231031_10:47:41
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:47:50
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31536.12it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:47:50
+kor_stock_fundamental_Postgresql저장_success_20231031_10:47:50
+DIV/BPS/PER/EPS 완료_012205_20231031_10:47:50
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:48:00
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 14665.40it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:48:00
+kor_stock_fundamental_Postgresql저장_success_20231031_10:48:00
+DIV/BPS/PER/EPS 완료_002140_20231031_10:48:00
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:48:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24818.37it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:48:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:48:09
+DIV/BPS/PER/EPS 완료_010130_20231031_10:48:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:48:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8630.26it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:48:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:48:20
+DIV/BPS/PER/EPS 완료_002240_20231031_10:48:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:48:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21732.15it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:48:29
+kor_stock_fundamental_Postgresql저장_success_20231031_10:48:29
+DIV/BPS/PER/EPS 완료_009290_20231031_10:48:29
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:48:40
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17260.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:48:40
+kor_stock_fundamental_Postgresql저장_success_20231031_10:48:40
+DIV/BPS/PER/EPS 완료_017040_20231031_10:48:40
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:48:49
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22550.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:48:49
+kor_stock_fundamental_Postgresql저장_success_20231031_10:48:49
+DIV/BPS/PER/EPS 완료_017900_20231031_10:48:49
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:49:00
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10979.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:49:00
+kor_stock_fundamental_Postgresql저장_success_20231031_10:49:00
+DIV/BPS/PER/EPS 완료_037710_20231031_10:49:00
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:49:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20763.88it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:49:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:49:09
+DIV/BPS/PER/EPS 완료_030610_20231031_10:49:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:49:17
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:49:17
+kor_stock_fundamental_Postgresql저장_success_20231031_10:49:17
+DIV/BPS/PER/EPS 완료_339770_20231031_10:49:17
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:49:26
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:49:26
+kor_stock_fundamental_Postgresql저장_success_20231031_10:49:26
+DIV/BPS/PER/EPS 완료_007690_20231031_10:49:26
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:49:36
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:49:36
+kor_stock_fundamental_Postgresql저장_success_20231031_10:49:36
+DIV/BPS/PER/EPS 완료_005320_20231031_10:49:36
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:49:46
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20164.92it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:49:46
+kor_stock_fundamental_Postgresql저장_success_20231031_10:49:46
+DIV/BPS/PER/EPS 완료_001140_20231031_10:49:46
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:49:55
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24966.10it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:49:55
+kor_stock_fundamental_Postgresql저장_success_20231031_10:49:55
+DIV/BPS/PER/EPS 완료_002720_20231031_10:49:55
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:50:05
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26051.58it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:50:05
+kor_stock_fundamental_Postgresql저장_success_20231031_10:50:05
+DIV/BPS/PER/EPS 완료_083420_20231031_10:50:05
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:50:16
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21076.90it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:50:16
+kor_stock_fundamental_Postgresql저장_success_20231031_10:50:16
+DIV/BPS/PER/EPS 완료_014530_20231031_10:50:16
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:50:25
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:50:25
+kor_stock_fundamental_Postgresql저장_success_20231031_10:50:25
+DIV/BPS/PER/EPS 완료_014280_20231031_10:50:25
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:50:34
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:50:34
+kor_stock_fundamental_Postgresql저장_success_20231031_10:50:34
+DIV/BPS/PER/EPS 완료_014285_20231031_10:50:34
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:50:43
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17260.51it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:50:43
+kor_stock_fundamental_Postgresql저장_success_20231031_10:50:43
+DIV/BPS/PER/EPS 완료_008870_20231031_10:50:43
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:50:53
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:50:53
+kor_stock_fundamental_Postgresql저장_success_20231031_10:50:53
+DIV/BPS/PER/EPS 완료_001570_20231031_10:50:53
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:51:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:51:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:51:02
+DIV/BPS/PER/EPS 완료_002990_20231031_10:51:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:51:11
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22192.08it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:51:11
+kor_stock_fundamental_Postgresql저장_success_20231031_10:51:11
+DIV/BPS/PER/EPS 완료_002995_20231031_10:51:11
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:51:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17050.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:51:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:51:20
+DIV/BPS/PER/EPS 완료_011780_20231031_10:51:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:51:30
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:51:30
+kor_stock_fundamental_Postgresql저장_success_20231031_10:51:30
+DIV/BPS/PER/EPS 완료_011785_20231031_10:51:30
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:51:40
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22075.28it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:51:40
+kor_stock_fundamental_Postgresql저장_success_20231031_10:51:40
+DIV/BPS/PER/EPS 완료_214330_20231031_10:51:40
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:51:52
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18558.87it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:51:52
+kor_stock_fundamental_Postgresql저장_success_20231031_10:51:52
+DIV/BPS/PER/EPS 완료_001210_20231031_10:51:52
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:52:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21183.35it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:52:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:52:02
+DIV/BPS/PER/EPS 완료_073240_20231031_10:52:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:52:12
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25420.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:52:12
+kor_stock_fundamental_Postgresql저장_success_20231031_10:52:12
+DIV/BPS/PER/EPS 완료_092440_20231031_10:52:12
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:52:23
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25731.93it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:52:23
+kor_stock_fundamental_Postgresql저장_success_20231031_10:52:23
+DIV/BPS/PER/EPS 완료_000270_20231031_10:52:23
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:52:33
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10305.42it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:52:33
+kor_stock_fundamental_Postgresql저장_success_20231031_10:52:33
+DIV/BPS/PER/EPS 완료_024110_20231031_10:52:33
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:52:42
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:52:42
+kor_stock_fundamental_Postgresql저장_success_20231031_10:52:42
+DIV/BPS/PER/EPS 완료_013700_20231031_10:52:42
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:52:51
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:52:51
+kor_stock_fundamental_Postgresql저장_success_20231031_10:52:51
+DIV/BPS/PER/EPS 완료_004540_20231031_10:52:51
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:53:01
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:53:01
+kor_stock_fundamental_Postgresql저장_success_20231031_10:53:01
+DIV/BPS/PER/EPS 완료_004545_20231031_10:53:01
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:53:11
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:53:11
+kor_stock_fundamental_Postgresql저장_success_20231031_10:53:11
+DIV/BPS/PER/EPS 완료_001260_20231031_10:53:11
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:53:20
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:53:20
+kor_stock_fundamental_Postgresql저장_success_20231031_10:53:20
+DIV/BPS/PER/EPS 완료_008350_20231031_10:53:20
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:53:30
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16912.52it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:53:30
+kor_stock_fundamental_Postgresql저장_success_20231031_10:53:30
+DIV/BPS/PER/EPS 완료_008355_20231031_10:53:30
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:53:40
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:53:40
+kor_stock_fundamental_Postgresql저장_success_20231031_10:53:40
+DIV/BPS/PER/EPS 완료_004270_20231031_10:53:40
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:53:49
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22919.69it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:53:49
+kor_stock_fundamental_Postgresql저장_success_20231031_10:53:49
+DIV/BPS/PER/EPS 완료_003920_20231031_10:53:49
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:53:58
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25575.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:53:58
+kor_stock_fundamental_Postgresql저장_success_20231031_10:53:58
+DIV/BPS/PER/EPS 완료_003925_20231031_10:53:58
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:54:09
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:54:09
+kor_stock_fundamental_Postgresql저장_success_20231031_10:54:09
+DIV/BPS/PER/EPS 완료_025860_20231031_10:54:09
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:54:18
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21076.90it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:54:18
+kor_stock_fundamental_Postgresql저장_success_20231031_10:54:18
+DIV/BPS/PER/EPS 완료_005720_20231031_10:54:18
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:54:28
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24818.37it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:54:28
+kor_stock_fundamental_Postgresql저장_success_20231031_10:54:28
+DIV/BPS/PER/EPS 완료_005725_20231031_10:54:28
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:54:38
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20460.02it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:54:38
+kor_stock_fundamental_Postgresql저장_success_20231031_10:54:38
+DIV/BPS/PER/EPS 완료_002350_20231031_10:54:38
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:54:46
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:54:46
+kor_stock_fundamental_Postgresql저장_success_20231031_10:54:46
+DIV/BPS/PER/EPS 완료_002355_20231031_10:54:46
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:54:52
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:54:52
+kor_stock_fundamental_Postgresql저장_success_20231031_10:54:52
+DIV/BPS/PER/EPS 완료_092790_20231031_10:54:52
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:55:02
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:55:02
+kor_stock_fundamental_Postgresql저장_success_20231031_10:55:02
+DIV/BPS/PER/EPS 완료_251270_20231031_10:55:02
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:55:12
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24385.49it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:55:12
+kor_stock_fundamental_Postgresql저장_success_20231031_10:55:12
+DIV/BPS/PER/EPS 완료_090350_20231031_10:55:12
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:55:21
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26051.58it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:55:21
+kor_stock_fundamental_Postgresql저장_success_20231031_10:55:21
+DIV/BPS/PER/EPS 완료_090355_20231031_10:55:21
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:55:31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:55:31
+kor_stock_fundamental_Postgresql저장_success_20231031_10:55:31
+DIV/BPS/PER/EPS 완료_000320_20231031_10:55:31
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:55:41
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23967.45it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:55:41
+kor_stock_fundamental_Postgresql저장_success_20231031_10:55:41
+DIV/BPS/PER/EPS 완료_000325_20231031_10:55:41
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:55:51
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17403.75it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:55:51
+kor_stock_fundamental_Postgresql저장_success_20231031_10:55:51
+DIV/BPS/PER/EPS 완료_006280_20231031_10:55:51
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:56:01
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20164.92it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:56:01
+kor_stock_fundamental_Postgresql저장_success_20231031_10:56:01
+DIV/BPS/PER/EPS 완료_005250_20231031_10:56:01
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:56:10
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24105.20it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:56:10
+kor_stock_fundamental_Postgresql저장_success_20231031_10:56:10
+DIV/BPS/PER/EPS 완료_005257_20231031_10:56:10
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:56:19
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
+kor_stock_fundamental_빅쿼리저장_success_20231031_10:56:19
+kor_stock_fundamental_Postgresql저장_success_20231031_10:56:19
+DIV/BPS/PER/EPS 완료_004370_20231031_10:56:19
+kor_stock_fundamental_로컬CSV저장_success_20231031_10:56:29
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]

@@ -123,84 +123,9 @@ now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")  
 
 file_name = 'kor_ticker_list'
-upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line)
+# upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line)
 kor_ticker_list = kor_ticker_list_df['ticker']
 
-
-# 주가 정보
-print('주가정보 시작')
-file_name = 'kor_stock_ohlcv'
-
-for ticker_nm in kor_ticker_list:
-    time.sleep(1)
-    try:
-        df_raw = stock.get_market_ohlcv(start_date1, today_date1, ticker_nm)
-        df_raw = df_raw.reset_index()
-        # df_raw['날짜'] = today_date2
-        df_raw['티커'] = ticker_nm
-        df_raw = df_raw[['날짜', '시가', '고가', '저가', '종가', '거래량', '등락률', '티커']]
-        df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_change_percentage', 'ticker']
-
-        df_raw['date'] = pd.to_datetime(df_raw['date'])
-
-
-        now1 = datetime.now()
-        time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-
-        upload_df(df_raw, file_name, project_id, dataset_id, time_line)
-        print(f'주가정보 완료_{ticker_nm}_{time_line}')
-    except:
-        print(f'주가정보 실패_{ticker_nm}_{time_line}')
-
-print(f'시가총액 시작')
-file_name = 'kor_market_cap'
-for ticker_nm in kor_ticker_list:
-    time.sleep(1)
-    try:
-        df_raw = stock.get_market_cap(start_date1, today_date1, ticker_nm)
-        df_raw = df_raw.reset_index()
-        # df_raw['날짜'] = today_date2
-        df_raw['티커'] = ticker_nm
-        df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장주식수', '티커']]
-        df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
-        df_raw['date'] = pd.to_datetime(df_raw['date'])
-
-
-        now1 = datetime.now()
-        time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-
-        upload_df(df_raw, file_name, project_id, dataset_id, time_line)
-        print(f'시가총액 완료_{ticker_nm}_{time_line}')
-    except:
-        print(f'시가총액 실패_{ticker_nm}_{time_line}')
-      
-
-
-
-# DIV/BPS/PER/EPS 조회
-print(f'DIV/BPS/PER/EPS 시작')
-file_name = 'kor_stock_fundamental'
-for ticker_nm in kor_ticker_list:
-    time.sleep(1)
-    try:
-        df_raw = stock.get_market_fundamental(start_date1, today_date1, ticker_nm)
-        df_raw = df_raw.reset_index()
-        # df_raw['날짜'] = today_date2
-        df_raw['티커'] = ticker_nm
-        df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
-        df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
-        df_raw['date'] = pd.to_datetime(df_raw['date'])
-        
-        now1 = datetime.now()
-        time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-        
-        upload_df(df_raw, file_name, project_id, dataset_id, time_line)
-        print(f'DIV/BPS/PER/EPS 완료_{ticker_nm}_{time_line}')
-    except:
-        print(f'DIV/BPS/PER/EPS 실패_{ticker_nm}_{time_line}')
-      
-      
-    
 
 # # 인덱스 정보
 print(f'인덱스 정보 시작')
