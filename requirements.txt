@@ -4,11 +4,19 @@ plotly
 ta
 
 
+finance-datareader
+psycopg2
+sqlalchemy
+pykrx
+
+bs4
+pandas-gbq
+google-cloud-bigquery
+google-cloud-storage
+
+
 gcsfs
 s3fs
 git+https://github.com/streamlit/files-connection
-
-google-cloud-bigquery
-pandas-gbq
 
 
