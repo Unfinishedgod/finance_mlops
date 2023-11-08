@@ -36,21 +36,21 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owen-403216'
+project_id = 'owen-404302'
 dataset_id = 'finance_mlops'
 
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
-bucket_name = 'finance-mlops-owen'     # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-proj'     # 서비스 계정 생성한 bucket 이름 입력
 
-# Postgresql 연결
-db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
-username = db_connect_info['username'][0]
-password = db_connect_info['password'][0]
-host = db_connect_info['host'][0]
-database = db_connect_info['database'][0]
-engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
+# # Postgresql 연결
+# db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
+# username = db_connect_info['username'][0]
+# password = db_connect_info['password'][0]
+# host = db_connect_info['host'][0]
+# database = db_connect_info['database'][0]
+# engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
 
 
 
@@ -58,7 +58,7 @@ now = datetime.now()
 # now = now + timedelta(days=-2)
 today_date1 = now.strftime('%Y%m%d')
 start_date1 = '20180101'
-today_date1 = '20231030'
+today_date1 = '20231031'
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
@@ -76,30 +76,30 @@ def upload_df(data, file_name, project_id, dataset_id, time_line):
         print(f'{file_name}_로컬CSV저장_fail_{time_line}')
     
     
-    # Google Storage 적재
-    source_file_name = f'data_crawler/{file_name}/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
-    destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
-    bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob(destination_blob_name)
-    blob.upload_from_filename(source_file_name)      
-    
-    try:
-        # 빅쿼리 데이터 적재
-        data.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
-          project_id=project_id,
-          if_exists='append',
-          credentials=credentials)
-        print(f'{file_name}_빅쿼리저장_success_{time_line}')    
-    except:
-        print(f'{file_name}_빅쿼리저장_fail_{time_line}')  
-    
-    
-    try:
-        # Postgresql 적재
-        data.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
-        print(f'{file_name}_Postgresql저장_success_{time_line}')    
-    except:
-        print(f'{file_name}_Postgresql저장_fail_{time_line}')
+    # # Google Storage 적재
+    # source_file_name = f'data_crawler/{file_name}/{file_name}.csv'    # GCP에 업로드할 파일 절대경로
+    # destination_blob_name = f'data_crawler/{file_name}/{file_name}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
+    # bucket = storage_client.bucket(bucket_name)
+    # blob = bucket.blob(destination_blob_name)
+    # blob.upload_from_filename(source_file_name)      
+    # 
+    # try:
+    #     # 빅쿼리 데이터 적재
+    #     data.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+    #       project_id=project_id,
+    #       if_exists='append',
+    #       credentials=credentials)
+    #     print(f'{file_name}_빅쿼리저장_success_{time_line}')    
+    # except:
+    #     print(f'{file_name}_빅쿼리저장_fail_{time_line}')  
+    # 
+    # 
+    # try:
+    #     # Postgresql 적재
+    #     data.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
+    #     print(f'{file_name}_Postgresql저장_success_{time_line}')    
+    # except:
+    #     print(f'{file_name}_Postgresql저장_fail_{time_line}')
 
 # # 주식 정보
 
