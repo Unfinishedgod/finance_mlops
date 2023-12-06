@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# import functions_framework
-
+import functions_framework
 import pandas as pd
 import pandas_gbq
 from pykrx import stock
@@ -111,11 +110,11 @@ df_raw['date'] = pd.to_datetime(df_raw['date'])
 now1 = datetime.now()
 
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+# upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
 
 
 
-# @functions_framework.http
+@functions_framework.http
 def hello_http(request):
     """HTTP Cloud Function.
     Args:

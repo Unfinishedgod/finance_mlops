@@ -5,7 +5,7 @@ sqlalchemy
 pykrx
 plotly
 
-
+flask
 
 bs4
 pandas-gbq
