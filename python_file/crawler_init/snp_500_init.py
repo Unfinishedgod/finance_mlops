@@ -36,7 +36,7 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owen-403216'
+project_id = 'owen-404302'
 dataset_id = 'finance_mlops'
 
 
@@ -44,7 +44,7 @@ dataset_id = 'finance_mlops'
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
-bucket_name = 'finance-mlops-owen'     # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-proj'     # 서비스 계정 생성한 bucket 이름 입력
 
 
 # Postgresql 연결
@@ -101,7 +101,7 @@ def upload_df(data, file_name, project_id, dataset_id, time_line):
 now = datetime.now()
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = '2017-01-01'
-today_date2 = '2023-10-29'
+today_date2 = '2023-12-05'
 
 # ## S&P 500 종목 리스트
 snp500 = fdr.StockListing('S&P500')
@@ -137,7 +137,7 @@ for ticker_nm in sp500_ticker_list:
 
 # ## 비트코인
 # df_raw = fdr.DataReader('BTC/KRW', "2016-01-01",today_date2)
-df_raw = fdr.DataReader('BTC/KRW', "2016-01-01","2023-10-29")
+df_raw = fdr.DataReader('BTC/KRW', "2016-01-01","2023-12-05")
 df_raw = df_raw.reset_index()
 df_raw.columns = ['date', 'open','high','low','close','adj_close','colume']
 
@@ -150,7 +150,7 @@ upload_df(df_raw, file_name, project_id, dataset_id, time_line)
 
 # ### 환율
 # df_raw = fdr.DataReader('USD/KRW', "2016-01-01",today_date2)
-df_raw = fdr.DataReader('USD/KRW', "2016-01-01","2023-10-30")
+df_raw = fdr.DataReader('USD/KRW', "2016-01-01","2023-12-5")
 df_raw = df_raw.reset_index()
 df_raw.columns = ['date', 'open','high','low','close','adj_close','colume']
 
