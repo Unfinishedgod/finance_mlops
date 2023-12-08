@@ -26,7 +26,7 @@ from google.cloud import storage
 
 
 # 경로 변경
-os.chdir('/home/shjj08choi/finance_mlops')
+os.chdir('/home/shjj08choi4/finance_mlops')
 
 
 # 서비스 계정 키 JSON 파일 경로
@@ -36,13 +36,13 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owen-403216'
+project_id = 'owen-404302'
 dataset_id = 'finance_mlops'
 
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials, 
                          project = credentials.project_id)
-bucket_name = 'finance-mlops-owen'     # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-proj'     # 서비스 계정 생성한 bucket 이름 입력
 
 # Postgresql 연결
 db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
@@ -58,7 +58,7 @@ now = datetime.now()
 # now = now + timedelta(days=-2)
 today_date1 = now.strftime('%Y%m%d')
 start_date1 = '20180101'
-today_date1 = '20231030'
+today_date1 = '20231130'
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
@@ -131,7 +131,7 @@ kor_ticker_list = kor_ticker_list_df['ticker']
 print(f'DIV/BPS/PER/EPS 시작')
 file_name = 'kor_stock_fundamental'
 for ticker_nm in kor_ticker_list:
-    # time.sleep(1)
+    time.sleep(1)
     try:
         df_raw = stock.get_market_fundamental(start_date1, today_date1, ticker_nm)
         df_raw = df_raw.reset_index()
