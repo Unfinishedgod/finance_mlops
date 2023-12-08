@@ -26,7 +26,7 @@ from google.cloud import storage
 
 
 # 경로 변경
-os.chdir('/home/shjj08choi4/finance_mlops')
+os.chdir('/home/shjj08choi/finance_mlops')
 
 
 # 서비스 계정 키 JSON 파일 경로
@@ -36,13 +36,13 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owenchoi-404302'
+project_id = 'owenchoi-403216'
 dataset_id = 'finance_mlops'
 
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials,
                          project = credentials.project_id)
-bucket_name = 'finance-mlops-proj'    # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-owen'    # 서비스 계정 생성한 bucket 이름 입력
 
 # Postgresql 연결
 db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
@@ -60,7 +60,7 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-print(f'{today_date2} pykrx_crawler Start')
+print(f'{today_date2} pykrx_index_crawler Start')
 
 def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
     if not os.path.exists(f'data_crawler/{file_name}'):
@@ -123,61 +123,139 @@ now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
 file_name = 'kor_ticker_list'
-upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
+# upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
 kor_ticker_list = kor_ticker_list_df['ticker']
 
 
-# 주가 정보
-print('주가정보 시작')
-df_raw = stock.get_market_ohlcv(today_date1,  market="ALL")
-df_raw = df_raw.reset_index()
-df_raw['날짜'] = today_date2
-df_raw = df_raw[['날짜', '시가', '고가', '저가', '종가', '거래량', '등락률', '티커']]
-df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_change_percentage', 'ticker']
+# # 인덱스 정보
+print(f'인덱스 정보 시작')
+kor_index_list_df = pd.DataFrame()
+market_list = ['KOSPI', 'KOSDAQ']
 
-df_raw['date'] = pd.to_datetime(df_raw['date'])
+for market_nm in market_list:
+    kor_index_list = stock.get_index_ticker_list(market=market_nm)
+    for index_codes in kor_index_list:
+        index_name = stock.get_index_ticker_name(index_codes)
+        df = pd.DataFrame({'index_code':index_codes,
+                           'index_code_nm':index_name,
+                           'market': market_nm
+                          }, index = [0])
+        kor_index_list_df = pd.concat([kor_index_list_df,df])
 
-file_name = 'kor_stock_ohlcv'
+kor_index_list_df = kor_index_list_df.reset_index(drop = True)
+
+file_name = 'kor_index_list_df'
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+upload_df(kor_index_list_df, file_name, project_id, dataset_id, time_line, today_date1)
+
+
+
+print(f'인덱스 정보 시작')
+
+kor_index_code_list  = kor_index_list_df['index_code']
+
+
+# ## 인덱스 OHLCV 조회
+print(f'인덱스 OHLCV 시작')
+
+file_name = 'kor_index_ohlcv'
+df_raw_total = pd.DataFrame()
+
+for index_code in kor_index_code_list:
+    now1 = datetime.now()
+    time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+    time.sleep(1)
+    try:
+        df_raw = stock.get_index_ohlcv(today_date1, today_date1, index_code)
+        df_raw = df_raw.reset_index()
+        df_raw['index_code'] = index_code
+        df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'trading_value', 'market_cap', 'index_code']
+        df_raw_total = pd.concat([df_raw_total,df_raw])
+
+        print(f'{file_name}_{index_code}_데이터수집_success_{time_line}')
+    except:
+        print(f'{file_name}_{index_code}_데이터수집_fail')
+
+df_raw_total['date'] = pd.to_datetime(df_raw_total['date'])
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-print(f'주가정보 완료_{time_line}')
+upload_df(df_raw_total, file_name, project_id, dataset_id, time_line, today_date1)
+
+print(f'인덱스 OHLCV 완료_{time_line}')
 
 
-print(f'시가총액 시작')
-df_raw = stock.get_market_cap(today_date1,  market="ALL")
-df_raw = df_raw.reset_index()
-df_raw['날짜'] = today_date2
-df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장주식수', '티커']]
-df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
-df_raw['date'] = pd.to_datetime(df_raw['date'])
-
-file_name = 'kor_market_cap'
-
-now1 = datetime.now()
-time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-print(f'시가총액 완료_{time_line}')
 
 
-# DIV/BPS/PER/EPS 조회
-print(f'DIV/BPS/PER/EPS 시작')
+# 인덱스 등락률
+print(f'인덱스 등락률 시작')
+file_name = 'kor_index_code_fundamental'
+df_raw_total = pd.DataFrame()
 
-df_raw = stock.get_market_fundamental(today_date1, market='ALL')
-df_raw = df_raw.reset_index()
-df_raw['날짜'] = today_date2
-df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
-df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
-df_raw['date'] = pd.to_datetime(df_raw['date'])
+for index_code in kor_index_code_list:
+    now1 = datetime.now()
+    time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+    time.sleep(1)
+    try:
+        df_raw = stock.get_index_fundamental(today_date1, today_date1, index_code)
+        df_raw = df_raw.reset_index()
+        df_raw['index_code'] = index_code
+        df_raw.columns = ['date', 'close', 'price_change_percentage', 'per', 'porward_per', 'pbr', 'dividend_yield', 'index_code']
+        df_raw_total = pd.concat([df_raw_total,df_raw])
+        print(f'{file_name}_{index_code}_데이터수집_success_{time_line}')
+    except:
+        print(f'{file_name}_{index_code}_데이터수집_fail')
 
-file_name = 'kor_stock_fundamental'
+df_raw_total['date'] = pd.to_datetime(df_raw_total['date'])
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+upload_df(df_raw_total, file_name, project_id, dataset_id, time_line, today_date1)
 
-print(f'DIV/BPS/PER/EPS 완료_{time_line}')
+print(f'인덱스 등락률 완료_{time_line}')
+
+
+
+
+# 인덱스 구성 종목
+print(f'인덱스 구성 종목 시작')
+
+index_code_info = pd.DataFrame()
+for index_code in kor_index_code_list:
+    time.sleep(1)
+    pdf = stock.get_index_portfolio_deposit_file(str(index_code))
+    df = pd.DataFrame({'ticker':pdf,
+                       'index_code': str(index_code)})
+    index_code_info = pd.concat([index_code_info, df])
+index_code_info = index_code_info.reset_index(drop = True)
+
+
+index_code_info_2  = pd.merge(index_code_info, kor_index_list_df,
+        how = 'left',
+        on = 'index_code')
+
+
+# kor_ticker_list_df = pd.read_csv(f'data_crawler/kor_ticker_list.csv')
+
+index_code_master  = pd.merge(index_code_info_2, kor_ticker_list_df[['ticker','corp_name']],
+        how = 'left',
+        on = 'ticker')
+
+file_name = 'index_code_master'
+
+
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+
+upload_df(index_code_master, file_name, project_id, dataset_id, time_line, today_date1)
+
+print(f'인덱스 구성 종목 완료_{time_line}')
+
+
+
+
