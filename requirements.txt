@@ -5,7 +5,7 @@ ta
 
 
 finance-datareader
-psycopg2
+psycopg2-binary
 sqlalchemy
 pykrx
 
