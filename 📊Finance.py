@@ -47,7 +47,7 @@ today_date2 = now.strftime('%Y-%m-%d')
 # kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv', dtype = {'ticker': object})
 # kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df.csv')
 
-conn = st.experimental_connection('gcs', type=FilesConnection)
+conn = st.connection('gcs', type=FilesConnection)
 kor_index_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv", 
                       input_format="csv", ttl=600)
                       

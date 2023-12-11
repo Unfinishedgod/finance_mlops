@@ -29,8 +29,8 @@ with open('style.css') as f:
 
 
 
-conn = st.experimental_connection('gcs', type=FilesConnection)
-bitcoin_df = conn.read("finance-mlops-owen/data_crawler/bitcoin/bitcoin.csv", 
+conn = st.connection('gcs', type=FilesConnection)
+bitcoin_df = conn.read("finance-mlops-proj/data_crawler/bitcoin/bitcoin.csv", 
                       input_format="csv", ttl=600)
 
 

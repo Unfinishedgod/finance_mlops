@@ -36,11 +36,11 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
-conn = st.experimental_connection('gcs', type=FilesConnection)
-# kor_stock_ohlcv = conn.read("finance-mlops-1/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv",
+conn = st.connection('gcs', type=FilesConnection)
+# kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_20230825.csv",
 #                       input_format="csv", ttl=600)
 #                       
-kor_ticker_list = conn.read("finance-mlops-1/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv",
+kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor_ticker_list_20230825.csv",
                       input_format="csv", ttl=600)
 
 kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSPI']
@@ -53,7 +53,7 @@ option = st.selectbox(
 st.write('You selected:', option)
 
 ticker_nm = '095570'
-df_raw = conn.read(f"finance-mlops-1/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
+df_raw = conn.read(f"finance-mlops-proj/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
                       input_format="csv", ttl=600)                      
 
 # ticker_nm = '005930'

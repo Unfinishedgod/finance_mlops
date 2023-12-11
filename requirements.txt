@@ -2,13 +2,6 @@ pandas== 2.1.0
 plotly
 
 ta
-
-
-finance-datareader
-psycopg2-binary
-sqlalchemy
-pykrx
-
 bs4
 pandas-gbq
 google-cloud-bigquery
