@@ -6,6 +6,9 @@ import plotly.graph_objects as go
 import json
 from plotly.subplots import make_subplots
 
+import functional
+from ta.trend import MACD 
+from ta.momentum import StochasticOscillator 
 # import math
 
 import streamlit as st
@@ -20,10 +23,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-
 
 
 # kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv', dtype = {'ticker': object})
@@ -34,31 +36,35 @@ with open('style.css') as f:
 # kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list.csv')
 
 conn = st.connection('gcs', type=FilesConnection)
-kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv", 
+kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv",
+                      input_format="csv", ttl=600)
+
+kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor_ticker_list.csv",
                       input_format="csv", ttl=600)
                       
-kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor_ticker_list.csv", 
+kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fundamental/kor_stock_fundamental.csv",
                       input_format="csv", ttl=600)
 
 
 
-llkor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
-kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
-kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
-kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
 
+# kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
+# kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
+# kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
+# kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
+# 
 # kor_stock_ohlcv = kor_stock_ohlcv[kor_stock_ohlcv['date'] > '2023-01-15']
+# 
+# 
+# 
+# # df1 = kor_stock_ohlcv[kor_stock_ohlcv['date'] == '2023-07-21']
+# df1 = pd.merge(kor_stock_ohlcv, kor_ticker_list, 
+#         on = 'ticker', 
+#         how = 'left')
+#         
 
-
-
-# df1 = kor_stock_ohlcv[kor_stock_ohlcv['date'] == '2023-07-21']
-df1 = pd.merge(kor_stock_ohlcv, kor_ticker_list, 
-        on = 'ticker', 
-        how = 'left')
-        
-df1 = df1[df1['market'] == 'KOSDAQ']
-
-ticker_list = df1['corp_name'].unique()
+kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSDAQ']
+ticker_list = kor_ticker_list['ticker'].unique()
 
 option = st.selectbox(
     'How would you like to be contacted?',
@@ -68,144 +74,45 @@ st.write('You selected:', option)
 
 
 ticker_nm = '095570'
-        
-# kor_stock_ohlcv_095570_total = df1[df1['ticker'] == ticker_nm]
-kor_stock_ohlcv_095570_total = df1[df1['corp_name'] == option]
+
+kor_stock_fundamental_total = kor_stock_fundamental[kor_stock_fundamental['ticker'] == option].reset_index()
 
 
 
-# fig = make_subplots(rows=4, cols=1, shared_xaxes=True)
-# fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5,0.1,0.2,0.2])
-fig = make_subplots(rows=2, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.7,0.3])
-# Plot OHLC on 1st subplot (using the codes from before)
-# Plot volume trace on 2nd row
-fig.add_trace(go.Candlestick(
-        x=kor_stock_ohlcv_095570_total['date'],
-        open=kor_stock_ohlcv_095570_total['open'],
-        high=kor_stock_ohlcv_095570_total['high'],
-        low=kor_stock_ohlcv_095570_total['low'],
-        close=kor_stock_ohlcv_095570_total['close'],
-        increasing_line_color= 'red', decreasing_line_color= 'blue')
-, row=1, col=1)
+# kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-proj/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
+#                       input_format="csv", ttl=600)
 
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA5'],
-                         opacity=0.7,
-                         line=dict(color='blue', width=2),
-                         name='MA 5'))
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA20'],
-                         opacity=0.7,
-                         line=dict(color='orange', width=2),
-                         name='MA 20'))
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA60'],
-                         opacity=0.7,
-                         line=dict(color='green', width=2),
-                         name='MA 60'))
-fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-                         y=kor_stock_ohlcv_095570_total['MA120'],
-                         opacity=0.7,
-                         line=dict(color='yellow', width=2),
-                         name='MA 120'))                         
-                         
-
-fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
-
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'], y=kor_stock_ohlcv_095570_total['close']), row=2, col=1)
+kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == option].reset_index()
 
 
+kor_stock_ohlcv_095570_total['MA5'] = kor_stock_ohlcv_095570_total['close'].rolling(window=5).mean()
+kor_stock_ohlcv_095570_total['MA20'] = kor_stock_ohlcv_095570_total['close'].rolling(window=20).mean()
+kor_stock_ohlcv_095570_total['MA60'] = kor_stock_ohlcv_095570_total['close'].rolling(window=60).mean()
+kor_stock_ohlcv_095570_total['MA120'] = kor_stock_ohlcv_095570_total['close'].rolling(window=120).mean()
 
-fig.add_trace(go.Bar(x=kor_stock_ohlcv_095570_total['date'], 
-                     y=kor_stock_ohlcv_095570_total['volume'],
-                     name = 'volumn'
-                    ), row=2, col=1)
-
-
-
-
-fig.update_layout(
-    title = option,
-#     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
-    title_font_family="맑은고딕",
-    title_font_size = 18,
-    hoverlabel=dict(
-#         bgcolor='white',
-        bgcolor='black',
-        font_size=15,
-    ),
-    hovermode="x unified",
-#     hovermode="x",    
-#     template='plotly_white', 
-    template='plotly_dark',
-    xaxis_tickangle=90,
-    yaxis_tickformat = ',',
-    legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1), 
-    barmode='group'
-)
-    
-# fig.update_layout(margin=go.layout.Margin(
-#         l=20, #left margin
-#         r=20, #right margin
-#         b=20, #bottom margin
-#         t=20  #top margin
-#     ))
-fig.update_layout(xaxis_rangeslider_visible=False)
+# MACD
+kor_stock_ohlcv_095570_total['ema_short'] = kor_stock_ohlcv_095570_total['close'].rolling(window=12).mean()
+kor_stock_ohlcv_095570_total['ema_long'] = kor_stock_ohlcv_095570_total['close'].rolling(window=26).mean()
+kor_stock_ohlcv_095570_total['macd'] = kor_stock_ohlcv_095570_total['ema_short'] - kor_stock_ohlcv_095570_total['ema_long'] 
 
 
+std = kor_stock_ohlcv_095570_total['close'].rolling(20).std(ddof=0)
 
-# fig = go.Figure(
-#     data=go.Candlestick(
-#         x=kor_stock_ohlcv_095570_total['date'],
-#         open=kor_stock_ohlcv_095570_total['open'],
-#         high=kor_stock_ohlcv_095570_total['high'],
-#         low=kor_stock_ohlcv_095570_total['low'],
-#         close=kor_stock_ohlcv_095570_total['close'],
-#         increasing_line_color= 'red', decreasing_line_color= 'blue')
-# )
-# 
-# 
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-#                          y=kor_stock_ohlcv_095570_total['MA5'],
-#                          opacity=0.7,
-#                          line=dict(color='blue', width=2),
-#                          name='MA 5'))
-# fig.add_trace(go.Scatter(x=kor_stock_ohlcv_095570_total['date'],
-#                          y=kor_stock_ohlcv_095570_total['MA20'],
-#                          opacity=0.7,
-#                          line=dict(color='orange', width=2),
-#                          name='MA 20'))
-# 
-# 
-# fig.update_layout(
-#     title = option,
-# #     title= f'{sig_area} 시군구별 {type_nm} 매매(실거래가)/전월세(보증금) 거래량',
-#     title_font_family="맑은고딕",
-#     title_font_size = 18,
-#     hoverlabel=dict(
-# #         bgcolor='white',
-#         bgcolor='black',
-#         font_size=15,
-#     ),
-#     hovermode="x unified",
-# #     hovermode="x",
-# #     template='plotly_white',
-#     template='plotly_dark',
-#     xaxis_tickangle=90,
-#     yaxis_tickformat = ',',
-#     legend = dict(orientation = 'h', xanchor = "center", x = 0.85, y= 1.1),
-#     barmode='group'
-# )
-# 
-# fig.update_layout(margin=go.layout.Margin(
-#         l=10, #left margin
-#         r=10, #right margin
-#         b=10, #bottom margin
-#         t=50  #top margin
-#     ))
-# 
-# # fig.update_layout(xaxis_rangeslider_visible=False)
-# fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
-# # fig.show()
+kor_stock_ohlcv_095570_total['upper'] = kor_stock_ohlcv_095570_total['MA20'] + 2 * std
+kor_stock_ohlcv_095570_total['lower'] = kor_stock_ohlcv_095570_total['MA20'] - 2 * std
 
-st.plotly_chart(fig, use_container_width=True)
+ 
+fig = functional.func1(kor_stock_ohlcv_095570_total)
+
+
+kor_stock_fundamental_total_df = kor_stock_fundamental_total[['bps', 'per', 'pbr', 'eps', 'div', 'dps']].T.reset_index()
+
+
+col1, col2 = st.columns([3,1])
+
+with col1:
+  st.plotly_chart(fig, use_container_width=True)
+
+with col2:
+  # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
+  st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
