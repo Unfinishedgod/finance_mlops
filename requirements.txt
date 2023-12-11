@@ -15,6 +15,7 @@ google-cloud-bigquery
 google-cloud-storage
 
 
+st-files-connection
 gcsfs
 s3fs
 git+https://github.com/streamlit/files-connection
