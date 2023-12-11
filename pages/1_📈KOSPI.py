@@ -36,9 +36,9 @@ with open('style.css') as f:
 # kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list.csv')
 
 conn = st.connection('gcs', type=FilesConnection)
-# kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv",
-#                       input_format="csv", ttl=600)
-#                       
+kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv",
+                      input_format="csv", ttl=600)
+
 kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor_ticker_list.csv",
                       input_format="csv", ttl=600)
                       
@@ -79,8 +79,10 @@ kor_stock_fundamental_total = kor_stock_fundamental[kor_stock_fundamental['ticke
 
 
 
-kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-proj/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
-                      input_format="csv", ttl=600)
+# kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-proj/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
+#                       input_format="csv", ttl=600)
+
+kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == option].reset_index()
 
 
 kor_stock_ohlcv_095570_total['MA5'] = kor_stock_ohlcv_095570_total['close'].rolling(window=5).mean()
