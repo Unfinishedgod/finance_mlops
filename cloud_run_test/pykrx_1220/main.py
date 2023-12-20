@@ -36,6 +36,7 @@ def hello_http(request):
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
     df_raw = stock.get_market_ohlcv('20231206',  market="ALL")
+    print(len(df_raw))
 
     """HTTP Cloud Function.
     Args:
