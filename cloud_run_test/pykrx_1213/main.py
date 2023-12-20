@@ -86,8 +86,8 @@ def hello_http(request):
     file_name = 'pykrxtest_222'
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
-    # df_raw = stock.get_market_ohlcv('20231206',  market="ALL")
-    df_raw = stock.get_market_ohlcv("20220720", "20231206", "005930")
+    df_raw = stock.get_market_ohlcv('20231206',  market="ALL")
+#     df_raw = stock.get_market_ohlcv("20220720", "20231206", "005930")
     df_raw = df_raw.reset_index()
 
     df_raw.columns = ['date', 'oepn', 'high', 'low', 'close', 'volumn', 'ratio']

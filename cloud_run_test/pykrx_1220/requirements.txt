@@ -1,0 +1,12 @@
+functions-framework==3.*
+pandas
+finance-datareader
+psycopg2
+sqlalchemy
+pykrx
+plotly
+
+bs4
+pandas-gbq
+google-cloud-bigquery
+google-cloud-storage
