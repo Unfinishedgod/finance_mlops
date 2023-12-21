@@ -7,7 +7,7 @@ pandas-gbq
 google-cloud-bigquery
 google-cloud-storage
 
-
+pyarrow
 st-files-connection
 gcsfs
 s3fs

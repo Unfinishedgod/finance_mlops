@@ -15,6 +15,10 @@ import streamlit as st
 from datetime import datetime
 
 from st_files_connection import FilesConnection
+from pyarrow import csv
+import pyarrow as pa
+import pyarrow.parquet as pq
+
 
 st.set_page_config(
     page_title="KOSPI",
