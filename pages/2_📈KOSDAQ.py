@@ -80,25 +80,28 @@ kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fun
 #         
 
 kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSDAQ']
-ticker_list = kor_ticker_list['ticker'].unique()
+# ticker_list = kor_ticker_list['ticker'].unique()
+corp_name_list = kor_ticker_list['corp_name'].unique()
 
 option = st.selectbox(
     'How would you like to be contacted?',
-    ticker_list)
-
+    corp_name_list)
+    # ticker_list)
+    
 st.write('You selected:', option)
 
 
-ticker_nm = '247540'
+ticker_nm_option = kor_ticker_list[kor_ticker_list['corp_name'] == option].reset_index(drop=True)['ticker'][0]
 
-kor_stock_fundamental_total = kor_stock_fundamental[kor_stock_fundamental['ticker'] == option].reset_index()
+ticker_nm = '095570'
 
+kor_stock_fundamental_total = kor_stock_fundamental[kor_stock_fundamental['ticker'] == ticker_nm_option].reset_index()
 
 
 # kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-proj/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
 #                       input_format="csv", ttl=600)
 
-kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == option].reset_index()
+kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == ticker_nm_option].reset_index()
 
 
 kor_stock_ohlcv_095570_total['MA5'] = kor_stock_ohlcv_095570_total['close'].rolling(window=5).mean()
