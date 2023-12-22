@@ -15,6 +15,10 @@ import streamlit as st
 from datetime import datetime
 
 from st_files_connection import FilesConnection
+from pyarrow import csv
+import pyarrow as pa
+import pyarrow.parquet as pq
+
 
 st.set_page_config(
     page_title="KOSDAQ",
@@ -38,13 +42,13 @@ with open('style.css') as f:
 conn = st.connection('gcs', type=FilesConnection)
 # kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv",
 #                       input_format="csv", ttl=600)
-# 
 # kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor_ticker_list.csv",
 #                       input_format="csv", ttl=600)
 #                       
 # kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fundamental/kor_stock_fundamental.csv",
 #                       input_format="csv", ttl=600)
 
+                      
 # parquet
 kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_info_kosdaq.parquet",
                       input_format="parquet", ttl=600)                      
@@ -56,6 +60,7 @@ kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor
       
 kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fundamental/kor_stock_fundamental_info_kosdaq.parquet",
                       input_format="parquet", ttl=600)
+# kor_stock_fundamental = kor_stock_fundamental.to_pandas()
 
 
 
@@ -84,7 +89,7 @@ option = st.selectbox(
 st.write('You selected:', option)
 
 
-ticker_nm = '095570'
+ticker_nm = '247540'
 
 kor_stock_fundamental_total = kor_stock_fundamental[kor_stock_fundamental['ticker'] == option].reset_index()
 
