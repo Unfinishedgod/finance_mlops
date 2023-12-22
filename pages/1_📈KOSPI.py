@@ -85,11 +85,9 @@ corp_name_list = kor_ticker_list['corp_name'].unique()
 
 option = st.selectbox(
     'How would you like to be contacted?',
-    corp_nm_list)
+    corp_name_list)
     # ticker_list)
     
-type_dic = {'아파트':'apt', '연립다세대':'sh'}
-
 st.write('You selected:', option)
 
 
