@@ -46,7 +46,7 @@ conn = st.connection('gcs', type=FilesConnection)
 #                       input_format="csv", ttl=600)
 
 # parquet
-kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.parquet",
+kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_info_kosdaq.parquet",
                       input_format="parquet", ttl=600)                      
 # kor_stock_ohlcv = kor_stock_ohlcv.to_pandas()
 
@@ -54,7 +54,7 @@ kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor
                       input_format="parquet", ttl=600)
 # kor_ticker_list = kor_ticker_list.to_pandas()
       
-kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fundamental/kor_stock_fundamental.parquet",
+kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fundamental/kor_stock_fundamental_info_kosdaq.parquet",
                       input_format="parquet", ttl=600)
 
 
