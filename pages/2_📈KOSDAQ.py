@@ -121,7 +121,7 @@ kor_stock_ohlcv_095570_total['upper'] = kor_stock_ohlcv_095570_total['MA20'] + 2
 kor_stock_ohlcv_095570_total['lower'] = kor_stock_ohlcv_095570_total['MA20'] - 2 * std
 
  
-fig = functional.func1(kor_stock_ohlcv_095570_total)
+fig = functional.macd_vis(kor_stock_ohlcv_095570_total)
 
 
 kor_stock_fundamental_total_df = kor_stock_fundamental_total[['bps', 'per', 'pbr', 'eps', 'div', 'dps']].T.reset_index()
