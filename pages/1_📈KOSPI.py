@@ -114,7 +114,6 @@ kor_stock_ohlcv_095570_total['ema_short'] = kor_stock_ohlcv_095570_total['close'
 kor_stock_ohlcv_095570_total['ema_long'] = kor_stock_ohlcv_095570_total['close'].rolling(window=26).mean()
 kor_stock_ohlcv_095570_total['macd'] = kor_stock_ohlcv_095570_total['ema_short'] - kor_stock_ohlcv_095570_total['ema_long'] 
 
-
 std = kor_stock_ohlcv_095570_total['close'].rolling(20).std(ddof=0)
 
 kor_stock_ohlcv_095570_total['upper'] = kor_stock_ohlcv_095570_total['MA20'] + 2 * std
@@ -122,7 +121,7 @@ kor_stock_ohlcv_095570_total['lower'] = kor_stock_ohlcv_095570_total['MA20'] - 2
 
  
 # fig = functional.func1(kor_stock_ohlcv_095570_total)
-fig = functional.macd_vis(kor_stock_ohlcv_095570_total)
+fig = functional.macd_vis(kor_stock_ohlcv_095570_total, 'array')
 
 
 
