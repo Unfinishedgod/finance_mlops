@@ -20,9 +20,9 @@ from plotly.subplots import make_subplots
 
 
 
-def macd_vis(df_raw):
+def macd_vis(df_raw, technical_indicator_nm):
     # fig = go.Figure()
-    fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.4, 0.2, 0.2, 0.2])
+    fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5, 0.1, 0.2, 0.2])
 
     # 캔들스틱차트
     fig.add_trace(go.Candlestick(
@@ -68,20 +68,18 @@ def macd_vis(df_raw):
         showlegend=False
     ), row = 1, col = 1)
 
-    # 상향, 하향 회귀
-    for i in range(len(cross_df)):
-        cross_index = cross_df['index'][i]
-        cross_name = cross_df['name'][i]
+    for type_nm in type_list:
+        index_list = df_raw_anal_date.index[df_raw_anal_date[technical_indicator_nm].str.contains(type_nm)]
+        for index_nm in index_list:
+            cross_date = df_raw['date'][index_nm]
+            cross_value = df_raw['close'][index_nm]
 
-        cross_date = df_raw['date'][cross_index]
-        cross_value = df_raw['close'][cross_index]
-
-        fig.add_annotation(x=cross_date, 
-                           y=cross_value,
-                           text=cross_name,
-                           showarrow=True,
-                           arrowhead=1,
-                           row = 1, col = 1)
+            fig.add_annotation(x=cross_date, 
+                               y=cross_value,
+                               text=f'{type_nm} <br> {technical_indicator_nm}',
+                               showarrow=True,
+                               arrowhead=1,
+                               row = 1, col = 1)                
 
     # Row 2 
     # volume
@@ -139,13 +137,6 @@ def macd_vis(df_raw):
                   annotation_font_color="blue",
                   annotation_font_family="Times New Roman", row=4, col=1)    
     
-#     fig.add_hrect(y0=40, y1=60, line_width=1, fillcolor="blue", opacity=0.1,
-#                   annotation_text=" ", 
-#                   annotation_position="top left",
-#                   annotation_font_size=20,
-#                   annotation_font_color="red",
-#                   annotation_font_family="Times New Roman", row=4, col=1)
-    
     
     # Rayout
     fig.update_layout(
@@ -168,7 +159,7 @@ def macd_vis(df_raw):
             b=10, #bottom margin
             t=100  #top margin
         ),
-        height=400, width=900, 
+        height=600, width=900, 
     #     showlegend=False, 
         xaxis_rangeslider_visible=False
     )
@@ -181,3 +172,4 @@ def macd_vis(df_raw):
 
     fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
     return fig
+
