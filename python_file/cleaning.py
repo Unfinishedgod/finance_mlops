@@ -84,7 +84,7 @@ today_date2 = '2023-12-26'
 
 
 
-source_blob_name = 'finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv'
+source_blob_name = 'data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv'
 destination_file_name = 'data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_cleaning.csv'
 
 
@@ -95,8 +95,20 @@ blob.download_to_filename(destination_file_name) # 파일 다운로드
 
 ohlcv_df_raw = pd.read_csv(destination_file_name)
 
+
+source_blob_name = 'data_crawler/kor_ticker_list/kor_ticker_list.csv'
+destination_file_name = 'data_crawler/kor_ticker_list/kor_ticker_list_cleaning.csv'
+
+
+# kor_ticker_list
+bucket = storage_client.bucket(bucket_name) # Bucket 접속
+blob = bucket.blob(source_blob_name) # 저장되어 있는 파일 연결
+blob.download_to_filename(destination_file_name) # 파일 다운로드
+
+
+kor_ticker_list = pd.read_csv(destination_file_name)
+
 # kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list.csv')
-# 
 # ohlcv_df_raw = pd.read_csv('data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv')
 
 ohlcv_df_raw['ticker'] = ohlcv_df_raw['ticker'].astype('str')
@@ -319,11 +331,11 @@ blob.upload_from_filename(source_file_name)
 
 
 
-# Google Storage 적재
-source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_index_list_df_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_index_list_df_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(destination_blob_name)
-blob.upload_from_filename(source_file_name)
+# # Google Storage 적재
+# source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_index_list_df_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
+# destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_index_list_df_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+# bucket = storage_client.bucket(bucket_name)
+# blob = bucket.blob(destination_blob_name)
+# blob.upload_from_filename(source_file_name)
 
 
