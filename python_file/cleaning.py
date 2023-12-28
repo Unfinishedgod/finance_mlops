@@ -73,9 +73,31 @@ storage_client = storage.Client(credentials = credentials,
 bucket_name = 'finance-mlops-proj'    # 서비스 계정 생성한 bucket 이름 입력
 
 
-kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list.csv')
+now = datetime.now()
+# now = now + timedelta(days=-2)
+today_date1 = now.strftime('%Y%m%d')
+today_date2 = now.strftime('%Y-%m-%d')
+today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-ohlcv_df_raw = pd.read_csv('data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv')
+today_date1 = '20231226'
+today_date2 = '2023-12-26'
+
+
+
+source_blob_name = 'finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv'
+destination_file_name = 'data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_cleaning.csv'
+
+
+# gcs
+bucket = storage_client.bucket(bucket_name) # Bucket 접속
+blob = bucket.blob(source_blob_name) # 저장되어 있는 파일 연결
+blob.download_to_filename(destination_file_name) # 파일 다운로드
+
+ohlcv_df_raw = pd.read_csv(destination_file_name)
+
+# kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list.csv')
+# 
+# ohlcv_df_raw = pd.read_csv('data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv')
 
 ohlcv_df_raw['ticker'] = ohlcv_df_raw['ticker'].astype('str')
 ohlcv_df_raw['ticker'] = ohlcv_df_raw['ticker'].str.zfill(6)
@@ -87,12 +109,12 @@ ticker_list = ohlcv_df_raw['ticker'].unique()
 df_raw_total = pd.DataFrame()
 df_raw_anal_total = pd.DataFrame()
 
-for ticker_nm in ticker_list:
+for ticker_nm in ticker_list[:5]:
     df_raw = ohlcv_df_raw[ohlcv_df_raw['ticker'] == ticker_nm].reset_index(drop = True)
-    
+
     ######################################################################
     # 보조지표
-    ###################################################################### 
+    ######################################################################
 
     # 이동평균선
     df_raw['MA5'] = df_raw['close'].rolling(window=5).mean()
@@ -107,10 +129,10 @@ for ticker_nm in ticker_list:
     df_raw['lower'] = df_raw['MA20'] - 2 * std
 
     # MACD
-    # MACD 
-    macd = MACD(close=df_raw['close'], 
+    # MACD
+    macd = MACD(close=df_raw['close'],
                 window_slow=26,
-                window_fast=12, 
+                window_fast=12,
                 window_sign=9)
 
 
@@ -131,13 +153,13 @@ for ticker_nm in ticker_list:
     df_raw['MA5-20'] = df_raw['MA5'] - df_raw['MA20']
     df_raw['MA20-60'] = df_raw['MA20'] - df_raw['MA60']
     df_raw['MA60-120'] = df_raw['MA60'] - df_raw['MA120']
-    
-    
+
+
     ######################################################################
     # 보조지표 분석
-    ###################################################################### 
+    ######################################################################
     df_raw_anal = df_raw[['date','ticker', 'close']]
-    
+
     # 골든크로스
     # 골든 크로스 5-20
     # 음수에서 양수로 바뀌는 모든 인덱스 찾기
@@ -154,7 +176,7 @@ for ticker_nm in ticker_list:
     # 골든 크로스 20-60
     # 음수에서 양수로 바뀌는 모든 인덱스 찾기
     idx_20_60_dead_cross = [idx for idx in range(len(df_raw)) if df_raw["MA20-60"].iloc[idx] < 0 and df_raw["MA20-60"].iloc[idx - 1] >= 0]
-    
+
 
     df_raw_anal.loc[:, '5_20_cross'] = '-'
     df_raw_anal.loc[idx_5_20_gold_cross,'5_20_cross'] = '골든크로스(매수)'
@@ -163,47 +185,47 @@ for ticker_nm in ticker_list:
     df_raw_anal.loc[:, '20_60_cross'] = '-'
     df_raw_anal.loc[idx_20_60_gold_cross,'20_60_cross'] = '골든크로스(매수)'
     df_raw_anal.loc[idx_20_60_dead_cross,'20_60_cross'] = '데드크로스(매도)'
-    
-    
+
+
     # 정배열 역배열
     ascending_sq  = (df_raw['MA5-20'] > 0) & \
     (df_raw['MA20-60'] > 0) & \
-    (df_raw['MA60-120'] > 0) 
+    (df_raw['MA60-120'] > 0)
 
     descending_sq  = (df_raw['MA5-20'] < 0) & \
     (df_raw['MA20-60'] < 0) & \
-    (df_raw['MA60-120'] < 0) 
-    
+    (df_raw['MA60-120'] < 0)
+
     df_raw_anal.loc[:,'array'] = '-'
     df_raw_anal.loc[ascending_sq,'array'] = '정배열(매수)'
     df_raw_anal.loc[descending_sq,'array'] = '역배열(매도)'
-    
-    
+
+
     # 볼린저밴드
-    down_reg_sq = df_raw['upper'] - df_raw['close'] 
-    top_reg_sq  = df_raw['lower'] - df_raw['close'] 
+    down_reg_sq = df_raw['upper'] - df_raw['close']
+    top_reg_sq  = df_raw['lower'] - df_raw['close']
 
     down_reg = [idx for idx in range(1,len(df_raw)) if down_reg_sq[idx] > 0 and down_reg_sq[idx-1] <= 0]
     top_reg = [idx for idx in range(1,len(df_raw)) if top_reg_sq[idx] < 0 and top_reg_sq[idx-1] >= 0]
-    
+
     df_raw_anal.loc[:,'Bollinger_band'] = '-'
     df_raw_anal.loc[down_reg,'Bollinger_band'] = '하향회귀(매도)'
     df_raw_anal.loc[top_reg,'Bollinger_band'] = '상향회귀(매수)'
-    
-    
+
+
     # MACD
     signal_down_cross = [idx for idx in range(1,len(df_raw)) if df_raw['MACD_DIFF'][idx] < 0 and df_raw['MACD_DIFF'][idx-1] >= 0]
     signal_top_corss = [idx for idx in range(1,len(df_raw)) if df_raw['MACD_DIFF'][idx] > 0 and df_raw['MACD_DIFF'][idx-1] <= 0]
 
     df_raw_anal.loc[:,'MACD'] = '-'
     df_raw_anal.loc[signal_down_cross,'MACD'] = '하향돌파(매도)'
-    df_raw_anal.loc[signal_top_corss,'MACD'] = '상향돌파(매수)'    
-    
+    df_raw_anal.loc[signal_top_corss,'MACD'] = '상향돌파(매수)'
+
     # RSI
     down_reg = [idx for idx in range(1,len(df_raw)) if df_raw['RSI'][idx] > 70 and df_raw['RSI'][idx-1] <= 70]
     top_reg = [idx for idx in range(1,len(df_raw)) if df_raw['RSI'][idx] < 30 and df_raw['RSI'][idx-1] >= 30]
-    
-    
+
+
     df_raw_anal.loc[:,'RSI'] = '-'
     df_raw_anal.loc[down_reg,'RSI'] = 'RSI 상단 하향돌파(매도)'
     df_raw_anal.loc[top_reg,'RSI'] = 'RSI 하단 상향 돌파(매수)'
@@ -211,11 +233,11 @@ for ticker_nm in ticker_list:
 
     df_raw_total = pd.concat([df_raw_total, df_raw])
     df_raw_anal_total = pd.concat([df_raw_anal_total, df_raw_anal])
-    
+
     print(ticker_nm)
-    
-    
-df_raw_total = df_raw_total.reset_index(drop = True)    
+
+
+df_raw_total = df_raw_total.reset_index(drop = True)
 
 
 
@@ -232,12 +254,12 @@ kor_ticker_list['ticker'] = kor_ticker_list['ticker'].str.zfill(6)
 
 
 df_raw_total_2 = pd.merge(df_raw_total, kor_ticker_list,
-        on = 'ticker', 
+        on = 'ticker',
         how = 'left')
-        
-        
+
+
 df_raw_anal_total_2 = pd.merge(df_raw_anal_total, kor_ticker_list,
-        on = 'ticker', 
+        on = 'ticker',
         how = 'left')
 
 
@@ -255,24 +277,24 @@ df_raw_anal_total_2_kosdaq = df_raw_anal_total_2[df_raw_anal_total_2['market'] =
 
 
 table_from_pandas = pa.Table.from_pandas(df_raw_total_2_kospi,preserve_index = False)
-pq.write_table(table_from_pandas, 'data_crawler/kor_stock_ohlcv/df_raw_total_2_kospi.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_kospi_{today_date1}.parquet')
 
 table_from_pandas = pa.Table.from_pandas(df_raw_total_2_kosdaq,preserve_index = False)
-pq.write_table(table_from_pandas, 'data_crawler/kor_stock_ohlcv/df_raw_total_2_kosdaq.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_kosdaq_{today_date1}.parquet')
 
 table_from_pandas = pa.Table.from_pandas(df_raw_anal_total_2_kospi,preserve_index = False)
-pq.write_table(table_from_pandas, 'data_crawler/kor_stock_ohlcv/df_raw_anal_total_2_kospi.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kospi_{today_date1}.parquet')
 
 table_from_pandas = pa.Table.from_pandas(df_raw_anal_total_2_kosdaq,preserve_index = False)
-pq.write_table(table_from_pandas, 'data_crawler/kor_stock_ohlcv/df_raw_anal_total_2_kosdaq.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kosdaq_{today_date1}.parquet')
 
 
 
 
 
 # Google Storage 적재
-source_file_name = f'data_crawler/kor_stock_ohlcv/df_raw_total_2_kospi.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/kor_stock_ohlcv/df_raw_total_2_kospi.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_kospi_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_kospi_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
@@ -280,8 +302,8 @@ blob.upload_from_filename(source_file_name)
 
 
 # Google Storage 적재
-source_file_name = f'data_crawler/kor_stock_ohlcv/df_raw_anal_total_2_kospi.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/kor_stock_ohlcv/df_raw_anal_total_2_kospi.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kospi_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kospi_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
@@ -289,8 +311,8 @@ blob.upload_from_filename(source_file_name)
 
 
 # Google Storage 적재
-source_file_name = f'data_crawler/kor_stock_ohlcv/df_raw_anal_total_2_kosdaq.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/kor_stock_ohlcv/df_raw_anal_total_2_kosdaq.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kosdaq_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kosdaq_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
@@ -298,8 +320,10 @@ blob.upload_from_filename(source_file_name)
 
 
 # Google Storage 적재
-source_file_name = f'data_crawler/kor_stock_ohlcv/kor_index_list_df.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/kor_stock_ohlcv/kor_index_list_df.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_index_list_df_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_index_list_df_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
+
+

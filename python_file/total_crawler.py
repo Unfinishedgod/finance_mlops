@@ -126,7 +126,7 @@ kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
-file_name = 'kor_ticker_list'
+file_name = 'cron_test_kor_ticker_list'
 upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
 kor_ticker_list = kor_ticker_list_df['ticker']
 
@@ -141,7 +141,7 @@ df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_chang
 
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'kor_stock_ohlcv'
+file_name = 'cron_test_kor_stock_ohlcv'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -158,7 +158,7 @@ df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장�
 df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'kor_market_cap'
+file_name = 'cron_test_kor_market_cap'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -177,7 +177,7 @@ df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
 df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'kor_stock_fundamental'
+file_name = 'cron_test_kor_stock_fundamental'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -205,7 +205,7 @@ for market_nm in market_list:
 
 kor_index_list_df = kor_index_list_df.reset_index(drop = True)
 
-file_name = 'kor_index_list_df'
+file_name = 'cron_test_kor_index_list_df'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -221,7 +221,7 @@ kor_index_code_list  = kor_index_list_df['index_code']
 # ## 인덱스 OHLCV 조회
 print(f'인덱스 OHLCV 시작')
 
-file_name = 'kor_index_ohlcv'
+file_name = 'cron_test_kor_index_ohlcv'
 df_raw_total = pd.DataFrame()
 
 for index_code in kor_index_code_list:
@@ -253,7 +253,7 @@ print(f'인덱스 OHLCV 완료_{time_line}')
 
 # 인덱스 등락률
 print(f'인덱스 등락률 시작')
-file_name = 'kor_index_code_fundamental'
+file_name = 'cron_test_kor_index_code_fundamental'
 df_raw_total = pd.DataFrame()
 
 for index_code in kor_index_code_list:
@@ -306,7 +306,7 @@ index_code_master  = pd.merge(index_code_info_2, kor_ticker_list_df[['ticker','c
         how = 'left',
         on = 'ticker')
 
-file_name = 'index_code_master'
+file_name = 'cron_test_index_code_master'
 
 
 
