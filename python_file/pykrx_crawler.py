@@ -60,6 +60,10 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
+today_date1 = '20231226'
+today_date2 = '2023-12-26'
+
+
 print(f'{today_date2} pykrx_crawler Start')
 
 def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
@@ -122,7 +126,7 @@ kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
-file_name = 'kor_ticker_list'
+file_name = 'cron_test_kor_ticker_list'
 upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
 kor_ticker_list = kor_ticker_list_df['ticker']
 
@@ -137,7 +141,7 @@ df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_chang
 
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'kor_stock_ohlcv'
+file_name = 'cron_test_kor_stock_ohlcv'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -154,7 +158,7 @@ df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장�
 df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'kor_market_cap'
+file_name = 'cron_test_kor_market_cap'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -173,7 +177,7 @@ df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
 df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'kor_stock_fundamental'
+file_name = 'cron_test_kor_stock_fundamental'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -181,3 +185,5 @@ time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
 
 print(f'DIV/BPS/PER/EPS 완료_{time_line}')
+
+
