@@ -26,7 +26,7 @@ from google.cloud import storage
 
 
 # 경로 변경
-os.chdir('/home/shjj08choi/finance_mlops')
+os.chdir('/home/shjj08choi4/finance_mlops')
 
 
 # 서비스 계정 키 JSON 파일 경로
