@@ -6,6 +6,7 @@ import pandas as pd
 from pykrx import stock
 from pykrx import bond
 from datetime import timedelta
+import FinanceDataReader as fdr
 
 from time import sleep
 
@@ -13,9 +14,9 @@ import os
 import time
 
 
-usdkrw = fdr.DataReader('USD/KRW', '1995-01-01', today_date2) # 달러 원화
+usdkrw = fdr.DataReader('USD/KRW', '2023-01-01', '2023-12-01') # 달러 원화
 usdkrw = usdkrw.reset_index()
-print(usdkrw)
+print(len(usdkrw))
 
 @functions_framework.http
 def hello_http(request):
