@@ -3,8 +3,6 @@
 
 import functions_framework
 import pandas as pd
-from pykrx import stock
-from pykrx import bond
 from datetime import timedelta
 import FinanceDataReader as fdr
 
