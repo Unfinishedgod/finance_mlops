@@ -1,6 +1,6 @@
 
 
-count_nm='2'
+count_nm='4'
 
 docker build -t test_image${count_nm}:tag${count_nm} .
 docker tag test_image:tag1  asia-northeast3-docker.pkg.dev/owenchoi-404302/cloud-run-test/test_image${count_nm}:tag${count_nm}
