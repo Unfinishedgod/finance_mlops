@@ -1,5 +1,0 @@
-functions-framework==3.*
-pandas
-finance-datareader
-bs4
-plotly
