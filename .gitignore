@@ -164,7 +164,6 @@ cython_debug/
 *.json
 *.out
 
-python_file/crawler_init/pykrx_log.txt
-python_file/crawler_init/snp500_log.txt
 
 *.parquet
+*txt

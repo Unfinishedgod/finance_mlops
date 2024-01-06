@@ -66,8 +66,8 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20231226'
-today_date2 = '2023-12-26'
+today_date1 = '20240107'
+today_date2 = '2023-01-07'
 
 
 sql = f"""
@@ -85,10 +85,9 @@ select
 from `{project_id}.{dataset_id}.kor_stock_ohlcv`
 left join  `{project_id}.{dataset_id}.kor_ticker_list`
 on `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker = `{project_id}.{dataset_id}.kor_ticker_list`.ticker
-where market = 'KOSPI'
-order by date asc
 """
-
+# where market = 'KOSPI'
+# order by date asc
 
 # 데이터 조회 쿼리 실행 결과
 query_job = client.query(sql)
