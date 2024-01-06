@@ -58,6 +58,6 @@ st.dataframe(df)
     
     
     
-asdf = functional.macd_vis(df_raw, ticker_nm)
+# asdf = functional.macd_vis(df_raw, ticker_nm)
 
-st.plotly_chart(asdf, use_container_width=True)
+# st.plotly_chart(asdf, use_container_width=True)
