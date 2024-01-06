@@ -101,7 +101,7 @@ def upload_df(data, file_name, project_id, dataset_id, time_line):
 now = datetime.now()
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = '2017-01-01'
-today_date2 = '2023-12-06'
+today_date2 = '2024-01-05'
 
 # ## S&P 500 종목 리스트
 snp500 = fdr.StockListing('S&P500')

@@ -1,2525 +1,0 @@
-Traceback (most recent call last):
-  File "/home/shjj08choi4/finance_mlops/python_file/crawler_init/snp_500_init.py", line 26, in <module>
-    os.chdir('/home/shjj08choi/finance_mlops')
-FileNotFoundError: [Errno 2] No such file or directory: '/home/shjj08choi/finance_mlops'
-snp500_ticker_list_로컬CSV저장_success_20231207_06:20:30
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 8738.13it/s]
-snp500_ticker_list_빅쿼리저장_success_20231207_06:20:30
-snp500_ticker_list_Postgresql저장_success_20231207_06:20:30
-snp500_daily_로컬CSV저장_success_20231207_06:20:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21076.90it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:20:34
-snp500_daily_Postgresql저장_success_20231207_06:20:34
-snp500_daily_MMM_데이터수집_success_20231207_06:20:34
-snp500_daily_로컬CSV저장_success_20231207_06:20:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22671.91it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:20:39
-snp500_daily_Postgresql저장_success_20231207_06:20:39
-snp500_daily_AOS_데이터수집_success_20231207_06:20:39
-snp500_daily_로컬CSV저장_success_20231207_06:20:51
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20763.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:20:51
-snp500_daily_Postgresql저장_success_20231207_06:20:51
-snp500_daily_ABT_데이터수집_success_20231207_06:20:51
-snp500_daily_로컬CSV저장_success_20231207_06:20:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17848.10it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:20:54
-snp500_daily_Postgresql저장_success_20231207_06:20:54
-snp500_daily_ABBV_데이터수집_success_20231207_06:20:54
-snp500_daily_로컬CSV저장_success_20231207_06:20:58
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:20:58
-snp500_daily_Postgresql저장_success_20231207_06:20:58
-snp500_daily_ACN_데이터수집_success_20231207_06:20:58
-snp500_daily_로컬CSV저장_success_20231207_06:21:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:02
-snp500_daily_Postgresql저장_success_20231207_06:21:02
-snp500_daily_ADM_데이터수집_success_20231207_06:21:02
-snp500_daily_로컬CSV저장_success_20231207_06:21:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:05
-snp500_daily_Postgresql저장_success_20231207_06:21:05
-snp500_daily_ADBE_데이터수집_success_20231207_06:21:05
-snp500_daily_로컬CSV저장_success_20231207_06:21:08
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23563.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:08
-snp500_daily_Postgresql저장_success_20231207_06:21:08
-snp500_daily_ADP_데이터수집_success_20231207_06:21:08
-snp500_daily_로컬CSV저장_success_20231207_06:21:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:12
-snp500_daily_Postgresql저장_success_20231207_06:21:12
-snp500_daily_AES_데이터수집_success_20231207_06:21:12
-snp500_daily_로컬CSV저장_success_20231207_06:21:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:16
-snp500_daily_Postgresql저장_success_20231207_06:21:16
-snp500_daily_AFL_데이터수집_success_20231207_06:21:16
-snp500_daily_로컬CSV저장_success_20231207_06:21:19
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25115.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:19
-snp500_daily_Postgresql저장_success_20231207_06:21:19
-snp500_daily_A_데이터수집_success_20231207_06:21:19
-snp500_daily_로컬CSV저장_success_20231207_06:21:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 14413.42it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:21
-snp500_daily_Postgresql저장_success_20231207_06:21:21
-snp500_daily_ABNB_데이터수집_success_20231207_06:21:21
-snp500_daily_로컬CSV저장_success_20231207_06:21:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31300.78it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:25
-snp500_daily_Postgresql저장_success_20231207_06:21:25
-snp500_daily_APD_데이터수집_success_20231207_06:21:25
-snp500_daily_로컬CSV저장_success_20231207_06:21:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:28
-snp500_daily_Postgresql저장_success_20231207_06:21:28
-snp500_daily_AKAM_데이터수집_success_20231207_06:21:28
-snp500_daily_로컬CSV저장_success_20231207_06:21:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:31
-snp500_daily_Postgresql저장_success_20231207_06:21:31
-snp500_daily_ALK_데이터수집_success_20231207_06:21:31
-snp500_daily_로컬CSV저장_success_20231207_06:21:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:34
-snp500_daily_Postgresql저장_success_20231207_06:21:34
-snp500_daily_ALB_데이터수집_success_20231207_06:21:34
-snp500_daily_로컬CSV저장_success_20231207_06:21:37
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:37
-snp500_daily_Postgresql저장_success_20231207_06:21:37
-snp500_daily_ARE_데이터수집_success_20231207_06:21:37
-snp500_daily_로컬CSV저장_success_20231207_06:21:41
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:41
-snp500_daily_Postgresql저장_success_20231207_06:21:41
-snp500_daily_ALGN_데이터수집_success_20231207_06:21:41
-snp500_daily_로컬CSV저장_success_20231207_06:21:44
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34379.54it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:44
-snp500_daily_Postgresql저장_success_20231207_06:21:44
-snp500_daily_ALLE_데이터수집_success_20231207_06:21:44
-snp500_daily_로컬CSV저장_success_20231207_06:21:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34952.53it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:47
-snp500_daily_Postgresql저장_success_20231207_06:21:47
-snp500_daily_LNT_데이터수집_success_20231207_06:21:47
-snp500_daily_로컬CSV저장_success_20231207_06:21:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:49
-snp500_daily_Postgresql저장_success_20231207_06:21:49
-snp500_daily_ALL_데이터수집_success_20231207_06:21:49
-snp500_daily_로컬CSV저장_success_20231207_06:21:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:53
-snp500_daily_Postgresql저장_success_20231207_06:21:53
-snp500_daily_GOOGL_데이터수집_success_20231207_06:21:53
-snp500_daily_로컬CSV저장_success_20231207_06:21:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:21:56
-snp500_daily_Postgresql저장_success_20231207_06:21:56
-snp500_daily_GOOG_데이터수집_success_20231207_06:21:56
-snp500_daily_로컬CSV저장_success_20231207_06:22:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:00
-snp500_daily_Postgresql저장_success_20231207_06:22:00
-snp500_daily_MO_데이터수집_success_20231207_06:22:00
-snp500_daily_로컬CSV저장_success_20231207_06:22:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34379.54it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:03
-snp500_daily_Postgresql저장_success_20231207_06:22:03
-snp500_daily_AMZN_데이터수집_success_20231207_06:22:03
-snp500_daily_로컬CSV저장_success_20231207_06:22:07
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:07
-snp500_daily_Postgresql저장_success_20231207_06:22:07
-snp500_daily_AMCR_데이터수집_success_20231207_06:22:07
-snp500_daily_로컬CSV저장_success_20231207_06:22:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:10
-snp500_daily_Postgresql저장_success_20231207_06:22:10
-snp500_daily_AMD_데이터수집_success_20231207_06:22:10
-snp500_daily_로컬CSV저장_success_20231207_06:22:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25115.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:14
-snp500_daily_Postgresql저장_success_20231207_06:22:14
-snp500_daily_AEE_데이터수집_success_20231207_06:22:14
-snp500_daily_로컬CSV저장_success_20231207_06:22:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:17
-snp500_daily_Postgresql저장_success_20231207_06:22:17
-snp500_daily_AAL_데이터수집_success_20231207_06:22:17
-snp500_daily_로컬CSV저장_success_20231207_06:22:20
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:20
-snp500_daily_Postgresql저장_success_20231207_06:22:20
-snp500_daily_AEP_데이터수집_success_20231207_06:22:20
-snp500_daily_로컬CSV저장_success_20231207_06:22:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:24
-snp500_daily_Postgresql저장_success_20231207_06:22:24
-snp500_daily_AXP_데이터수집_success_20231207_06:22:24
-snp500_daily_로컬CSV저장_success_20231207_06:22:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:28
-snp500_daily_Postgresql저장_success_20231207_06:22:28
-snp500_daily_AIG_데이터수집_success_20231207_06:22:28
-snp500_daily_로컬CSV저장_success_20231207_06:22:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:31
-snp500_daily_Postgresql저장_success_20231207_06:22:31
-snp500_daily_AMT_데이터수집_success_20231207_06:22:31
-snp500_daily_로컬CSV저장_success_20231207_06:22:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:34
-snp500_daily_Postgresql저장_success_20231207_06:22:34
-snp500_daily_AWK_데이터수집_success_20231207_06:22:34
-snp500_daily_로컬CSV저장_success_20231207_06:22:37
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:37
-snp500_daily_Postgresql저장_success_20231207_06:22:37
-snp500_daily_AMP_데이터수집_success_20231207_06:22:37
-snp500_daily_로컬CSV저장_success_20231207_06:22:41
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:41
-snp500_daily_Postgresql저장_success_20231207_06:22:41
-snp500_daily_AME_데이터수집_success_20231207_06:22:41
-snp500_daily_로컬CSV저장_success_20231207_06:22:44
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:44
-snp500_daily_Postgresql저장_success_20231207_06:22:44
-snp500_daily_AMGN_데이터수집_success_20231207_06:22:44
-snp500_daily_로컬CSV저장_success_20231207_06:22:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:47
-snp500_daily_Postgresql저장_success_20231207_06:22:47
-snp500_daily_APH_데이터수집_success_20231207_06:22:47
-snp500_daily_로컬CSV저장_success_20231207_06:22:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:52
-snp500_daily_Postgresql저장_success_20231207_06:22:52
-snp500_daily_ADI_데이터수집_success_20231207_06:22:52
-snp500_daily_로컬CSV저장_success_20231207_06:22:55
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22429.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:55
-snp500_daily_Postgresql저장_success_20231207_06:22:55
-snp500_daily_ANSS_데이터수집_success_20231207_06:22:55
-snp500_daily_로컬CSV저장_success_20231207_06:22:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:22:59
-snp500_daily_Postgresql저장_success_20231207_06:22:59
-snp500_daily_AON_데이터수집_success_20231207_06:22:59
-snp500_daily_로컬CSV저장_success_20231207_06:23:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:02
-snp500_daily_Postgresql저장_success_20231207_06:23:02
-snp500_daily_APA_데이터수집_success_20231207_06:23:02
-snp500_daily_로컬CSV저장_success_20231207_06:23:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:05
-snp500_daily_Postgresql저장_success_20231207_06:23:05
-snp500_daily_AAPL_데이터수집_success_20231207_06:23:05
-snp500_daily_로컬CSV저장_success_20231207_06:23:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31775.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:10
-snp500_daily_Postgresql저장_success_20231207_06:23:10
-snp500_daily_AMAT_데이터수집_success_20231207_06:23:10
-snp500_daily_로컬CSV저장_success_20231207_06:23:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34379.54it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:13
-snp500_daily_Postgresql저장_success_20231207_06:23:13
-snp500_daily_APTV_데이터수집_success_20231207_06:23:13
-snp500_daily_로컬CSV저장_success_20231207_06:23:18
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:18
-snp500_daily_Postgresql저장_success_20231207_06:23:18
-snp500_daily_ACGL_데이터수집_success_20231207_06:23:18
-snp500_daily_로컬CSV저장_success_20231207_06:23:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:21
-snp500_daily_Postgresql저장_success_20231207_06:23:21
-snp500_daily_ANET_데이터수집_success_20231207_06:23:21
-snp500_daily_로컬CSV저장_success_20231207_06:23:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:24
-snp500_daily_Postgresql저장_success_20231207_06:23:24
-snp500_daily_AJG_데이터수집_success_20231207_06:23:24
-snp500_daily_로컬CSV저장_success_20231207_06:23:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:28
-snp500_daily_Postgresql저장_success_20231207_06:23:28
-snp500_daily_AIZ_데이터수집_success_20231207_06:23:28
-snp500_daily_로컬CSV저장_success_20231207_06:23:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:31
-snp500_daily_Postgresql저장_success_20231207_06:23:31
-snp500_daily_T_데이터수집_success_20231207_06:23:31
-snp500_daily_로컬CSV저장_success_20231207_06:23:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:34
-snp500_daily_Postgresql저장_success_20231207_06:23:34
-snp500_daily_ATO_데이터수집_success_20231207_06:23:34
-snp500_daily_로컬CSV저장_success_20231207_06:23:38
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24528.09it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:38
-snp500_daily_Postgresql저장_success_20231207_06:23:38
-snp500_daily_ADSK_데이터수집_success_20231207_06:23:38
-snp500_daily_로컬CSV저장_success_20231207_06:23:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 35246.25it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:42
-snp500_daily_Postgresql저장_success_20231207_06:23:42
-snp500_daily_AZO_데이터수집_success_20231207_06:23:42
-snp500_daily_로컬CSV저장_success_20231207_06:23:45
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:45
-snp500_daily_Postgresql저장_success_20231207_06:23:45
-snp500_daily_AVB_데이터수집_success_20231207_06:23:45
-snp500_daily_로컬CSV저장_success_20231207_06:23:48
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:48
-snp500_daily_Postgresql저장_success_20231207_06:23:48
-snp500_daily_AVY_데이터수집_success_20231207_06:23:48
-snp500_daily_로컬CSV저장_success_20231207_06:23:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:52
-snp500_daily_Postgresql저장_success_20231207_06:23:52
-snp500_daily_AXON_데이터수집_success_20231207_06:23:52
-snp500_daily_로컬CSV저장_success_20231207_06:23:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:56
-snp500_daily_Postgresql저장_success_20231207_06:23:56
-snp500_daily_BKR_데이터수집_success_20231207_06:23:56
-snp500_daily_로컬CSV저장_success_20231207_06:23:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:23:59
-snp500_daily_Postgresql저장_success_20231207_06:23:59
-snp500_daily_BALL_데이터수집_success_20231207_06:23:59
-snp500_daily_로컬CSV저장_success_20231207_06:24:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:03
-snp500_daily_Postgresql저장_success_20231207_06:24:03
-snp500_daily_BAC_데이터수집_success_20231207_06:24:03
-snp500_daily_로컬CSV저장_success_20231207_06:24:06
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:06
-snp500_daily_Postgresql저장_success_20231207_06:24:06
-snp500_daily_BBWI_데이터수집_success_20231207_06:24:06
-snp500_daily_로컬CSV저장_success_20231207_06:24:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:10
-snp500_daily_Postgresql저장_success_20231207_06:24:10
-snp500_daily_BAX_데이터수집_success_20231207_06:24:10
-snp500_daily_로컬CSV저장_success_20231207_06:24:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:14
-snp500_daily_Postgresql저장_success_20231207_06:24:14
-snp500_daily_BDX_데이터수집_success_20231207_06:24:14
-snp500_daily_로컬CSV저장_success_20231207_06:24:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:17
-snp500_daily_Postgresql저장_success_20231207_06:24:17
-snp500_daily_WRB_데이터수집_success_20231207_06:24:17
-HTTP Error 404: Not Found  - symbol "BRKB"not found or invalid periods
-snp500_daily_BRKB_데이터수집_fail_20231207_06:24:20
-snp500_daily_로컬CSV저장_success_20231207_06:24:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:21
-snp500_daily_Postgresql저장_success_20231207_06:24:21
-snp500_daily_BBY_데이터수집_success_20231207_06:24:21
-snp500_daily_로컬CSV저장_success_20231207_06:24:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:24
-snp500_daily_Postgresql저장_success_20231207_06:24:24
-snp500_daily_BIO_데이터수집_success_20231207_06:24:24
-snp500_daily_로컬CSV저장_success_20231207_06:24:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:27
-snp500_daily_Postgresql저장_success_20231207_06:24:27
-snp500_daily_TECH_데이터수집_success_20231207_06:24:27
-snp500_daily_로컬CSV저장_success_20231207_06:24:30
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23301.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:30
-snp500_daily_Postgresql저장_success_20231207_06:24:30
-snp500_daily_BIIB_데이터수집_success_20231207_06:24:30
-snp500_daily_로컬CSV저장_success_20231207_06:24:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:35
-snp500_daily_Postgresql저장_success_20231207_06:24:35
-snp500_daily_BLK_데이터수집_success_20231207_06:24:35
-snp500_daily_로컬CSV저장_success_20231207_06:24:38
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:38
-snp500_daily_Postgresql저장_success_20231207_06:24:38
-snp500_daily_BX_데이터수집_success_20231207_06:24:38
-snp500_daily_로컬CSV저장_success_20231207_06:24:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:42
-snp500_daily_Postgresql저장_success_20231207_06:24:42
-snp500_daily_BK_데이터수집_success_20231207_06:24:42
-snp500_daily_로컬CSV저장_success_20231207_06:24:45
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:45
-snp500_daily_Postgresql저장_success_20231207_06:24:45
-snp500_daily_BA_데이터수집_success_20231207_06:24:45
-snp500_daily_로컬CSV저장_success_20231207_06:24:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20068.44it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:49
-snp500_daily_Postgresql저장_success_20231207_06:24:49
-snp500_daily_BKNG_데이터수집_success_20231207_06:24:49
-snp500_daily_로컬CSV저장_success_20231207_06:24:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:53
-snp500_daily_Postgresql저장_success_20231207_06:24:53
-snp500_daily_BWA_데이터수집_success_20231207_06:24:53
-snp500_daily_로컬CSV저장_success_20231207_06:24:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:24:57
-snp500_daily_Postgresql저장_success_20231207_06:24:57
-snp500_daily_BXP_데이터수집_success_20231207_06:24:57
-snp500_daily_로컬CSV저장_success_20231207_06:25:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:00
-snp500_daily_Postgresql저장_success_20231207_06:25:00
-snp500_daily_BSX_데이터수집_success_20231207_06:25:00
-snp500_daily_로컬CSV저장_success_20231207_06:25:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:04
-snp500_daily_Postgresql저장_success_20231207_06:25:04
-snp500_daily_BMY_데이터수집_success_20231207_06:25:04
-snp500_daily_로컬CSV저장_success_20231207_06:25:08
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:08
-snp500_daily_Postgresql저장_success_20231207_06:25:08
-snp500_daily_AVGO_데이터수집_success_20231207_06:25:08
-snp500_daily_로컬CSV저장_success_20231207_06:25:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:12
-snp500_daily_Postgresql저장_success_20231207_06:25:12
-snp500_daily_BR_데이터수집_success_20231207_06:25:12
-snp500_daily_로컬CSV저장_success_20231207_06:25:15
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:15
-snp500_daily_Postgresql저장_success_20231207_06:25:15
-snp500_daily_BRO_데이터수집_success_20231207_06:25:15
-HTTP Error 404: Not Found  - symbol "BFB"not found or invalid periods
-snp500_daily_BFB_데이터수집_fail_20231207_06:25:18
-snp500_daily_로컬CSV저장_success_20231207_06:25:19
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:19
-snp500_daily_Postgresql저장_success_20231207_06:25:19
-snp500_daily_BG_데이터수집_success_20231207_06:25:19
-snp500_daily_로컬CSV저장_success_20231207_06:25:22
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 35246.25it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:22
-snp500_daily_Postgresql저장_success_20231207_06:25:22
-snp500_daily_CHRW_데이터수집_success_20231207_06:25:22
-snp500_daily_로컬CSV저장_success_20231207_06:25:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:25
-snp500_daily_Postgresql저장_success_20231207_06:25:25
-snp500_daily_CDNS_데이터수집_success_20231207_06:25:25
-snp500_daily_로컬CSV저장_success_20231207_06:25:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:28
-snp500_daily_Postgresql저장_success_20231207_06:25:28
-snp500_daily_CZR_데이터수집_success_20231207_06:25:28
-snp500_daily_로컬CSV저장_success_20231207_06:25:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:31
-snp500_daily_Postgresql저장_success_20231207_06:25:31
-snp500_daily_CPT_데이터수집_success_20231207_06:25:31
-snp500_daily_로컬CSV저장_success_20231207_06:25:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:34
-snp500_daily_Postgresql저장_success_20231207_06:25:34
-snp500_daily_CPB_데이터수집_success_20231207_06:25:34
-snp500_daily_로컬CSV저장_success_20231207_06:25:37
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:37
-snp500_daily_Postgresql저장_success_20231207_06:25:37
-snp500_daily_COF_데이터수집_success_20231207_06:25:37
-snp500_daily_로컬CSV저장_success_20231207_06:25:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:40
-snp500_daily_Postgresql저장_success_20231207_06:25:40
-snp500_daily_CAH_데이터수집_success_20231207_06:25:40
-snp500_daily_로컬CSV저장_success_20231207_06:25:44
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:44
-snp500_daily_Postgresql저장_success_20231207_06:25:44
-snp500_daily_KMX_데이터수집_success_20231207_06:25:44
-snp500_daily_로컬CSV저장_success_20231207_06:25:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:47
-snp500_daily_Postgresql저장_success_20231207_06:25:47
-snp500_daily_CCL_데이터수집_success_20231207_06:25:47
-snp500_daily_로컬CSV저장_success_20231207_06:25:51
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:51
-snp500_daily_Postgresql저장_success_20231207_06:25:51
-snp500_daily_CARR_데이터수집_success_20231207_06:25:51
-snp500_daily_로컬CSV저장_success_20231207_06:25:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:54
-snp500_daily_Postgresql저장_success_20231207_06:25:54
-snp500_daily_CTLT_데이터수집_success_20231207_06:25:54
-snp500_daily_로컬CSV저장_success_20231207_06:25:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22429.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:25:57
-snp500_daily_Postgresql저장_success_20231207_06:25:57
-snp500_daily_CAT_데이터수집_success_20231207_06:25:57
-snp500_daily_로컬CSV저장_success_20231207_06:26:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:00
-snp500_daily_Postgresql저장_success_20231207_06:26:00
-snp500_daily_CBOE_데이터수집_success_20231207_06:26:00
-snp500_daily_로컬CSV저장_success_20231207_06:26:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 35848.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:04
-snp500_daily_Postgresql저장_success_20231207_06:26:04
-snp500_daily_CBRE_데이터수집_success_20231207_06:26:04
-snp500_daily_로컬CSV저장_success_20231207_06:26:06
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31775.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:06
-snp500_daily_Postgresql저장_success_20231207_06:26:06
-snp500_daily_CDW_데이터수집_success_20231207_06:26:06
-snp500_daily_로컬CSV저장_success_20231207_06:26:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:10
-snp500_daily_Postgresql저장_success_20231207_06:26:10
-snp500_daily_CE_데이터수집_success_20231207_06:26:10
-snp500_daily_로컬CSV저장_success_20231207_06:26:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:14
-snp500_daily_Postgresql저장_success_20231207_06:26:14
-snp500_daily_COR_데이터수집_success_20231207_06:26:14
-snp500_daily_로컬CSV저장_success_20231207_06:26:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:17
-snp500_daily_Postgresql저장_success_20231207_06:26:17
-snp500_daily_CNC_데이터수집_success_20231207_06:26:17
-snp500_daily_로컬CSV저장_success_20231207_06:26:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:21
-snp500_daily_Postgresql저장_success_20231207_06:26:21
-snp500_daily_CNP_데이터수집_success_20231207_06:26:21
-snp500_daily_로컬CSV저장_success_20231207_06:26:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:25
-snp500_daily_Postgresql저장_success_20231207_06:26:25
-snp500_daily_CDAY_데이터수집_success_20231207_06:26:25
-snp500_daily_로컬CSV저장_success_20231207_06:26:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:28
-snp500_daily_Postgresql저장_success_20231207_06:26:28
-snp500_daily_CF_데이터수집_success_20231207_06:26:28
-snp500_daily_로컬CSV저장_success_20231207_06:26:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:32
-snp500_daily_Postgresql저장_success_20231207_06:26:32
-snp500_daily_CRL_데이터수집_success_20231207_06:26:32
-snp500_daily_로컬CSV저장_success_20231207_06:26:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20971.52it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:35
-snp500_daily_Postgresql저장_success_20231207_06:26:35
-snp500_daily_SCHW_데이터수집_success_20231207_06:26:35
-snp500_daily_로컬CSV저장_success_20231207_06:26:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:39
-snp500_daily_Postgresql저장_success_20231207_06:26:39
-snp500_daily_CHTR_데이터수집_success_20231207_06:26:39
-snp500_daily_로컬CSV저장_success_20231207_06:26:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21183.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:43
-snp500_daily_Postgresql저장_success_20231207_06:26:43
-snp500_daily_CVX_데이터수집_success_20231207_06:26:43
-snp500_daily_로컬CSV저장_success_20231207_06:26:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:46
-snp500_daily_Postgresql저장_success_20231207_06:26:46
-snp500_daily_CMG_데이터수집_success_20231207_06:26:46
-snp500_daily_로컬CSV저장_success_20231207_06:26:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:49
-snp500_daily_Postgresql저장_success_20231207_06:26:49
-snp500_daily_CB_데이터수집_success_20231207_06:26:49
-snp500_daily_로컬CSV저장_success_20231207_06:26:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:53
-snp500_daily_Postgresql저장_success_20231207_06:26:53
-snp500_daily_CHD_데이터수집_success_20231207_06:26:53
-snp500_daily_로컬CSV저장_success_20231207_06:26:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:56
-snp500_daily_Postgresql저장_success_20231207_06:26:56
-snp500_daily_CI_데이터수집_success_20231207_06:26:56
-snp500_daily_로컬CSV저장_success_20231207_06:26:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:26:59
-snp500_daily_Postgresql저장_success_20231207_06:26:59
-snp500_daily_CINF_데이터수집_success_20231207_06:26:59
-snp500_daily_로컬CSV저장_success_20231207_06:27:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:02
-snp500_daily_Postgresql저장_success_20231207_06:27:02
-snp500_daily_CTAS_데이터수집_success_20231207_06:27:02
-snp500_daily_로컬CSV저장_success_20231207_06:27:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:05
-snp500_daily_Postgresql저장_success_20231207_06:27:05
-snp500_daily_CSCO_데이터수집_success_20231207_06:27:05
-snp500_daily_로컬CSV저장_success_20231207_06:27:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 35246.25it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:09
-snp500_daily_Postgresql저장_success_20231207_06:27:09
-snp500_daily_C_데이터수집_success_20231207_06:27:09
-snp500_daily_로컬CSV저장_success_20231207_06:27:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22310.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:13
-snp500_daily_Postgresql저장_success_20231207_06:27:13
-snp500_daily_CFG_데이터수집_success_20231207_06:27:13
-snp500_daily_로컬CSV저장_success_20231207_06:27:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:16
-snp500_daily_Postgresql저장_success_20231207_06:27:16
-snp500_daily_CLX_데이터수집_success_20231207_06:27:16
-snp500_daily_로컬CSV저장_success_20231207_06:27:20
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:20
-snp500_daily_Postgresql저장_success_20231207_06:27:20
-snp500_daily_CME_데이터수집_success_20231207_06:27:20
-snp500_daily_로컬CSV저장_success_20231207_06:27:23
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:23
-snp500_daily_Postgresql저장_success_20231207_06:27:23
-snp500_daily_CMS_데이터수집_success_20231207_06:27:23
-snp500_daily_로컬CSV저장_success_20231207_06:27:26
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31300.78it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:26
-snp500_daily_Postgresql저장_success_20231207_06:27:26
-snp500_daily_KO_데이터수집_success_20231207_06:27:26
-snp500_daily_로컬CSV저장_success_20231207_06:27:29
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:29
-snp500_daily_Postgresql저장_success_20231207_06:27:29
-snp500_daily_CTSH_데이터수집_success_20231207_06:27:29
-snp500_daily_로컬CSV저장_success_20231207_06:27:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:32
-snp500_daily_Postgresql저장_success_20231207_06:27:32
-snp500_daily_CL_데이터수집_success_20231207_06:27:32
-snp500_daily_로컬CSV저장_success_20231207_06:27:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:36
-snp500_daily_Postgresql저장_success_20231207_06:27:36
-snp500_daily_CMCSA_데이터수집_success_20231207_06:27:36
-snp500_daily_로컬CSV저장_success_20231207_06:27:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:39
-snp500_daily_Postgresql저장_success_20231207_06:27:39
-snp500_daily_CMA_데이터수집_success_20231207_06:27:39
-snp500_daily_로컬CSV저장_success_20231207_06:27:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:42
-snp500_daily_Postgresql저장_success_20231207_06:27:42
-snp500_daily_CAG_데이터수집_success_20231207_06:27:42
-snp500_daily_로컬CSV저장_success_20231207_06:27:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:46
-snp500_daily_Postgresql저장_success_20231207_06:27:46
-snp500_daily_COP_데이터수집_success_20231207_06:27:46
-snp500_daily_로컬CSV저장_success_20231207_06:27:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22192.08it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:49
-snp500_daily_Postgresql저장_success_20231207_06:27:49
-snp500_daily_ED_데이터수집_success_20231207_06:27:49
-snp500_daily_로컬CSV저장_success_20231207_06:27:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17119.61it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:52
-snp500_daily_Postgresql저장_success_20231207_06:27:52
-snp500_daily_STZ_데이터수집_success_20231207_06:27:52
-snp500_daily_로컬CSV저장_success_20231207_06:27:55
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 15768.06it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:55
-snp500_daily_Postgresql저장_success_20231207_06:27:55
-snp500_daily_CEG_데이터수집_success_20231207_06:27:55
-snp500_daily_로컬CSV저장_success_20231207_06:27:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:27:59
-snp500_daily_Postgresql저장_success_20231207_06:27:59
-snp500_daily_COO_데이터수집_success_20231207_06:27:59
-snp500_daily_로컬CSV저장_success_20231207_06:28:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:02
-snp500_daily_Postgresql저장_success_20231207_06:28:02
-snp500_daily_CPRT_데이터수집_success_20231207_06:28:02
-snp500_daily_로컬CSV저장_success_20231207_06:28:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22310.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:05
-snp500_daily_Postgresql저장_success_20231207_06:28:05
-snp500_daily_GLW_데이터수집_success_20231207_06:28:05
-snp500_daily_로컬CSV저장_success_20231207_06:28:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:09
-snp500_daily_Postgresql저장_success_20231207_06:28:09
-snp500_daily_CTVA_데이터수집_success_20231207_06:28:09
-snp500_daily_로컬CSV저장_success_20231207_06:28:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:13
-snp500_daily_Postgresql저장_success_20231207_06:28:13
-snp500_daily_CSGP_데이터수집_success_20231207_06:28:13
-snp500_daily_로컬CSV저장_success_20231207_06:28:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:16
-snp500_daily_Postgresql저장_success_20231207_06:28:16
-snp500_daily_COST_데이터수집_success_20231207_06:28:16
-snp500_daily_로컬CSV저장_success_20231207_06:28:20
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:20
-snp500_daily_Postgresql저장_success_20231207_06:28:20
-snp500_daily_CTRA_데이터수집_success_20231207_06:28:20
-snp500_daily_로컬CSV저장_success_20231207_06:28:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:24
-snp500_daily_Postgresql저장_success_20231207_06:28:24
-snp500_daily_CCI_데이터수집_success_20231207_06:28:24
-snp500_daily_로컬CSV저장_success_20231207_06:28:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33554.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:27
-snp500_daily_Postgresql저장_success_20231207_06:28:27
-snp500_daily_CSX_데이터수집_success_20231207_06:28:27
-snp500_daily_로컬CSV저장_success_20231207_06:28:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:31
-snp500_daily_Postgresql저장_success_20231207_06:28:31
-snp500_daily_CMI_데이터수집_success_20231207_06:28:31
-snp500_daily_로컬CSV저장_success_20231207_06:28:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:35
-snp500_daily_Postgresql저장_success_20231207_06:28:35
-snp500_daily_CVS_데이터수집_success_20231207_06:28:35
-snp500_daily_로컬CSV저장_success_20231207_06:28:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26886.56it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:39
-snp500_daily_Postgresql저장_success_20231207_06:28:39
-snp500_daily_DHI_데이터수집_success_20231207_06:28:39
-snp500_daily_로컬CSV저장_success_20231207_06:28:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17549.39it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:42
-snp500_daily_Postgresql저장_success_20231207_06:28:42
-snp500_daily_DHR_데이터수집_success_20231207_06:28:42
-snp500_daily_로컬CSV저장_success_20231207_06:28:45
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:45
-snp500_daily_Postgresql저장_success_20231207_06:28:45
-snp500_daily_DRI_데이터수집_success_20231207_06:28:45
-snp500_daily_로컬CSV저장_success_20231207_06:28:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:49
-snp500_daily_Postgresql저장_success_20231207_06:28:49
-snp500_daily_DVA_데이터수집_success_20231207_06:28:49
-snp500_daily_로컬CSV저장_success_20231207_06:28:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19239.93it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:52
-snp500_daily_Postgresql저장_success_20231207_06:28:52
-snp500_daily_DE_데이터수집_success_20231207_06:28:52
-snp500_daily_로컬CSV저장_success_20231207_06:28:55
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:55
-snp500_daily_Postgresql저장_success_20231207_06:28:55
-snp500_daily_DAL_데이터수집_success_20231207_06:28:55
-snp500_daily_로컬CSV저장_success_20231207_06:28:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25731.93it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:28:59
-snp500_daily_Postgresql저장_success_20231207_06:28:59
-snp500_daily_XRAY_데이터수집_success_20231207_06:28:59
-snp500_daily_로컬CSV저장_success_20231207_06:29:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:02
-snp500_daily_Postgresql저장_success_20231207_06:29:02
-snp500_daily_DVN_데이터수집_success_20231207_06:29:02
-snp500_daily_로컬CSV저장_success_20231207_06:29:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:05
-snp500_daily_Postgresql저장_success_20231207_06:29:05
-snp500_daily_DXCM_데이터수집_success_20231207_06:29:05
-snp500_daily_로컬CSV저장_success_20231207_06:29:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:09
-snp500_daily_Postgresql저장_success_20231207_06:29:09
-snp500_daily_FANG_데이터수집_success_20231207_06:29:09
-snp500_daily_로컬CSV저장_success_20231207_06:29:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:12
-snp500_daily_Postgresql저장_success_20231207_06:29:12
-snp500_daily_DLR_데이터수집_success_20231207_06:29:12
-snp500_daily_로컬CSV저장_success_20231207_06:29:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:16
-snp500_daily_Postgresql저장_success_20231207_06:29:16
-snp500_daily_DFS_데이터수집_success_20231207_06:29:16
-snp500_daily_로컬CSV저장_success_20231207_06:29:18
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:18
-snp500_daily_Postgresql저장_success_20231207_06:29:18
-snp500_daily_DIS_데이터수집_success_20231207_06:29:18
-snp500_daily_로컬CSV저장_success_20231207_06:29:22
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32513.98it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:22
-snp500_daily_Postgresql저장_success_20231207_06:29:22
-snp500_daily_DG_데이터수집_success_20231207_06:29:22
-snp500_daily_로컬CSV저장_success_20231207_06:29:26
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:26
-snp500_daily_Postgresql저장_success_20231207_06:29:26
-snp500_daily_DLTR_데이터수집_success_20231207_06:29:26
-snp500_daily_로컬CSV저장_success_20231207_06:29:30
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34663.67it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:30
-snp500_daily_Postgresql저장_success_20231207_06:29:30
-snp500_daily_D_데이터수집_success_20231207_06:29:30
-snp500_daily_로컬CSV저장_success_20231207_06:29:33
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:33
-snp500_daily_Postgresql저장_success_20231207_06:29:33
-snp500_daily_DPZ_데이터수집_success_20231207_06:29:33
-snp500_daily_로컬CSV저장_success_20231207_06:29:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:36
-snp500_daily_Postgresql저장_success_20231207_06:29:36
-snp500_daily_DOV_데이터수집_success_20231207_06:29:36
-snp500_daily_로컬CSV저장_success_20231207_06:29:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18477.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:40
-snp500_daily_Postgresql저장_success_20231207_06:29:40
-snp500_daily_DOW_데이터수집_success_20231207_06:29:40
-snp500_daily_로컬CSV저장_success_20231207_06:29:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24966.10it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:43
-snp500_daily_Postgresql저장_success_20231207_06:29:43
-snp500_daily_DTE_데이터수집_success_20231207_06:29:43
-snp500_daily_로컬CSV저장_success_20231207_06:29:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:47
-snp500_daily_Postgresql저장_success_20231207_06:29:47
-snp500_daily_DUK_데이터수집_success_20231207_06:29:47
-snp500_daily_로컬CSV저장_success_20231207_06:29:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:50
-snp500_daily_Postgresql저장_success_20231207_06:29:50
-snp500_daily_DD_데이터수집_success_20231207_06:29:50
-snp500_daily_로컬CSV저장_success_20231207_06:29:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:53
-snp500_daily_Postgresql저장_success_20231207_06:29:53
-snp500_daily_EMN_데이터수집_success_20231207_06:29:53
-snp500_daily_로컬CSV저장_success_20231207_06:29:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25115.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:56
-snp500_daily_Postgresql저장_success_20231207_06:29:56
-snp500_daily_ETN_데이터수집_success_20231207_06:29:56
-snp500_daily_로컬CSV저장_success_20231207_06:29:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:29:59
-snp500_daily_Postgresql저장_success_20231207_06:29:59
-snp500_daily_EBAY_데이터수집_success_20231207_06:29:59
-snp500_daily_로컬CSV저장_success_20231207_06:30:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23301.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:03
-snp500_daily_Postgresql저장_success_20231207_06:30:03
-snp500_daily_ECL_데이터수집_success_20231207_06:30:03
-snp500_daily_로컬CSV저장_success_20231207_06:30:07
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:07
-snp500_daily_Postgresql저장_success_20231207_06:30:07
-snp500_daily_EIX_데이터수집_success_20231207_06:30:07
-snp500_daily_로컬CSV저장_success_20231207_06:30:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:10
-snp500_daily_Postgresql저장_success_20231207_06:30:10
-snp500_daily_EW_데이터수집_success_20231207_06:30:10
-snp500_daily_로컬CSV저장_success_20231207_06:30:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22919.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:14
-snp500_daily_Postgresql저장_success_20231207_06:30:14
-snp500_daily_EA_데이터수집_success_20231207_06:30:14
-snp500_daily_로컬CSV저장_success_20231207_06:30:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31536.12it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:17
-snp500_daily_Postgresql저장_success_20231207_06:30:17
-snp500_daily_ELV_데이터수집_success_20231207_06:30:17
-snp500_daily_로컬CSV저장_success_20231207_06:30:20
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:20
-snp500_daily_Postgresql저장_success_20231207_06:30:20
-snp500_daily_LLY_데이터수집_success_20231207_06:30:20
-snp500_daily_로컬CSV저장_success_20231207_06:30:23
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:23
-snp500_daily_Postgresql저장_success_20231207_06:30:23
-snp500_daily_EMR_데이터수집_success_20231207_06:30:23
-snp500_daily_로컬CSV저장_success_20231207_06:30:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:27
-snp500_daily_Postgresql저장_success_20231207_06:30:27
-snp500_daily_ENPH_데이터수집_success_20231207_06:30:27
-snp500_daily_로컬CSV저장_success_20231207_06:30:30
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:30
-snp500_daily_Postgresql저장_success_20231207_06:30:30
-snp500_daily_ETR_데이터수집_success_20231207_06:30:30
-snp500_daily_로컬CSV저장_success_20231207_06:30:33
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:33
-snp500_daily_Postgresql저장_success_20231207_06:30:33
-snp500_daily_EOG_데이터수집_success_20231207_06:30:33
-snp500_daily_로컬CSV저장_success_20231207_06:30:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:36
-snp500_daily_Postgresql저장_success_20231207_06:30:36
-snp500_daily_EPAM_데이터수집_success_20231207_06:30:36
-snp500_daily_로컬CSV저장_success_20231207_06:30:41
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:41
-snp500_daily_Postgresql저장_success_20231207_06:30:41
-snp500_daily_EQT_데이터수집_success_20231207_06:30:41
-snp500_daily_로컬CSV저장_success_20231207_06:30:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:46
-snp500_daily_Postgresql저장_success_20231207_06:30:46
-snp500_daily_EFX_데이터수집_success_20231207_06:30:46
-snp500_daily_로컬CSV저장_success_20231207_06:30:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19972.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:49
-snp500_daily_Postgresql저장_success_20231207_06:30:49
-snp500_daily_EQIX_데이터수집_success_20231207_06:30:49
-snp500_daily_로컬CSV저장_success_20231207_06:30:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18724.57it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:52
-snp500_daily_Postgresql저장_success_20231207_06:30:52
-snp500_daily_EQR_데이터수집_success_20231207_06:30:52
-snp500_daily_로컬CSV저장_success_20231207_06:30:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:56
-snp500_daily_Postgresql저장_success_20231207_06:30:56
-snp500_daily_ESS_데이터수집_success_20231207_06:30:56
-snp500_daily_로컬CSV저장_success_20231207_06:30:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:30:59
-snp500_daily_Postgresql저장_success_20231207_06:30:59
-snp500_daily_EL_데이터수집_success_20231207_06:30:59
-snp500_daily_로컬CSV저장_success_20231207_06:31:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:02
-snp500_daily_Postgresql저장_success_20231207_06:31:02
-snp500_daily_ETSY_데이터수집_success_20231207_06:31:02
-snp500_daily_로컬CSV저장_success_20231207_06:31:07
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:07
-snp500_daily_Postgresql저장_success_20231207_06:31:07
-snp500_daily_EG_데이터수집_success_20231207_06:31:07
-snp500_daily_로컬CSV저장_success_20231207_06:31:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20661.60it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:10
-snp500_daily_Postgresql저장_success_20231207_06:31:10
-snp500_daily_EVRG_데이터수집_success_20231207_06:31:10
-snp500_daily_로컬CSV저장_success_20231207_06:31:15
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24672.38it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:15
-snp500_daily_Postgresql저장_success_20231207_06:31:15
-snp500_daily_ES_데이터수집_success_20231207_06:31:15
-snp500_daily_로컬CSV저장_success_20231207_06:31:19
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:19
-snp500_daily_Postgresql저장_success_20231207_06:31:19
-snp500_daily_EXC_데이터수집_success_20231207_06:31:19
-snp500_daily_로컬CSV저장_success_20231207_06:31:22
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:22
-snp500_daily_Postgresql저장_success_20231207_06:31:22
-snp500_daily_EXPE_데이터수집_success_20231207_06:31:22
-snp500_daily_로컬CSV저장_success_20231207_06:31:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:25
-snp500_daily_Postgresql저장_success_20231207_06:31:25
-snp500_daily_EXPD_데이터수집_success_20231207_06:31:25
-snp500_daily_로컬CSV저장_success_20231207_06:31:29
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:29
-snp500_daily_Postgresql저장_success_20231207_06:31:29
-snp500_daily_EXR_데이터수집_success_20231207_06:31:29
-snp500_daily_로컬CSV저장_success_20231207_06:31:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:32
-snp500_daily_Postgresql저장_success_20231207_06:31:32
-snp500_daily_XOM_데이터수집_success_20231207_06:31:32
-snp500_daily_로컬CSV저장_success_20231207_06:31:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:36
-snp500_daily_Postgresql저장_success_20231207_06:31:36
-snp500_daily_FFIV_데이터수집_success_20231207_06:31:36
-snp500_daily_로컬CSV저장_success_20231207_06:31:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:40
-snp500_daily_Postgresql저장_success_20231207_06:31:40
-snp500_daily_FDS_데이터수집_success_20231207_06:31:40
-snp500_daily_로컬CSV저장_success_20231207_06:31:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:43
-snp500_daily_Postgresql저장_success_20231207_06:31:43
-snp500_daily_FICO_데이터수집_success_20231207_06:31:43
-snp500_daily_로컬CSV저장_success_20231207_06:31:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:47
-snp500_daily_Postgresql저장_success_20231207_06:31:47
-snp500_daily_FAST_데이터수집_success_20231207_06:31:47
-snp500_daily_로컬CSV저장_success_20231207_06:31:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:50
-snp500_daily_Postgresql저장_success_20231207_06:31:50
-snp500_daily_FRT_데이터수집_success_20231207_06:31:50
-snp500_daily_로컬CSV저장_success_20231207_06:31:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18236.10it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:54
-snp500_daily_Postgresql저장_success_20231207_06:31:54
-snp500_daily_FDX_데이터수집_success_20231207_06:31:54
-snp500_daily_로컬CSV저장_success_20231207_06:31:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:57
-snp500_daily_Postgresql저장_success_20231207_06:31:57
-snp500_daily_FITB_데이터수집_success_20231207_06:31:57
-snp500_daily_로컬CSV저장_success_20231207_06:31:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19691.57it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:31:59
-snp500_daily_Postgresql저장_success_20231207_06:31:59
-snp500_daily_FSLR_데이터수집_success_20231207_06:31:59
-snp500_daily_로컬CSV저장_success_20231207_06:32:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:03
-snp500_daily_Postgresql저장_success_20231207_06:32:03
-snp500_daily_FE_데이터수집_success_20231207_06:32:03
-snp500_daily_로컬CSV저장_success_20231207_06:32:06
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:06
-snp500_daily_Postgresql저장_success_20231207_06:32:06
-snp500_daily_FIS_데이터수집_success_20231207_06:32:06
-snp500_daily_로컬CSV저장_success_20231207_06:32:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:10
-snp500_daily_Postgresql저장_success_20231207_06:32:10
-snp500_daily_FI_데이터수집_success_20231207_06:32:10
-snp500_daily_로컬CSV저장_success_20231207_06:32:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:13
-snp500_daily_Postgresql저장_success_20231207_06:32:13
-snp500_daily_FLT_데이터수집_success_20231207_06:32:13
-snp500_daily_로컬CSV저장_success_20231207_06:32:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 12945.38it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:16
-snp500_daily_Postgresql저장_success_20231207_06:32:16
-snp500_daily_FMC_데이터수집_success_20231207_06:32:16
-snp500_daily_로컬CSV저장_success_20231207_06:32:19
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:19
-snp500_daily_Postgresql저장_success_20231207_06:32:19
-snp500_daily_F_데이터수집_success_20231207_06:32:19
-snp500_daily_로컬CSV저장_success_20231207_06:32:22
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25890.77it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:22
-snp500_daily_Postgresql저장_success_20231207_06:32:22
-snp500_daily_FTNT_데이터수집_success_20231207_06:32:22
-snp500_daily_로컬CSV저장_success_20231207_06:32:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 9510.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:25
-snp500_daily_Postgresql저장_success_20231207_06:32:25
-snp500_daily_FTV_데이터수집_success_20231207_06:32:25
-snp500_daily_로컬CSV저장_success_20231207_06:32:29
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:29
-snp500_daily_Postgresql저장_success_20231207_06:32:29
-snp500_daily_FOXA_데이터수집_success_20231207_06:32:29
-snp500_daily_로컬CSV저장_success_20231207_06:32:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:32
-snp500_daily_Postgresql저장_success_20231207_06:32:32
-snp500_daily_FOX_데이터수집_success_20231207_06:32:32
-snp500_daily_로컬CSV저장_success_20231207_06:32:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:36
-snp500_daily_Postgresql저장_success_20231207_06:32:36
-snp500_daily_BEN_데이터수집_success_20231207_06:32:36
-snp500_daily_로컬CSV저장_success_20231207_06:32:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:39
-snp500_daily_Postgresql저장_success_20231207_06:32:39
-snp500_daily_FCX_데이터수집_success_20231207_06:32:39
-snp500_daily_로컬CSV저장_success_20231207_06:32:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:42
-snp500_daily_Postgresql저장_success_20231207_06:32:42
-snp500_daily_GRMN_데이터수집_success_20231207_06:32:42
-snp500_daily_로컬CSV저장_success_20231207_06:32:45
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:45
-snp500_daily_Postgresql저장_success_20231207_06:32:45
-snp500_daily_IT_데이터수집_success_20231207_06:32:45
-snp500_daily_로컬CSV저장_success_20231207_06:32:48
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:48
-snp500_daily_Postgresql저장_success_20231207_06:32:48
-snp500_daily_GEHC_데이터수집_success_20231207_06:32:48
-snp500_daily_로컬CSV저장_success_20231207_06:32:51
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:51
-snp500_daily_Postgresql저장_success_20231207_06:32:51
-snp500_daily_GEN_데이터수집_success_20231207_06:32:51
-snp500_daily_로컬CSV저장_success_20231207_06:32:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:54
-snp500_daily_Postgresql저장_success_20231207_06:32:54
-snp500_daily_GNRC_데이터수집_success_20231207_06:32:54
-snp500_daily_로컬CSV저장_success_20231207_06:32:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:32:57
-snp500_daily_Postgresql저장_success_20231207_06:32:57
-snp500_daily_GD_데이터수집_success_20231207_06:32:57
-snp500_daily_로컬CSV저장_success_20231207_06:33:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:00
-snp500_daily_Postgresql저장_success_20231207_06:33:00
-snp500_daily_GE_데이터수집_success_20231207_06:33:00
-snp500_daily_로컬CSV저장_success_20231207_06:33:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:04
-snp500_daily_Postgresql저장_success_20231207_06:33:04
-snp500_daily_GIS_데이터수집_success_20231207_06:33:04
-snp500_daily_로컬CSV저장_success_20231207_06:33:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21732.15it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:09
-snp500_daily_Postgresql저장_success_20231207_06:33:09
-snp500_daily_GM_데이터수집_success_20231207_06:33:09
-snp500_daily_로컬CSV저장_success_20231207_06:33:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:12
-snp500_daily_Postgresql저장_success_20231207_06:33:12
-snp500_daily_GPC_데이터수집_success_20231207_06:33:12
-snp500_daily_로컬CSV저장_success_20231207_06:33:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 15709.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:16
-snp500_daily_Postgresql저장_success_20231207_06:33:16
-snp500_daily_GILD_데이터수집_success_20231207_06:33:16
-snp500_daily_로컬CSV저장_success_20231207_06:33:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19784.45it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:21
-snp500_daily_Postgresql저장_success_20231207_06:33:21
-snp500_daily_GL_데이터수집_success_20231207_06:33:21
-snp500_daily_로컬CSV저장_success_20231207_06:33:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34952.53it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:24
-snp500_daily_Postgresql저장_success_20231207_06:33:24
-snp500_daily_GPN_데이터수집_success_20231207_06:33:24
-snp500_daily_로컬CSV저장_success_20231207_06:33:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:27
-snp500_daily_Postgresql저장_success_20231207_06:33:27
-snp500_daily_GS_데이터수집_success_20231207_06:33:27
-snp500_daily_로컬CSV저장_success_20231207_06:33:30
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:30
-snp500_daily_Postgresql저장_success_20231207_06:33:30
-snp500_daily_HAL_데이터수집_success_20231207_06:33:30
-snp500_daily_로컬CSV저장_success_20231207_06:33:33
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31775.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:33
-snp500_daily_Postgresql저장_success_20231207_06:33:33
-snp500_daily_HIG_데이터수집_success_20231207_06:33:33
-snp500_daily_로컬CSV저장_success_20231207_06:33:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34952.53it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:36
-snp500_daily_Postgresql저장_success_20231207_06:33:36
-snp500_daily_HAS_데이터수집_success_20231207_06:33:36
-snp500_daily_로컬CSV저장_success_20231207_06:33:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:40
-snp500_daily_Postgresql저장_success_20231207_06:33:40
-snp500_daily_HCA_데이터수집_success_20231207_06:33:40
-snp500_daily_로컬CSV저장_success_20231207_06:33:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:43
-snp500_daily_Postgresql저장_success_20231207_06:33:43
-snp500_daily_PEAK_데이터수집_success_20231207_06:33:43
-snp500_daily_로컬CSV저장_success_20231207_06:33:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20867.18it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:46
-snp500_daily_Postgresql저장_success_20231207_06:33:46
-snp500_daily_HSIC_데이터수집_success_20231207_06:33:46
-snp500_daily_로컬CSV저장_success_20231207_06:33:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22919.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:50
-snp500_daily_Postgresql저장_success_20231207_06:33:50
-snp500_daily_HSY_데이터수집_success_20231207_06:33:50
-snp500_daily_로컬CSV저장_success_20231207_06:33:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:53
-snp500_daily_Postgresql저장_success_20231207_06:33:53
-snp500_daily_HES_데이터수집_success_20231207_06:33:53
-snp500_daily_로컬CSV저장_success_20231207_06:33:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:33:57
-snp500_daily_Postgresql저장_success_20231207_06:33:57
-snp500_daily_HPE_데이터수집_success_20231207_06:33:57
-snp500_daily_로컬CSV저장_success_20231207_06:34:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:00
-snp500_daily_Postgresql저장_success_20231207_06:34:00
-snp500_daily_HLT_데이터수집_success_20231207_06:34:00
-snp500_daily_로컬CSV저장_success_20231207_06:34:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:03
-snp500_daily_Postgresql저장_success_20231207_06:34:03
-snp500_daily_HOLX_데이터수집_success_20231207_06:34:03
-snp500_daily_로컬CSV저장_success_20231207_06:34:07
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:07
-snp500_daily_Postgresql저장_success_20231207_06:34:07
-snp500_daily_HD_데이터수집_success_20231207_06:34:07
-snp500_daily_로컬CSV저장_success_20231207_06:34:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19328.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:10
-snp500_daily_Postgresql저장_success_20231207_06:34:10
-snp500_daily_HON_데이터수집_success_20231207_06:34:10
-snp500_daily_로컬CSV저장_success_20231207_06:34:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:14
-snp500_daily_Postgresql저장_success_20231207_06:34:14
-snp500_daily_HRL_데이터수집_success_20231207_06:34:14
-snp500_daily_로컬CSV저장_success_20231207_06:34:18
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:18
-snp500_daily_Postgresql저장_success_20231207_06:34:18
-snp500_daily_HST_데이터수집_success_20231207_06:34:18
-snp500_daily_로컬CSV저장_success_20231207_06:34:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:21
-snp500_daily_Postgresql저장_success_20231207_06:34:21
-snp500_daily_HWM_데이터수집_success_20231207_06:34:21
-snp500_daily_로컬CSV저장_success_20231207_06:34:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26051.58it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:24
-snp500_daily_Postgresql저장_success_20231207_06:34:24
-snp500_daily_HPQ_데이터수집_success_20231207_06:34:24
-snp500_daily_로컬CSV저장_success_20231207_06:34:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:28
-snp500_daily_Postgresql저장_success_20231207_06:34:28
-snp500_daily_HUBB_데이터수집_success_20231207_06:34:28
-snp500_daily_로컬CSV저장_success_20231207_06:34:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31300.78it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:32
-snp500_daily_Postgresql저장_success_20231207_06:34:32
-snp500_daily_HUM_데이터수집_success_20231207_06:34:32
-snp500_daily_로컬CSV저장_success_20231207_06:34:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:36
-snp500_daily_Postgresql저장_success_20231207_06:34:36
-snp500_daily_HBAN_데이터수집_success_20231207_06:34:36
-snp500_daily_로컬CSV저장_success_20231207_06:34:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:39
-snp500_daily_Postgresql저장_success_20231207_06:34:39
-snp500_daily_HII_데이터수집_success_20231207_06:34:39
-snp500_daily_로컬CSV저장_success_20231207_06:34:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:43
-snp500_daily_Postgresql저장_success_20231207_06:34:43
-snp500_daily_IBM_데이터수집_success_20231207_06:34:43
-snp500_daily_로컬CSV저장_success_20231207_06:34:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:46
-snp500_daily_Postgresql저장_success_20231207_06:34:46
-snp500_daily_IEX_데이터수집_success_20231207_06:34:46
-snp500_daily_로컬CSV저장_success_20231207_06:34:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:50
-snp500_daily_Postgresql저장_success_20231207_06:34:50
-snp500_daily_IDXX_데이터수집_success_20231207_06:34:50
-snp500_daily_로컬CSV저장_success_20231207_06:34:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 17623.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:54
-snp500_daily_Postgresql저장_success_20231207_06:34:54
-snp500_daily_ITW_데이터수집_success_20231207_06:34:54
-snp500_daily_로컬CSV저장_success_20231207_06:34:58
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16578.28it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:34:58
-snp500_daily_Postgresql저장_success_20231207_06:34:58
-snp500_daily_ILMN_데이터수집_success_20231207_06:34:58
-snp500_daily_로컬CSV저장_success_20231207_06:35:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:02
-snp500_daily_Postgresql저장_success_20231207_06:35:02
-snp500_daily_INCY_데이터수집_success_20231207_06:35:02
-snp500_daily_로컬CSV저장_success_20231207_06:35:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:05
-snp500_daily_Postgresql저장_success_20231207_06:35:05
-snp500_daily_IR_데이터수집_success_20231207_06:35:05
-snp500_daily_로컬CSV저장_success_20231207_06:35:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:10
-snp500_daily_Postgresql저장_success_20231207_06:35:10
-snp500_daily_PODD_데이터수집_success_20231207_06:35:10
-snp500_daily_로컬CSV저장_success_20231207_06:35:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32513.98it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:13
-snp500_daily_Postgresql저장_success_20231207_06:35:13
-snp500_daily_INTC_데이터수집_success_20231207_06:35:13
-snp500_daily_로컬CSV저장_success_20231207_06:35:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:16
-snp500_daily_Postgresql저장_success_20231207_06:35:16
-snp500_daily_ICE_데이터수집_success_20231207_06:35:16
-snp500_daily_로컬CSV저장_success_20231207_06:35:20
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:20
-snp500_daily_Postgresql저장_success_20231207_06:35:20
-snp500_daily_IFF_데이터수집_success_20231207_06:35:20
-snp500_daily_로컬CSV저장_success_20231207_06:35:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:24
-snp500_daily_Postgresql저장_success_20231207_06:35:24
-snp500_daily_IP_데이터수집_success_20231207_06:35:24
-snp500_daily_로컬CSV저장_success_20231207_06:35:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:28
-snp500_daily_Postgresql저장_success_20231207_06:35:28
-snp500_daily_IPG_데이터수집_success_20231207_06:35:28
-snp500_daily_로컬CSV저장_success_20231207_06:35:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24244.53it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:31
-snp500_daily_Postgresql저장_success_20231207_06:35:31
-snp500_daily_INTU_데이터수집_success_20231207_06:35:31
-snp500_daily_로컬CSV저장_success_20231207_06:35:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23967.45it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:34
-snp500_daily_Postgresql저장_success_20231207_06:35:34
-snp500_daily_ISRG_데이터수집_success_20231207_06:35:34
-snp500_daily_로컬CSV저장_success_20231207_06:35:37
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:37
-snp500_daily_Postgresql저장_success_20231207_06:35:37
-snp500_daily_IVZ_데이터수집_success_20231207_06:35:37
-snp500_daily_로컬CSV저장_success_20231207_06:35:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:42
-snp500_daily_Postgresql저장_success_20231207_06:35:42
-snp500_daily_INVH_데이터수집_success_20231207_06:35:42
-snp500_daily_로컬CSV저장_success_20231207_06:35:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22310.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:46
-snp500_daily_Postgresql저장_success_20231207_06:35:46
-snp500_daily_IQV_데이터수집_success_20231207_06:35:46
-snp500_daily_로컬CSV저장_success_20231207_06:35:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:49
-snp500_daily_Postgresql저장_success_20231207_06:35:49
-snp500_daily_IRM_데이터수집_success_20231207_06:35:49
-snp500_daily_로컬CSV저장_success_20231207_06:35:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:53
-snp500_daily_Postgresql저장_success_20231207_06:35:53
-snp500_daily_JBHT_데이터수집_success_20231207_06:35:53
-snp500_daily_로컬CSV저장_success_20231207_06:35:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21620.12it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:56
-snp500_daily_Postgresql저장_success_20231207_06:35:56
-snp500_daily_JKHY_데이터수집_success_20231207_06:35:56
-snp500_daily_로컬CSV저장_success_20231207_06:35:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:35:59
-snp500_daily_Postgresql저장_success_20231207_06:35:59
-snp500_daily_J_데이터수집_success_20231207_06:35:59
-snp500_daily_로컬CSV저장_success_20231207_06:36:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:02
-snp500_daily_Postgresql저장_success_20231207_06:36:02
-snp500_daily_JNJ_데이터수집_success_20231207_06:36:02
-snp500_daily_로컬CSV저장_success_20231207_06:36:06
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:06
-snp500_daily_Postgresql저장_success_20231207_06:36:06
-snp500_daily_JCI_데이터수집_success_20231207_06:36:06
-snp500_daily_로컬CSV저장_success_20231207_06:36:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:09
-snp500_daily_Postgresql저장_success_20231207_06:36:09
-snp500_daily_JPM_데이터수집_success_20231207_06:36:09
-snp500_daily_로컬CSV저장_success_20231207_06:36:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:12
-snp500_daily_Postgresql저장_success_20231207_06:36:12
-snp500_daily_JNPR_데이터수집_success_20231207_06:36:12
-snp500_daily_로컬CSV저장_success_20231207_06:36:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:16
-snp500_daily_Postgresql저장_success_20231207_06:36:16
-snp500_daily_K_데이터수집_success_20231207_06:36:16
-snp500_daily_로컬CSV저장_success_20231207_06:36:20
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:20
-snp500_daily_Postgresql저장_success_20231207_06:36:20
-snp500_daily_KVUE_데이터수집_success_20231207_06:36:20
-snp500_daily_로컬CSV저장_success_20231207_06:36:23
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:23
-snp500_daily_Postgresql저장_success_20231207_06:36:23
-snp500_daily_KDP_데이터수집_success_20231207_06:36:23
-snp500_daily_로컬CSV저장_success_20231207_06:36:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:27
-snp500_daily_Postgresql저장_success_20231207_06:36:27
-snp500_daily_KEY_데이터수집_success_20231207_06:36:27
-snp500_daily_로컬CSV저장_success_20231207_06:36:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:31
-snp500_daily_Postgresql저장_success_20231207_06:36:31
-snp500_daily_KEYS_데이터수집_success_20231207_06:36:31
-snp500_daily_로컬CSV저장_success_20231207_06:36:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:34
-snp500_daily_Postgresql저장_success_20231207_06:36:34
-snp500_daily_KMB_데이터수집_success_20231207_06:36:34
-snp500_daily_로컬CSV저장_success_20231207_06:36:38
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19691.57it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:38
-snp500_daily_Postgresql저장_success_20231207_06:36:38
-snp500_daily_KIM_데이터수집_success_20231207_06:36:38
-snp500_daily_로컬CSV저장_success_20231207_06:36:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 13797.05it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:43
-snp500_daily_Postgresql저장_success_20231207_06:36:43
-snp500_daily_KMI_데이터수집_success_20231207_06:36:43
-snp500_daily_로컬CSV저장_success_20231207_06:36:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:47
-snp500_daily_Postgresql저장_success_20231207_06:36:47
-snp500_daily_KLAC_데이터수집_success_20231207_06:36:47
-snp500_daily_로컬CSV저장_success_20231207_06:36:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:50
-snp500_daily_Postgresql저장_success_20231207_06:36:50
-snp500_daily_KHC_데이터수집_success_20231207_06:36:50
-snp500_daily_로컬CSV저장_success_20231207_06:36:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:54
-snp500_daily_Postgresql저장_success_20231207_06:36:54
-snp500_daily_KR_데이터수집_success_20231207_06:36:54
-snp500_daily_로컬CSV저장_success_20231207_06:36:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24672.38it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:36:57
-snp500_daily_Postgresql저장_success_20231207_06:36:57
-snp500_daily_LHX_데이터수집_success_20231207_06:36:57
-snp500_daily_로컬CSV저장_success_20231207_06:37:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21183.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:00
-snp500_daily_Postgresql저장_success_20231207_06:37:00
-snp500_daily_LH_데이터수집_success_20231207_06:37:00
-snp500_daily_로컬CSV저장_success_20231207_06:37:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31536.12it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:04
-snp500_daily_Postgresql저장_success_20231207_06:37:04
-snp500_daily_LRCX_데이터수집_success_20231207_06:37:04
-snp500_daily_로컬CSV저장_success_20231207_06:37:07
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32513.98it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:07
-snp500_daily_Postgresql저장_success_20231207_06:37:07
-snp500_daily_LW_데이터수집_success_20231207_06:37:07
-snp500_daily_로컬CSV저장_success_20231207_06:37:11
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:11
-snp500_daily_Postgresql저장_success_20231207_06:37:11
-snp500_daily_LVS_데이터수집_success_20231207_06:37:11
-snp500_daily_로컬CSV저장_success_20231207_06:37:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:14
-snp500_daily_Postgresql저장_success_20231207_06:37:14
-snp500_daily_LDOS_데이터수집_success_20231207_06:37:14
-snp500_daily_로컬CSV저장_success_20231207_06:37:18
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:18
-snp500_daily_Postgresql저장_success_20231207_06:37:18
-snp500_daily_LEN_데이터수집_success_20231207_06:37:18
-snp500_daily_로컬CSV저장_success_20231207_06:37:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:21
-snp500_daily_Postgresql저장_success_20231207_06:37:21
-snp500_daily_LIN_데이터수집_success_20231207_06:37:21
-snp500_daily_로컬CSV저장_success_20231207_06:37:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11683.30it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:25
-snp500_daily_Postgresql저장_success_20231207_06:37:25
-snp500_daily_LYV_데이터수집_success_20231207_06:37:25
-snp500_daily_로컬CSV저장_success_20231207_06:37:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:28
-snp500_daily_Postgresql저장_success_20231207_06:37:28
-snp500_daily_LKQ_데이터수집_success_20231207_06:37:28
-snp500_daily_로컬CSV저장_success_20231207_06:37:33
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:33
-snp500_daily_Postgresql저장_success_20231207_06:37:33
-snp500_daily_LMT_데이터수집_success_20231207_06:37:33
-snp500_daily_로컬CSV저장_success_20231207_06:37:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:36
-snp500_daily_Postgresql저장_success_20231207_06:37:36
-snp500_daily_L_데이터수집_success_20231207_06:37:36
-snp500_daily_로컬CSV저장_success_20231207_06:37:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:39
-snp500_daily_Postgresql저장_success_20231207_06:37:39
-snp500_daily_LOW_데이터수집_success_20231207_06:37:39
-snp500_daily_로컬CSV저장_success_20231207_06:37:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:42
-snp500_daily_Postgresql저장_success_20231207_06:37:42
-snp500_daily_LULU_데이터수집_success_20231207_06:37:42
-snp500_daily_로컬CSV저장_success_20231207_06:37:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:46
-snp500_daily_Postgresql저장_success_20231207_06:37:46
-snp500_daily_LYB_데이터수집_success_20231207_06:37:46
-snp500_daily_로컬CSV저장_success_20231207_06:37:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22192.08it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:49
-snp500_daily_Postgresql저장_success_20231207_06:37:49
-snp500_daily_MTB_데이터수집_success_20231207_06:37:49
-snp500_daily_로컬CSV저장_success_20231207_06:37:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:52
-snp500_daily_Postgresql저장_success_20231207_06:37:52
-snp500_daily_MRO_데이터수집_success_20231207_06:37:52
-snp500_daily_로컬CSV저장_success_20231207_06:37:55
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:55
-snp500_daily_Postgresql저장_success_20231207_06:37:55
-snp500_daily_MPC_데이터수집_success_20231207_06:37:55
-snp500_daily_로컬CSV저장_success_20231207_06:37:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:37:59
-snp500_daily_Postgresql저장_success_20231207_06:37:59
-snp500_daily_MKTX_데이터수집_success_20231207_06:37:59
-snp500_daily_로컬CSV저장_success_20231207_06:38:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:03
-snp500_daily_Postgresql저장_success_20231207_06:38:03
-snp500_daily_MAR_데이터수집_success_20231207_06:38:03
-snp500_daily_로컬CSV저장_success_20231207_06:38:07
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11881.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:07
-snp500_daily_Postgresql저장_success_20231207_06:38:07
-snp500_daily_MMC_데이터수집_success_20231207_06:38:07
-snp500_daily_로컬CSV저장_success_20231207_06:38:10
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32513.98it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:10
-snp500_daily_Postgresql저장_success_20231207_06:38:10
-snp500_daily_MLM_데이터수집_success_20231207_06:38:10
-snp500_daily_로컬CSV저장_success_20231207_06:38:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19972.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:13
-snp500_daily_Postgresql저장_success_20231207_06:38:13
-snp500_daily_MAS_데이터수집_success_20231207_06:38:13
-snp500_daily_로컬CSV저장_success_20231207_06:38:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:17
-snp500_daily_Postgresql저장_success_20231207_06:38:17
-snp500_daily_MA_데이터수집_success_20231207_06:38:17
-snp500_daily_로컬CSV저장_success_20231207_06:38:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:21
-snp500_daily_Postgresql저장_success_20231207_06:38:21
-snp500_daily_MTCH_데이터수집_success_20231207_06:38:21
-snp500_daily_로컬CSV저장_success_20231207_06:38:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:24
-snp500_daily_Postgresql저장_success_20231207_06:38:24
-snp500_daily_MKC_데이터수집_success_20231207_06:38:24
-snp500_daily_로컬CSV저장_success_20231207_06:38:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20164.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:27
-snp500_daily_Postgresql저장_success_20231207_06:38:27
-snp500_daily_MCD_데이터수집_success_20231207_06:38:27
-snp500_daily_로컬CSV저장_success_20231207_06:38:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:31
-snp500_daily_Postgresql저장_success_20231207_06:38:31
-snp500_daily_MCK_데이터수집_success_20231207_06:38:31
-snp500_daily_로컬CSV저장_success_20231207_06:38:34
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:34
-snp500_daily_Postgresql저장_success_20231207_06:38:34
-snp500_daily_MDT_데이터수집_success_20231207_06:38:34
-snp500_daily_로컬CSV저장_success_20231207_06:38:37
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26379.27it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:37
-snp500_daily_Postgresql저장_success_20231207_06:38:37
-snp500_daily_MRK_데이터수집_success_20231207_06:38:37
-snp500_daily_로컬CSV저장_success_20231207_06:38:41
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:41
-snp500_daily_Postgresql저장_success_20231207_06:38:41
-snp500_daily_META_데이터수집_success_20231207_06:38:41
-snp500_daily_로컬CSV저장_success_20231207_06:38:45
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:45
-snp500_daily_Postgresql저장_success_20231207_06:38:45
-snp500_daily_MET_데이터수집_success_20231207_06:38:45
-snp500_daily_로컬CSV저장_success_20231207_06:38:48
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:48
-snp500_daily_Postgresql저장_success_20231207_06:38:48
-snp500_daily_MTD_데이터수집_success_20231207_06:38:48
-snp500_daily_로컬CSV저장_success_20231207_06:38:51
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:51
-snp500_daily_Postgresql저장_success_20231207_06:38:51
-snp500_daily_MGM_데이터수집_success_20231207_06:38:51
-snp500_daily_로컬CSV저장_success_20231207_06:38:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:54
-snp500_daily_Postgresql저장_success_20231207_06:38:54
-snp500_daily_MCHP_데이터수집_success_20231207_06:38:54
-snp500_daily_로컬CSV저장_success_20231207_06:38:58
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:38:58
-snp500_daily_Postgresql저장_success_20231207_06:38:58
-snp500_daily_MU_데이터수집_success_20231207_06:38:58
-snp500_daily_로컬CSV저장_success_20231207_06:39:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20971.52it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:02
-snp500_daily_Postgresql저장_success_20231207_06:39:02
-snp500_daily_MSFT_데이터수집_success_20231207_06:39:02
-snp500_daily_로컬CSV저장_success_20231207_06:39:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:05
-snp500_daily_Postgresql저장_success_20231207_06:39:05
-snp500_daily_MAA_데이터수집_success_20231207_06:39:05
-snp500_daily_로컬CSV저장_success_20231207_06:39:08
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26886.56it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:08
-snp500_daily_Postgresql저장_success_20231207_06:39:08
-snp500_daily_MRNA_데이터수집_success_20231207_06:39:08
-snp500_daily_로컬CSV저장_success_20231207_06:39:11
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:11
-snp500_daily_Postgresql저장_success_20231207_06:39:11
-snp500_daily_MHK_데이터수집_success_20231207_06:39:11
-snp500_daily_로컬CSV저장_success_20231207_06:39:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:14
-snp500_daily_Postgresql저장_success_20231207_06:39:14
-snp500_daily_MOH_데이터수집_success_20231207_06:39:14
-snp500_daily_로컬CSV저장_success_20231207_06:39:18
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31775.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:18
-snp500_daily_Postgresql저장_success_20231207_06:39:18
-snp500_daily_TAP_데이터수집_success_20231207_06:39:18
-snp500_daily_로컬CSV저장_success_20231207_06:39:22
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:22
-snp500_daily_Postgresql저장_success_20231207_06:39:22
-snp500_daily_MDLZ_데이터수집_success_20231207_06:39:22
-snp500_daily_로컬CSV저장_success_20231207_06:39:26
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:26
-snp500_daily_Postgresql저장_success_20231207_06:39:26
-snp500_daily_MPWR_데이터수집_success_20231207_06:39:26
-snp500_daily_로컬CSV저장_success_20231207_06:39:29
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:29
-snp500_daily_Postgresql저장_success_20231207_06:39:29
-snp500_daily_MNST_데이터수집_success_20231207_06:39:29
-snp500_daily_로컬CSV저장_success_20231207_06:39:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 14364.05it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:32
-snp500_daily_Postgresql저장_success_20231207_06:39:32
-snp500_daily_MCO_데이터수집_success_20231207_06:39:32
-snp500_daily_로컬CSV저장_success_20231207_06:39:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34663.67it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:35
-snp500_daily_Postgresql저장_success_20231207_06:39:35
-snp500_daily_MS_데이터수집_success_20231207_06:39:35
-snp500_daily_로컬CSV저장_success_20231207_06:39:38
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21620.12it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:38
-snp500_daily_Postgresql저장_success_20231207_06:39:38
-snp500_daily_MOS_데이터수집_success_20231207_06:39:38
-snp500_daily_로컬CSV저장_success_20231207_06:39:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:43
-snp500_daily_Postgresql저장_success_20231207_06:39:43
-snp500_daily_MSI_데이터수집_success_20231207_06:39:43
-snp500_daily_로컬CSV저장_success_20231207_06:39:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:47
-snp500_daily_Postgresql저장_success_20231207_06:39:47
-snp500_daily_MSCI_데이터수집_success_20231207_06:39:47
-snp500_daily_로컬CSV저장_success_20231207_06:39:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20867.18it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:52
-snp500_daily_Postgresql저장_success_20231207_06:39:52
-snp500_daily_NDAQ_데이터수집_success_20231207_06:39:52
-snp500_daily_로컬CSV저장_success_20231207_06:39:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:39:56
-snp500_daily_Postgresql저장_success_20231207_06:39:56
-snp500_daily_NTAP_데이터수집_success_20231207_06:39:56
-snp500_daily_로컬CSV저장_success_20231207_06:40:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:00
-snp500_daily_Postgresql저장_success_20231207_06:40:00
-snp500_daily_NFLX_데이터수집_success_20231207_06:40:00
-snp500_daily_로컬CSV저장_success_20231207_06:40:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:02
-snp500_daily_Postgresql저장_success_20231207_06:40:02
-snp500_daily_NEM_데이터수집_success_20231207_06:40:02
-snp500_daily_로컬CSV저장_success_20231207_06:40:06
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:06
-snp500_daily_Postgresql저장_success_20231207_06:40:06
-snp500_daily_NWSA_데이터수집_success_20231207_06:40:06
-snp500_daily_로컬CSV저장_success_20231207_06:40:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 5817.34it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:09
-snp500_daily_Postgresql저장_success_20231207_06:40:09
-snp500_daily_NWS_데이터수집_success_20231207_06:40:09
-snp500_daily_로컬CSV저장_success_20231207_06:40:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:12
-snp500_daily_Postgresql저장_success_20231207_06:40:12
-snp500_daily_NEE_데이터수집_success_20231207_06:40:12
-snp500_daily_로컬CSV저장_success_20231207_06:40:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33554.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:17
-snp500_daily_Postgresql저장_success_20231207_06:40:17
-snp500_daily_NKE_데이터수집_success_20231207_06:40:17
-snp500_daily_로컬CSV저장_success_20231207_06:40:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31775.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:21
-snp500_daily_Postgresql저장_success_20231207_06:40:21
-snp500_daily_NI_데이터수집_success_20231207_06:40:21
-snp500_daily_로컬CSV저장_success_20231207_06:40:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31536.12it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:24
-snp500_daily_Postgresql저장_success_20231207_06:40:24
-snp500_daily_NDSN_데이터수집_success_20231207_06:40:24
-snp500_daily_로컬CSV저장_success_20231207_06:40:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:27
-snp500_daily_Postgresql저장_success_20231207_06:40:27
-snp500_daily_NSC_데이터수집_success_20231207_06:40:27
-snp500_daily_로컬CSV저장_success_20231207_06:40:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26886.56it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:32
-snp500_daily_Postgresql저장_success_20231207_06:40:32
-snp500_daily_NTRS_데이터수집_success_20231207_06:40:32
-snp500_daily_로컬CSV저장_success_20231207_06:40:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:36
-snp500_daily_Postgresql저장_success_20231207_06:40:36
-snp500_daily_NOC_데이터수집_success_20231207_06:40:36
-snp500_daily_로컬CSV저장_success_20231207_06:40:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:39
-snp500_daily_Postgresql저장_success_20231207_06:40:39
-snp500_daily_NCLH_데이터수집_success_20231207_06:40:39
-snp500_daily_로컬CSV저장_success_20231207_06:40:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24818.37it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:43
-snp500_daily_Postgresql저장_success_20231207_06:40:43
-snp500_daily_NRG_데이터수집_success_20231207_06:40:43
-snp500_daily_로컬CSV저장_success_20231207_06:40:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23831.27it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:46
-snp500_daily_Postgresql저장_success_20231207_06:40:46
-snp500_daily_NUE_데이터수집_success_20231207_06:40:46
-snp500_daily_로컬CSV저장_success_20231207_06:40:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33554.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:49
-snp500_daily_Postgresql저장_success_20231207_06:40:49
-snp500_daily_NVDA_데이터수집_success_20231207_06:40:49
-snp500_daily_로컬CSV저장_success_20231207_06:40:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:52
-snp500_daily_Postgresql저장_success_20231207_06:40:52
-snp500_daily_NVR_데이터수집_success_20231207_06:40:52
-snp500_daily_로컬CSV저장_success_20231207_06:40:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:56
-snp500_daily_Postgresql저장_success_20231207_06:40:56
-snp500_daily_NXPI_데이터수집_success_20231207_06:40:56
-snp500_daily_로컬CSV저장_success_20231207_06:40:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32513.98it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:40:59
-snp500_daily_Postgresql저장_success_20231207_06:40:59
-snp500_daily_ORLY_데이터수집_success_20231207_06:40:59
-snp500_daily_로컬CSV저장_success_20231207_06:41:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:02
-snp500_daily_Postgresql저장_success_20231207_06:41:02
-snp500_daily_OXY_데이터수집_success_20231207_06:41:02
-snp500_daily_로컬CSV저장_success_20231207_06:41:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:05
-snp500_daily_Postgresql저장_success_20231207_06:41:05
-snp500_daily_ODFL_데이터수집_success_20231207_06:41:05
-snp500_daily_로컬CSV저장_success_20231207_06:41:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20867.18it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:09
-snp500_daily_Postgresql저장_success_20231207_06:41:09
-snp500_daily_OMC_데이터수집_success_20231207_06:41:09
-snp500_daily_로컬CSV저장_success_20231207_06:41:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:14
-snp500_daily_Postgresql저장_success_20231207_06:41:14
-snp500_daily_ON_데이터수집_success_20231207_06:41:14
-snp500_daily_로컬CSV저장_success_20231207_06:41:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23045.63it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:17
-snp500_daily_Postgresql저장_success_20231207_06:41:17
-snp500_daily_OKE_데이터수집_success_20231207_06:41:17
-snp500_daily_로컬CSV저장_success_20231207_06:41:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:21
-snp500_daily_Postgresql저장_success_20231207_06:41:21
-snp500_daily_ORCL_데이터수집_success_20231207_06:41:21
-snp500_daily_로컬CSV저장_success_20231207_06:41:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:25
-snp500_daily_Postgresql저장_success_20231207_06:41:25
-snp500_daily_OTIS_데이터수집_success_20231207_06:41:25
-snp500_daily_로컬CSV저장_success_20231207_06:41:27
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:27
-snp500_daily_Postgresql저장_success_20231207_06:41:27
-snp500_daily_PCAR_데이터수집_success_20231207_06:41:27
-snp500_daily_로컬CSV저장_success_20231207_06:41:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:31
-snp500_daily_Postgresql저장_success_20231207_06:41:31
-snp500_daily_PKG_데이터수집_success_20231207_06:41:31
-snp500_daily_로컬CSV저장_success_20231207_06:41:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22192.08it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:36
-snp500_daily_Postgresql저장_success_20231207_06:41:36
-snp500_daily_PANW_데이터수집_success_20231207_06:41:36
-snp500_daily_로컬CSV저장_success_20231207_06:41:41
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:41
-snp500_daily_Postgresql저장_success_20231207_06:41:41
-snp500_daily_PARA_데이터수집_success_20231207_06:41:41
-snp500_daily_로컬CSV저장_success_20231207_06:41:44
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:44
-snp500_daily_Postgresql저장_success_20231207_06:41:44
-snp500_daily_PH_데이터수집_success_20231207_06:41:44
-snp500_daily_로컬CSV저장_success_20231207_06:41:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:47
-snp500_daily_Postgresql저장_success_20231207_06:41:47
-snp500_daily_PAYX_데이터수집_success_20231207_06:41:47
-snp500_daily_로컬CSV저장_success_20231207_06:41:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:50
-snp500_daily_Postgresql저장_success_20231207_06:41:50
-snp500_daily_PAYC_데이터수집_success_20231207_06:41:50
-snp500_daily_로컬CSV저장_success_20231207_06:41:54
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:54
-snp500_daily_Postgresql저장_success_20231207_06:41:54
-snp500_daily_PYPL_데이터수집_success_20231207_06:41:54
-snp500_daily_로컬CSV저장_success_20231207_06:41:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:41:57
-snp500_daily_Postgresql저장_success_20231207_06:41:57
-snp500_daily_PNR_데이터수집_success_20231207_06:41:57
-snp500_daily_로컬CSV저장_success_20231207_06:42:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:00
-snp500_daily_Postgresql저장_success_20231207_06:42:00
-snp500_daily_PEP_데이터수집_success_20231207_06:42:00
-snp500_daily_로컬CSV저장_success_20231207_06:42:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:04
-snp500_daily_Postgresql저장_success_20231207_06:42:04
-snp500_daily_PFE_데이터수집_success_20231207_06:42:04
-snp500_daily_로컬CSV저장_success_20231207_06:42:08
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:08
-snp500_daily_Postgresql저장_success_20231207_06:42:08
-snp500_daily_PCG_데이터수집_success_20231207_06:42:08
-snp500_daily_로컬CSV저장_success_20231207_06:42:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:12
-snp500_daily_Postgresql저장_success_20231207_06:42:12
-snp500_daily_PM_데이터수집_success_20231207_06:42:12
-snp500_daily_로컬CSV저장_success_20231207_06:42:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:17
-snp500_daily_Postgresql저장_success_20231207_06:42:17
-snp500_daily_PSX_데이터수집_success_20231207_06:42:17
-snp500_daily_로컬CSV저장_success_20231207_06:42:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31300.78it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:21
-snp500_daily_Postgresql저장_success_20231207_06:42:21
-snp500_daily_PNW_데이터수집_success_20231207_06:42:21
-snp500_daily_로컬CSV저장_success_20231207_06:42:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31300.78it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:25
-snp500_daily_Postgresql저장_success_20231207_06:42:25
-snp500_daily_PXD_데이터수집_success_20231207_06:42:25
-snp500_daily_로컬CSV저장_success_20231207_06:42:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:28
-snp500_daily_Postgresql저장_success_20231207_06:42:28
-snp500_daily_PNC_데이터수집_success_20231207_06:42:28
-snp500_daily_로컬CSV저장_success_20231207_06:42:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:32
-snp500_daily_Postgresql저장_success_20231207_06:42:32
-snp500_daily_POOL_데이터수집_success_20231207_06:42:32
-snp500_daily_로컬CSV저장_success_20231207_06:42:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:35
-snp500_daily_Postgresql저장_success_20231207_06:42:35
-snp500_daily_PPG_데이터수집_success_20231207_06:42:35
-snp500_daily_로컬CSV저장_success_20231207_06:42:38
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32263.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:38
-snp500_daily_Postgresql저장_success_20231207_06:42:38
-snp500_daily_PPL_데이터수집_success_20231207_06:42:38
-snp500_daily_로컬CSV저장_success_20231207_06:42:41
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25115.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:41
-snp500_daily_Postgresql저장_success_20231207_06:42:41
-snp500_daily_PFG_데이터수집_success_20231207_06:42:41
-snp500_daily_로컬CSV저장_success_20231207_06:42:45
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:45
-snp500_daily_Postgresql저장_success_20231207_06:42:45
-snp500_daily_PG_데이터수집_success_20231207_06:42:45
-snp500_daily_로컬CSV저장_success_20231207_06:42:49
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20763.88it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:49
-snp500_daily_Postgresql저장_success_20231207_06:42:49
-snp500_daily_PGR_데이터수집_success_20231207_06:42:49
-snp500_daily_로컬CSV저장_success_20231207_06:42:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18078.90it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:52
-snp500_daily_Postgresql저장_success_20231207_06:42:52
-snp500_daily_PLD_데이터수집_success_20231207_06:42:52
-snp500_daily_로컬CSV저장_success_20231207_06:42:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20867.18it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:56
-snp500_daily_Postgresql저장_success_20231207_06:42:56
-snp500_daily_PRU_데이터수집_success_20231207_06:42:56
-snp500_daily_로컬CSV저장_success_20231207_06:42:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:42:59
-snp500_daily_Postgresql저장_success_20231207_06:42:59
-snp500_daily_PEG_데이터수집_success_20231207_06:42:59
-snp500_daily_로컬CSV저장_success_20231207_06:43:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:03
-snp500_daily_Postgresql저장_success_20231207_06:43:03
-snp500_daily_PTC_데이터수집_success_20231207_06:43:03
-snp500_daily_로컬CSV저장_success_20231207_06:43:06
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34379.54it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:06
-snp500_daily_Postgresql저장_success_20231207_06:43:06
-snp500_daily_PSA_데이터수집_success_20231207_06:43:06
-snp500_daily_로컬CSV저장_success_20231207_06:43:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:09
-snp500_daily_Postgresql저장_success_20231207_06:43:09
-snp500_daily_PHM_데이터수집_success_20231207_06:43:09
-snp500_daily_로컬CSV저장_success_20231207_06:43:14
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33554.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:14
-snp500_daily_Postgresql저장_success_20231207_06:43:14
-snp500_daily_QRVO_데이터수집_success_20231207_06:43:14
-snp500_daily_로컬CSV저장_success_20231207_06:43:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:17
-snp500_daily_Postgresql저장_success_20231207_06:43:17
-snp500_daily_PWR_데이터수집_success_20231207_06:43:17
-snp500_daily_로컬CSV저장_success_20231207_06:43:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:21
-snp500_daily_Postgresql저장_success_20231207_06:43:21
-snp500_daily_QCOM_데이터수집_success_20231207_06:43:21
-snp500_daily_로컬CSV저장_success_20231207_06:43:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:25
-snp500_daily_Postgresql저장_success_20231207_06:43:25
-snp500_daily_DGX_데이터수집_success_20231207_06:43:25
-snp500_daily_로컬CSV저장_success_20231207_06:43:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:28
-snp500_daily_Postgresql저장_success_20231207_06:43:28
-snp500_daily_RL_데이터수집_success_20231207_06:43:28
-snp500_daily_로컬CSV저장_success_20231207_06:43:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34952.53it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:32
-snp500_daily_Postgresql저장_success_20231207_06:43:32
-snp500_daily_RJF_데이터수집_success_20231207_06:43:32
-snp500_daily_로컬CSV저장_success_20231207_06:43:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:35
-snp500_daily_Postgresql저장_success_20231207_06:43:35
-snp500_daily_RTX_데이터수집_success_20231207_06:43:35
-snp500_daily_로컬CSV저장_success_20231207_06:43:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:42
-snp500_daily_Postgresql저장_success_20231207_06:43:42
-snp500_daily_O_데이터수집_success_20231207_06:43:42
-snp500_daily_로컬CSV저장_success_20231207_06:43:45
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:45
-snp500_daily_Postgresql저장_success_20231207_06:43:45
-snp500_daily_REG_데이터수집_success_20231207_06:43:45
-snp500_daily_로컬CSV저장_success_20231207_06:43:48
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34379.54it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:48
-snp500_daily_Postgresql저장_success_20231207_06:43:48
-snp500_daily_REGN_데이터수집_success_20231207_06:43:48
-snp500_daily_로컬CSV저장_success_20231207_06:43:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33288.13it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:52
-snp500_daily_Postgresql저장_success_20231207_06:43:52
-snp500_daily_RF_데이터수집_success_20231207_06:43:52
-snp500_daily_로컬CSV저장_success_20231207_06:43:55
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33554.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:55
-snp500_daily_Postgresql저장_success_20231207_06:43:55
-snp500_daily_RSG_데이터수집_success_20231207_06:43:55
-snp500_daily_로컬CSV저장_success_20231207_06:43:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:43:59
-snp500_daily_Postgresql저장_success_20231207_06:43:59
-snp500_daily_RMD_데이터수집_success_20231207_06:43:59
-snp500_daily_로컬CSV저장_success_20231207_06:44:02
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:02
-snp500_daily_Postgresql저장_success_20231207_06:44:02
-snp500_daily_RVTY_데이터수집_success_20231207_06:44:02
-snp500_daily_로컬CSV저장_success_20231207_06:44:06
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:06
-snp500_daily_Postgresql저장_success_20231207_06:44:06
-snp500_daily_RHI_데이터수집_success_20231207_06:44:06
-snp500_daily_로컬CSV저장_success_20231207_06:44:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:09
-snp500_daily_Postgresql저장_success_20231207_06:44:09
-snp500_daily_ROK_데이터수집_success_20231207_06:44:09
-snp500_daily_로컬CSV저장_success_20231207_06:44:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:13
-snp500_daily_Postgresql저장_success_20231207_06:44:13
-snp500_daily_ROL_데이터수집_success_20231207_06:44:13
-snp500_daily_로컬CSV저장_success_20231207_06:44:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22671.91it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:17
-snp500_daily_Postgresql저장_success_20231207_06:44:17
-snp500_daily_ROP_데이터수집_success_20231207_06:44:17
-snp500_daily_로컬CSV저장_success_20231207_06:44:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:21
-snp500_daily_Postgresql저장_success_20231207_06:44:21
-snp500_daily_ROST_데이터수집_success_20231207_06:44:21
-snp500_daily_로컬CSV저장_success_20231207_06:44:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26715.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:24
-snp500_daily_Postgresql저장_success_20231207_06:44:24
-snp500_daily_RCL_데이터수집_success_20231207_06:44:24
-snp500_daily_로컬CSV저장_success_20231207_06:44:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30174.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:28
-snp500_daily_Postgresql저장_success_20231207_06:44:28
-snp500_daily_SPGI_데이터수집_success_20231207_06:44:28
-snp500_daily_로컬CSV저장_success_20231207_06:44:33
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:33
-snp500_daily_Postgresql저장_success_20231207_06:44:33
-snp500_daily_CRM_데이터수집_success_20231207_06:44:33
-snp500_daily_로컬CSV저장_success_20231207_06:44:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21732.15it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:36
-snp500_daily_Postgresql저장_success_20231207_06:44:36
-snp500_daily_SBAC_데이터수집_success_20231207_06:44:36
-snp500_daily_로컬CSV저장_success_20231207_06:44:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:40
-snp500_daily_Postgresql저장_success_20231207_06:44:40
-snp500_daily_SLB_데이터수집_success_20231207_06:44:40
-snp500_daily_로컬CSV저장_success_20231207_06:44:44
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22671.91it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:44
-snp500_daily_Postgresql저장_success_20231207_06:44:44
-snp500_daily_STX_데이터수집_success_20231207_06:44:44
-snp500_daily_로컬CSV저장_success_20231207_06:44:48
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:48
-snp500_daily_Postgresql저장_success_20231207_06:44:48
-snp500_daily_SEE_데이터수집_success_20231207_06:44:48
-snp500_daily_로컬CSV저장_success_20231207_06:44:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11397.57it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:52
-snp500_daily_Postgresql저장_success_20231207_06:44:52
-snp500_daily_SRE_데이터수집_success_20231207_06:44:52
-snp500_daily_로컬CSV저장_success_20231207_06:44:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28149.69it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:44:56
-snp500_daily_Postgresql저장_success_20231207_06:44:56
-snp500_daily_NOW_데이터수집_success_20231207_06:44:56
-snp500_daily_로컬CSV저장_success_20231207_06:45:01
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:01
-snp500_daily_Postgresql저장_success_20231207_06:45:01
-snp500_daily_SHW_데이터수집_success_20231207_06:45:01
-snp500_daily_로컬CSV저장_success_20231207_06:45:05
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32513.98it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:05
-snp500_daily_Postgresql저장_success_20231207_06:45:05
-snp500_daily_SPG_데이터수집_success_20231207_06:45:05
-snp500_daily_로컬CSV저장_success_20231207_06:45:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27962.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:09
-snp500_daily_Postgresql저장_success_20231207_06:45:09
-snp500_daily_SWKS_데이터수집_success_20231207_06:45:09
-snp500_daily_로컬CSV저장_success_20231207_06:45:13
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:13
-snp500_daily_Postgresql저장_success_20231207_06:45:13
-snp500_daily_SJM_데이터수집_success_20231207_06:45:13
-snp500_daily_로컬CSV저장_success_20231207_06:45:17
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22192.08it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:17
-snp500_daily_Postgresql저장_success_20231207_06:45:17
-snp500_daily_SNA_데이터수집_success_20231207_06:45:17
-snp500_daily_로컬CSV저장_success_20231207_06:45:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:21
-snp500_daily_Postgresql저장_success_20231207_06:45:21
-snp500_daily_SEDG_데이터수집_success_20231207_06:45:21
-snp500_daily_로컬CSV저장_success_20231207_06:45:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24528.09it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:24
-snp500_daily_Postgresql저장_success_20231207_06:45:24
-snp500_daily_SO_데이터수집_success_20231207_06:45:24
-snp500_daily_로컬CSV저장_success_20231207_06:45:29
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:29
-snp500_daily_Postgresql저장_success_20231207_06:45:29
-snp500_daily_LUV_데이터수집_success_20231207_06:45:29
-snp500_daily_로컬CSV저장_success_20231207_06:45:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:32
-snp500_daily_Postgresql저장_success_20231207_06:45:32
-snp500_daily_SWK_데이터수집_success_20231207_06:45:32
-snp500_daily_로컬CSV저장_success_20231207_06:45:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:35
-snp500_daily_Postgresql저장_success_20231207_06:45:35
-snp500_daily_SBUX_데이터수집_success_20231207_06:45:35
-snp500_daily_로컬CSV저장_success_20231207_06:45:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32513.98it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:40
-snp500_daily_Postgresql저장_success_20231207_06:45:40
-snp500_daily_STT_데이터수집_success_20231207_06:45:40
-snp500_daily_로컬CSV저장_success_20231207_06:45:44
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 9320.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:44
-snp500_daily_Postgresql저장_success_20231207_06:45:44
-snp500_daily_STLD_데이터수집_success_20231207_06:45:44
-snp500_daily_로컬CSV저장_success_20231207_06:45:48
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20262.34it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:48
-snp500_daily_Postgresql저장_success_20231207_06:45:48
-snp500_daily_STE_데이터수집_success_20231207_06:45:48
-snp500_daily_로컬CSV저장_success_20231207_06:45:52
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 16777.22it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:52
-snp500_daily_Postgresql저장_success_20231207_06:45:52
-snp500_daily_SYK_데이터수집_success_20231207_06:45:52
-snp500_daily_로컬CSV저장_success_20231207_06:45:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:56
-snp500_daily_Postgresql저장_fail_20231207_06:45:56
-snp500_daily_SYF_데이터수집_success_20231207_06:45:56
-snp500_daily_로컬CSV저장_success_20231207_06:45:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22429.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:45:59
-snp500_daily_Postgresql저장_success_20231207_06:45:59
-snp500_daily_SNPS_데이터수집_success_20231207_06:45:59
-snp500_daily_로컬CSV저장_success_20231207_06:46:03
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20360.70it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:03
-snp500_daily_Postgresql저장_success_20231207_06:46:03
-snp500_daily_SYY_데이터수집_success_20231207_06:46:03
-snp500_daily_로컬CSV저장_success_20231207_06:46:07
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 23172.95it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:07
-snp500_daily_Postgresql저장_success_20231207_06:46:07
-snp500_daily_TMUS_데이터수집_success_20231207_06:46:07
-snp500_daily_로컬CSV저장_success_20231207_06:46:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20460.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:12
-snp500_daily_Postgresql저장_success_20231207_06:46:12
-snp500_daily_TROW_데이터수집_success_20231207_06:46:12
-snp500_daily_로컬CSV저장_success_20231207_06:46:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 20661.60it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:16
-snp500_daily_Postgresql저장_success_20231207_06:46:16
-snp500_daily_TTWO_데이터수집_success_20231207_06:46:16
-snp500_daily_로컬CSV저장_success_20231207_06:46:21
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22192.08it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:21
-snp500_daily_Postgresql저장_success_20231207_06:46:21
-snp500_daily_TPR_데이터수집_success_20231207_06:46:21
-snp500_daily_로컬CSV저장_success_20231207_06:46:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24385.49it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:24
-snp500_daily_Postgresql저장_success_20231207_06:46:24
-snp500_daily_TRGP_데이터수집_success_20231207_06:46:24
-snp500_daily_로컬CSV저장_success_20231207_06:46:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33825.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:28
-snp500_daily_Postgresql저장_success_20231207_06:46:28
-snp500_daily_TGT_데이터수집_success_20231207_06:46:28
-snp500_daily_로컬CSV저장_success_20231207_06:46:33
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26214.40it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:33
-snp500_daily_Postgresql저장_success_20231207_06:46:33
-snp500_daily_TEL_데이터수집_success_20231207_06:46:33
-snp500_daily_로컬CSV저장_success_20231207_06:46:37
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 12595.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:37
-snp500_daily_Postgresql저장_success_20231207_06:46:37
-snp500_daily_TDY_데이터수집_success_20231207_06:46:37
-snp500_daily_로컬CSV저장_success_20231207_06:46:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 12264.05it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:40
-snp500_daily_Postgresql저장_success_20231207_06:46:40
-snp500_daily_TFX_데이터수집_success_20231207_06:46:40
-snp500_daily_로컬CSV저장_success_20231207_06:46:44
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:44
-snp500_daily_Postgresql저장_success_20231207_06:46:44
-snp500_daily_TER_데이터수집_success_20231207_06:46:44
-snp500_daily_로컬CSV저장_success_20231207_06:46:47
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25115.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:47
-snp500_daily_Postgresql저장_success_20231207_06:46:47
-snp500_daily_TSLA_데이터수집_success_20231207_06:46:47
-snp500_daily_로컬CSV저장_success_20231207_06:46:51
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:51
-snp500_daily_Postgresql저장_success_20231207_06:46:51
-snp500_daily_TXN_데이터수집_success_20231207_06:46:51
-snp500_daily_로컬CSV저장_success_20231207_06:46:55
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:55
-snp500_daily_Postgresql저장_success_20231207_06:46:55
-snp500_daily_TXT_데이터수집_success_20231207_06:46:55
-snp500_daily_로컬CSV저장_success_20231207_06:46:59
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:46:59
-snp500_daily_Postgresql저장_success_20231207_06:46:59
-snp500_daily_TMO_데이터수집_success_20231207_06:46:59
-snp500_daily_로컬CSV저장_success_20231207_06:47:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:04
-snp500_daily_Postgresql저장_success_20231207_06:47:04
-snp500_daily_TJX_데이터수집_success_20231207_06:47:04
-snp500_daily_로컬CSV저장_success_20231207_06:47:08
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32017.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:08
-snp500_daily_Postgresql저장_success_20231207_06:47:08
-snp500_daily_TSCO_데이터수집_success_20231207_06:47:08
-snp500_daily_로컬CSV저장_success_20231207_06:47:11
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28926.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:11
-snp500_daily_Postgresql저장_success_20231207_06:47:11
-snp500_daily_TT_데이터수집_success_20231207_06:47:11
-snp500_daily_로컬CSV저장_success_20231207_06:47:15
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27594.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:15
-snp500_daily_Postgresql저장_success_20231207_06:47:15
-snp500_daily_TDG_데이터수집_success_20231207_06:47:15
-snp500_daily_로컬CSV저장_success_20231207_06:47:19
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:19
-snp500_daily_Postgresql저장_success_20231207_06:47:19
-snp500_daily_TRV_데이터수집_success_20231207_06:47:19
-snp500_daily_로컬CSV저장_success_20231207_06:47:24
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:24
-snp500_daily_Postgresql저장_success_20231207_06:47:24
-snp500_daily_TRMB_데이터수집_success_20231207_06:47:24
-snp500_daily_로컬CSV저장_success_20231207_06:47:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28728.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:28
-snp500_daily_Postgresql저장_success_20231207_06:47:28
-snp500_daily_TFC_데이터수집_success_20231207_06:47:28
-snp500_daily_로컬CSV저장_success_20231207_06:47:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 14027.77it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:32
-snp500_daily_Postgresql저장_success_20231207_06:47:32
-snp500_daily_TYL_데이터수집_success_20231207_06:47:32
-snp500_daily_로컬CSV저장_success_20231207_06:47:36
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29127.11it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:36
-snp500_daily_Postgresql저장_success_20231207_06:47:36
-snp500_daily_TSN_데이터수집_success_20231207_06:47:36
-snp500_daily_로컬CSV저장_success_20231207_06:47:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 10979.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:39
-snp500_daily_Postgresql저장_success_20231207_06:47:39
-snp500_daily_USB_데이터수집_success_20231207_06:47:39
-snp500_daily_로컬CSV저장_success_20231207_06:47:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 22429.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:43
-snp500_daily_Postgresql저장_success_20231207_06:47:43
-snp500_daily_UDR_데이터수집_success_20231207_06:47:43
-snp500_daily_로컬CSV저장_success_20231207_06:47:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:46
-snp500_daily_Postgresql저장_success_20231207_06:47:46
-snp500_daily_ULTA_데이터수집_success_20231207_06:47:46
-snp500_daily_로컬CSV저장_success_20231207_06:47:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:50
-snp500_daily_Postgresql저장_success_20231207_06:47:50
-snp500_daily_UNP_데이터수집_success_20231207_06:47:50
-snp500_daily_로컬CSV저장_success_20231207_06:47:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28532.68it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:53
-snp500_daily_Postgresql저장_success_20231207_06:47:53
-snp500_daily_UAL_데이터수집_success_20231207_06:47:53
-snp500_daily_로컬CSV저장_success_20231207_06:47:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:47:57
-snp500_daily_Postgresql저장_success_20231207_06:47:57
-snp500_daily_UPS_데이터수집_success_20231207_06:47:57
-snp500_daily_로컬CSV저장_success_20231207_06:48:01
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25890.77it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:01
-snp500_daily_Postgresql저장_success_20231207_06:48:01
-snp500_daily_URI_데이터수집_success_20231207_06:48:01
-snp500_daily_로컬CSV저장_success_20231207_06:48:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31536.12it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:04
-snp500_daily_Postgresql저장_success_20231207_06:48:04
-snp500_daily_UNH_데이터수집_success_20231207_06:48:04
-snp500_daily_로컬CSV저장_success_20231207_06:48:09
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27235.74it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:09
-snp500_daily_Postgresql저장_success_20231207_06:48:09
-snp500_daily_UHS_데이터수집_success_20231207_06:48:09
-snp500_daily_로컬CSV저장_success_20231207_06:48:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:12
-snp500_daily_Postgresql저장_success_20231207_06:48:12
-snp500_daily_VLO_데이터수집_success_20231207_06:48:12
-snp500_daily_로컬CSV저장_success_20231207_06:48:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:16
-snp500_daily_Postgresql저장_success_20231207_06:48:16
-snp500_daily_VTR_데이터수집_success_20231207_06:48:16
-snp500_daily_로컬CSV저장_success_20231207_06:48:20
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:20
-snp500_daily_Postgresql저장_success_20231207_06:48:20
-snp500_daily_VLTO_데이터수집_success_20231207_06:48:20
-snp500_daily_로컬CSV저장_success_20231207_06:48:23
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29959.31it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:23
-snp500_daily_Postgresql저장_success_20231207_06:48:23
-snp500_daily_VRSN_데이터수집_success_20231207_06:48:23
-snp500_daily_로컬CSV저장_success_20231207_06:48:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:28
-snp500_daily_Postgresql저장_success_20231207_06:48:28
-snp500_daily_VRSK_데이터수집_success_20231207_06:48:28
-snp500_daily_로컬CSV저장_success_20231207_06:48:31
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:31
-snp500_daily_Postgresql저장_success_20231207_06:48:31
-snp500_daily_VZ_데이터수집_success_20231207_06:48:31
-snp500_daily_로컬CSV저장_success_20231207_06:48:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25266.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:35
-snp500_daily_Postgresql저장_success_20231207_06:48:35
-snp500_daily_VRTX_데이터수집_success_20231207_06:48:35
-snp500_daily_로컬CSV저장_success_20231207_06:48:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 18157.16it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:39
-snp500_daily_Postgresql저장_success_20231207_06:48:39
-snp500_daily_VFC_데이터수집_success_20231207_06:48:39
-snp500_daily_로컬CSV저장_success_20231207_06:48:42
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11214.72it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:42
-snp500_daily_Postgresql저장_success_20231207_06:48:42
-snp500_daily_VTRS_데이터수집_success_20231207_06:48:42
-snp500_daily_로컬CSV저장_success_20231207_06:48:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:46
-snp500_daily_Postgresql저장_success_20231207_06:48:46
-snp500_daily_VICI_데이터수집_success_20231207_06:48:46
-snp500_daily_로컬CSV저장_success_20231207_06:48:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 7423.55it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:50
-snp500_daily_Postgresql저장_success_20231207_06:48:50
-snp500_daily_V_데이터수집_success_20231207_06:48:50
-snp500_daily_로컬CSV저장_success_20231207_06:48:53
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27060.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:53
-snp500_daily_Postgresql저장_success_20231207_06:48:53
-snp500_daily_VMC_데이터수집_success_20231207_06:48:53
-snp500_daily_로컬CSV저장_success_20231207_06:48:57
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 26546.23it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:48:57
-snp500_daily_Postgresql저장_success_20231207_06:48:57
-snp500_daily_WAB_데이터수집_success_20231207_06:48:57
-snp500_daily_로컬CSV저장_success_20231207_06:49:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11428.62it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:00
-snp500_daily_Postgresql저장_success_20231207_06:49:00
-snp500_daily_WBA_데이터수집_success_20231207_06:49:00
-snp500_daily_로컬CSV저장_success_20231207_06:49:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19878.22it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:04
-snp500_daily_Postgresql저장_success_20231207_06:49:04
-snp500_daily_WMT_데이터수집_success_20231207_06:49:04
-snp500_daily_로컬CSV저장_success_20231207_06:49:08
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33554.43it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:08
-snp500_daily_Postgresql저장_success_20231207_06:49:08
-snp500_daily_WBD_데이터수집_success_20231207_06:49:08
-snp500_daily_로컬CSV저장_success_20231207_06:49:12
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 33026.02it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:12
-snp500_daily_Postgresql저장_success_20231207_06:49:12
-snp500_daily_WM_데이터수집_success_20231207_06:49:12
-snp500_daily_로컬CSV저장_success_20231207_06:49:16
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27413.75it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:16
-snp500_daily_Postgresql저장_success_20231207_06:49:16
-snp500_daily_WAT_데이터수집_success_20231207_06:49:16
-snp500_daily_로컬CSV저장_success_20231207_06:49:19
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30840.47it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:19
-snp500_daily_Postgresql저장_success_20231207_06:49:19
-snp500_daily_WEC_데이터수집_success_20231207_06:49:19
-snp500_daily_로컬CSV저장_success_20231207_06:49:25
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31068.92it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:25
-snp500_daily_Postgresql저장_success_20231207_06:49:25
-snp500_daily_WFC_데이터수집_success_20231207_06:49:25
-snp500_daily_로컬CSV저장_success_20231207_06:49:28
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 25115.59it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:28
-snp500_daily_Postgresql저장_success_20231207_06:49:28
-snp500_daily_WELL_데이터수집_success_20231207_06:49:28
-snp500_daily_로컬CSV저장_success_20231207_06:49:32
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:32
-snp500_daily_Postgresql저장_success_20231207_06:49:32
-snp500_daily_WST_데이터수집_success_20231207_06:49:32
-snp500_daily_로컬CSV저장_success_20231207_06:49:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24244.53it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:35
-snp500_daily_Postgresql저장_success_20231207_06:49:35
-snp500_daily_WDC_데이터수집_success_20231207_06:49:35
-snp500_daily_로컬CSV저장_success_20231207_06:49:39
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 34100.03it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:39
-snp500_daily_Postgresql저장_success_20231207_06:49:39
-snp500_daily_WRK_데이터수집_success_20231207_06:49:39
-snp500_daily_로컬CSV저장_success_20231207_06:49:43
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24818.37it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:43
-snp500_daily_Postgresql저장_success_20231207_06:49:43
-snp500_daily_WY_데이터수집_success_20231207_06:49:43
-snp500_daily_로컬CSV저장_success_20231207_06:49:46
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 28339.89it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:46
-snp500_daily_Postgresql저장_success_20231207_06:49:46
-snp500_daily_WHR_데이터수집_success_20231207_06:49:46
-snp500_daily_로컬CSV저장_success_20231207_06:49:50
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30615.36it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:50
-snp500_daily_Postgresql저장_success_20231207_06:49:50
-snp500_daily_WMB_데이터수집_success_20231207_06:49:50
-snp500_daily_로컬CSV저장_success_20231207_06:49:56
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 11428.62it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:49:56
-snp500_daily_Postgresql저장_success_20231207_06:49:56
-snp500_daily_WTW_데이터수집_success_20231207_06:49:56
-snp500_daily_로컬CSV저장_success_20231207_06:50:00
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 30393.51it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:00
-snp500_daily_Postgresql저장_success_20231207_06:50:00
-snp500_daily_GWW_데이터수집_success_20231207_06:50:00
-snp500_daily_로컬CSV저장_success_20231207_06:50:04
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 32768.00it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:04
-snp500_daily_Postgresql저장_success_20231207_06:50:04
-snp500_daily_WYNN_데이터수집_success_20231207_06:50:04
-snp500_daily_로컬CSV저장_success_20231207_06:50:08
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29330.80it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:08
-snp500_daily_Postgresql저장_success_20231207_06:50:08
-snp500_daily_XEL_데이터수집_success_20231207_06:50:08
-snp500_daily_로컬CSV저장_success_20231207_06:50:11
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 27776.85it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:11
-snp500_daily_Postgresql저장_success_20231207_06:50:11
-snp500_daily_XYL_데이터수집_success_20231207_06:50:11
-snp500_daily_로컬CSV저장_success_20231207_06:50:15
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:15
-snp500_daily_Postgresql저장_success_20231207_06:50:15
-snp500_daily_YUM_데이터수집_success_20231207_06:50:15
-snp500_daily_로컬CSV저장_success_20231207_06:50:19
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 21959.71it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:19
-snp500_daily_Postgresql저장_success_20231207_06:50:19
-snp500_daily_ZBRA_데이터수집_success_20231207_06:50:19
-snp500_daily_로컬CSV저장_success_20231207_06:50:23
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29746.84it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:23
-snp500_daily_Postgresql저장_success_20231207_06:50:23
-snp500_daily_ZBH_데이터수집_success_20231207_06:50:23
-snp500_daily_로컬CSV저장_success_20231207_06:50:26
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 24672.38it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:26
-snp500_daily_Postgresql저장_success_20231207_06:50:26
-snp500_daily_ZION_데이터수집_success_20231207_06:50:26
-snp500_daily_로컬CSV저장_success_20231207_06:50:29
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 29537.35it/s]
-snp500_daily_빅쿼리저장_success_20231207_06:50:29
-snp500_daily_Postgresql저장_success_20231207_06:50:29
-snp500_daily_ZTS_데이터수집_success_20231207_06:50:29
-bitcoin_로컬CSV저장_success_20231207_06:50:35
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 19878.22it/s]
-bitcoin_빅쿼리저장_success_20231207_06:50:35
-bitcoin_Postgresql저장_success_20231207_06:50:35
-usd_krw_로컬CSV저장_success_20231207_06:50:40
-  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 31300.78it/s]
-usd_krw_빅쿼리저장_success_20231207_06:50:40
-usd_krw_Postgresql저장_success_20231207_06:50:40

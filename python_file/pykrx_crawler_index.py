@@ -60,8 +60,9 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20231226'
-today_date2 = '2023-12-26'
+today_date1 = '20240105'
+today_date2 = '2024-01-05'
+
 
 print(f'{today_date2} pykrx_index_crawler Start')
 
