@@ -65,8 +65,8 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20231226'
-today_date2 = '2023-12-26'
+today_date1 = '20240105'
+today_date2 = '2024-01-05'
 
 
 
@@ -106,7 +106,7 @@ ticker_list = ohlcv_df_raw['ticker'].unique()
 df_raw_total = pd.DataFrame()
 df_raw_anal_total = pd.DataFrame()
 
-for ticker_nm in ticker_list[:5]:
+for ticker_nm in ticker_list:
     df_raw = ohlcv_df_raw[ohlcv_df_raw['ticker'] == ticker_nm].reset_index(drop = True)
 
     ######################################################################
@@ -235,16 +235,16 @@ for ticker_nm in ticker_list[:5]:
 
 
 df_raw_total = df_raw_total.reset_index(drop = True)
-
+df_raw_anal_total = df_raw_anal_total.reset_index(drop = True)
 
 
 df_raw_total['ticker'] = df_raw_total['ticker'].astype('str')
+df_raw_total['ticker'] = df_raw_total['ticker'].str.zfill(6)
+
+df_raw_anal_total['ticker'] = df_raw_anal_total['ticker'].str.zfill(6)
 df_raw_anal_total['ticker'] = df_raw_anal_total['ticker'].astype('str')
 
 kor_ticker_list['ticker'] = kor_ticker_list['ticker'].astype('str')
-
-df_raw_total['ticker'] = df_raw_total['ticker'].str.zfill(6)
-df_raw_anal_total['ticker'] = df_raw_anal_total['ticker'].str.zfill(6)
 kor_ticker_list['ticker'] = kor_ticker_list['ticker'].str.zfill(6)
 
 
@@ -297,14 +297,12 @@ blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
 
 
-
 # Google Storage 적재
 source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kospi_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
 destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_kospi_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
-
 
 
 # Google Storage 적재
