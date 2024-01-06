@@ -36,6 +36,15 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
+
+# Create API client.
+credentials = service_account.Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"]
+)
+
+client = bigquery.Client(credentials=credentials)
+
+
 conn = st.connection('gcs', type=FilesConnection)
 
 
