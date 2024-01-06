@@ -1,35 +1,24 @@
-import plotly.graph_objects as go
-
-from ta.trend import MACD
-from ta.momentum import StochasticOscillator
-
 import numpy as np
 import pandas as pd
-from pykrx import stock
-from pykrx import bond
-from time import sleep
 
-from datetime import datetime
-from datetime import timedelta
 import os
 import time
-from plotly.subplots import make_subplots
 import glob
 
 import math
-import pandas as pd
-import os
 
-import glob
-from pyarrow import csv
-import pyarrow as pa
-import pyarrow.parquet as pq
-import time
-
-import numpy as np
 from ta.trend import MACD
 from ta.momentum import StochasticOscillator
 
+from pykrx import stock
+from pykrx import bond
+
+from pyarrow import csv
+import pyarrow as pa
+import pyarrow.parquet as pq
+
+import time
+from time import sleep
 
 import psycopg2 as pg2
 from sqlalchemy import create_engine
@@ -37,16 +26,13 @@ from sqlalchemy import create_engine
 from datetime import datetime
 from datetime import timedelta
 
-import os
-import time
+from plotly.subplots import make_subplots
 import plotly.express as px
 import plotly.graph_objects as go
 
-import glob
 from google.cloud import bigquery
 from google.oauth2 import service_account
 from google.cloud import storage
-from plotly.subplots import make_subplots
 
 
 import warnings
@@ -115,7 +101,6 @@ ohlcv_df_raw['ticker'] = ohlcv_df_raw['ticker'].astype('str')
 ohlcv_df_raw['ticker'] = ohlcv_df_raw['ticker'].str.zfill(6)
 
 ticker_list = ohlcv_df_raw['ticker'].unique()
-
 
 
 df_raw_total = pd.DataFrame()
