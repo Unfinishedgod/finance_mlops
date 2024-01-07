@@ -25,7 +25,7 @@ def macd_vis(df_raw, technical_indicator_nm):
     # fig = go.Figure()
     fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5, 0.1, 0.2, 0.2])
 
-    corp_nm = kor_stock_ohlcv_095570_total['corp_name'].unique()[0]
+    corp_nm = df_raw['corp_name'].unique()[0]
 
     # 캔들스틱차트
     fig.add_trace(go.Candlestick(
