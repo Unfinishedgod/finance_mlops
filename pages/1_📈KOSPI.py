@@ -63,16 +63,12 @@ with col11:
         corp_name_list)
         # ticker_list)
     st.write('You selected:', option)
-    st.checkbox("Disable radio widget", key="disabled")
-    st.checkbox("Orient radio options horizontally", key="horizontal")
 with col22:
     asdf = st.radio(
         "Set label visibility 👇",
         ['5_20_cross', '20_60_cross', 'array', 'Bollinger_band', 'MACD', 'RSI'],
         key="visibility",
-        label_visibility=st.session_state.visibility,
-        disabled=st.session_state.disabled,
-        horizontal=st.session_state.horizontal
+        horizontal=True
     )
 
 st.write(asdf)
