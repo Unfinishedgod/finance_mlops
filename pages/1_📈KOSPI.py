@@ -48,21 +48,39 @@ kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= 'date')
 kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
 corp_name_list = kor_stock_ohlcv['corp_name'].unique()
 
-option = st.selectbox(
-    'How would you like to be contacted?',
-    corp_name_list)
-    # ticker_list)
-    
-st.write('You selected:', option)
+
+col11, col22 = st.columns([1,1])
+
+with col11:
+    option = st.selectbox(
+        'How would you like to be contacted?',
+        corp_name_list)
+        # ticker_list)
+    st.write('You selected:', option)
+with col22:
+    asdf = st.radio(
+        "Set label visibility 👇",
+        ['5_20_cross', '20_60_cross', 'array', 'Bollinger_band', 'MACD', 'RSI'],
+        key="visibility",
+        label_visibility=st.session_state.visibility,
+        disabled=st.session_state.disabled,
+        horizontal=st.session_state.horizontal,
+    )
+
+st.write(asdf)
 
 
 ticker_nm_option = kor_stock_ohlcv[kor_stock_ohlcv['corp_name'] == option].reset_index(drop=True)['ticker'][0]
 
 
 kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == ticker_nm_option].reset_index()
-
+kor_stock_ohlcv_anal_total = kor_stock_ohlcv_anal[kor_stock_ohlcv_anal['ticker'] == ticker_nm_option].reset_index()
  
-fig = functional.macd_vis(kor_stock_ohlcv_095570_total, 'array')
+ 
+fig = functional.macd_vis(kor_stock_ohlcv_095570_total, kor_stock_ohlcv_anal_total,'array')
+
+
+
 
 
 col1, col2 = st.columns([3,1])
