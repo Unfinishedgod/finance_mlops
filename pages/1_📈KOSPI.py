@@ -58,16 +58,11 @@ st.write('You selected:', option)
 
 ticker_nm_option = kor_stock_ohlcv[kor_stock_ohlcv['corp_name'] == option].reset_index(drop=True)['ticker'][0]
 
-ticker_nm = '095570'
 
 kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == ticker_nm_option].reset_index()
 
  
-# fig = functional.func1(kor_stock_ohlcv_095570_total)
 fig = functional.macd_vis(kor_stock_ohlcv_095570_total, 'array')
-
-
-# kor_stock_fundamental_total_df = kor_stock_fundamental_total[['bps', 'per', 'pbr', 'eps', 'div', 'dps']].T.reset_index()
 
 
 col1, col2 = st.columns([3,1])
