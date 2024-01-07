@@ -32,99 +32,52 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
-# kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv', dtype = {'ticker': object})
-# kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df.csv')
-
-
-# kor_stock_ohlcv = pd.read_csv('data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv', dtype = {'ticker':object})
-# kor_ticker_list = pd.read_csv('data_crawler/kor_ticker_list/kor_ticker_list.csv')
 
 conn = st.connection('gcs', type=FilesConnection)
-# kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv.csv",
-#                       input_format="csv", ttl=600)
-# kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor_ticker_list.csv",
-#                       input_format="csv", ttl=600)
-#                       
-# kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fundamental/kor_stock_fundamental.csv",
-#                       input_format="csv", ttl=600)
-
                       
 # parquet
-kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_stock_ohlcv/kor_stock_ohlcv_info_kosdaq.parquet",
-                      input_format="parquet", ttl=600)                      
-# kor_stock_ohlcv = kor_stock_ohlcv.to_pandas()
-
-kor_ticker_list = conn.read("finance-mlops-proj/data_crawler/kor_ticker_list/kor_ticker_list.parquet",
+kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_KOSDAQ_reset.parquet",
                       input_format="parquet", ttl=600)
-# kor_ticker_list = kor_ticker_list.to_pandas()
-      
-kor_stock_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_stock_fundamental/kor_stock_fundamental_info_kosdaq.parquet",
+kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_KOSDAQ_reset.parquet",
                       input_format="parquet", ttl=600)
-# kor_stock_fundamental = kor_stock_fundamental.to_pandas()
+                      
+kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= 'date')
 
 
 
-# kor_stock_ohlcv['MA120'] = kor_stock_ohlcv['close'].rolling(window=120).mean()
-# kor_stock_ohlcv['MA60'] = kor_stock_ohlcv['close'].rolling(window=60).mean()
-# kor_stock_ohlcv['MA20'] = kor_stock_ohlcv['close'].rolling(window=20).mean()
-# kor_stock_ohlcv['MA5'] = kor_stock_ohlcv['close'].rolling(window=5).mean()
-# 
-# kor_stock_ohlcv = kor_stock_ohlcv[kor_stock_ohlcv['date'] > '2023-01-15']
-# 
-# 
-# 
-# # df1 = kor_stock_ohlcv[kor_stock_ohlcv['date'] == '2023-07-21']
-# df1 = pd.merge(kor_stock_ohlcv, kor_ticker_list, 
-#         on = 'ticker', 
-#         how = 'left')
-#         
+kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
+corp_name_list = kor_stock_ohlcv['corp_name'].unique()
 
-kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSDAQ']
-# ticker_list = kor_ticker_list['ticker'].unique()
-corp_name_list = kor_ticker_list['corp_name'].unique()
 
-option = st.selectbox(
-    'How would you like to be contacted?',
-    corp_name_list)
-    # ticker_list)
+col11, col22 = st.columns([1,3])
     
-st.write('You selected:', option)
+with col11:
+    option = st.selectbox(
+        'How would you like to be contacted?',
+        corp_name_list)
+        # ticker_list)
+    st.write('You selected:', option)
+with col22:
+    asdf = st.radio(
+        "Set label visibility 👇",
+        ['5_20_cross', '20_60_cross', 'array', 'Bollinger_band', 'MACD', 'RSI'],
+        horizontal=True
+    )
+
+st.write(asdf)
 
 
-ticker_nm_option = kor_ticker_list[kor_ticker_list['corp_name'] == option].reset_index(drop=True)['ticker'][0]
+ticker_nm_option = kor_stock_ohlcv[kor_stock_ohlcv['corp_name'] == option].reset_index(drop=True)['ticker'][0]
 
-ticker_nm = '095570'
-
-kor_stock_fundamental_total = kor_stock_fundamental[kor_stock_fundamental['ticker'] == ticker_nm_option].reset_index()
-
-
-# kor_stock_ohlcv_095570_total = conn.read(f"finance-mlops-proj/data_crawler/streamlit_data/kor_stock_ohlcv/{option}_20230925.csv",
-#                       input_format="csv", ttl=600)
 
 kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == ticker_nm_option].reset_index()
-
-
-kor_stock_ohlcv_095570_total['MA5'] = kor_stock_ohlcv_095570_total['close'].rolling(window=5).mean()
-kor_stock_ohlcv_095570_total['MA20'] = kor_stock_ohlcv_095570_total['close'].rolling(window=20).mean()
-kor_stock_ohlcv_095570_total['MA60'] = kor_stock_ohlcv_095570_total['close'].rolling(window=60).mean()
-kor_stock_ohlcv_095570_total['MA120'] = kor_stock_ohlcv_095570_total['close'].rolling(window=120).mean()
-
-# MACD
-kor_stock_ohlcv_095570_total['ema_short'] = kor_stock_ohlcv_095570_total['close'].rolling(window=12).mean()
-kor_stock_ohlcv_095570_total['ema_long'] = kor_stock_ohlcv_095570_total['close'].rolling(window=26).mean()
-kor_stock_ohlcv_095570_total['macd'] = kor_stock_ohlcv_095570_total['ema_short'] - kor_stock_ohlcv_095570_total['ema_long'] 
-
-
-std = kor_stock_ohlcv_095570_total['close'].rolling(20).std(ddof=0)
-
-kor_stock_ohlcv_095570_total['upper'] = kor_stock_ohlcv_095570_total['MA20'] + 2 * std
-kor_stock_ohlcv_095570_total['lower'] = kor_stock_ohlcv_095570_total['MA20'] - 2 * std
-
+kor_stock_ohlcv_anal_total = kor_stock_ohlcv_anal[kor_stock_ohlcv_anal['ticker'] == ticker_nm_option].reset_index()
  
-fig = functional.macd_vis(kor_stock_ohlcv_095570_total)
+ 
+fig = functional.macd_vis(kor_stock_ohlcv_095570_total, kor_stock_ohlcv_anal_total,asdf)
 
 
-kor_stock_fundamental_total_df = kor_stock_fundamental_total[['bps', 'per', 'pbr', 'eps', 'div', 'dps']].T.reset_index()
+
 
 
 col1, col2 = st.columns([3,1])
@@ -133,5 +86,6 @@ with col1:
   st.plotly_chart(fig, use_container_width=True)
 
 with col2:
+  st.write('asdf')
   # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
-  st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
+  # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
