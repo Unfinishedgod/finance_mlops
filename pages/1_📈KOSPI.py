@@ -49,13 +49,7 @@ kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
 corp_name_list = kor_stock_ohlcv['corp_name'].unique()
 
 
-# col11, col22 = st.columns([1,1])
-col11, col22 = st.columns(2)
-
-if "visibility" not in st.session_state:
-    st.session_state.visibility = "visible"
-    st.session_state.disabled = False
-    st.session_state.horizontal = False
+col11, col22 = st.columns([1,3])
     
 with col11:
     option = st.selectbox(
