@@ -78,5 +78,6 @@ with col1:
   st.plotly_chart(fig, use_container_width=True)
 
 with col2:
+  st.write('asdf')
   # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
   # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
