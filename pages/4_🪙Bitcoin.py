@@ -34,7 +34,8 @@ with open('style.css') as f:
 
 
 conn = st.connection('gcs', type=FilesConnection)
-                      
+
+option = 'bitcoin'
 # parquet
 bitcoin = conn.read("finance-mlops-proj/data_crawler/cleaning/bitcoin/bitcoin_cleaning.parquet",
                       input_format="parquet", ttl=600)
@@ -50,9 +51,7 @@ asdf = st.radio(
     horizontal=True
 )
     
-fig = functional.macd_vis(bitcoin, bitcoin_anal,asdf)
-
-
+fig = functional.macd_vis(bitcoin, bitcoin_anal,asdf, option)
 
 
 

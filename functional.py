@@ -21,7 +21,9 @@ from plotly.subplots import make_subplots
 
 
 
-def macd_vis(df_raw, df_raw_anal_date, technical_indicator_nm):
+def macd_vis(df_raw, df_raw_anal_date, technical_indicator_nm, chart_nm):
+  
+  
     # fig = go.Figure()
     fig = make_subplots(rows=4, cols=1, shared_xaxes=True, vertical_spacing=0.01, row_heights=[0.5, 0.1, 0.2, 0.2])
 
@@ -143,7 +145,7 @@ def macd_vis(df_raw, df_raw_anal_date, technical_indicator_nm):
     
     # Rayout
     fig.update_layout(
-        title = '삼성전자 주가',
+        title = f'{chart_nm} 주가',
         title_font_family="맑은고딕",
         title_font_size = 18,
         hoverlabel=dict(
