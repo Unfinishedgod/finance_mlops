@@ -49,7 +49,9 @@ kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
 corp_name_list = kor_stock_ohlcv['corp_name'].unique()
 
 
-col11, col22 = st.columns([1,1])
+# col11, col22 = st.columns([1,1])
+col11, col22 = st.columns(2)
+
 
 with col11:
     option = st.selectbox(
