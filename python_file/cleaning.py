@@ -66,9 +66,28 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20240107'
+today_date1 = '2024010'
 today_date2 = '2023-01-07'
 
+today_date1 = 'reset'
+
+# sql = f"""
+# select 
+#   `date`,
+#   open, 
+#   high, 
+#   low, 
+#   close, 
+#   volume,
+#   price_change_percentage,
+#   `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker,
+#   corp_name, 
+#   market 
+# from `{project_id}.{dataset_id}.kor_stock_ohlcv`
+# left join  `{project_id}.{dataset_id}.kor_ticker_list`
+# on `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker = `{project_id}.{dataset_id}.kor_ticker_list`.ticker
+# order by date asc
+# """
 
 sql = f"""
 select 
@@ -79,13 +98,15 @@ select
   close, 
   volume,
   price_change_percentage,
-  `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker,
+  `owenchoi-404302.finance_mlops.kor_stock_ohlcv`.ticker,
   corp_name, 
   market 
-from `{project_id}.{dataset_id}.kor_stock_ohlcv`
-left join  `{project_id}.{dataset_id}.kor_ticker_list`
-on `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker = `{project_id}.{dataset_id}.kor_ticker_list`.ticker
+from `owenchoi-404302.finance_mlops.kor_stock_ohlcv`
+left join  `owenchoi-404302.finance_mlops.kor_ticker_list`
+on `owenchoi-404302.finance_mlops.kor_stock_ohlcv`.ticker = `owenchoi-404302.finance_mlops.kor_ticker_list`.ticker
+order by date asc
 """
+
 # where market = 'KOSPI'
 # order by date asc
 
@@ -95,15 +116,12 @@ query_job = client.query(sql)
 # 데이터프레임 변환
 ohlcv_df_raw = query_job.to_dataframe()
 
-
 ohlcv_df_raw = ohlcv_df_raw.fillna(0)
 ticker_list = ohlcv_df_raw['ticker'].unique()
 
 
-
 now = datetime.now()
 print(now)
-
 
 df_raw_total = pd.DataFrame()
 df_raw_anal_total = pd.DataFrame()
@@ -272,7 +290,6 @@ for market_nm in ['KOSPI', 'KOSDAQ']:
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(destination_blob_name)
     blob.upload_from_filename(source_file_name)
-
 
 
 now = datetime.now()

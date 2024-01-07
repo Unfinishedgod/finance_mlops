@@ -36,9 +36,9 @@ with open('style.css') as f:
 conn = st.connection('gcs', type=FilesConnection)
                       
 # parquet
-kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_KOSPI_20240107.parquet",
+kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_KOSPI_reset.parquet",
                       input_format="parquet", ttl=600)
-kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_KOSPI_20240107.parquet",
+kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_KOSPI_reset.parquet",
                       input_format="parquet", ttl=600)
                       
 kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= 'date')
