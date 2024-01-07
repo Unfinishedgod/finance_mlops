@@ -61,7 +61,6 @@ with col22:
     asdf = st.radio(
         "Set label visibility 👇",
         ['5_20_cross', '20_60_cross', 'array', 'Bollinger_band', 'MACD', 'RSI'],
-        key="visibility",
         horizontal=True
     )
 
