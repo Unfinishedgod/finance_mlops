@@ -41,6 +41,9 @@ now = now + timedelta(days=-30)
 today_date2 = now.strftime('%Y-%m-%d')
 
 
+
+
+
 # kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv', dtype = {'ticker': object})
 # kor_index_list_df = pd.read_csv('data_crawler/kor_index_list_df/kor_index_list_df.csv')
 
@@ -50,6 +53,7 @@ kor_index_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_index_ohlcv/kor
                       
 kor_index_code_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_index_code_fundamental/kor_index_code_fundamental.parquet", 
                       input_format="parquet", ttl=600)
+                      
                       
 kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet", 
                       input_format="parquet", ttl=600)
