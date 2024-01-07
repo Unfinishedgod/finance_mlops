@@ -64,9 +64,6 @@ with col22:
         horizontal=True
     )
 
-st.write(asdf)
-
-
 ticker_nm_option = kor_stock_ohlcv[kor_stock_ohlcv['corp_name'] == option].reset_index(drop=True)['ticker'][0]
 
 

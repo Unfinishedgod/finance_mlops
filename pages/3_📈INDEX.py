@@ -63,9 +63,6 @@ with col22:
         horizontal=True
     )
 
-st.write(asdf)
-
-
 index_code_nm_option = kor_index_ohlcv[kor_index_ohlcv['index_code_nm'] == option].reset_index(drop=True)['index_code'][0]
 
 
