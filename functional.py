@@ -69,19 +69,20 @@ def macd_vis(df_raw, df_raw_anal_date, technical_indicator_nm):
         showlegend=False
     ), row = 1, col = 1)
 
-    type_list = ['매수', '매도']
-    for type_nm in type_list:
-        index_list = df_raw_anal_date.index[df_raw_anal_date[technical_indicator_nm].str.contains(type_nm)]
-        for index_nm in index_list:
-            cross_date = df_raw['date'][index_nm]
-            cross_value = df_raw['close'][index_nm]
-
-            fig.add_annotation(x=cross_date, 
-                               y=cross_value,
-                               text=f'{type_nm} <br> {technical_indicator_nm}',
-                               showarrow=True,
-                               arrowhead=1,
-                               row = 1, col = 1)                
+    if technical_indicator_nm != 'NONE':
+        type_list = ['매수', '매도']
+        for type_nm in type_list:
+            index_list = df_raw_anal_date.index[df_raw_anal_date[technical_indicator_nm].str.contains(type_nm)]
+            for index_nm in index_list:
+                cross_date = df_raw['date'][index_nm]
+                cross_value = df_raw['close'][index_nm]
+    
+                fig.add_annotation(x=cross_date, 
+                                   y=cross_value,
+                                   text=f'{type_nm} <br> {technical_indicator_nm}',
+                                   showarrow=True,
+                                   arrowhead=1,
+                                   row = 1, col = 1)                
 
     # Row 2 
     # volume

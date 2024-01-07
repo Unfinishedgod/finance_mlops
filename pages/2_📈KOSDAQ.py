@@ -34,6 +34,7 @@ with open('style.css') as f:
 
 
 conn = st.connection('gcs', type=FilesConnection)
+                      
 # parquet
 kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_KOSDAQ_reset.parquet",
                       input_format="parquet", ttl=600)
@@ -43,12 +44,13 @@ kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_s
 kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= 'date')
 
 
-kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
+
+kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSDAQ']
 corp_name_list = kor_stock_ohlcv['corp_name'].unique()
 
 
 col11, col22 = st.columns([1,3])
-
+    
 with col11:
     option = st.selectbox(
         'How would you like to be contacted?',
@@ -58,7 +60,7 @@ with col11:
 with col22:
     asdf = st.radio(
         "Set label visibility 👇",
-        ['5_20_cross', '20_60_cross', 'array', 'Bollinger_band', 'MACD', 'RSI'],
+        ['5_20_cross', '20_60_cross', 'array', 'Bollinger_band', 'MACD', 'RSI', 'NONE'],
         horizontal=True
     )
 
