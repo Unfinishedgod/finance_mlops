@@ -81,7 +81,7 @@ kor_stock_ohlcv_095570_total = kor_stock_ohlcv[kor_stock_ohlcv['ticker'] == tick
 kor_stock_ohlcv_anal_total = kor_stock_ohlcv_anal[kor_stock_ohlcv_anal['ticker'] == ticker_nm_option].reset_index()
  
  
-fig = functional.macd_vis(kor_stock_ohlcv_095570_total, kor_stock_ohlcv_anal_total,'array')
+fig = functional.macd_vis(kor_stock_ohlcv_095570_total, kor_stock_ohlcv_anal_total,asdf)
 
 
 
