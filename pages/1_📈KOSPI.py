@@ -120,18 +120,18 @@ with col2:
   
   df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
   
-  # st.dataframe(
-  #     df_2,
-  #     column_config={
-  #         "index_code": "App name",
-  #         "index_name": "App index_name",
-  #         "url": st.column_config.LinkColumn("App URL"),
-  #         "close": st.column_config.LineChartColumn(
-  #             "Views (past 30 days)", 
-  #         ),
-  #     },
-  #     hide_index=True,
-  # )
+  st.dataframe(
+      df_2,
+      column_config={
+          "index_code": "App name",
+          "index_name": "App index_name",
+          "url": st.column_config.LinkColumn("App URL"),
+          "close": st.column_config.LineChartColumn(
+              "Views (past 30 days)",
+          ),
+      },
+      hide_index=True,
+  )
   
   
   ################################################################################################
