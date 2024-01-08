@@ -28,6 +28,9 @@ st.set_page_config(
 
 
 
+conn = st.connection('gcs', type=FilesConnection)
+                      
+
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -50,13 +53,16 @@ today_date2 = now.strftime('%Y-%m-%d')
 conn = st.connection('gcs', type=FilesConnection)
 kor_index_ohlcv = conn.read("finance-mlops-proj/data_crawler/kor_index_ohlcv/kor_index_ohlcv.parquet", 
                       input_format="parquet", ttl=600)
-                      
 kor_index_code_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_index_code_fundamental/kor_index_code_fundamental.parquet", 
                       input_format="parquet", ttl=600)
-                      
-                      
 kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet", 
                       input_format="parquet", ttl=600)
+
+# parquet
+buy_sell_count_kospi = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kospi.parquet.parquet",
+                      input_format="parquet", ttl=600)
+
+
 
 
 # kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > today_date2]
@@ -75,7 +81,6 @@ df_kosdaq = df2[df2['market'] == 'KOSDAQ']
 
 ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 1001]
 price_change_percentage_kospi = kor_index_code_fundamental[kor_index_code_fundamental['index_code'] == 1001]
-
 
 
 ohlcv_kospi_value = ohlcv_kospi['close'].tail(1).tolist()[0]
@@ -250,3 +255,7 @@ col2.dataframe(
   },
   hide_index=True,
 )
+
+
+
+st.dataframe(buy_sell_count_kospi)
