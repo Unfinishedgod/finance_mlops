@@ -59,7 +59,7 @@ kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df
                       input_format="parquet", ttl=600)
 
 # parquet
-buy_sell_count_kospi = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kospi.parquet.parquet",
+buy_sell_count_kospi = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kospi.parquet",
                       input_format="parquet", ttl=600)
 
 
