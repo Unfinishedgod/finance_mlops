@@ -60,9 +60,6 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20240105'
-today_date2 = '2024-01-05'
-
 
 print(f'{today_date2} pykrx_crawler Start')
 
@@ -107,6 +104,22 @@ def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
 
 # # 주식 정보
 
+print(f'시가총액 시작')
+df_raw = stock.get_market_cap(today_date1,  market="ALL")
+df_raw = df_raw.reset_index()
+df_raw['날짜'] = today_date2
+df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장주식수', '티커']]
+df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
+df_raw['date'] = pd.to_datetime(df_raw['date'])
+
+file_name = 'cron_test_kor_market_cap'
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+
+upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+print(f'시가총액 완료_{time_line}')
+
 
 ## 티커 리스트
 market_list = ['KOSPI', 'KOSDAQ']
@@ -120,8 +133,18 @@ for market_nm in market_list:
                            'market': market_nm
                           }, index = [0])
         kor_ticker_list_df = pd.concat([kor_ticker_list_df,df])
-kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 
+
+# 시가총액 별로 정렬
+kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
+kor_ticker_list_df_2 = pd.merge(kor_ticker_list_df, df_raw[['market_cap', 'ticker']],
+        on = 'ticker', 
+        how = 'left')
+kor_ticker_list_df_2['rank'] = kor_ticker_list_df_2.groupby('market')['market_cap'].rank(method='min', ascending=False)
+kor_ticker_list_df_2['rank'] = kor_ticker_list_df_2['rank'].astype(int)
+kor_ticker_list_df_2 = kor_ticker_list_df_2.drop(['market_cap'], axis = 1)
+
+kor_ticker_list_df = kor_ticker_list_df_2.sort_values(by = 'rank').reset_index(drop = True)
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -150,21 +173,7 @@ upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
 print(f'주가정보 완료_{time_line}')
 
 
-print(f'시가총액 시작')
-df_raw = stock.get_market_cap(today_date1,  market="ALL")
-df_raw = df_raw.reset_index()
-df_raw['날짜'] = today_date2
-df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장주식수', '티커']]
-df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
-df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'cron_test_kor_market_cap'
-
-now1 = datetime.now()
-time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
-print(f'시가총액 완료_{time_line}')
 
 
 # DIV/BPS/PER/EPS 조회

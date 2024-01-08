@@ -59,6 +59,15 @@ storage_client = storage.Client(credentials = credentials,
                          project = credentials.project_id)
 bucket_name = 'finance-mlops-proj'    # 서비스 계정 생성한 bucket 이름 입력
 
+# Postgresql 연결
+db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
+username = db_connect_info['username'][0]
+password = db_connect_info['password'][0]
+host = db_connect_info['host'][0]
+database = db_connect_info['database'][0]
+engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
+
+
 
 now = datetime.now()
 # now = now + timedelta(days=-2)
@@ -66,27 +75,23 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '2024010'
-today_date2 = '2023-01-07'
-today_date1 = 'reset'
 
-# sql = f"""
-# select 
-#   `date`,
-#   open, 
-#   high, 
-#   low, 
-#   close, 
-#   volume,
-#   price_change_percentage,
-#   `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker,
-#   corp_name, 
-#   market 
-# from `{project_id}.{dataset_id}.kor_stock_ohlcv`
-# left join  `{project_id}.{dataset_id}.kor_ticker_list`
-# on `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker = `{project_id}.{dataset_id}.kor_ticker_list`.ticker
-# order by date asc
-# """
+
+now = datetime.now()
+now = now + timedelta(days=-365 * 2)
+set_date_1 = now.strftime('%Y%m%d')
+query_date = now.strftime('%Y-%m-%d')
+
+
+now = datetime.now()
+print(now)
+
+
+file_name = 'kor_stock_ohlcv'
+if not os.path.exists(f'data_crawler/cleaning/{file_name}'):
+    os.makedirs(f'data_crawler/cleaning/{file_name}')
+
+
 
 sql = f"""
 select 
@@ -96,18 +101,17 @@ select
   low, 
   close, 
   volume,
-  price_change_percentage,
-  `owenchoi-404302.finance_mlops.kor_stock_ohlcv`.ticker,
+  price_change_percentage,  
+  `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker,
   corp_name, 
-  market 
-from `owenchoi-404302.finance_mlops.kor_stock_ohlcv`
-left join  `owenchoi-404302.finance_mlops.kor_ticker_list`
-on `owenchoi-404302.finance_mlops.kor_stock_ohlcv`.ticker = `owenchoi-404302.finance_mlops.kor_ticker_list`.ticker
-order by date asc
+  market,
+  rank
+from `{project_id}.{dataset_id}.kor_stock_ohlcv`
+left join  `{project_id}.{dataset_id}.kor_ticker_list`
+on `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker = `{project_id}.{dataset_id}.kor_ticker_list`.ticker
+where date > '{query_date}' and market = 'KOSDAQ'
+order by date, rank asc
 """
-
-# where market = 'KOSPI'
-# order by date asc
 
 # 데이터 조회 쿼리 실행 결과
 query_job = client.query(sql)
@@ -115,12 +119,11 @@ query_job = client.query(sql)
 # 데이터프레임 변환
 ohlcv_df_raw = query_job.to_dataframe()
 
+
 ohlcv_df_raw = ohlcv_df_raw.fillna(0)
 ticker_list = ohlcv_df_raw['ticker'].unique()
 
 
-now = datetime.now()
-print(now)
 
 df_raw_total = pd.DataFrame()
 df_raw_anal_total = pd.DataFrame()
@@ -259,43 +262,61 @@ df_raw_total = df_raw_total.reset_index(drop = True)
 df_raw_anal_total = df_raw_anal_total.reset_index(drop = True)
 
 
+df_raw_total = df_raw_total[['date', 'open', 'high', 'low', 'close', 'volume', 'price_change_percentage',
+                            'ticker', 'corp_name', 'market', 
+                            'MA5','MA20', 'MA60', 'MA120', 
+                            'upper', 'lower', 'MACD_DIFF', 'MACD','MACD_Signal', 'RSI']]
+
+
 now = datetime.now()
-now = now + timedelta(days=-180)
+now = now + timedelta(days=-365)
 set_date_1 = now.strftime('%Y%m%d')
 set_date_2 = now.strftime('%Y-%m-%d')
-
 
 df_raw_total_2 = df_raw_total[df_raw_total['date'] > set_date_2].reset_index(drop = True)
 df_raw_anal_total_2 = df_raw_anal_total[df_raw_anal_total['date'] > set_date_2].reset_index(drop = True)
 
 
+## 매수 매도 카운트
+max_date = max(df_raw_anal_total_2['date'])
+buy_sell_count = df_raw_anal_total_2[df_raw_anal_total_2['date'] == max_date].reset_index(drop = True)
 
 
-for market_nm in ['KOSPI', 'KOSDAQ']:
-    df_raw_total_3 = df_raw_total_2[df_raw_total_2['market'] == market_nm].reset_index(drop = True)
-    df_raw_anal_total_3 = df_raw_anal_total_2[df_raw_anal_total_2['market'] == market_nm].reset_index(drop = True)
 
-    table_from_pandas = pa.Table.from_pandas(df_raw_total_3,preserve_index = False)
-    pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_{market_nm}_{today_date1}.parquet')
+table_from_pandas = pa.Table.from_pandas(df_raw_total_2,preserve_index = False)
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_kosdaq.parquet')
 
-    table_from_pandas = pa.Table.from_pandas(df_raw_anal_total_3,preserve_index = False)
-    pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_{market_nm}_{today_date1}.parquet')
-    
-
-    # Google Storage 적재
-    source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_{market_nm}_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
-    destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_total_2_{market_nm}_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
-    bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob(destination_blob_name)
-    blob.upload_from_filename(source_file_name)
+table_from_pandas = pa.Table.from_pandas(df_raw_anal_total_2,preserve_index = False)
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_anal_kosdaq.parquet')
 
 
-    # Google Storage 적재
-    source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_{market_nm}_{today_date1}.parquet'    # GCP에 업로드할 파일 절대경로
-    destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/df_raw_anal_total_2_{market_nm}_{today_date1}.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
-    bucket = storage_client.bucket(bucket_name)
-    blob = bucket.blob(destination_blob_name)
-    blob.upload_from_filename(source_file_name)
+table_from_pandas = pa.Table.from_pandas(buy_sell_count,preserve_index = False)
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kosdaq.parquet')
+
+
+# Google Storage 적재
+source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_kosdaq.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_kosdaq.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+bucket = storage_client.bucket(bucket_name)
+blob = bucket.blob(destination_blob_name)
+blob.upload_from_filename(source_file_name)
+
+
+# Google Storage 적재
+source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_anal_kosdaq.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_anal_kosdaq.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+bucket = storage_client.bucket(bucket_name)
+blob = bucket.blob(destination_blob_name)
+blob.upload_from_filename(source_file_name)
+
+
+# Google Storage 적재
+source_file_name = f'data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kosdaq.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kosdaq.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+bucket = storage_client.bucket(bucket_name)
+blob = bucket.blob(destination_blob_name)
+blob.upload_from_filename(source_file_name)
+
 
 
 now = datetime.now()
