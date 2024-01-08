@@ -41,12 +41,13 @@ kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_
 kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_anal_kospi.parquet",
                       input_format="parquet", ttl=600)
                       
-kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= ['date', 'rank'])
 
 
 
 kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
 corp_name_list = kor_stock_ohlcv['corp_name'].unique()
+
+kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= ['date'])
 
 
 col11, col22 = st.columns([1,3])
