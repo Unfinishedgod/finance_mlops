@@ -118,6 +118,8 @@ with col2:
   
   df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
   
+  st.dataframe(index_code_master)
+  
   st.dataframe(
       df_2,
       column_config={
