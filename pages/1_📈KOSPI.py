@@ -41,7 +41,7 @@ kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_
 kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_anal_kospi.parquet",
                       input_format="parquet", ttl=600)
                       
-kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= 'date')
+kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= ['date', 'rank'])
 
 
 
