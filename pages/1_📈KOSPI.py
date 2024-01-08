@@ -49,7 +49,7 @@ kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_s
 
 
 # parquet
-kor_index_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet",
+kor_index_ohlcv_cleaning = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet",
                       input_format="parquet", ttl=600)
 kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet",
                       input_format="parquet", ttl=600)
@@ -61,7 +61,7 @@ now = now + timedelta(days=-30)
 
 today_date2 = now.strftime('%Y-%m-%d')
 
-kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > today_date2]
+kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['date'] > today_date2]
 
 df = kor_index_ohlcv_cleaning.groupby(['index_code','index_code_nm'])['close'].apply(list).reset_index()
 
