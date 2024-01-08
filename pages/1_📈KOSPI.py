@@ -65,6 +65,8 @@ kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['da
 
 df = kor_index_ohlcv_cleaning.groupby(['index_code','index_code_nm'])['close'].apply(list).reset_index()
 
+index_list_df = index_code_master[index_code_master['ticker'] == '373220'].reset_index(drop = True)
+
 df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
 
 st.dataframe(
