@@ -66,7 +66,7 @@ kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['da
 
 df = kor_index_ohlcv_cleaning.groupby(['index_code','index_code_nm'])['close'].apply(list).reset_index()
 
-index_list_df = index_code_master[index_code_master['ticker'] == '373220'].reset_index(drop = True)
+index_list_df = index_code_master[index_code_master['ticker'] == '005930'].reset_index(drop = True)
 
 df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
 
@@ -102,7 +102,8 @@ with col11:
         'How would you like to be contacted?',
         corp_name_list)
         # ticker_list)
-    st.write('You selected:', option)
+    ticker_nm_option = kor_stock_ohlcv[kor_stock_ohlcv['corp_name'] == option].reset_index(drop=True)['ticker'][0]        
+    st.write('You selected:', ticker_nm_option)
 with col22:
     asdf = st.radio(
         "Set label visibility 👇",
