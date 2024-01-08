@@ -53,7 +53,8 @@ kor_index_ohlcv_cleaning = conn.read("finance-mlops-proj/data_crawler/cleaning/k
                       input_format="parquet", ttl=600)
 kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet",
                       input_format="parquet", ttl=600)
-
+index_code_master = conn.read("finance-mlops-proj/data_crawler/index_code_master/index_code_master.csv",
+                      input_format="csv", ttl=600)
 
 # ### 날짜 설정
 now = datetime.now()
