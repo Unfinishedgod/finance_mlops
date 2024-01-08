@@ -42,6 +42,47 @@ kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_s
                       input_format="parquet", ttl=600)
                       
 
+################################################################################################
+################################################################################################
+
+
+
+# parquet
+kor_index_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet",
+                      input_format="parquet", ttl=600)
+kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet",
+                      input_format="parquet", ttl=600)
+
+
+# ### 날짜 설정
+now = datetime.now()
+now = now + timedelta(days=-30)
+
+today_date2 = now.strftime('%Y-%m-%d')
+
+kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > today_date2]
+
+df = kor_index_ohlcv_cleaning.groupby(['index_code','index_code_nm'])['close'].apply(list).reset_index()
+
+df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
+
+st.dataframe(
+    df_2,
+    column_config={
+        "index_code": "App name",
+        "index_name": "App index_name",
+        "url": st.column_config.LinkColumn("App URL"),
+        "close": st.column_config.LineChartColumn(
+            "Views (past 30 days)", 
+        ),
+    },
+    hide_index=True,
+)
+
+
+################################################################################################
+################################################################################################
+
 
 
 kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
