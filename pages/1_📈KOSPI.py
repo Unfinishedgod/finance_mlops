@@ -103,6 +103,7 @@ with col2:
                         input_format="parquet", ttl=600)
   index_code_master = conn.read("finance-mlops-proj/data_crawler/index_code_master/index_code_master.csv",
                         input_format="csv", ttl=600)
+  index_code_master['ticker'] = index_code_master['ticker'].str.zfill(6)
   
   # ### 날짜 설정
   now = datetime.now()
