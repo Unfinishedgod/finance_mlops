@@ -43,52 +43,6 @@ kor_stock_ohlcv_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_s
                       input_format="parquet", ttl=600)
                       
 
-################################################################################################
-################################################################################################
-
-
-
-# parquet
-kor_index_ohlcv_cleaning = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet",
-                      input_format="parquet", ttl=600)
-kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet",
-                      input_format="parquet", ttl=600)
-index_code_master = conn.read("finance-mlops-proj/data_crawler/index_code_master/index_code_master.csv",
-                      input_format="csv", ttl=600)
-
-# ### 날짜 설정
-now = datetime.now()
-now = now + timedelta(days=-30)
-
-today_date2 = now.strftime('%Y-%m-%d')
-
-kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['date'] > today_date2]
-
-df = kor_index_ohlcv_cleaning.groupby(['index_code','index_code_nm'])['close'].apply(list).reset_index()
-
-index_list_df = index_code_master[index_code_master['ticker'] == '005930'].reset_index(drop = True)
-
-df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
-
-st.dataframe(
-    df_2,
-    column_config={
-        "index_code": "App name",
-        "index_name": "App index_name",
-        "url": st.column_config.LinkColumn("App URL"),
-        "close": st.column_config.LineChartColumn(
-            "Views (past 30 days)", 
-        ),
-    },
-    hide_index=True,
-)
-
-
-################################################################################################
-################################################################################################
-
-
-
 kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSPI']
 corp_name_list = kor_stock_ohlcv['corp_name'].unique()
 
@@ -133,3 +87,50 @@ with col2:
   st.write('asdf')
   # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
   # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
+
+
+
+
+  ################################################################################################
+  ################################################################################################
+  
+  
+  
+  # parquet
+  kor_index_ohlcv_cleaning = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet",
+                        input_format="parquet", ttl=600)
+  kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet",
+                        input_format="parquet", ttl=600)
+  index_code_master = conn.read("finance-mlops-proj/data_crawler/index_code_master/index_code_master.csv",
+                        input_format="csv", ttl=600)
+  
+  # ### 날짜 설정
+  now = datetime.now()
+  now = now + timedelta(days=-30)
+  
+  today_date2 = now.strftime('%Y-%m-%d')
+  
+  kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['date'] > today_date2]
+  
+  df = kor_index_ohlcv_cleaning.groupby(['index_code','index_code_nm'])['close'].apply(list).reset_index()
+  
+  index_list_df = index_code_master[index_code_master['index_code'] == ticker_nm_option].reset_index(drop = True)
+  
+  df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
+  
+  st.dataframe(
+      df_2,
+      column_config={
+          "index_code": "App name",
+          "index_name": "App index_name",
+          "url": st.column_config.LinkColumn("App URL"),
+          "close": st.column_config.LineChartColumn(
+              "Views (past 30 days)", 
+          ),
+      },
+      hide_index=True,
+  )
+  
+  
+  ################################################################################################
+  ################################################################################################
