@@ -13,6 +13,7 @@ from ta.momentum import StochasticOscillator
 
 import streamlit as st
 from datetime import datetime
+from datetime import timedelta
 
 from st_files_connection import FilesConnection
 from pyarrow import csv
