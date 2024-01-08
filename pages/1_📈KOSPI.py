@@ -108,7 +108,7 @@ dfdf22 = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['index_code'].isin(in
   
 
 now = datetime.now()
-now = now + timedelta(days=-90bhtgd)
+now = now + timedelta(days=-90)
 today_date2 = now.strftime('%Y-%m-%d')
 fig = functional.macd_vis(kor_stock_ohlcv_095570_total[kor_stock_ohlcv_095570_total['date'] > today_date2], 
                           kor_stock_ohlcv_anal_total[kor_stock_ohlcv_anal_total['date'] > today_date2], 
