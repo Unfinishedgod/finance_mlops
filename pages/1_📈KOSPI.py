@@ -84,18 +84,6 @@ with col1:
   st.plotly_chart(fig, use_container_width=True)
 
 with col2:
-  st.write('asdf')
-  # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
-  # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
-
-
-
-
-  ################################################################################################
-  ################################################################################################
-  
-  
-  
   # parquet
   kor_index_ohlcv_cleaning = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet",
                         input_format="parquet", ttl=600)
@@ -104,38 +92,33 @@ with col2:
   index_code_master = conn.read("finance-mlops-proj/data_crawler/index_code_master/index_code_master.csv",
                         input_format="csv", ttl=600)
                         
+  index_code_master['index_code'] = index_code_master['index_code'].astype(str)
   index_code_master['ticker'] = index_code_master['ticker'].astype(str).str.zfill(6)
   
-  # ### 날짜 설정
+
   now = datetime.now()
   now = now + timedelta(days=-30)
   
   today_date2 = now.strftime('%Y-%m-%d')
   
-  kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['date'] > today_date2]
+  kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['date'] >= today_date2]
   
-  df = kor_index_ohlcv_cleaning.groupby(['index_code','index_code_nm'])['close'].apply(list).reset_index()
+  not_sectors = ["1002","1003","1004","1028","1034","1035","1150","1151",
+             "1152","1153","1154","1155","1156","1157","1158","1159",
+             "1160","1167","1182","1224","1227","1232","1244","1894",
+             "2002","2003","2004","2181","2182","2183","2184","2189",
+             "2203","2212","2213","2214","2215","2216","2217","2218"]
   
-  index_list_df = index_code_master[index_code_master['ticker'] == str(ticker_nm_option)].reset_index(drop = True)
+  index_code_master = index_code_master[~index_code_master['index_code'].isin(not_sectors)].reset_index(drop = True)
   
-  df_2 = df[df['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
+  index_list_df = index_code_master[index_code_master['ticker'] == str('022100')].reset_index(drop = True)
+  dfdf22 = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
   
-  st.dataframe(
-      df_2,
-      column_config={
-          "index_code": "App name",
-          "index_name": "App index_name",
-          "url": st.column_config.LinkColumn("App URL"),
-          "close": st.column_config.LineChartColumn(
-              "Views (past 30 days)",
-          ),
-      },
-      hide_index=True,
-  )
-  
-  
-  ################################################################################################
-  ################################################################################################
-st.dataframe(index_code_master)
-st.dataframe(index_list_df)
-st.dataframe(df_2)
+  fig = px.line(dfdf22, 
+                x = 'date',
+                y = 'close',
+                line_shape="spline",
+                facet_row="index_code_nm")
+  fig.update_yaxes(matches=None)
+  fig.show()
+  st.plotly_chart(fig, use_container_width=True)
