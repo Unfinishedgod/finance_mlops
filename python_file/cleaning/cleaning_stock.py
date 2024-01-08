@@ -68,7 +68,6 @@ today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 today_date1 = '2024010'
 today_date2 = '2023-01-07'
-
 today_date1 = 'reset'
 
 # sql = f"""
@@ -259,8 +258,15 @@ for ticker_nm in ticker_list:
 df_raw_total = df_raw_total.reset_index(drop = True)
 df_raw_anal_total = df_raw_anal_total.reset_index(drop = True)
 
-df_raw_total_2 = df_raw_total[df_raw_total['date'] > '2023-01-01'].reset_index(drop = True)
-df_raw_anal_total_2 = df_raw_anal_total[df_raw_anal_total['date'] > '2023-01-01'].reset_index(drop = True)
+
+now = datetime.now()
+now = now + timedelta(days=-180)
+set_date_1 = now.strftime('%Y%m%d')
+set_date_2 = now.strftime('%Y-%m-%d')
+
+
+df_raw_total_2 = df_raw_total[df_raw_total['date'] > set_date_2].reset_index(drop = True)
+df_raw_anal_total_2 = df_raw_anal_total[df_raw_anal_total['date'] > set_date_2].reset_index(drop = True)
 
 
 

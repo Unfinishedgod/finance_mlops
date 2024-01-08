@@ -175,5 +175,6 @@ def macd_vis(df_raw, df_raw_anal_date, technical_indicator_nm, chart_nm):
     fig.update_yaxes(title_text="MACD", row=3, col=1)
     fig.update_yaxes(title_text="RSI", row=4, col=1)
 
-    fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
+    if chart_nm != 'bitcoin':
+        fig.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
     return fig
