@@ -122,9 +122,8 @@ fig2 = px.line(dfdf22,
               facet_row="index_code_nm")
 fig2.update_yaxes(matches=None)
 
-  
 
-st.markdown("""
+message = """
 **보고서**
 
 **날짜:** 2024년 1월 5일
@@ -143,13 +142,16 @@ st.markdown("""
 
 **결론:**
 
-전반적으로 삼성전자, 코스피 지수, 전기전자 산업, 제조업 산업의 주가는 최근 상승세를 보였습니다. 그러나 코스피 지수의 MACD가 하향 돌파로 나타나 앞으로 주가가 하락할 가능성이 있으므로 주의가 필요합니다.""")
+전반적으로 삼성전자, 코스피 지수, 전기전자 산업, 제조업 산업의 주가는 최근 상승세를 보였습니다. 그러나 코스피 지수의 MACD가 하향 돌파로 나타나 앞으로 주가가 하락할 가능성이 있으므로 주의가 필요합니다."""
 
-col1, col2 = st.columns([3,1])
+
+
+col1, col2 = st.columns([2,3])
 
 with col1:
-  st.plotly_chart(fig, use_container_width=True)
-
+  st.markdown(message)
 with col2:
-  st.plotly_chart(fig2, use_container_width=True)
+  st.plotly_chart(fig, use_container_width=True)
+  st.plotly_chart(fig2, use_container_width=True)  
+
 
