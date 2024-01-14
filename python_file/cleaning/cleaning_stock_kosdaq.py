@@ -78,14 +78,14 @@ today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 
 now = datetime.now()
-now = now + timedelta(days=-365 * 2)
+now = now + timedelta(days=-(365 + 180))
 set_date_1 = now.strftime('%Y%m%d')
 query_date = now.strftime('%Y-%m-%d')
 
 
-now = datetime.now()
-print(now)
-
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+print(f'코스닥 전처리 시작_{time_line}')
 
 file_name = 'kor_stock_ohlcv'
 if not os.path.exists(f'data_crawler/cleaning/{file_name}'):
@@ -319,5 +319,6 @@ blob.upload_from_filename(source_file_name)
 
 
 
-now = datetime.now()
-print(now)
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+print(f'코스닥 전처리 완료_{time_line}')

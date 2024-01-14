@@ -64,7 +64,9 @@ today_date1 = '20240105'
 today_date2 = '2024-01-05'
 
 
-print(f'{today_date2} pykrx_index_crawler Start')
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+print(f'{today_date2} pykrx_index_crawler 데이터 수집 시작_{time_line}')
 
 def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
     if not os.path.exists(f'data_crawler/{file_name}'):
@@ -138,7 +140,7 @@ market_list = ['KOSPI', 'KOSDAQ']
 
 for market_nm in market_list:
     kor_index_list = stock.get_index_ticker_list(market=market_nm)
-    for index_codes in kor_index_list[:3]:
+    for index_codes in kor_index_list:
         index_name = stock.get_index_ticker_name(index_codes)
         df = pd.DataFrame({'index_code':index_codes,
                            'index_code_nm':index_name,
@@ -167,7 +169,7 @@ print(f'인덱스 OHLCV 시작')
 file_name = 'cron_test_kor_index_ohlcv'
 df_raw_total = pd.DataFrame()
 
-for index_code in kor_index_code_list[:3]:
+for index_code in kor_index_code_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
     time.sleep(1)
@@ -199,7 +201,7 @@ print(f'인덱스 등락률 시작')
 file_name = 'cron_test_kor_index_code_fundamental'
 df_raw_total = pd.DataFrame()
 
-for index_code in kor_index_code_list[:3]:
+for index_code in kor_index_code_list:
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
     time.sleep(1)
@@ -225,43 +227,38 @@ print(f'인덱스 등락률 완료_{time_line}')
 
 
 
-# # 인덱스 구성 종목
-# print(f'인덱스 구성 종목 시작')
-# 
-# index_code_info = pd.DataFrame()
-# for index_code in kor_index_code_list:
-#     time.sleep(1)
-#     pdf = stock.get_index_portfolio_deposit_file(str(index_code))
-#     df = pd.DataFrame({'ticker':pdf,
-#                        'index_code': str(index_code)})
-#     index_code_info = pd.concat([index_code_info, df])
-# index_code_info = index_code_info.reset_index(drop = True)
-# 
-# 
-# index_code_info_2  = pd.merge(index_code_info, kor_index_list_df,
-#         how = 'left',
-#         on = 'index_code')
-# 
-# 
-# # kor_ticker_list_df = pd.read_csv(f'data_crawler/kor_ticker_list.csv')
-# 
-# index_code_master  = pd.merge(index_code_info_2, kor_ticker_list_df[['ticker','corp_name']],
-#         how = 'left',
-#         on = 'ticker')
-# 
-# file_name = 'cron_test_index_code_master'
-# 
-# 
-# 
-# now1 = datetime.now()
-# time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-# 
-# upload_df(index_code_master, file_name, project_id, dataset_id, time_line, today_date1)
-# 
-# print(f'인덱스 구성 종목 완료_{time_line}')
+# 인덱스 구성 종목
+print(f'인덱스 구성 종목 시작')
+
+index_code_info = pd.DataFrame()
+for index_code in kor_index_code_list:
+    time.sleep(1)
+    pdf = stock.get_index_portfolio_deposit_file(str(index_code))
+    df = pd.DataFrame({'ticker':pdf,
+                       'index_code': str(index_code)})
+    index_code_info = pd.concat([index_code_info, df])
+index_code_info = index_code_info.reset_index(drop = True)
 
 
+index_code_info_2  = pd.merge(index_code_info, kor_index_list_df,
+        how = 'left',
+        on = 'index_code')
 
 
+# kor_ticker_list_df = pd.read_csv(f'data_crawler/kor_ticker_list.csv')
+
+index_code_master  = pd.merge(index_code_info_2, kor_ticker_list_df[['ticker','corp_name']],
+        how = 'left',
+        on = 'ticker')
+
+file_name = 'cron_test_index_code_master'
+
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+
+upload_df(index_code_master, file_name, project_id, dataset_id, time_line, today_date1)
+
+print(f'인덱스 구성 종목 완료_{time_line}')
 
 

@@ -60,8 +60,15 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
+today_date1 = '20230112'
+today_date2 = '2023-01-12'
 
-print(f'{today_date2} pykrx_crawler Start')
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+print(f'{today_date2} pykrx_crawler 데이터 수집 시작_{time_line}')
+
+
 
 def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
     if not os.path.exists(f'data_crawler/{file_name}'):
@@ -102,6 +109,9 @@ def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
     except:
         print(f'{file_name}_Postgresql저장_fail_{time_line}')
 
+
+
+
 # # 주식 정보
 
 print(f'시가총액 시작')
@@ -138,7 +148,7 @@ for market_nm in market_list:
 # 시가총액 별로 정렬
 kor_ticker_list_df = kor_ticker_list_df.reset_index(drop = True)
 kor_ticker_list_df_2 = pd.merge(kor_ticker_list_df, df_raw[['market_cap', 'ticker']],
-        on = 'ticker', 
+        on = 'ticker',
         how = 'left')
 kor_ticker_list_df_2['rank'] = kor_ticker_list_df_2.groupby('market')['market_cap'].rank(method='min', ascending=False)
 kor_ticker_list_df_2['rank'] = kor_ticker_list_df_2['rank'].astype(int)
@@ -196,3 +206,35 @@ upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
 print(f'DIV/BPS/PER/EPS 완료_{time_line}')
 
 
+
+
+
+# DIV/BPS/PER/EPS 조회
+print(f'거래실적 거래 대금 거래량 시작')
+
+type_list = ["금융투자","보험","투신","사모","은행","기타금융","연기금",
+             "기관합계","기타법인","개인","외국인","기타외국인","전체"]
+
+total_df = pd.DataFrame()
+for type_nm in type_list:
+    df = stock.get_market_net_purchases_of_equities(today_date1, today_date1, 'ALL', type_nm)
+    df = df.reset_index()
+    df['type'] = type_nm
+    df['date'] = today_date2
+
+    total_df = pd.concat([total_df, df])
+
+total_df.columns = ['ticker', 'corp_name', 
+                    'sell_volume', 'buy_volume','net_buy_volume',
+                    'sell_amount', 'buy_amount','net_buy_amount',
+                   'type', 'date']
+                   
+file_name = 'cron_test_kor_stock_trading_volume_amount_by_date'
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+
+
+upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+
+print(f'거래실적 거래 대금 거래량 완료_{time_line}')
