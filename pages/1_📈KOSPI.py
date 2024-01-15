@@ -126,7 +126,7 @@ fig2 = px.line(dfdf22,
               facet_row="index_code_nm")
 fig2.update_yaxes(matches=None)
 
-message = gemini_result_kospi_20240115[gemini_result_kospi_20240115['ticker'] == ticker_nm_option].reset_index(drop = True)['response_msg'][0]
+message = gemini_kospi[gemini_kospi['ticker'] == ticker_nm_option].reset_index(drop = True)['response_msg'][0]
 
 
 col1, col2 = st.columns([2,3])
