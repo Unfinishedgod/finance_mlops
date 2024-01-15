@@ -8,9 +8,10 @@ py_dir = '/home/shjj08choi4/anaconda3/bin/python3'
 file_dir = '/home/shjj08choi4/finance_mlops/python_file'
 
 ############################################################################
+# pykrx  
 ############################################################################
 
-# pykrx  
+
 time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx 시작 {time_line}')
 
@@ -20,9 +21,10 @@ time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx 완료 {time_line}')
 
 ############################################################################
+# pykrx index crawler
 ############################################################################
 
-# pykrx index crawler
+
 time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx index 시작 {time_line}')
 
@@ -32,9 +34,10 @@ time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx index 완료 {time_line}')
 
 ############################################################################
+# pykrx cleaning kospi
 ############################################################################
 
-# pykrx cleaning kospi
+
 time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx cleaning kospi 시작 {time_line}')
 
@@ -44,9 +47,10 @@ time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx cleaning kospi 완료 {time_line}')
 
 ############################################################################
+# pykrx cleaning kosdaq
 ############################################################################
 
-# pykrx cleaning kosdaq
+
 time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx cleaning kosdaq 시작 {time_line}')
 
@@ -56,9 +60,10 @@ time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx cleaning kosdaq 완료 {time_line}')
 
 ############################################################################
+# pykrx cleaning index
 ############################################################################
 
-# pykrx cleaning index
+
 time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx cleaning index 시작 {time_line}')
 
@@ -68,10 +73,10 @@ time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx cleaning index 완료 {time_line}')
 
 ############################################################################
+# pykrx indicator_setup
 ############################################################################
 
 
-# pykrx indicator_setup
 time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
 print(f'pykrx indicator_setup 시작 {time_line}')
 
@@ -83,5 +88,23 @@ print(f'pykrx indicator_setup 완료 {time_line}')
 ############################################################################
 ############################################################################
 
+
+
+############################################################################
+# gemini result
+############################################################################
+
+
+time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
+print(f'pykrx gemini 시작 {time_line}')
+
+os.system(f'nohup {py_dir} {file_dir}/cleaning/gemini_kospi.py >> gemini_kospi_log.txt &')
+os.system(f'nohup {py_dir} {file_dir}/cleaning/gemini_kosdaq.py >> gemini_kosdaq_log.txt &')
+
+time_line = datetime.now().strftime("%Y%m%d_%H:%M:%S")
+print(f'pykrx gemini 완료 {time_line}')
+
+############################################################################
+############################################################################
 
 

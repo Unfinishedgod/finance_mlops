@@ -88,6 +88,16 @@ query_job = client.query(sql)
 kor_ticker_list = query_job.to_dataframe()
 
 
+index_code_master = pd.read_csv('data_crawler/index_code_master/index_code_master.csv', dtype = {'ticker':str, 
+                                                                                                'index_code':str})
+
+not_sectors = ["1002","1003","1004","1028","1034","1035","1150","1151",
+           "1152","1153","1154","1155","1156","1157","1158","1159",
+           "1160","1167","1182","1224","1227","1232","1244","1894",
+           "2002","2003","2004","2181","2182","2183","2184","2189",
+           "2203","2212","2213","2214","2215","2216","2217","2218"]
+
+index_code_master = index_code_master[~index_code_master['index_code'].isin(not_sectors)].reset_index(drop = True)
 
 
 
@@ -96,7 +106,7 @@ kor_ticker_list = query_job.to_dataframe()
 ### gemini
 
 api_key_df = pd.read_csv('key_value/chatgpt_apikey.csv')
-GOOGLE_API_KEY = api_key_df[api_key_df['corp'] == 'google'].reset_index()['api_key'][0]
+GOOGLE_API_KEY = api_key_df[api_key_df['corp'] == 'google_2'].reset_index()['api_key'][0]
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
@@ -115,9 +125,14 @@ df_total = pd.read_csv('data_crawler/dashboard/indicator.csv')
 
 kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSDAQ']
 
+date_nm = df_total['date'].unique()
+
 total_response_df = pd.DataFrame()
 for ticker_nm in kor_ticker_list['ticker']:
     ticker_index_code_df = index_code_master[index_code_master['ticker'] == ticker_nm].reset_index(drop = True)
+    
+    corp_nm = kor_ticker_list[kor_ticker_list['ticker'] == ticker_nm].reset_index(drop = True)['corp_name'][0]
+    
     index_code_list = ticker_index_code_df['index_code']
 
     total_df = df_total[(df_total['code'] == ticker_nm) | (df_total['code'].isin(index_code_list))].reset_index(drop = True)
@@ -125,10 +140,10 @@ for ticker_nm in kor_ticker_list['ticker']:
     total_df_2 = total_df[total_df['등락률기간'].isin(['5_20_cross', '20_60_cross', 'array', 'Bollinger_band','MACD','RSI'])]
 
     
-    # date_nm = df3['date'][0].strftime('%Y-%m-%d')
 
     prompt = f"""
-    - 날짜:{date_nm} 
+    - 날짜:{today_date2} 
+    - 종목정보: {corp_nm}
 
     - 등락률
         - {total_df_1}
@@ -139,22 +154,24 @@ for ticker_nm in kor_ticker_list['ticker']:
 
     증권 보고서 형태로 설명식으로 요약해줘. 
     """
-
-    response = model.generate_content(prompt)
-#     print(response.text)
     
-    response_df = pd.DataFrame({'ticker':ticker_nm, 
-                 'response_msg':response.text}, index = [0])
+    try:
+        response = model.generate_content(prompt)
+        
+        response_df = pd.DataFrame({'ticker':ticker_nm, 
+                     'response_msg':response.text}, index = [0])
+    except:
+        response_df = pd.DataFrame({'ticker':ticker_nm, 
+                     'response_msg':"증권 보고서 없음"}, index = [0])        
     
 
 
-    if not os.path.exists(f'data_crawler/dashboard/total_response_df_{today_date1}.csv'):
-        response_df.to_csv(f'data_crawler/dashboard/total_response_df_{today_date1}.csv', index=False, mode='w')
+    if not os.path.exists(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv'):
+        response_df.to_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv', index=False, mode='w')
     else:
-        response_df.to_csv(f'data_crawler/dashboard/total_response_df_{today_date1}.csv', index=False, mode='a', header=False)
+        response_df.to_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv', index=False, mode='a', header=False)
     
     time.sleep(1.5)
-#     print(ticker_nm)
 
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
