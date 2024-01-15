@@ -38,7 +38,6 @@ conn = st.connection('gcs', type=FilesConnection)
 
 gemini_kospi = conn.read("finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi_20240115.csv",
                       input_format="csv", ttl=3600)
-
 gemini_kospi['ticker'] = gemini_kospi['ticker'].astype(str).str.zfill(6)                      
                       
 # parquet
@@ -129,9 +128,10 @@ fig2.update_yaxes(matches=None)
 
 
 try:
-    message = gemini_kosdaq[gemini_kosdaq['ticker'] == str(ticker_nm_option)].reset_index(drop = True)['response_msg'][0]
+    message = gemini_kospi[gemini_kospi['ticker'] == str(ticker_nm_option)].reset_index(drop = True)['response_msg'][0]
 except:
     message = '증권보고서를 생성중입니다. 잠시만 기다려 주세요.'
+
 
 col1, col2 = st.columns([2,3])
 
