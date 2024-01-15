@@ -38,7 +38,8 @@ conn = st.connection('gcs', type=FilesConnection)
 
 gemini_kospi = conn.read("finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi_20240115.csv",
                       input_format="csv", ttl=3600)
-                      
+
+gemini_kospi['ticker'] = gemini_kospi['ticker'].astype(str).str.zfill(6)                      
                       
 # parquet
 kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_kospi.parquet",
@@ -128,11 +129,13 @@ fig2.update_yaxes(matches=None)
 
 message = gemini_kospi[gemini_kospi['ticker'] == str(ticker_nm_option)].reset_index(drop = True)['response_msg'][0]
 
+# st.dataframe(gemini_kospi)
 
 col1, col2 = st.columns([2,3])
 
 with col1:
   st.markdown(message)
+  # st.write('a')
 with col2:
   st.plotly_chart(fig, use_container_width=True)
   st.plotly_chart(fig2, use_container_width=True)  
