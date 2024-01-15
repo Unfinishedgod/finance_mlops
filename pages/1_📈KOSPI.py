@@ -129,13 +129,10 @@ fig2.update_yaxes(matches=None)
 
 message = gemini_kospi[gemini_kospi['ticker'] == str(ticker_nm_option)].reset_index(drop = True)['response_msg'][0]
 
-# st.dataframe(gemini_kospi)
-
 col1, col2 = st.columns([2,3])
 
 with col1:
   st.markdown(message)
-  # st.write('a')
 with col2:
   st.plotly_chart(fig, use_container_width=True)
   st.plotly_chart(fig2, use_container_width=True)  
