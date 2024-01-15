@@ -14,9 +14,9 @@ with open('style.css') as f:
 
 col11, col21 = st.columns([3,1])
 
-with col1:
+with col11:
   st.image('./etc/architecture_main.png', caption='architecture')
-with col2:
+with col21:
   st.markdown(' ')  
   
 
