@@ -100,7 +100,7 @@ kor_stock_ohlcv_anal_kospi = t.to_pandas()
 # buy_sell_count_kospi = t.to_pandas()
 
 # 코스닥 지표
-t = pq.read_table('data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_kospi.parquet')
+t = pq.read_table('data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_kosdaq.parquet')
 kor_stock_ohlcv_kosdaq = t.to_pandas()
 
 # 코스닥 매수/매도 지표
