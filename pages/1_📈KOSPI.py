@@ -36,7 +36,7 @@ with open('style.css') as f:
 
 conn = st.connection('gcs', type=FilesConnection)
 
-gemini_kospi = conn.read("finance-mlops-proj/data_crawler/dashboard/gemini_result_kosdaq_20240115.csv",
+gemini_kospi = conn.read("finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi_20240115.csv",
                       input_format="csv", ttl=3600)
                       
                       
