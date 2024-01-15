@@ -120,9 +120,9 @@ kor_index_ohlcv_cleaning = t.to_pandas()
 t = pq.read_table('data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal_cleaning.parquet')
 kor_index_ohlcv_anal_cleaning = t.to_pandas()
 
-# 인덱스 PBR
-t = pq.read_table('data_crawler/kor_index_code_fundamental/kor_index_code_fundamental.parquet')
-kor_index_code_fundamental = t.to_pandas()
+# # 인덱스 PBR
+# t = pq.read_table('data_crawler/kor_index_code_fundamental/kor_index_code_fundamental.parquet')
+# kor_index_code_fundamental = t.to_pandas()
 
 
 index_code_master = pd.read_csv('data_crawler/index_code_master/index_code_master.csv', dtype = {'ticker':str, 
