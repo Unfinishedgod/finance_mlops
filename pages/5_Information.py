@@ -65,6 +65,6 @@ col4, col5, col6 = st.columns(3)
 with col4:
   st.markdown(markdown_4)
 with col5:
-  # st.markdown(markdown_2)
+  st.markdown("markdown_5")
 with col6:
-  # st.markdown(markdown_3)
+  st.markdown("markdown_6")
