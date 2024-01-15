@@ -4,7 +4,6 @@ from datetime import datetime
 
 
 py_dir = '/home/shjj08choi4/anaconda3/bin/python3'
-
 file_dir = '/home/shjj08choi4/finance_mlops/python_file'
 
 ############################################################################

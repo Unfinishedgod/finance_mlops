@@ -159,10 +159,12 @@ for ticker_nm in kor_ticker_list['ticker']:
         response = model.generate_content(prompt)
         
         response_df = pd.DataFrame({'ticker':ticker_nm, 
+                     'corp_name':corp_nm,
                      'response_msg':response.text}, index = [0])
     except:
         print('증권 보고서 없음')
         response_df = pd.DataFrame({'ticker':ticker_nm, 
+                     'corp_name':corp_nm,
                      'response_msg':"증권 보고서 없음"}, index = [0])    
     
 
