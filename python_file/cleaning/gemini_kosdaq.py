@@ -88,8 +88,19 @@ query_job = client.query(sql)
 kor_ticker_list = query_job.to_dataframe()
 
 
-index_code_master = pd.read_csv('data_crawler/index_code_master/index_code_master.csv', dtype = {'ticker':str, 
-                                                                                                'index_code':str})
+# index_code_master = pd.read_csv('data_crawler/index_code_master/index_code_master.csv', dtype = {'ticker':str, 
+#                                                                                                 'index_code':str})
+
+
+sql = f"""
+select * from `{project_id}.{dataset_id}.index_code_master`
+"""
+
+# 데이터 조회 쿼리 실행 결과
+query_job = client.query(sql)
+
+# 데이터프레임 변환
+index_code_master = query_job.to_dataframe()
 
 not_sectors = ["1002","1003","1004","1028","1034","1035","1150","1151",
            "1152","1153","1154","1155","1156","1157","1158","1159",
