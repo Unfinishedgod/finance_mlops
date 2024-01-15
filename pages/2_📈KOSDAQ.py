@@ -127,8 +127,11 @@ fig2 = px.line(dfdf22,
               facet_row="index_code_nm")
 fig2.update_yaxes(matches=None)
 
-message = gemini_kosdaq[gemini_kosdaq['ticker'] == str(ticker_nm_option)].reset_index(drop = True)['response_msg'][0]
-
+try:
+    message = gemini_kosdaq[gemini_kosdaq['ticker'] == str(ticker_nm_option)].reset_index(drop = True)['response_msg'][0]
+except:
+    message = '증권보고서를 생성중입니다. 잠시만 기다려 주세요.'
+    
 col1, col2 = st.columns([2,3])
 
 with col1:
