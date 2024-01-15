@@ -12,8 +12,14 @@ with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 
+col11, col21 = st.columns([3,1])
 
-st.image('./etc/architecture_main.png', caption='architecture')
+with col1:
+  st.image('./etc/architecture_main.png', caption='architecture')
+with col2:
+  st.markdown(' ')  
+  
+
 
 
 
