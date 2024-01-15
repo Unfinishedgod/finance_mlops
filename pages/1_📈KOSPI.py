@@ -35,6 +35,10 @@ with open('style.css') as f:
 
 
 conn = st.connection('gcs', type=FilesConnection)
+
+gemini_kospi = conn.read("finance-mlops-proj/data_crawler/dashboard/gemini_result_kosdaq_20240115.csv",
+                      input_format="csv", ttl=3600)
+                      
                       
 # parquet
 kor_stock_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_kospi.parquet",
@@ -122,28 +126,7 @@ fig2 = px.line(dfdf22,
               facet_row="index_code_nm")
 fig2.update_yaxes(matches=None)
 
-
-message = """
-**보고서**
-
-**날짜:** 2024년 1월 5일
-
-**주제:** 주식 시장 분석
-
-**내용:**
-
-삼성전자의 주가는 최근 30일 동안 4.21% 상승했고, 90일 동안은 12.64% 상승했으며, 180일 동안은 4.50% 상승했으며, 240일 동안은 17.12% 상승했으며, 365일 동안은 26.61% 상승했습니다. 해당 기간 동안 삼성전자는 정배열(매수)로 분석되었습니다.
-
-코스피 지수는 최근 30일 동안 1.68% 상승했고, 90일 동안은 4.96% 상승했으며, 180일 동안은 -1.56% 하락했으며, 240일 동안은 3.94% 상승했으며, 365일 동안은 9.26% 상승했습니다. 코스피 지수의 MACD는 하향 돌파(매도)로 나타났습니다.
-
-전기전자 산업의 주가는 최근 30일 동안 3.33% 상승했고, 90일 동안은 6.76% 상승했으며, 180일 동안은 -2.19% 하락했으며, 240일 동안은 9.32% 상승했으며, 365일 동안은 18.79% 상승했습니다.
-
-제조업 산업의 주가는 최근 30일 동안 2.82% 상승했고, 90일 동안은 4.89% 상승했으며, 180일 동안은 -3.35% 하락했으며, 240일 동안은 4.38% 상승했으며, 365일 동안은 13.49% 상승했습니다.
-
-**결론:**
-
-전반적으로 삼성전자, 코스피 지수, 전기전자 산업, 제조업 산업의 주가는 최근 상승세를 보였습니다. 그러나 코스피 지수의 MACD가 하향 돌파로 나타나 앞으로 주가가 하락할 가능성이 있으므로 주의가 필요합니다."""
-
+message = gemini_result_kospi_20240115[gemini_result_kospi_20240115['ticker'] == ticker_nm_option].reset_index(drop = True)['response_msg'][0]
 
 
 col1, col2 = st.columns([2,3])
