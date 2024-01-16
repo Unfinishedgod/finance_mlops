@@ -158,8 +158,11 @@ file_name = 'kor_index_list_df'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-upload_df(kor_index_list_df, file_name, project_id, dataset_id, time_line, today_date1)
-
+# 빅쿼리 데이터 적재
+kor_index_list_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+  project_id=project_id,
+  if_exists='replace', # append 여부: {'fail', 'replace', 'append'}
+  credentials=credentials)
 
 
 print(f'인덱스 정보 시작')
