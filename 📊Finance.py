@@ -30,7 +30,7 @@ st.set_page_config(
 
 conn = st.connection('gcs', type=FilesConnection)
                       
-gemini_kospi = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_main_view_20240116.csv",
+gemini_main = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_main_view_20240116.csv",
                       input_format="csv", ttl=3600)
 
 with open('style.css') as f:
@@ -224,7 +224,7 @@ col2.plotly_chart(fig, use_container_width=True)
 
 
 try:
-    message = gemini_bitcoin['response_msg'][0]
+    message = gemini_main['response_msg'][0]
 except:
     message = '증권보고서를 생성중입니다. 잠시만 기다려 주세요.'
         
