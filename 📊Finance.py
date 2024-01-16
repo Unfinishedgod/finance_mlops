@@ -30,7 +30,8 @@ st.set_page_config(
 
 conn = st.connection('gcs', type=FilesConnection)
                       
-
+gemini_kospi = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_main_view_20240116.csv",
+                      input_format="csv", ttl=3600)
 
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -222,36 +223,44 @@ fig.update_layout(
 col2.plotly_chart(fig, use_container_width=True)
 
 
+try:
+    message = gemini_bitcoin['response_msg'][0]
+except:
+    message = '증권보고서를 생성중입니다. 잠시만 기다려 주세요.'
         
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 
-col1.dataframe(
-    df_kospi,
-    column_config={
-        "index_code": "App name",
-        "index_name": "App index_name",
-        "index_market": "App index_market",
-        "url": st.column_config.LinkColumn("App URL"),
-        "close": st.column_config.LineChartColumn(
-            "Views (past 30 days)", 
-        ),
-    },
-    hide_index=True,
-)
+with col1:
+    st.markdown(message)
+with col2:
+    st.dataframe(
+            df_kospi,
+            column_config={
+                "index_code": "App name",
+                "index_name": "App index_name",
+                "index_market": "App index_market",
+                "url": st.column_config.LinkColumn("App URL"),
+                "close": st.column_config.LineChartColumn(
+                    "Views (past 30 days)", 
+                ),
+            },
+            hide_index=True,
+        )
+with col3:
+    st.dataframe(
+      df_kosdaq,
+      column_config={
+          "index_code": "App name",
+          "index_name": "App index_name",
+          "index_market": "App index_market",
+          "url": st.column_config.LinkColumn("App URL"),
+          "close": st.column_config.LineChartColumn(
+              "Views (past 30 days)",
+          ),
+      },
+      hide_index=True,
+    )
 
-col2.dataframe(
-  df_kosdaq,
-  column_config={
-      "index_code": "App name",
-      "index_name": "App index_name",
-      "index_market": "App index_market",
-      "url": st.column_config.LinkColumn("App URL"),
-      "close": st.column_config.LineChartColumn(
-          "Views (past 30 days)",
-      ),
-  },
-  hide_index=True,
-)
 
 
 
