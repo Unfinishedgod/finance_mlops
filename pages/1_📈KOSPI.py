@@ -42,7 +42,7 @@ today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 conn = st.connection('gcs', type=FilesConnection)
 
-gemini_kospi = conn.read("finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv",
+gemini_kospi = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv",
                       input_format="csv", ttl=3600)
                       
 gemini_kospi['ticker'] = gemini_kospi['ticker'].astype(str).str.zfill(6)                      
