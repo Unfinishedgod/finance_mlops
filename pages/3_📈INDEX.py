@@ -74,12 +74,16 @@ fig = functional.macd_vis(kor_index_ohlcv_095570_total, kor_index_ohlcv_anal_tot
 
 
 
-col1, col2 = st.columns([3,1])
+st.plotly_chart(fig, use_container_width=True)
 
-with col1:
-  st.plotly_chart(fig, use_container_width=True)
 
-with col2:
-  st.write('asdf')
-  # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
-  # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
+# 
+# col1, col2 = st.columns([3,1])
+# 
+# with col1:
+#   st.plotly_chart(fig, use_container_width=True)
+# 
+# with col2:
+#   st.write('asdf')
+#   # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
+#   # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
