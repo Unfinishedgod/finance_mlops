@@ -243,7 +243,7 @@ with col3:
             t=0  #top margin
         ))
         
-    col2.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
     st.dataframe(
       df_kosdaq,
