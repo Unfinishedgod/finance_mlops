@@ -66,9 +66,9 @@ except:
     
 
 col1, col2 = st.columns([2,3])
-st.markdown("Gemini로 작성한 보고서 이며, 금융투자회사 직원 등 제3자에게 투자판단을 일임하는 경우에도 투자결과에 대한 책임은 결국 투자자 본인이 부담하게 된다는 점을 유념하시기 바랍니다.")
 
 with col1:
+  st.markdown("Gemini로 작성한 보고서 이며, 금융투자회사 직원 등 제3자에게 투자판단을 일임하는 경우에도 투자결과에 대한 책임은 결국 투자자 본인이 부담하게 된다는 점을 유념하시기 바랍니다.")
   st.markdown(message)
 with col2:
   st.plotly_chart(fig, use_container_width=True)

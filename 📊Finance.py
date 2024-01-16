@@ -92,9 +92,9 @@ except:
     message = '증권보고서를 생성중입니다. 잠시만 기다려 주세요.'
         
 col1, col2, col3 = st.columns(3)
-st.markdown("Gemini로 작성한 보고서 이며, 금융투자회사 직원 등 제3자에게 투자판단을 일임하는 경우에도 투자결과에 대한 책임은 결국 투자자 본인이 부담하게 된다는 점을 유념하시기 바랍니다.")
 
 with col1:
+    st.markdown("Gemini로 작성한 보고서 이며, 금융투자회사 직원 등 제3자에게 투자판단을 일임하는 경우에도 투자결과에 대한 책임은 결국 투자자 본인이 부담하게 된다는 점을 유념하시기 바랍니다.")
     st.markdown(message)
 with col2:    
     st.metric("코스피", ohlcv_kospi_value, price_change_percentage_value)
