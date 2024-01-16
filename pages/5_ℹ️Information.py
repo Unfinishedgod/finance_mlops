@@ -26,13 +26,13 @@ with col31:
 
 
 markdown_1 = """
-  #### GCP 서버 구축 
+  #### 1. GCP 서버 구축 
 - [1-1. GCP Compute Engine 구축](https://unfinishedgod.netlify.app/2023/06/10/gcp-gcp/) 
 - [1-2. Compute Engine 방화벽 및 MobaXterm 연결](https://unfinishedgod.netlify.app/2023/06/11/gcp-compute-engine-mobaxterm/) 
 """
 
 markdown_2 = """
-  #### Python 데이터 수집
+  #### 2. Python 데이터 수집
 - [2-1. pykrx를 사용한 금융데이터 수집 PART 1](https://unfinishedgod.netlify.app/2023/07/03/python-pykrk-part-1/) 
 - [2-2. pykrx를 사용한 금융데이터 수집 PART 2](https://unfinishedgod.netlify.app/2023/07/09/python-pykrk-part-2/) 
 - [2-3. FinanceDataReader을 사용한 금융 데이터 수집 (S&P500, 비트코인)](https://unfinishedgod.netlify.app/2023/07/11/python-financedatareader-s-p500/) 
@@ -41,7 +41,7 @@ markdown_2 = """
 """
 
 markdown_3 = """
-  #### Bigquery 및 Storage
+  #### 3. Bigquery 및 Storage
 - [3-1. ubuntu에 postgresql 설치 및 vscode 연결](https://unfinishedgod.netlify.app/2023/06/13/postgresql-ubuntu-postgresql/) 
 - [3-2. Cloud SQL DB 구축](https://unfinishedgod.netlify.app/2023/06/15/gcp-cloud-sql-db/) 
 - [3-3. BigQuery, Storage - Python 연동](https://unfinishedgod.netlify.app/2023/06/20/gcp-bigquery-storage-python/) 
@@ -49,7 +49,7 @@ markdown_3 = """
 """
 
 markdown_4 = """
-  #### Airflow 사용한 데이터 수집
+  #### 4. Airflow 사용한 데이터 수집
 - [4-1. Airflow 1. 설치](https://unfinishedgod.netlify.app/2023/07/18/airflow-airflow-1/) 
 - [4-2. Airflow 2. 기본 세팅(예제 제거, PostgreSQL 연결)](https://unfinishedgod.netlify.app/2023/07/20/airflow-airflow-2-dag/) 
 - [4-3. Airflow 3. Timezone 설정 및 DAG 테스트](https://unfinishedgod.netlify.app/2023/07/22/airflow-airflow-3-timezone-dag/) 
@@ -58,7 +58,7 @@ markdown_4 = """
 """
 
 markdown_5 = """
-  #### Plotly사용한 데이터 시각화
+  #### 5. Plotly사용한 데이터 시각화
 - [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 1](https://unfinishedgod.netlify.app/2023/10/10/python-plotly-1/)
 - [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 2 (이동평균선)](https://unfinishedgod.netlify.app/2023/10/13/python-plotly-2/)
 - [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 3 (볼린저밴드)](https://unfinishedgod.netlify.app/2023/10/18/python-plotly-3/)
@@ -68,7 +68,7 @@ markdown_5 = """
 
 
 markdown_6 = """
-  #### GCP Serverless 사용한 데이터 수집
+  #### 6. GCP Serverless 사용한 데이터 수집
 - [Cloud Function & Cloud Scheduler를 사용한 주가 데이터 수집 1](https://unfinishedgod.netlify.app/2023/11/09/gcp-cloud-function-cloud-scheduler/)
 - [Cloud Function & Cloud Scheduler를 사용한 주가 데이터 수집 2](https://unfinishedgod.netlify.app/2023/11/10/gcp-cloud-function-cloud-scheduler-2-cloud-scheduler/)
 - [Google Cloud run에 대해 알아 보자.](https://unfinishedgod.netlify.app/2023/12/30/gcp-google-cloud-run/)
