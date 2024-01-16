@@ -35,6 +35,12 @@ with open('style.css') as f:
 
 conn = st.connection('gcs', type=FilesConnection)
 
+gemini_bitcoin = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi_20240116.csv",
+                      input_format="csv", ttl=3600)
+                      
+# gemini_bitcoin['ticker'] = gemini_bitcoin['ticker'].astype(str).str.zfill(6)         
+
+
 option = 'bitcoin'
 # parquet
 bitcoin = conn.read("finance-mlops-proj/data_crawler/cleaning/bitcoin/bitcoin.parquet",
@@ -53,12 +59,16 @@ asdf = st.radio(
     
 fig = functional.macd_vis(bitcoin, bitcoin_anal,asdf, option)
 
+try:
+    message = gemini_bitcoin['response_msg'][0]
+except:
+    message = '증권보고서를 생성중입니다. 잠시만 기다려 주세요.'
+    
 
 col1, col2 = st.columns([2,3])
 
 with col1:
-  # st.markdown(message)
-  st.write(' ')
+  st.markdown(message)
 with col2:
   st.plotly_chart(fig, use_container_width=True)
   
