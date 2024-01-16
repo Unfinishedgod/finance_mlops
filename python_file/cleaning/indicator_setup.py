@@ -111,7 +111,6 @@ kor_stock_ohlcv_anal_kosdaq = t.to_pandas()
 # t = pq.read_table('data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kosdaq.parquet')
 # buy_sell_count_kosdaq = t.to_pandas()
 
-
 # 인덱스 지표
 t = pq.read_table('data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet')
 kor_index_ohlcv_cleaning = t.to_pandas()
@@ -391,3 +390,8 @@ df_total = df_total[['code','code_nm', '등락률기간', '등락률', 'type']]
 df_total['date'] = date_nm
 
 df_total.to_csv(f'data_crawler/dashboard/indicator.csv', index = False)
+
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+print(f'보조지표 완료_{time_line}')

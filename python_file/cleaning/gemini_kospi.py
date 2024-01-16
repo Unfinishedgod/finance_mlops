@@ -32,6 +32,12 @@ from google.cloud import storage
 
 import google.generativeai as genai
 
+import sys
+
+sys_num = sys.argv[1]
+sys_num = int(sys_num)
+
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -136,8 +142,11 @@ model = genai.GenerativeModel('gemini-pro',
 df_total = pd.read_csv('data_crawler/dashboard/indicator.csv')
 
 kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSPI']
+kor_ticker_list = kor_ticker_list[kor_ticker_list['rank'] % 5 == sys_num]
 
 date_nm = df_total['date'].unique()
+
+
 
 total_response_df = pd.DataFrame()
 for ticker_nm in kor_ticker_list['ticker']:
@@ -179,14 +188,25 @@ for ticker_nm in kor_ticker_list['ticker']:
                      'corp_name':corp_nm,
                      'response_msg':"증권 보고서 없음"}, index = [0])    
     
-
+    file_name = f'gemini_kospi'
+    now1 = datetime.now()
+    time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+    try:
+        # 빅쿼리 데이터 적재
+        response_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+          project_id=project_id,
+          if_exists='append',
+          credentials=credentials)
+        print(f'{file_name}_빅쿼리저장_success_{time_line}')
+    except:
+        print(f'{file_name}_빅쿼리저장_fail_{time_line}')
+        
 
     if not os.path.exists(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv'):
         response_df.to_csv(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv', index=False, mode='w')
     else:
         response_df.to_csv(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv', index=False, mode='a', header=False)
     
-    time.sleep(1.5)
 
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")

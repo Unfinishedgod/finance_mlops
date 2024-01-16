@@ -54,14 +54,18 @@ engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432
 
 
 
+import sys
+time_delta_nm = sys.argv[1]
+time_delta_nm = int(time_delta_nm)
+
 now = datetime.now()
-# now = now + timedelta(days=-2)
+now = now + timedelta(days=-time_delta_nm)
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20240112'
-today_date2 = '2024-01-12'
+# today_date1 = '20240112'
+# today_date2 = '2024-01-12'
 
 
 now1 = datetime.now()
@@ -150,7 +154,7 @@ for market_nm in market_list:
 
 kor_index_list_df = kor_index_list_df.reset_index(drop = True)
 
-file_name = 'cron_test_kor_index_list_df'
+file_name = 'kor_index_list_df'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -166,7 +170,7 @@ kor_index_code_list  = kor_index_list_df['index_code']
 # ## 인덱스 OHLCV 조회
 print(f'인덱스 OHLCV 시작')
 
-file_name = 'cron_test_kor_index_ohlcv'
+file_name = 'kor_index_ohlcv'
 df_raw_total = pd.DataFrame()
 
 for index_code in kor_index_code_list:
@@ -198,7 +202,7 @@ print(f'인덱스 OHLCV 완료_{time_line}')
 
 # 인덱스 등락률
 print(f'인덱스 등락률 시작')
-file_name = 'cron_test_kor_index_code_fundamental'
+file_name = 'kor_index_code_fundamental'
 df_raw_total = pd.DataFrame()
 
 for index_code in kor_index_code_list:
@@ -251,7 +255,7 @@ index_code_master  = pd.merge(index_code_info_2, kor_ticker_list_df[['ticker','c
         how = 'left',
         on = 'ticker')
 
-file_name = 'cron_test_index_code_master'
+file_name = 'index_code_master'
 
 
 now1 = datetime.now()

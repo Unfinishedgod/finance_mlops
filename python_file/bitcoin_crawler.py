@@ -28,7 +28,7 @@ from google.cloud import storage
 
 
 # 경로 변경
-os.chdir('/home/shjj08choi/finance_mlops')
+os.chdir('/home/shjj08choi4/finance_mlops')
 
 # 서비스 계정 키 JSON 파일 경로
 key_path = glob.glob("key_value/*.json")[0]
@@ -37,13 +37,19 @@ key_path = glob.glob("key_value/*.json")[0]
 credentials = service_account.Credentials.from_service_account_file(key_path)
 
 # 빅쿼리 정보
-project_id = 'owenchoi-403216'
+project_id = 'owenchoi-404302'
 dataset_id = 'finance_mlops'
+
+
+# BigQuery 클라이언트 객체 생성
+client = bigquery.Client(credentials = credentials, 
+                         project = credentials.project_id)
+
 
 # GCP 클라이언트 객체 생성
 storage_client = storage.Client(credentials = credentials,
                          project = credentials.project_id)
-bucket_name = 'finance-mlops-owen'    # 서비스 계정 생성한 bucket 이름 입력
+bucket_name = 'finance-mlops-proj'    # 서비스 계정 생성한 bucket 이름 입력
 
 # Postgresql 연결
 db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
@@ -107,6 +113,7 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 start_date2 = today_date2
 start_date2 = '2016-01-01'
+today_date2 = '2024-01-16'
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 
@@ -116,8 +123,7 @@ try:
     now1 = datetime.now()
 
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")
-    df_raw = fdr.DataReader('BTC/KRW', today_date2, today_date2)
-    # df_raw = fdr.DataReader('BTC/KRW', start_date2,today_date2, today_date1)
+    df_raw = fdr.DataReader('BTC/KRW', start_date2, today_date2)
     df_raw['ticker'] = ticker_nm
     df_raw = df_raw.reset_index()
     df_raw.columns = ['date', 'open','high','low','close','adj_close','volume','ticker']

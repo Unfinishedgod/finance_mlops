@@ -103,13 +103,13 @@ select
   close, 
   volume,
   price_change_percentage,
-  `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker,
+  `owenchoi-404302.finance_mlops.kor_stock_ohlcv`.ticker,
   corp_name, 
   market,
   rank
-from `{project_id}.{dataset_id}.kor_stock_ohlcv`
-left join  `{project_id}.{dataset_id}.kor_ticker_list`
-on `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker = `{project_id}.{dataset_id}.kor_ticker_list`.ticker
+from `owenchoi-404302.finance_mlops.kor_stock_ohlcv`
+left join  `owenchoi-404302.finance_mlops.kor_ticker_list`
+on `owenchoi-404302.finance_mlops.kor_stock_ohlcv`.ticker = `owenchoi-404302.finance_mlops.kor_ticker_list`.ticker
 where date > '{query_date}' and market = 'KOSPI'
 order by date, rank asc
 """
@@ -290,7 +290,6 @@ pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/kor_st
 table_from_pandas = pa.Table.from_pandas(df_raw_anal_total_2,preserve_index = False)
 pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/kor_stock_ohlcv_anal_kospi.parquet')
 
-
 table_from_pandas = pa.Table.from_pandas(buy_sell_count,preserve_index = False)
 pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_kospi.parquet')
 
@@ -317,6 +316,15 @@ destination_blob_name = f'data_crawler/cleaning/kor_stock_ohlcv/buy_sell_count_k
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
+
+
+
+
+
+
+
+
+
 
 
 

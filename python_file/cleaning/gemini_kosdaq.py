@@ -32,6 +32,12 @@ from google.cloud import storage
 
 import google.generativeai as genai
 
+import sys
+
+sys_num = sys.argv[1]
+sys_num = int(sys_num)
+
+
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -102,6 +108,7 @@ query_job = client.query(sql)
 # 데이터프레임 변환
 index_code_master = query_job.to_dataframe()
 
+
 not_sectors = ["1002","1003","1004","1028","1034","1035","1150","1151",
            "1152","1153","1154","1155","1156","1157","1158","1159",
            "1160","1167","1182","1224","1227","1232","1244","1894",
@@ -135,8 +142,11 @@ model = genai.GenerativeModel('gemini-pro',
 df_total = pd.read_csv('data_crawler/dashboard/indicator.csv')
 
 kor_ticker_list = kor_ticker_list[kor_ticker_list['market'] == 'KOSDAQ']
+kor_ticker_list = kor_ticker_list[kor_ticker_list['rank'] % 5 == sys_num]
 
 date_nm = df_total['date'].unique()
+
+
 
 total_response_df = pd.DataFrame()
 for ticker_nm in kor_ticker_list['ticker']:
@@ -165,7 +175,7 @@ for ticker_nm in kor_ticker_list['ticker']:
 
     증권 보고서 형태로 설명식으로 요약해줘. 
     """
-    
+
     try:
         response = model.generate_content(prompt)
         
@@ -176,16 +186,27 @@ for ticker_nm in kor_ticker_list['ticker']:
         print('증권 보고서 없음')
         response_df = pd.DataFrame({'ticker':ticker_nm, 
                      'corp_name':corp_nm,
-                     'response_msg':"증권 보고서 없음"}, index = [0])      
+                     'response_msg':"증권 보고서 없음"}, index = [0])    
     
-
+    file_name = f'gemini_kosdaq'
+    now1 = datetime.now()
+    time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+    try:
+        # 빅쿼리 데이터 적재
+        response_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+          project_id=project_id,
+          if_exists='append',
+          credentials=credentials)
+        print(f'{file_name}_빅쿼리저장_success_{time_line}')
+    except:
+        print(f'{file_name}_빅쿼리저장_fail_{time_line}')
+        
 
     if not os.path.exists(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv'):
         response_df.to_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv', index=False, mode='w')
     else:
         response_df.to_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv', index=False, mode='a', header=False)
     
-    time.sleep(1.5)
 
     now1 = datetime.now()
     time_line = now1.strftime("%Y%m%d_%H:%M:%S")

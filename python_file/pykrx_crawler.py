@@ -25,6 +25,7 @@ from google.oauth2 import service_account
 from google.cloud import storage
 
 
+
 # 경로 변경
 os.chdir('/home/shjj08choi4/finance_mlops')
 
@@ -53,15 +54,18 @@ database = db_connect_info['database'][0]
 engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
 
 
+import sys
+time_delta_nm = sys.argv[1]
+time_delta_nm = int(time_delta_nm)
 
 now = datetime.now()
-# now = now + timedelta(days=-2)
+now = now + timedelta(days=-time_delta_nm)
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20230112'
-today_date2 = '2023-01-12'
+# today_date1 = '20230112'
+# today_date2 = '2023-01-12'
 
 
 now1 = datetime.now()
@@ -95,7 +99,7 @@ def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
         # 빅쿼리 데이터 적재
         data.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
           project_id=project_id,
-          if_exists='append',
+          if_exists='append', # append 여부: {'fail', 'replace', 'append'}
           credentials=credentials)
         print(f'{file_name}_빅쿼리저장_success_{time_line}')
     except:
@@ -104,7 +108,9 @@ def upload_df(data, file_name, project_id, dataset_id, time_line, today_date1):
 
     try:
         # Postgresql 적재
-        data.to_sql(f'{file_name}',if_exists='append', con=engine,  index=False)
+        data.to_sql(f'{file_name}',
+        if_exists='append', # append 여부: {'fail', 'replace', 'append'}
+        con=engine,  index=False)
         print(f'{file_name}_Postgresql저장_success_{time_line}')
     except:
         print(f'{file_name}_Postgresql저장_fail_{time_line}')
@@ -122,7 +128,7 @@ df_raw = df_raw[['날짜', '시가총액', '거래량','거래대금' ,'상장�
 df_raw.columns = ['date', 'market_cap', 'volume', 'trading_value', 'outstanding_shares', 'ticker']
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'cron_test_kor_market_cap'
+file_name = 'kor_market_cap'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -159,7 +165,7 @@ kor_ticker_list_df = kor_ticker_list_df_2.sort_values(by = 'rank').reset_index(d
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
-file_name = 'cron_test_kor_ticker_list'
+file_name = 'kor_ticker_list'
 upload_df(kor_ticker_list_df, file_name, project_id, dataset_id, time_line, today_date1)
 kor_ticker_list = kor_ticker_list_df['ticker']
 
@@ -174,12 +180,17 @@ df_raw.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'price_chang
 
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'cron_test_kor_stock_ohlcv'
+file_name = 'kor_stock_ohlcv'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 
-upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+# upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
+# 빅쿼리 데이터 적재
+df_raw.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+  project_id=project_id,
+  if_exists='replace', # append 여부: {'fail', 'replace', 'append'}
+  credentials=credentials)
 print(f'주가정보 완료_{time_line}')
 
 
@@ -196,7 +207,7 @@ df_raw = df_raw[['날짜', 'BPS', 'PER','PBR', 'EPS', 'DIV', 'DPS', '티커']]
 df_raw.columns = ['date', 'bps', 'per', 'pbr', 'eps', 'div', 'dps', 'ticker']
 df_raw['date'] = pd.to_datetime(df_raw['date'])
 
-file_name = 'cron_test_kor_stock_fundamental'
+file_name = 'kor_stock_fundamental'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
@@ -229,7 +240,7 @@ total_df.columns = ['ticker', 'corp_name',
                     'sell_amount', 'buy_amount','net_buy_amount',
                    'type', 'date']
                    
-file_name = 'cron_test_kor_stock_trading_volume_amount_by_date'
+file_name = 'kor_stock_trading_volume_amount_by_date'
 
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
