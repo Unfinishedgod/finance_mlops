@@ -156,7 +156,7 @@ with col2:
             t=0  #top margin
         ))
         
-    col1.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 
