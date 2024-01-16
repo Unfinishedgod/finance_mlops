@@ -54,13 +54,20 @@ asdf = st.radio(
 fig = functional.macd_vis(bitcoin, bitcoin_anal,asdf, option)
 
 
-
-col1, col2 = st.columns([3,1])
+col1, col2 = st.columns([2,3])
 
 with col1:
-  st.plotly_chart(fig, use_container_width=True)
-
+  st.markdown(message)
 with col2:
-  st.write('asdf')
-  # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
-  # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
+  st.plotly_chart(fig, use_container_width=True)
+  
+  
+# col1, col2 = st.columns([3,1])
+# 
+# with col1:
+#   st.plotly_chart(fig, use_container_width=True)
+# 
+# with col2:
+#   st.write('asdf')
+#   # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
+#   # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
