@@ -57,7 +57,8 @@ fig = functional.macd_vis(bitcoin, bitcoin_anal,asdf, option)
 col1, col2 = st.columns([2,3])
 
 with col1:
-  st.markdown(message)
+  # st.markdown(message)
+  st.write(' ')
 with col2:
   st.plotly_chart(fig, use_container_width=True)
   
