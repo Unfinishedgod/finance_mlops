@@ -255,4 +255,10 @@ col2.dataframe(
 
 
 
-# st.dataframe(buy_sell_count_kospi)
+st.sidebar.markdown(
+  """
+    ---
+    - Email : shjj08@gmail.com
+    - Blog : https://unfinishedgod.netlify.app/
+"""
+)
