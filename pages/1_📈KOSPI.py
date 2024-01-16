@@ -149,3 +149,12 @@ with col2:
   # st.plotly_chart(fig2, use_container_width=True)  
 
 
+
+
+
+st.sidebar.markdown(
+  """
+    - Email : shjj08@gmail.com
+    - Blog : [unfinishedgod_netlify](https://unfinishedgod.netlify.app/)
+"""
+)

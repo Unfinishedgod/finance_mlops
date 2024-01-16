@@ -87,3 +87,14 @@ st.plotly_chart(fig, use_container_width=True)
 #   st.write('asdf')
 #   # st.metric("PER", kor_stock_fundamental_total, kor_stock_fundamental_total)
 #   # st.dataframe(kor_stock_fundamental_total_df, hide_index=True)
+
+
+
+
+
+st.sidebar.markdown(
+  """
+    - Email : shjj08@gmail.com
+    - Blog : [unfinishedgod_netlify](https://unfinishedgod.netlify.app/)
+"""
+)

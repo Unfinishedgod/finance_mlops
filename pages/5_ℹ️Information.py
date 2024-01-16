@@ -51,9 +51,22 @@ markdown_4 = """
 - [4-5. 주가 데이터 수집 파이프라인 2 (S&P 500 편)](https://unfinishedgod.netlify.app/2023/08/04/airflow-2-s-p500/)
 """
 
-# markdown_5 = """
-# 
-# """
+markdown_5 = """
+- [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 1](https://unfinishedgod.netlify.app/2023/10/10/python-plotly-1/)
+- [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 2 (이동평균선)](https://unfinishedgod.netlify.app/2023/10/13/python-plotly-2/)
+- [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 3 (볼린저밴드)](https://unfinishedgod.netlify.app/2023/10/18/python-plotly-3/)
+- [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 4 (MACD)](https://unfinishedgod.netlify.app/2023/10/21/python-plotly-4-macd/)
+- [Plotly와 주식 보조지표로 보는 주식 데이터 시각화 5 (RSI)](https://unfinishedgod.netlify.app/2023/10/22/python-plotly-5-rsi/)
+"""
+
+
+markdown_5 = """
+- [Cloud Function & Cloud Scheduler를 사용한 주가 데이터 수집 1](https://unfinishedgod.netlify.app/2023/11/09/gcp-cloud-function-cloud-scheduler/)
+- [Cloud Function & Cloud Scheduler를 사용한 주가 데이터 수집 2](https://unfinishedgod.netlify.app/2023/11/10/gcp-cloud-function-cloud-scheduler-2-cloud-scheduler/)
+- [Google Cloud run에 대해 알아 보자.](https://unfinishedgod.netlify.app/2023/12/30/gcp-google-cloud-run/)
+- [Compute Engine 자동 시작&중지 와 부팅시 파이썬 파일 실행](https://unfinishedgod.netlify.app/2023/12/27/gcp-compute-engine/)
+- [아주 간단한 파이썬에서 Google Gemini 사용하기](https://unfinishedgod.netlify.app/2024/01/09/gcp-google-gemini/)
+"""
 
 
 col1, col2, col3 = st.columns(3)
@@ -71,6 +84,18 @@ col4, col5, col6 = st.columns(3)
 with col4:
   st.markdown(markdown_4)
 with col5:
-  st.markdown("markdown_5")
+  st.markdown(markdown_5)
 with col6:
   st.markdown("markdown_6")
+
+
+
+
+
+
+st.sidebar.markdown(
+  """
+    - Email : shjj08@gmail.com
+    - Blog : [unfinishedgod_netlify](https://unfinishedgod.netlify.app/)
+"""
+)

@@ -257,8 +257,7 @@ col2.dataframe(
 
 st.sidebar.markdown(
   """
-    ---
     - Email : shjj08@gmail.com
-    - Blog : https://unfinishedgod.netlify.app/
+    - Blog : [unfinishedgod_netlify](https://unfinishedgod.netlify.app/)
 """
 )
