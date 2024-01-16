@@ -30,6 +30,8 @@ from google.cloud import bigquery
 from google.oauth2 import service_account
 from google.cloud import storage
 
+import google.generativeai as genai
+
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -297,6 +299,8 @@ pq.write_table(table_from_pandas, f'data_crawler/cleaning/bitcoin/bitcoin.parque
 table_from_pandas = pa.Table.from_pandas(df_raw_anal_total_2,preserve_index = False)
 pq.write_table(table_from_pandas, f'data_crawler/cleaning/bitcoin/bitcoin_anal.parquet')
 
+df_raw_anal_total_2.to_csv(f'data_crawler/cleaning/bitcoin/bitcoin_anal.csv')
+
 
 # Google Storage 적재
 source_file_name = f'data_crawler/cleaning/bitcoin/bitcoin.parquet'    # GCP에 업로드할 파일 절대경로
@@ -317,3 +321,174 @@ blob.upload_from_filename(source_file_name)
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 print(f'비트코인 전처리 완료_{time_line}')
+
+
+
+
+### 비트코인 보조지표 
+# 
+# df1_set = df_raw_total_2.groupby("ticker")['date'].max().reset_index()
+# df1_set = df1_set[['ticker', 'date']]
+# df1_set = pd.merge(df1_set, df_raw_total_2[['ticker', 'date', 'close', 'corp_name']],
+#               on = ['ticker', 'date'], 
+#               how = 'left')
+              
+date_nm = max(df_raw_total_2['date'])
+df1_set = df_raw_total_2[df_raw_total_2['date'] == date_nm]
+
+diff_date_list = [30, 90, 180, 240, 365]
+for diff_date in diff_date_list:
+# diff_date = 240
+    now = datetime.now()
+    now = now + timedelta(days=-diff_date)
+    set_date = now.strftime('%Y-%m-%d')
+    df1 =  df_raw_anal_total_2[df_raw_anal_total_2['date'] > set_date].groupby("ticker")['date'].min().reset_index()
+
+    
+    df1 = df1[['ticker','date']]
+    df1 = pd.merge(df1, df_raw_anal_total_2[['ticker', 'date', 'close']],
+                  on = ['ticker', 'date'], 
+                  how = 'left')
+    
+    df1.columns = ['ticker', f'date_{diff_date}', f'close_{diff_date}']
+
+    df1_set = pd.merge(df1_set, df1, 
+                      on = 'ticker', 
+                      how = 'left')
+
+    df1_set[f'per_{diff_date}'] = (df1_set['close'] - df1_set[f'close_{diff_date}']) / df1_set[f'close_{diff_date}'] * 100
+
+
+df1_set_2 = df1_set[['date','ticker','per_30', 'per_90', 'per_180', 'per_240', 'per_365']]
+
+df1_set_3 = pd.melt(df1_set_2, 
+        # id_vars= ['date', 'ticker', 'corp_name'], 
+        id_vars= ['date', 'ticker'], 
+        value_vars=['per_30', 'per_90', 'per_180', 'per_240','per_365'])    
+stock_ratio_per = df1_set_3.sort_values(by = ['ticker'])
+stock_ratio_per.head()
+
+
+
+# df_per_total = pd.DataFrame()
+# per_set = ['per_30', 'per_90', 'per_180', 'per_240', 'per_365']
+# ascending_list = [True, False]
+# 
+# for per_value in per_set:
+#     for ascending_value in ascending_list:
+#         df_per =  df1_set_2.sort_values(by = per_value, ascending = ascending_value).head()
+#         df_per['type'] = per_value
+#         # df_per['rank'] = range(1,6)
+#         df_per['음/양'] = ascending_value
+#         df_per_total = pd.concat([df_per_total, df_per])
+# 
+# df_per_total = df_per_total.drop_duplicates()     
+# df_per_total = df_per_total.reset_index(drop = True)
+
+
+
+date_nm = max(df_raw_anal_total_2['date'])
+dfdf = df_raw_anal_total_2[df_raw_anal_total_2['date'] == date_nm]
+
+
+# pd.wide_to_long(dfdf, stubnames='ht', i=['date', 'ticker','corp_name','market','close'], j='age')
+dfdf2 = pd.melt(dfdf, 
+        id_vars= ['date', 'ticker'], 
+        value_vars=['5_20_cross', '20_60_cross', 'array', 'Bollinger_band','MACD','RSI'])
+stock_indicator = dfdf2[dfdf2['value'] != '-']
+
+df_total = pd.concat([stock_ratio_per,stock_indicator])
+df_total['type'] = 'bitcoin'
+df_total.columns = ['date', 'code', '등락률기간', '등락률', 'type']
+
+
+df_total = df_total[['code','등락률기간', '등락률', 'type']]
+df_total['date'] = date_nm
+
+
+
+
+
+### gemini
+api_key_df = pd.read_csv('key_value/chatgpt_apikey.csv')
+GOOGLE_API_KEY = api_key_df[api_key_df['corp'] == 'google'].reset_index()['api_key'][0]
+
+genai.configure(api_key=GOOGLE_API_KEY)
+
+# Set up the model
+generation_config = {
+  "temperature": 0.9,
+  "top_p": 1,
+  "top_k": 1,
+  "max_output_tokens": 2048,
+}
+
+model = genai.GenerativeModel('gemini-pro',
+                             generation_config=generation_config)
+
+# df_total = pd.read_csv('data_crawler/dashboard/indicator.csv')
+
+total_df_1 = df_total[~df_total['등락률기간'].isin(['5_20_cross', '20_60_cross', 'array', 'Bollinger_band','MACD','RSI'])]
+total_df_2 = df_total[df_total['등락률기간'].isin(['5_20_cross', '20_60_cross', 'array', 'Bollinger_band','MACD','RSI'])]
+
+
+
+prompt = f"""
+- 날짜:{today_date2} 
+- 종목정보: 비트코인
+
+- 등락률
+    - {total_df_1}
+
+- 매수/매도신호
+    - {total_df_2}
+
+
+증권 보고서 형태로 설명식으로 요약해줘. 
+"""
+
+try:
+    response = model.generate_content(prompt)
+    
+    response_df = pd.DataFrame({'ticker':'bitcoin', 
+                 'corp_name':'비트코인',
+                 'date':today_date2,
+                 'response_msg':response.text}, index = [0])
+except:
+    print('보고서 없음')
+    response_df = pd.DataFrame({'ticker':'bitcoin', 
+                 'corp_name':'비트코인',
+                 'date':today_date2,
+                 'response_msg':"증권 보고서 없음"}, index = [0])    
+
+file_name = f'gemini_bitcoin'
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+
+try:
+    # 빅쿼리 데이터 적재
+    response_df.to_gbq(destination_table=f'{project_id}.{dataset_id}.{file_name}',
+      project_id=project_id,
+      if_exists='append',
+      credentials=credentials)
+    print(f'{file_name}_빅쿼리저장_success_{time_line}')
+except:
+    print(f'{file_name}_빅쿼리저장_fail_{time_line}')
+    
+
+if not os.path.exists(f'data_crawler/dashboard/gemini_result_bitcoin_{today_date1}.csv'):
+    response_df.to_csv(f'data_crawler/dashboard/gemini_result_bitcoin_{today_date1}.csv', index=False, mode='w')
+else:
+    response_df.to_csv(f'data_crawler/dashboard/gemini_result_bitcoin_{today_date1}.csv', index=False, mode='a', header=False)
+
+# Google Storage 적재
+source_file_name = f'data_crawler/dashboard/gemini_result_bitcoin_{today_date1}.csv'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/dashboard/gemini_result_bitcoin_{today_date1}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
+bucket = storage_client.bucket(bucket_name)
+blob = bucket.blob(destination_blob_name)
+blob.upload_from_filename(source_file_name)
+
+
+now1 = datetime.now()
+time_line = now1.strftime("%Y%m%d_%H:%M:%S")
+print(f'{ticker_nm} 완료_{time_line}')

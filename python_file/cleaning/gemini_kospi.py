@@ -122,7 +122,6 @@ index_code_master = index_code_master[~index_code_master['index_code'].isin(not_
 
 
 ### gemini
-
 api_key_df = pd.read_csv('key_value/chatgpt_apikey.csv')
 GOOGLE_API_KEY = api_key_df[api_key_df['corp'] == 'google'].reset_index()['api_key'][0]
 
