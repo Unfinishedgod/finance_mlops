@@ -37,9 +37,9 @@ conn = st.connection('gcs', type=FilesConnection)
 
 option = 'bitcoin'
 # parquet
-bitcoin = conn.read("finance-mlops-proj/data_crawler/cleaning/bitcoin/bitcoin_cleaning.parquet",
+bitcoin = conn.read("finance-mlops-proj/data_crawler/cleaning/bitcoin/bitcoin.parquet",
                       input_format="parquet", ttl=600)
-bitcoin_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/bitcoin/bitcoin_anal_cleaning.parquet",
+bitcoin_anal = conn.read("finance-mlops-proj/data_crawler/cleaning/bitcoin/bitcoin_anal.parquet",
                       input_format="parquet", ttl=600)
                       
 bitcoin = bitcoin.sort_values(by= 'date')
