@@ -60,7 +60,7 @@ markdown_5 = """
 """
 
 
-markdown_5 = """
+markdown_6 = """
 - [Cloud Function & Cloud Scheduler를 사용한 주가 데이터 수집 1](https://unfinishedgod.netlify.app/2023/11/09/gcp-cloud-function-cloud-scheduler/)
 - [Cloud Function & Cloud Scheduler를 사용한 주가 데이터 수집 2](https://unfinishedgod.netlify.app/2023/11/10/gcp-cloud-function-cloud-scheduler-2-cloud-scheduler/)
 - [Google Cloud run에 대해 알아 보자.](https://unfinishedgod.netlify.app/2023/12/30/gcp-google-cloud-run/)
@@ -86,7 +86,7 @@ with col4:
 with col5:
   st.markdown(markdown_5)
 with col6:
-  st.markdown("markdown_6")
+  st.markdown(markdown_6)
 
 
 
