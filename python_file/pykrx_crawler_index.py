@@ -54,18 +54,18 @@ engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432
 
 
 
-import sys
-time_delta_nm = sys.argv[1]
-time_delta_nm = int(time_delta_nm)
+# import sys
+# time_delta_nm = sys.argv[1]
+# time_delta_nm = int(time_delta_nm)
 
 now = datetime.now()
-now = now + timedelta(days=-time_delta_nm)
+# now = now + timedelta(days=-time_delta_nm)
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-# today_date1 = '20240112'
-# today_date2 = '2024-01-12'
+today_date1 = '20240117'
+today_date2 = '2024-01-17'
 
 
 now1 = datetime.now()
