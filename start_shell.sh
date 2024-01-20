@@ -24,6 +24,9 @@ ${python_dir} ${file_dir}/cleaning/cleaning_index.py
 echo "보조지표: pykrx 보조지표 시작"
 ${python_dir} ${file_dir}/cleaning/indicator_setup.py
 
+echo "Gemini: 메인 시작"
+${python_dir} ${file_dir}/cleaning/gemini_main_view.py
+
 echo "Gemini: 코스피 & 코스닥 시작"
 ${python_dir} ${file_dir}/cleaning/main_gemini.py
 
