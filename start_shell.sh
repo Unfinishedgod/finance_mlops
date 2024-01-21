@@ -29,8 +29,5 @@ ${python_dir} ${file_dir}/cleaning/gemini_main_view.py
 
 echo "Gemini: 코스피 & 코스닥 시작"
 ${python_dir} ${file_dir}/cleaning/main_gemini.py
-
-# nohup ${python_dir} ${file_dir}/cleaning/gemini_kospi.py >> kospi_log.txt & 
-# nohup ${python_dir} ${file_dir}/cleaning/gemini_kosdaq.py >> kosdaq_log.txt & 
     
 # fi

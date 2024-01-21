@@ -64,8 +64,8 @@ today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
-today_date1 = '20230117'
-today_date2 = '2023-01-17'
+# today_date1 = '20240119'
+# today_date2 = '2024-01-19'
 
 
 now1 = datetime.now()
