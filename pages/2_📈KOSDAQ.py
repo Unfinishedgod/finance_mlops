@@ -36,7 +36,7 @@ with open('style.css') as f:
 
 conn = st.connection('gcs', type=FilesConnection)
 
-gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kosdaq_20240120.csv",
+gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kosdaq_20240122.csv",
                       input_format="csv", ttl=3600)
 
 gemini_kosdaq['ticker'] = gemini_kosdaq['ticker'].astype(str).str.zfill(6)                      
