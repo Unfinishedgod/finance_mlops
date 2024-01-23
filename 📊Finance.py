@@ -30,7 +30,7 @@ st.set_page_config(
 
 conn = st.connection('gcs', type=FilesConnection)
                       
-gemini_main = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_main_view_20240116.csv",
+gemini_main = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_main_view_20240123.csv",
                       input_format="csv", ttl=3600)
 
 with open('style.css') as f:
