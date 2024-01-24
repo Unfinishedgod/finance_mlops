@@ -395,3 +395,7 @@ df_total.to_csv(f'data_crawler/dashboard/indicator.csv', index = False)
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 print(f'보조지표 완료_{time_line}')
+
+
+os.system(f"python_file/send_gmail.py '보조지표'")
+ 

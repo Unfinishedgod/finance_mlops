@@ -322,3 +322,7 @@ blob.upload_from_filename(source_file_name)
 now1 = datetime.now()
 time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 print(f'코스닥 전처리 완료_{time_line}')
+
+
+os.system(f"python_file/send_gmail.py '코스닥_전처리'")
+ 

@@ -250,3 +250,7 @@ time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 upload_df(df_raw, file_name, project_id, dataset_id, time_line, today_date1)
 
 print(f'거래실적 거래 대금 거래량 완료_{time_line}')
+
+
+
+os.system(f"python_file/send_gmail.py 'pykrx_주가'")

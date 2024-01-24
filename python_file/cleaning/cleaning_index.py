@@ -283,3 +283,9 @@ destination_blob_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
+
+
+
+
+os.system(f"python_file/send_gmail.py '인덱스_전처리'")
+ 

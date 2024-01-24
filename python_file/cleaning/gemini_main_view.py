@@ -241,3 +241,6 @@ time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 print(f'완료_{time_line}')
 
 
+
+os.system(f"python_file/send_gmail.py 'gemini_메인'")
+ 
