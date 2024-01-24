@@ -42,9 +42,12 @@ today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 conn = st.connection('gcs', type=FilesConnection)
 
-gemini_kospi = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi.parquet",
-                      input_format="parquet", ttl=3600)
-                      
+gemini_kospi = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kospi.csv",
+                      input_format="csv", ttl=3600)
+
+gemini_kospi_max_date = gemini_kospi['date'].max()
+
+gemini_kospi = gemini_kospi[gemini_kospi['date'] == gemini_kospi_max_date]
 gemini_kospi['ticker'] = gemini_kospi['ticker'].astype(str).str.zfill(6)                      
                       
 # parquet
