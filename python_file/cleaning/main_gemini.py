@@ -80,6 +80,7 @@ dir1 = "/home/shjj08choi4/finance_mlops"
 gemini_result_kospi = pd.read_csv(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv')
 gemini_result_kosdaq = pd.read_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv')
 
+gemini_result_kospi.to_csv(f'data_crawler/dashboard/gemini_result_kospi.csv')
 
 table_from_pandas = pa.Table.from_pandas(gemini_result_kospi,preserve_index = False)
 pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_result_kospi.parquet')
