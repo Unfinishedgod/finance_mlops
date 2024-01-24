@@ -15,4 +15,31 @@ os.system(f"nohup {python_dir} {file_dir}/cleaning/gemini_kospi.py {str(final_i)
 os.system(f"{python_dir} {file_dir}/cleaning/gemini_kosdaq.py {str(final_i)} >> gemini_kosdaq.txt")
 
 
+
+
+
+gemini_result_kospi = pd.read_csv(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv')
+gemini_result_kosdaq = pd.read_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv')
+
+
+table_from_pandas = pa.Table.from_pandas(gemini_result_kospi,preserve_index = False)
+pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_result_kospi.parquet')
+
+table_from_pandas = pa.Table.from_pandas(gemini_result_kosdaq,preserve_index = False)
+pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_result_kosdaq.parquet')
+
+# Google Storage 적재
+source_file_name = f'data_crawler/dashboard/gemini_result_kospi.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/dashboard/gemini_result_kospi.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+bucket = storage_client.bucket(bucket_name)
+blob = bucket.blob(destination_blob_name)
+blob.upload_from_filename(source_file_name)
+
+# Google Storage 적재
+source_file_name = f'data_crawler/dashboard/gemini_result_kosdaq.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/dashboard/gemini_result_kosdaq.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+bucket = storage_client.bucket(bucket_name)
+blob = bucket.blob(destination_blob_name)
+blob.upload_from_filename(source_file_name)
+
 os.system(f"{file_dir}/send_gmail.py 'gemini_코스피코스닥'")

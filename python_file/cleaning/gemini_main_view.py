@@ -228,9 +228,13 @@ if not os.path.exists(f'data_crawler/dashboard/gemini_main_view_{today_date1}.cs
 else:
     kospi_kosdaq_msg.to_csv(f'data_crawler/dashboard/gemini_main_view_{today_date1}.csv', index=False, mode='a', header=False)
 
+
+table_from_pandas = pa.Table.from_pandas(kospi_kosdaq_msg,preserve_index = False)
+pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_main_view.parquet')
+
 # Google Storage 적재
-source_file_name = f'data_crawler/dashboard/gemini_main_view_{today_date1}.csv'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/dashboard/gemini_main_view_{today_date1}.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/dashboard/gemini_main_view.csv'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/dashboard/gemini_main_view.csv'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
