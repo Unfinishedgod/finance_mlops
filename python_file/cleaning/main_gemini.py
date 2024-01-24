@@ -80,8 +80,8 @@ dir1 = "/home/shjj08choi4/finance_mlops"
 gemini_result_kospi = pd.read_csv(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv')
 gemini_result_kosdaq = pd.read_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv')
 
-gemini_result_kospi.to_csv(f'data_crawler/dashboard/gemini_result_kospi.csv')
-gemini_result_kosdaq.to_csv(f'data_crawler/dashboard/gemini_result_kosdaq.csv')
+gemini_result_kospi.to_csv(f'data_crawler/dashboard/gemini_result_kospi.csv', index = False)
+gemini_result_kosdaq.to_csv(f'data_crawler/dashboard/gemini_result_kosdaq.csv', index = False)
 
 
 # Google Storage 적재
