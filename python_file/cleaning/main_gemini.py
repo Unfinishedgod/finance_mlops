@@ -16,8 +16,6 @@ os.system(f"{python_dir} {file_dir}/cleaning/gemini_kosdaq.py {str(final_i)} >> 
 
 
 
-
-
 gemini_result_kospi = pd.read_csv(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv')
 gemini_result_kosdaq = pd.read_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv')
 
