@@ -6,6 +6,14 @@ from time import sleep
 from datetime import datetime
 from datetime import timedelta
 
+from pyarrow import csv
+import pyarrow as pa
+import pyarrow.parquet as pq
+
+from google.cloud import bigquery
+from google.oauth2 import service_account
+from google.cloud import storage
+
 
 now = datetime.now()
 # now = now + timedelta(days=-2)
