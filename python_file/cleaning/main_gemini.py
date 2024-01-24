@@ -16,6 +16,10 @@ from sqlalchemy import create_engine
 from datetime import datetime
 from datetime import timedelta
 
+from pyarrow import csv
+import pyarrow as pa
+import pyarrow.parquet as pq
+
 import os
 import time
 
