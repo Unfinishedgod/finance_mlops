@@ -101,4 +101,4 @@ bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
 
-os.system(f"{file_dir}/send_gmail.py 'gemini_코스피코스닥'")
+os.system(f"python3 python_file/send_gmail.py 'gemini_코스피코스닥'")
