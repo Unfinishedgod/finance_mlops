@@ -1,22 +1,60 @@
-import os
-import pandas as pd
+#!/usr/bin/env python
+# coding: utf-8
 
-import time
+import pandas as pd
+import pandas_gbq
+from pykrx import stock
+from pykrx import bond
+import FinanceDataReader as fdr
+
+
 from time import sleep
+
+import psycopg2 as pg2
+from sqlalchemy import create_engine
+
 from datetime import datetime
 from datetime import timedelta
 
-from pyarrow import csv
-import pyarrow as pa
-import pyarrow.parquet as pq
+import os
+import time
 
+import glob
 from google.cloud import bigquery
 from google.oauth2 import service_account
 from google.cloud import storage
 
 
+# 서비스 계정 키 JSON 파일 경로
+key_path = glob.glob("key_value/*.json")[0]
+
+# Credentials 객체 생성
+credentials = service_account.Credentials.from_service_account_file(key_path)
+
+# 빅쿼리 정보
+project_id = 'owenchoi-404302'
+dataset_id = 'finance_mlops'
+
+# GCP 클라이언트 객체 생성
+storage_client = storage.Client(credentials = credentials,
+                         project = credentials.project_id)
+bucket_name = 'finance-mlops-proj'    # 서비스 계정 생성한 bucket 이름 입력
+
+# Postgresql 연결
+db_connect_info = pd.read_csv('key_value/db_connect_info.csv')
+username = db_connect_info['username'][0]
+password = db_connect_info['password'][0]
+host = db_connect_info['host'][0]
+database = db_connect_info['database'][0]
+engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
+
+
+# import sys
+# time_delta_nm = sys.argv[1]
+# time_delta_nm = int(time_delta_nm)
+
 now = datetime.now()
-# now = now + timedelta(days=-2)
+# now = now + timedelta(days=-time_delta_nm)
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
