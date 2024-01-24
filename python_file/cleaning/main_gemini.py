@@ -25,6 +25,9 @@ from google.oauth2 import service_account
 from google.cloud import storage
 
 
+# 경로 변경
+os.chdir('/home/shjj08choi4/finance_mlops')
+
 # 서비스 계정 키 JSON 파일 경로
 key_path = glob.glob("key_value/*.json")[0]
 
@@ -48,11 +51,6 @@ host = db_connect_info['host'][0]
 database = db_connect_info['database'][0]
 engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
 
-
-# import sys
-# time_delta_nm = sys.argv[1]
-# time_delta_nm = int(time_delta_nm)
-
 now = datetime.now()
 # now = now + timedelta(days=-time_delta_nm)
 today_date1 = now.strftime('%Y%m%d')
@@ -75,26 +73,26 @@ dir1 = "/home/shjj08choi4/finance_mlops"
 
 
 
-gemini_result_kospi = pd.read_csv(f'{dir1}/data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv')
-gemini_result_kosdaq = pd.read_csv(f'{dir1}/data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv')
+gemini_result_kospi = pd.read_csv(f'data_crawler/dashboard/gemini_result_kospi_{today_date1}.csv')
+gemini_result_kosdaq = pd.read_csv(f'data_crawler/dashboard/gemini_result_kosdaq_{today_date1}.csv')
 
 
 table_from_pandas = pa.Table.from_pandas(gemini_result_kospi,preserve_index = False)
-pq.write_table(table_from_pandas, f'{dir1}/data_crawler/dashboard/gemini_result_kospi.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_result_kospi.parquet')
 
 table_from_pandas = pa.Table.from_pandas(gemini_result_kosdaq,preserve_index = False)
-pq.write_table(table_from_pandas, f'{dir1}/data_crawler/dashboard/gemini_result_kosdaq.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_result_kosdaq.parquet')
 
 # Google Storage 적재
-source_file_name = f'{dir1}/data_crawler/dashboard/gemini_result_kospi.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'{dir1}/data_crawler/dashboard/gemini_result_kospi.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/dashboard/gemini_result_kospi.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/dashboard/gemini_result_kospi.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
 
 # Google Storage 적재
-source_file_name = f'{dir1}/data_crawler/dashboard/gemini_result_kosdaq.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'{dir1}/data_crawler/dashboard/gemini_result_kosdaq.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/dashboard/gemini_result_kosdaq.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/dashboard/gemini_result_kosdaq.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)

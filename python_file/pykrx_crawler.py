@@ -54,10 +54,6 @@ database = db_connect_info['database'][0]
 engine = create_engine(f'postgresql+psycopg2://{username}:{password}@{host}:5432/{database}')
 
 
-# import sys
-# time_delta_nm = sys.argv[1]
-# time_delta_nm = int(time_delta_nm)
-
 now = datetime.now()
 # now = now + timedelta(days=-time_delta_nm)
 today_date1 = now.strftime('%Y%m%d')
