@@ -287,5 +287,5 @@ blob.upload_from_filename(source_file_name)
 
 
 
-os.system(f"python_file/send_gmail.py '인덱스_전처리'")
+os.system(f"python3 python_file/send_gmail.py '인덱스_전처리'")
  
