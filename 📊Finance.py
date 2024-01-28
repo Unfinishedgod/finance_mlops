@@ -33,7 +33,6 @@ conn = st.connection('gcs', type=FilesConnection)
 gemini_main = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_main_view.csv",
                       input_format="csv", ttl=3600)
 
-
 gemini_main_max_date = gemini_main['date'].max()
 gemini_main = gemini_main[gemini_main['date'] == gemini_main_max_date]
 
