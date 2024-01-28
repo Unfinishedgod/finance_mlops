@@ -223,14 +223,14 @@ except:
     print(f'{file_name}_빅쿼리저장_fail_{time_line}')
 
 
-if not os.path.exists(f'data_crawler/dashboard/gemini_main_view_{today_date1}.csv'):
-    kospi_kosdaq_msg.to_csv(f'data_crawler/dashboard/gemini_main_view_{today_date1}.csv', index=False, mode='w')
+if not os.path.exists(f'data_crawler/dashboard/gemini_main_view.csv'):
+    kospi_kosdaq_msg.to_csv(f'data_crawler/dashboard/gemini_main_view.csv', index=False, mode='w')
 else:
-    kospi_kosdaq_msg.to_csv(f'data_crawler/dashboard/gemini_main_view_{today_date1}.csv', index=False, mode='a', header=False)
+    kospi_kosdaq_msg.to_csv(f'data_crawler/dashboard/gemini_main_view.csv', index=False, mode='a', header=False)
 
 
-table_from_pandas = pa.Table.from_pandas(kospi_kosdaq_msg,preserve_index = False)
-pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_main_view.parquet')
+# table_from_pandas = pa.Table.from_pandas(kospi_kosdaq_msg,preserve_index = False)
+# pq.write_table(table_from_pandas, f'data_crawler/dashboard/gemini_main_view.parquet')
 
 # Google Storage 적재
 source_file_name = f'data_crawler/dashboard/gemini_main_view.csv'    # GCP에 업로드할 파일 절대경로
