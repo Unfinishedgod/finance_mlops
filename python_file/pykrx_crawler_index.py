@@ -269,4 +269,4 @@ upload_df(index_code_master, file_name, project_id, dataset_id, time_line, today
 print(f'인덱스 구성 종목 완료_{time_line}')
 
 
-os.system(f"python3 python_file/send_gmail.py 'pykrx_인덱스_주가'")
+os.system(f"/home/shjj08choi4/anaconda3/bin/python3 python_file/send_gmail.py 'pykrx_인덱스_주가'")
