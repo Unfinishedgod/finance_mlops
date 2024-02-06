@@ -71,7 +71,7 @@ buy_sell_count_kospi = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_s
 kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] >= today_date2]
 
 df = kor_index_ohlcv.groupby(['index_code'])['close'].apply(list).reset_index()
-df['index_code'] = df['index_code'].astype(str)
+kor_index_list_df['index_code'] = kor_index_list_df['index_code'].astype(str)
 
 
 df2 = pd.merge(kor_index_list_df, df, 
