@@ -263,23 +263,23 @@ df_raw_anal_total_2 = df_raw_anal_total[df_raw_anal_total['date'] > set_date_2].
 
 
 table_from_pandas = pa.Table.from_pandas(df_raw_total_2,preserve_index = False)
-pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv.parquet')
 
 table_from_pandas = pa.Table.from_pandas(df_raw_anal_total_2,preserve_index = False)
-pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal_cleaning.parquet')
+pq.write_table(table_from_pandas, f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal.parquet')
 
 
 # Google Storage 적재
-source_file_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
 
 
 # Google Storage 적재
-source_file_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal_cleaning.parquet'    # GCP에 업로드할 파일 절대경로
-destination_blob_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal_cleaning.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
+source_file_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv.parquet'    # GCP에 업로드할 파일 절대경로
+destination_blob_name = f'data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal.parquet'    # 업로드할 파일을 GCP에 저장할 때의 이름
 bucket = storage_client.bucket(bucket_name)
 blob = bucket.blob(destination_blob_name)
 blob.upload_from_filename(source_file_name)
