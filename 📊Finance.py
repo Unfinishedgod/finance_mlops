@@ -82,8 +82,8 @@ df_kospi = df2[df2['market'] == 'KOSPI']
 df_kosdaq = df2[df2['market'] == 'KOSDAQ']        
 
 
-ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 1001]
-price_change_percentage_kospi = kor_index_code_fundamental[kor_index_code_fundamental['index_code'] == 1001]
+ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == '1001']
+price_change_percentage_kospi = kor_index_code_fundamental[kor_index_code_fundamental['index_code'] == '1001']
 
 
 ohlcv_kospi_value = ohlcv_kospi['close'].tail(1).tolist()[0]
@@ -166,8 +166,8 @@ with col2:
 
 
 
-    ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == 2001]
-    price_change_percentage_kospi = kor_index_code_fundamental[kor_index_code_fundamental['index_code'] == 2001]
+    ohlcv_kospi = kor_index_ohlcv[kor_index_ohlcv['index_code'] == '2001']
+    price_change_percentage_kospi = kor_index_code_fundamental[kor_index_code_fundamental['index_code'] == '2001']
     
     
     
