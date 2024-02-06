@@ -11,4 +11,4 @@ for i in range(5):
     os.system(f"nohup {python_dir} {file_dir}/cleaning/gemini_kospi.py {str(i)} >> gemini_kospi.txt &")
     os.system(f"nohup {python_dir} {file_dir}/cleaning/gemini_kosdaq.py {str(i)} >> gemini_kosdaq.txt &")
 
-os.system(f"python3 python_file/send_gmail.py 'gemini_코스피코스닥'")
+os.system(f"/home/shjj08choi4/anaconda3/bin/python3 python_file/send_gmail.py 'gemini_코스피코스닥'")
