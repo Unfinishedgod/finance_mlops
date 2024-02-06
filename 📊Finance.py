@@ -58,7 +58,7 @@ today_date2 = now.strftime('%Y-%m-%d')
 conn = st.connection('gcs', type=FilesConnection)
 kor_index_ohlcv = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv.parquet", 
                       input_format="parquet", ttl=600)
-kor_index_code_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_index_code_fundamental/kor_index_code_fundamental.csv", 
+kor_index_code_fundamental = conn.read("finance-mlops-proj/data_crawler/kor_index_code_fundamental/kor_index_code_fundamental_20240206.csv", 
                       input_format="csv", ttl=600)
 kor_index_list_df = conn.read("finance-mlops-proj/data_crawler/kor_index_list_df/kor_index_list_df.parquet", 
                       input_format="parquet", ttl=600)
