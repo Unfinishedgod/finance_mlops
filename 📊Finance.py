@@ -68,7 +68,7 @@ buy_sell_count_kospi = conn.read("finance-mlops-proj/data_crawler/cleaning/kor_s
                       input_format="parquet", ttl=600)
 
 
-kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] > today_date2]
+kor_index_ohlcv = kor_index_ohlcv[kor_index_ohlcv['date'] >= today_date2]
 
 df = kor_index_ohlcv.groupby(['index_code'])['close'].apply(list).reset_index()
 
