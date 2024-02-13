@@ -110,7 +110,7 @@ select
 from `owenchoi-404302.finance_mlops.kor_stock_ohlcv`
 left join  `owenchoi-404302.finance_mlops.kor_ticker_list`
 on `owenchoi-404302.finance_mlops.kor_stock_ohlcv`.ticker = `owenchoi-404302.finance_mlops.kor_ticker_list`.ticker
-where date > '{query_date}' and market = 'KOSPI' and close = 0
+where date > '{query_date}' and market = 'KOSPI' and close != 0
 order by date, rank asc
 """
 
