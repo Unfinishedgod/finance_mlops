@@ -109,7 +109,7 @@ select
 from `{project_id}.{dataset_id}.kor_stock_ohlcv`
 left join  `{project_id}.{dataset_id}.kor_ticker_list`
 on `{project_id}.{dataset_id}.kor_stock_ohlcv`.ticker = `{project_id}.{dataset_id}.kor_ticker_list`.ticker
-where date > '{query_date}' and market = 'KOSDAQ'
+where date > '{query_date}' and market = 'KOSDAQ' and close = 0
 order by date, rank asc
 """
 

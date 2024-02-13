@@ -100,7 +100,7 @@ SELECT
 FROM `owenchoi-404302.finance_mlops.kor_index_ohlcv` 
 left join  `owenchoi-404302.finance_mlops.kor_index_list_df`
 on `owenchoi-404302.finance_mlops.kor_index_ohlcv`.index_code = `owenchoi-404302.finance_mlops.kor_index_list_df`.index_code
-where date > '{query_date}'
+where date > '{query_date}' and close = 0
 order by date asc
 """
 
