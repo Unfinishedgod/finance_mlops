@@ -37,7 +37,7 @@ with open('style.css') as f:
 conn = st.connection('gcs', type=FilesConnection)
 
 gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kosdaq.csv",
-                      input_format="parquet", ttl=3600)
+                      input_format="csv", ttl=3600)
 
 gemini_kosdaq_max_date = gemini_kosdaq['date'].max()
 
