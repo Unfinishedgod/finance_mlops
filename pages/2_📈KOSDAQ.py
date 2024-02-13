@@ -36,7 +36,7 @@ with open('style.css') as f:
 
 conn = st.connection('gcs', type=FilesConnection)
 
-gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kosdaq.parquet",
+gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_result_kosdaq.csv",
                       input_format="parquet", ttl=3600)
 
 gemini_kosdaq_max_date = gemini_kosdaq['date'].max()
@@ -63,7 +63,7 @@ index_code_master['ticker'] = index_code_master['ticker'].astype(str).str.zfill(
   
 
 
-kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'kosdaq']
+kor_ticker_list = kor_stock_ohlcv[kor_stock_ohlcv['market'] == 'KOSDAQ']
 corp_name_list = kor_stock_ohlcv['corp_name'].unique()
 kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= ['date'])
 
