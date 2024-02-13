@@ -41,7 +41,7 @@ gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_res
 
 gemini_kosdaq_max_date = gemini_kosdaq['date'].max()
 
-gemini_kosdaq = gemini_kosdaq[gemini_kosdaq['date'] == gemini_kospi_max_date]
+gemini_kosdaq = gemini_kosdaq[gemini_kosdaq['date'] == gemini_kosdaq_max_date]
 gemini_kosdaq['ticker'] = gemini_kosdaq['ticker'].astype(str).str.zfill(6)                      
                       
 # parquet
