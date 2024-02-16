@@ -118,6 +118,9 @@ index_code_list = kor_index_ohlcv_2['index_code'].unique()
 df_raw_total = pd.DataFrame()
 df_raw_anal_total = pd.DataFrame()
 
+df_raw_total = pd.DataFrame()
+df_raw_anal_total = pd.DataFrame()
+
 for index_code_nm in index_code_list:
     df_raw = kor_index_ohlcv_2[kor_index_ohlcv_2['index_code'] == index_code_nm].reset_index(drop = True)
 

@@ -112,11 +112,11 @@ kor_stock_ohlcv_anal_kosdaq = t.to_pandas()
 # buy_sell_count_kosdaq = t.to_pandas()
 
 # 인덱스 지표
-t = pq.read_table('data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_cleaning.parquet')
+t = pq.read_table('data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv.parquet')
 kor_index_ohlcv_cleaning = t.to_pandas()
 
 # 인덱스 매수/매도 지표
-t = pq.read_table('data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal_cleaning.parquet')
+t = pq.read_table('data_crawler/cleaning/kor_index_ohlcv/kor_index_ohlcv_anal.parquet')
 kor_index_ohlcv_anal_cleaning = t.to_pandas()
 
 # # 인덱스 PBR
