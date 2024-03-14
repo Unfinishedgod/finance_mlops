@@ -397,5 +397,5 @@ time_line = now1.strftime("%Y%m%d_%H:%M:%S")
 print(f'보조지표 완료_{time_line}')
 
 
-os.system(f"/home/shjj08choi4/anaconda3/bin/python3 python_file/send_gmail.py '보조지표'")
+os.system(f"/home/shjj08choi4/anaconda3/bin/python3 python_file/send_slack.py '보조지표'")
  

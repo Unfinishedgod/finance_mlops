@@ -246,5 +246,5 @@ print(f'완료_{time_line}')
 
 
 
-os.system(f"/home/shjj08choi4/anaconda3/bin/python3 python_file/send_gmail.py 'gemini_메인'")
+os.system(f"/home/shjj08choi4/anaconda3/bin/python3 python_file/send_slack.py 'gemini_메인'")
  
