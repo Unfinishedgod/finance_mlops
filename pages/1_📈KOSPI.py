@@ -128,7 +128,6 @@ fig = functional.macd_vis(kor_stock_ohlcv_095570_total[kor_stock_ohlcv_095570_to
                           kor_stock_ohlcv_anal_total[kor_stock_ohlcv_anal_total['date'] > today_date2], 
                           asdf, option)
 
-
 fig2 = px.line(dfdf22, 
               x = 'date',
               y = 'close',
