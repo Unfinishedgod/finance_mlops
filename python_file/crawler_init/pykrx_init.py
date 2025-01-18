@@ -63,6 +63,9 @@ today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 start_date1 = '20180101'
 today_date1 = '20240105'
 
+start_date1 = '20240705'
+today_date1 = '20250118'
+
 def upload_df(data, file_name, project_id, dataset_id, time_line):
     if not os.path.exists(f'data_crawler/{file_name}'):
         os.makedirs(f'data_crawler/{file_name}')

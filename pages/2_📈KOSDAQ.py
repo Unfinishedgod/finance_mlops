@@ -45,7 +45,7 @@ gemini_kosdaq_max_date = '2024-06-01'
 now = datetime.now()
 now = now + timedelta(days=-30)
 today_date2 = now.strftime('%Y-%m-%d')
-today_date2 = '2024-01-01'
+today_date2 = '2024-03-01'
 
 
 gemini_kosdaq = gemini_kosdaq[gemini_kosdaq['date'] == gemini_kosdaq_max_date]
