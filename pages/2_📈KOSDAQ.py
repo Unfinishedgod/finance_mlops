@@ -40,6 +40,13 @@ gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_res
                       input_format="csv", ttl=3600)
 
 gemini_kosdaq_max_date = gemini_kosdaq['date'].max()
+gemini_kosdaq_max_date = '2024-06-01'
+
+now = datetime.now()
+now = now + timedelta(days=-30)
+today_date2 = now.strftime('%Y-%m-%d')
+today_date2 = '2024-01-01'
+
 
 gemini_kosdaq = gemini_kosdaq[gemini_kosdaq['date'] == gemini_kosdaq_max_date]
 gemini_kosdaq['ticker'] = gemini_kosdaq['ticker'].astype(str).str.zfill(6)                      
@@ -69,9 +76,12 @@ kor_stock_ohlcv = kor_stock_ohlcv.sort_values(by= ['date'])
 
 
 
-now = datetime.now()
-now = now + timedelta(days=-30)
-today_date2 = now.strftime('%Y-%m-%d')
+# now = datetime.now()
+# now = now + timedelta(days=-30)
+# today_date2 = now.strftime('%Y-%m-%d')
+# today_date2 = '2024-01-01'
+
+
 kor_index_ohlcv_cleaning = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['date'] >= today_date2]
 
 not_sectors = ["1002","1003","1004","1028","1034","1035","1150","1151",
@@ -115,20 +125,22 @@ index_list_df = index_code_master[index_code_master['ticker'] == str(ticker_nm_o
 dfdf22 = kor_index_ohlcv_cleaning[kor_index_ohlcv_cleaning['index_code'].isin(index_list_df['index_code'])].reset_index(drop = True)
   
 
-now = datetime.now()
-now = now + timedelta(days=-90)
-today_date2 = now.strftime('%Y-%m-%d')
+# now = datetime.now()
+# now = now + timedelta(days=-90)
+# today_date2 = now.strftime('%Y-%m-%d')
+# today_date2 =  '2024-06-01'
+
 fig = functional.macd_vis(kor_stock_ohlcv_095570_total[kor_stock_ohlcv_095570_total['date'] > today_date2], 
                           kor_stock_ohlcv_anal_total[kor_stock_ohlcv_anal_total['date'] > today_date2], 
                           asdf, option)
 
 
-fig2 = px.line(dfdf22, 
-              x = 'date',
-              y = 'close',
-              line_shape="spline",
-              facet_row="index_code_nm")
-fig2.update_yaxes(matches=None)
+# fig2 = px.line(dfdf22, 
+#               x = 'date',
+#               y = 'close',
+#               line_shape="spline",
+#               facet_row="index_code_nm")
+# fig2.update_yaxes(matches=None)
 
 try:
     message = gemini_kosdaq[gemini_kosdaq['ticker'] == str(ticker_nm_option)].reset_index(drop = True)['response_msg'][0]
