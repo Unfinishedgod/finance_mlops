@@ -40,7 +40,7 @@ gemini_kosdaq = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_res
                       input_format="csv", ttl=3600)
 
 gemini_kosdaq_max_date = gemini_kosdaq['date'].max()
-gemini_kosdaq_max_date = '2024-06-01'
+gemini_kosdaq_max_date = '2024-03-01'
 
 now = datetime.now()
 now = now + timedelta(days=-30)
