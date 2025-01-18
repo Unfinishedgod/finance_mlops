@@ -49,7 +49,7 @@ now = now + timedelta(days=-30)
 today_date2 = now.strftime('%Y-%m-%d')
 
 
-
+today_date2 = '2024-03-01'
 
 
 # kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv', dtype = {'ticker': object})
