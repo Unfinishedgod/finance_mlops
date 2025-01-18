@@ -34,7 +34,7 @@ gemini_main = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_main_
                       input_format="parquet", ttl=3600)
 
 gemini_main_max_date = gemini_main['date'].max()
-gemini_main_max_date = '2024-03-01'
+gemini_main_max_date = '2024-03-04'
 gemini_main = gemini_main[gemini_main['date'] == gemini_main_max_date]
 
 
@@ -50,7 +50,7 @@ now = now + timedelta(days=-30)
 today_date2 = now.strftime('%Y-%m-%d')
 
 
-today_date2 = '2024-03-01'
+today_date2 = '2024-03-04'
 
 
 # kor_index_ohlcv = pd.read_csv('data_crawler/kor_index_ohlcv/kor_index_ohlcv.csv', dtype = {'ticker': object})

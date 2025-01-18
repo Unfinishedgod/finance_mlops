@@ -37,7 +37,7 @@ with open('style.css') as f:
 now = datetime.now()
 today_date1 = now.strftime('%Y%m%d')
 today_date2 = now.strftime('%Y-%m-%d')
-today_date2 = '2024-03-01'
+today_date2 = '2024-03-04'
 today_date_time_csv = now.strftime("%Y%m%d_%H%M")
 
 
@@ -47,7 +47,7 @@ gemini_kospi = conn.read(f"finance-mlops-proj/data_crawler/dashboard/gemini_resu
                       input_format="csv", ttl=3600)
 
 gemini_kospi_max_date = gemini_kospi['date'].max()
-gemini_kospi_max_date = '2024-03-01'
+gemini_kospi_max_date = '2024-03-04'
 gemini_kospi = gemini_kospi[gemini_kospi['date'] == gemini_kospi_max_date]
 gemini_kospi['ticker'] = gemini_kospi['ticker'].astype(str).str.zfill(6)                      
                       
